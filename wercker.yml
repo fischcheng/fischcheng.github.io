@@ -25,7 +25,6 @@ deploy:
              apt-get update && apt-get install git -y
        - leipert/git-push@0.7.6:
             gh_oauth: $Git_Token
-            repo: fischcheng/fischcheng.github.io
             gh_pages: true
             basedir: public
             branch: master

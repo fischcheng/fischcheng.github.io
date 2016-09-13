@@ -112,7 +112,7 @@ googleAnalytics = ""
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:test@example.org"
+    link = "mailto:yucheng@rsmas.miami.edu"
 
   [[params.social]]
     icon = "twitter"
@@ -128,11 +128,6 @@ googleAnalytics = ""
     icon = "github"
     icon_pack = "fa"
     link = "https://github.com/fischcheng"
-
-  [[params.social]]
-    icon = "skype"
-    icon_pack = "fa"
-    link = "skype:dennis_yu0123?add"
 
 
 # Navigation Links
