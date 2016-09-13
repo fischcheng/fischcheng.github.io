@@ -33,3 +33,4 @@ deploy:
             repo: fischcheng/fischcheng.github.io
             branch: master
             basedir: public
+            domain: fischcheng.github.io
