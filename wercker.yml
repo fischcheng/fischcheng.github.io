@@ -19,8 +19,6 @@ box: debian
 build:
   steps:
     - arjen/hugo-build:
-        version: "0.14"
-        theme: herring-cove
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
 
@@ -29,8 +27,7 @@ deploy:
         - install-packages:
             packages: git ssh-client
         - leipert/git-push:
-            gh_oauth: $GIT_TOKEN
+            gh_oauth: $GITHUB_TOKEN
             repo: fischcheng/fischcheng.github.io
             branch: master
             basedir: public
-            domain: fischcheng.github.io
