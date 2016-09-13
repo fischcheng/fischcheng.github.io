@@ -14,7 +14,7 @@ build:
 
     - arjen/hugo-build@1.11.0:
         version: "0.15"
-        theme: "academic"
+        theme: "hugo-academic"
         flags: --buildDrafts=true
 
 deploy:
