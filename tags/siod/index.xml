@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Siod on Yu Cheng</title>
+    <link>https://fischcheng.github.io/tags/siod/</link>
+    <description>Recent content in Siod on Yu Cheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <lastBuildDate>Mon, 04 Jul 2016 17:07:00 +0000</lastBuildDate>
+    <atom:link href="https://fischcheng.github.io/tags/siod/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Agulhas Group meeting notes 2016-06-29</title>
+      <link>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</link>
+      <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://link.springer.com/article/10.1007/s00382-016-3220-6&#34;&gt;Andrew Hoell, Chris Funk, Jens Zinke, Laura Harrison: Modulation of the Southern Africa precipitation response to the El Niño Southern Oscillation by the subtropical Indian Ocean Dipole&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;br /&gt;
+How the phase of the SIOD and therefore the SST anomaly expression of the Indian Ocean, modulates the Southern Africa precipitation response to ENSO?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What methods do the authors use to address the questions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SA Land area bound by the region 15S-35S; 12.5E-42.5E&lt;/li&gt;
+&lt;li&gt;Observation: Global Precipitation Climatology Project version 2.2 (GPCP) 1979 to 2014, 2.5 x 2.5 deg resolution. Hadley-NOAA Optimum Interpolation dataset (OISST) 1.0x1.0 deg&lt;/li&gt;
+&lt;li&gt;Three SST modes and their indices: ENSO (Nino3.4 &amp;gt;0.5K, table 2), IOD, Subtropical-IOD (Fig. 1)&lt;/li&gt;
+&lt;li&gt;Two experiments: (1) Forced by observed global SST (2) Forced by the leading pattern of glabal time-varying monthly SST anomaly added to the monthly climatology, to isolate the atmospheric response to ENSO. (EOF1, Fig. 4)&lt;/li&gt;
+&lt;li&gt;Each experiment has two sets of ensembles from two different models:(1) 30 members of ECHAM5.4, 50 members of GFS2, on 1x1 deg horizonal grid.&lt;/li&gt;
+&lt;li&gt;Test whether the SIOD modifies the relationship between SA precipitation and ENSO through an examination of SA precipitation as a function of SIOD phase in two forced simulations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the authors&amp;rsquo; main conclusions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;El Niño is associated with reduced precipitation in the Southern Africa, and La Niña tends to occur with abundant precipitation in the area. Both are further enhanced by out-of-phase SIOD, and disrupted by in-phase SIOD.&lt;/li&gt;
+&lt;li&gt;For the in-phase SIOD and ENSO during December-March, SA precipitation is associated with an SST anomaly over the &lt;em&gt;Agulhas Current region.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;ENSO is related to an equivalent barotropic Rossby wave over Southern Africa, that modifies the regional mid-tropospheric vertical motions and precipitation.&lt;/li&gt;
+&lt;li&gt;The EOF1 forced case, either phase of SIOD does not modulate the SA precipitation response to ENSO (indistinguishable Fig. 10 and 11)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the implications of the results?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ENSO has been an important parameter for rainy season SA precipitation prediction, as SST playing a critical role in the regional climate. The modulation relationship between SIOD and ENSO presented here can help to make more informed forecasts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Why did you choose this paper?&lt;/strong&gt;
+looking into papers about South African precipitation variability.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who read this paper?&lt;/strong&gt;
+Yu Cheng&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

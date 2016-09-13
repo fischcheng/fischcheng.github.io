@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Yu Cheng</title>
+    <link>https://fischcheng.github.io/post/</link>
+    <description>Recent content in Posts on Yu Cheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <lastBuildDate>Thu, 28 Jul 2016 17:06:00 +0000</lastBuildDate>
+    <atom:link href="https://fischcheng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Workflow for a CCSM4 run</title>
+      <link>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</link>
+      <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</guid>
+      <description>
+
+&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a new case using the script under &lt;code&gt;~/CCSM4/scripts&lt;/code&gt;, following the template: PATH, compset, resolution and machine file. Compset B is the fully coupled mode.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./create_newcase -case ~/ccsm4/$casename \
+                       -compset B_2000 \
+                       -res 0.9x1.25_gx1v6 \
+                       -mach bluefire 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go to the $CASEROOT directory, &lt;code&gt;~/ccsm4/$case&lt;/code&gt;, modify the processor layout (&lt;code&gt;env_mach_pes.xml&lt;/code&gt;) or &lt;code&gt;env_conf.xml&lt;/code&gt; files, then configure and build the model:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure -case
+./$casename.$mach.build  
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create Production test (Optional): This will clone the current case and create a parallel folder &lt;code&gt;../$casename_ERT.x$mach&lt;/code&gt;. Go to the folder, and execute following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./$casename_ERT.$mach.build
+bsub &amp;lt; $casename_ERT.$mach.test
+cat TestStatus
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once pass the test run, go back to the &lt;code&gt;$CASEROOT&lt;/code&gt;, modify the &lt;code&gt;env_run.xml&lt;/code&gt; as well as &lt;code&gt;%casename.$mach.run&lt;/code&gt;. Using the given &lt;code&gt;xmlchange&lt;/code&gt; script is recommended. The &lt;code&gt;%casename.$mach.run&lt;/code&gt; is the batch submit script. Depending on the machines, it could be executed through &lt;code&gt;bsub&lt;/code&gt; or &lt;code&gt;qsub&lt;/code&gt;. In the &lt;code&gt;env_run.xml&lt;/code&gt; file, one can edit items such as &lt;code&gt;STOP_N&lt;/code&gt;, &lt;code&gt;STOP_OPTION&lt;/code&gt; and &lt;code&gt;RESUBMIT&lt;/code&gt;, to adjust the simulation length, as well as the resubmit frequencies. This modifications don&amp;rsquo;t require rebuilding executables.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;a-branch-or-hybrid-run&#34;&gt;A branch or hybrid run:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Follow Step 1 in the previous example to create a new case &lt;code&gt;$casename2&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Edit &lt;code&gt;env_conf.xml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xmlchange -file env_conf.xml -id RUN_TYPE    -val branch
+xmlchange -file env_conf.xml -id RUN_REFCASE -val $casename1
+xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For a hybrid run, set &lt;code&gt;RUN_TYPE&lt;/code&gt; to &lt;code&gt;hybrid&lt;/code&gt; instead.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Configure and build the case executable.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure -case
+./$casename.$mach.build   
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy the necessary restart/initial data into &lt;code&gt;$RUNROOT&lt;/code&gt;, a path similar to &lt;code&gt;.../exe/$casename2/run&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Repeat Step 4 in the previous example.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+
+&lt;h3 id=&#34;file-locking-explained&#34;&gt;File locking explained:&lt;/h3&gt;
+
+&lt;p&gt;Locking variables is a feature of CCSM that prevents users from changing variables after they have been resolved (used) in other parts of the scripts system. The variables in env_case are locked when create_newcase is called. The env_conf and env_mach_pes variables are locked when configure is called. The env_build variables are locked when CCSM is built, and the env_run variables are never locked and can be changed anytime. In addition, the Macros file is locked as part of the build step. The &lt;code&gt;$CASEROOT/LockedFiles&lt;/code&gt; directory saves copies of the xml files to facilitate the locking feature.&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+
+&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Renovate this place and new resolutions!</title>
+      <link>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions</link>
+      <pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve just spent the long weekend updating my nearly-abandoned website. This year, I have passed my qualifying exam (February), and the paper I&amp;rsquo;ve been working on for almost an year is now finally accepted.&lt;/p&gt;
+
+&lt;p&gt;The website has been changed to a GitHub user-page, instead of a project-page. Also, now the website is automatically generated by Travis-CI, a very popular service recently, testing and deploying the codes to ensure portability. All the changes and new posts are made on my laptop. Html pages are built by Pelican/Python3, on the /source branch. A push to the remote host will trigger Travis-CI. With a little help from ghp-import, the Travis-CI-generated pages will be force-pushed to the /master branch. Voila, that is the website now you are looking at.&lt;/p&gt;
+
+&lt;p&gt;Through this little-over-two-days endeavor, I now had more knowledge on Github, Travis-CI, and more control on my own website templates. Now it&amp;rsquo;s just the matter of keeping things rolling &amp;ndash; I made the resolution to post more frequently. In fact, I have just updated the Work page to include some of my recent presentations and abstracts. I will also post some of the notes from our group meeting.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Agulhas Group meeting notes 2016-06-29</title>
+      <link>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</link>
+      <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://link.springer.com/article/10.1007/s00382-016-3220-6&#34;&gt;Andrew Hoell, Chris Funk, Jens Zinke, Laura Harrison: Modulation of the Southern Africa precipitation response to the El Niño Southern Oscillation by the subtropical Indian Ocean Dipole&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;br /&gt;
+How the phase of the SIOD and therefore the SST anomaly expression of the Indian Ocean, modulates the Southern Africa precipitation response to ENSO?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What methods do the authors use to address the questions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SA Land area bound by the region 15S-35S; 12.5E-42.5E&lt;/li&gt;
+&lt;li&gt;Observation: Global Precipitation Climatology Project version 2.2 (GPCP) 1979 to 2014, 2.5 x 2.5 deg resolution. Hadley-NOAA Optimum Interpolation dataset (OISST) 1.0x1.0 deg&lt;/li&gt;
+&lt;li&gt;Three SST modes and their indices: ENSO (Nino3.4 &amp;gt;0.5K, table 2), IOD, Subtropical-IOD (Fig. 1)&lt;/li&gt;
+&lt;li&gt;Two experiments: (1) Forced by observed global SST (2) Forced by the leading pattern of glabal time-varying monthly SST anomaly added to the monthly climatology, to isolate the atmospheric response to ENSO. (EOF1, Fig. 4)&lt;/li&gt;
+&lt;li&gt;Each experiment has two sets of ensembles from two different models:(1) 30 members of ECHAM5.4, 50 members of GFS2, on 1x1 deg horizonal grid.&lt;/li&gt;
+&lt;li&gt;Test whether the SIOD modifies the relationship between SA precipitation and ENSO through an examination of SA precipitation as a function of SIOD phase in two forced simulations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the authors&amp;rsquo; main conclusions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;El Niño is associated with reduced precipitation in the Southern Africa, and La Niña tends to occur with abundant precipitation in the area. Both are further enhanced by out-of-phase SIOD, and disrupted by in-phase SIOD.&lt;/li&gt;
+&lt;li&gt;For the in-phase SIOD and ENSO during December-March, SA precipitation is associated with an SST anomaly over the &lt;em&gt;Agulhas Current region.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;ENSO is related to an equivalent barotropic Rossby wave over Southern Africa, that modifies the regional mid-tropospheric vertical motions and precipitation.&lt;/li&gt;
+&lt;li&gt;The EOF1 forced case, either phase of SIOD does not modulate the SA precipitation response to ENSO (indistinguishable Fig. 10 and 11)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the implications of the results?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ENSO has been an important parameter for rainy season SA precipitation prediction, as SST playing a critical role in the regional climate. The modulation relationship between SIOD and ENSO presented here can help to make more informed forecasts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Why did you choose this paper?&lt;/strong&gt;
+looking into papers about South African precipitation variability.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who read this paper?&lt;/strong&gt;
+Yu Cheng&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recently</title>
+      <link>https://fischcheng.github.io/2015/09/29/recently</link>
+      <pubDate>Tue, 29 Sep 2015 11:47:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2015/09/29/recently</guid>
+      <description>&lt;p&gt;I always have hard time to do something consistently except tennis. It&amp;rsquo;s been more than a year since my last post. Many trips taken, many things happened, yet not much works have been done. This post is just to record some of them, reminding me that the long road ahead is still awaiting.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Agulhas Group meeting notes, 2014-07-10</title>
+      <link>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10</link>
+      <pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.clim-past.net/9/2631/2013/cp-9-2631-2013.html&#34;&gt;P. Scussolini, E. van Sebille, J.V. Durgadoo: Paleo Agulhas rings enter the subtropical gyre during the penultimate deglaciation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The maximum strength of Agulhas leakage is identified during the glacial Termination II. The authors attempt to demonstrate the leakage, mostly in the form of rings, was effectively incorporated into the South Atlantic gyre, instead of retroflecting back to Southern or Indian ocean.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What methods do the authors use to address the questions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;They investigate the presence of paleo Agulhas rings from a sediment core on the central Walvis Ridge (64PE-174P13, 29.45.71&amp;rsquo;S, 2.24.10&amp;rsquo;E, 2914m deep). By selecting the appropriate species of plaktic foraminifer, they aim to target the salinity and temperature anomalies induced by the leakage at the depth of the thermocline.&lt;/li&gt;
+&lt;li&gt;Analyzing INALT01 60yr model output to relate density perturbations at thermocline depth to the passage of individual rings over the core site. They concluded that the increasing variability of density at thermocline depth can be contributed to increasing passage of Agulhas rings.&lt;/li&gt;
+&lt;li&gt;Using this relation as a basis of proxy of Agulhas leakage, they generate a time series of individual Globorotalia truncatulinoides O_18 variability to infer the variability of Agulhas leakage.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the authors&amp;rsquo; main conclusions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Strong relation between SSH and potential density at 452m variability is prominent in INALT01. Fig3 shows the temporal variability induced by individual Agulhas ring crossings the chosen core location. The largest density troughs can be attributed to passing Agulhas rings. Out of average 6 rings/year, the core site captures on average one to two full rings according to a Fourier analysis of SSH on the location.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The time series shows high levels of pycnocline depth variability at the site, suggesting enhanced numbers of Agulhas rings moving into the South Atlantic Gyre around glacial Termination II.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Their results closely follow the previous quantifications of Agulhas leakage from the east of the Cape Basin (other sediments cores.), showing that Indian Ocean waters enter the South Atlantic circulation.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the implications of the results?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;By targeting the isotopes in appropriate species, scientists can not only study certain era of sediments cores, but also specific levels of the ocean.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;This result is a crucial support for the view of a prominent role of the Agulhas leakage in the shift from a glacial to an interglacial mode of the Atlantic circulation.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Even though the increased leakage during the glacial termination did make it into subtropical gyre, the corresponding salt and heat were not neccesarily advected across the equator. However, modeling evidence show that the heat and salt from the Leakage do not have to reach the North Atlantic to impact the AMOC.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Why did you choose this paper?&lt;/strong&gt;
+Back to work on leakage, digging something more that supporting the claim that Agulhas leakage has impact on Atlantic circulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who read this paper?&lt;/strong&gt;
+Yu Cheng&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building a statistic blog with Pelican</title>
+      <link>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican</link>
+      <pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican</guid>
+      <description>
+
+&lt;h4 id=&#34;once-upon-a-time&#34;&gt;Once upon a time&amp;hellip;&lt;/h4&gt;
+
+&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;laquo;blog&amp;raquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;laquo;blog&amp;raquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
+
+&lt;h4 id=&#34;pelican-i-love-this-bird&#34;&gt;Pelican: I love this bird!!&lt;/h4&gt;
+
+&lt;p&gt;I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34;&gt;https://github.com/getpelican&lt;/a&gt;
+&lt;p align=&#34;center&#34;&gt;
+{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;overview&#34;&gt;Overview&lt;/h4&gt;
+
+&lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;themes&#34;&gt;Themes&lt;/h4&gt;
+
+&lt;p&gt;One of the reasons that I chose Pelican is the active community on Github. As mentioned above, pelican templates are generated by Jinja2, which is a template engine powered by Python. A set of themes including templates of different pages and stylesheets. There are many high-quality themes available on github, which can be easily downloaded using following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:::bash
+git clone https://github.com/getpelican/pelican-themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This blog is powered by pelican-bootstraps3 theme; few other themes I would also like to try are Pelican-pure, Mockingbird and Notmyidea. Additional stylesheet can be easily integrated by changing the setting in &lt;em&gt;configuration.py&lt;/em&gt;. To switch between different themes, just modify this line in your &lt;em&gt;configuration.py&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:::python
+THEME = &amp;quot;pelican-bootstrap3&amp;quot;  # or whatever themes you like
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;customize&#34;&gt;Customize&lt;/h4&gt;
+
+&lt;p&gt;This is a more tricky part, due to my limited knowledge of CSS and Jinja2. So far I&amp;rsquo;ve only managed to change the background color, font size, line-height and link-hover style of my header. Even though the syntax of CSS is very straightforward, lacking of nested structure, it is very difficult to read the CCS stylesheet by someone else: one must figure out the class/ID names of each elements in the html files, and locate corresponding tags in the minified CSS file. I&amp;rsquo;ve found a Sublime-Text package to unminify the CSS, yet still find it difficult to change even a single property. Currently, I am attempting to use SASS/COMPASS to rewrite the stylesheet.&lt;/p&gt;
+
+&lt;h4 id=&#34;plugins&#34;&gt;Plugins&lt;/h4&gt;
+
+&lt;p&gt;One of greatest feature of Pelican is to include modular plugins into your static site. Same as Pelican-themes, these plugins can be downloaded easily from github.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:::bash
+git clone https://github.com/getpelican/pelican-plugins.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:::python
+# Plugins
+PLUGIN_PATH = &#39;/Users/yucheng/Desktop/Other/MyPage/pelican-plugin&#39;
+PLUGINS = [&#39;liquid_tags.img&#39;, &#39;liquid_tags.video&#39;,
+           &#39;liquid_tags.youtube&#39;, &#39;liquid_tags.vimeo&#39;,
+            &#39;liquid_tags.include_code&#39;, &#39;liquid_tags.notebook&#39;,&#39;render_math&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;Pelican is a really powerful static-site generator, using Python. All options you may play with are in the &lt;em&gt;configuration.py&lt;/em&gt; and the &lt;em&gt;syltesheet.css&lt;/em&gt;. The official documentation of Pelican is rather complete, not to mention the active developer-base. If you are a Python lover, it won&amp;rsquo;t take you too long to setup a really polished and somehow-dynamic static site. So, look no further, among numerous static-site engines, Pelican is definitely one of the best.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Agulhas Group meeting note 2014-06-05</title>
+      <link>https://fischcheng.github.io/2014/06/05/agulhas-group-meeting-note-2014-06-05</link>
+      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/2014/06/05/agulhas-group-meeting-note-2014-06-05</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1002/2014GL059473/abstract&#34;&gt;C. D. Roberts, L. Jackson andD. McNeall, 2014: Is the 2004–2012 reduction of the Atlantic meridional overturning circulation significant?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To test the observed (by MOCHA array) 8 year trend (2004-2012, -0.53Sv/yr) of AMOC is significant, in comparison to the 14 CMIP5 models preindustrial control runs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What methods do the authors use to address the questions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The existed oberserved timeseries is not long enough, and there is yet no consensus on the magnitude, periodicities, and mechanisms of AMOC variability across different models.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Pick out the models with overturning streamfunction diagnostics on the CMIP5 archive (14), indices defined as the maximum streamfunction at the model latitude closest to 26.5N, annual mean taken from Apr-Mar adopted by the RAPID array (why?)&lt;/li&gt;
+&lt;li&gt;Simplely compare distribution of 8yr trends of different models to the observed trend. However, every models seem underestimate the interannual variability of AMOC (Fig2, b,c)&lt;/li&gt;
+&lt;li&gt;Combining the temporal correlation characteristics of AMOC from CMIP5 models with an observational estimate of interannual variability to account for this bias. (using autoregressive moving average model to fit CMIP5 AMOC timeseries, and add the upper limit of observed variability.)&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the authors&amp;rsquo; main conclusions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Eight year trends ≤ −0.53 Sv/yr are relatively common in GFDL-CM3 and GFDL-ESM2M, but they are extremely unusual (or out of range) in the other 12 models.&lt;/li&gt;
+&lt;li&gt;Applying modification of observed variability on top of temporal correlation of Model AMOC timeseries, the observed AMOC trend is not significantly different (p &amp;gt; 0.01) from that expected due to internal AMOC variability. (Fig 2, 3)&lt;/li&gt;
+&lt;li&gt;If the AMOC continues to decrease at a rate of −0.53 Sv/yr, it will take a total of 18 yearsbefore the trend is significantly different from all 14 ARMA-based estimates of internal AMOC variability (red line in Figure 3).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the implications of the results?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Authors find that 14 different CMIP5 models underestimate the magnitude of AMOC variability on interannual time scales, which may due to insufficient atmospheric variability on interannual time scales, and the coarse resolution of ocean in CMIP5 simulations.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It is not yet possible to distinguish between mechanisms or dominant time scales due to the short length of the existing observational AMOC record. Discriminating between different models and refining estimates of internal AMOC variability require more than one decade of continuous AMOC observations. All this is calling for the consruction of a more powerful observation system, including monitoring water mass properties in the subpolar gyre and similar arrays at additional lattitudes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Why did you choose this paper?&lt;/strong&gt;
+I am digging out materials about AMOC in climate models.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who read this paper?&lt;/strong&gt;
+Yu Cheng&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
