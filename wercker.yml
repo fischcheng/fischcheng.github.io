@@ -19,9 +19,11 @@ build:
 
 deploy:
     steps:
-        - install-packages:
-            packages: ssh-client
-        - leipert/git-push@0.7.6:
+       - script:
+          name: install git
+          code: |
+             apt-get update && apt-get install git -y
+       - leipert/git-push@0.7.6:
             gh_oauth: $Git_Token
             repo: fischcheng/fischcheng.github.io
             gh_pages: true
