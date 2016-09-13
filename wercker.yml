@@ -7,12 +7,6 @@ build:
         code: |
             apt-get update
             apt-get install git -y
-    - add-ssh-key:
-        keyname: KEY_NAME
-        host: github.com
-    - add-to-known_hosts:
-        hostname: github.com
-        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
     - script:
         name: initialize git submodules
         code: |
@@ -22,13 +16,11 @@ build:
         version: "0.15"
         theme: "academic"
         flags: --buildDrafts=true
-    # Sets the go workspace and places you package
-    # at the right place in the workspace tree
 
 deploy:
     steps:
         - install-packages:
-            packages: git ssh-client
+            packages: ssh-client
         - leipert/git-push@0.7.6:
             gh_oauth: $Git_Token
             repo: fischcheng/fischcheng.github.io
