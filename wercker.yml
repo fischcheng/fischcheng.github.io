@@ -1,34 +1,17 @@
-# This references the default golang container from
-# the Docker Hub: https://registry.hub.docker.com/u/library/golang/
-# If you want Google's container you would reference google/golang
-# Read more about containers on our dev center
-# http://devcenter.wercker.com/docs/containers/index.html
 box: debian
-# This is the build pipeline. Pipelines are the core of wercker
-# Read more about pipelines on our dev center
-# http://devcenter.wercker.com/docs/pipelines/index.html
-
-# You can also use services such as databases. Read more on our dev center:
-# http://devcenter.wercker.com/docs/services/index.html
-# services:
-    # - postgres
-    # http://devcenter.wercker.com/docs/services/postgresql.html
-
-    # - mongo
-    # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
   steps:
-    - arjen/hugo-build:
+    - arjen/hugo-build@1.11.0:
         version: "0.15"
-        theme: "academic"
         flags: --buildDrafts=true
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
+
 deploy:
     steps:
         - install-packages:
             packages: git ssh-client
-        - leipert/git-push:
+        - leipert/git-push@0.7.6:
             gh_oauth: $Git_Token
             gh_pages: true
             basedir: public
