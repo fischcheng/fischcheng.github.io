@@ -21,4 +21,4 @@ script:
     - hugo
 
 after_success:
-    - ./scripts/deploy.sh
+    - ./deploy.sh
