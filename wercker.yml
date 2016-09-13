@@ -19,6 +19,8 @@ box: debian
 build:
   steps:
     - arjen/hugo-build:
+        version: "0.15"
+        theme: hugo-academic
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
 
