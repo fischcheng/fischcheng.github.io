@@ -21,25 +21,15 @@ build:
     - arjen/hugo-build:
         version: "0.14"
         theme: herring-cove
-        flags: --buildDrafts=true
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
-    - setup-go-workspace
 
-    # Gets the dependencies
-    - script:
-        name: go get
-        code: |
-          go get
-
-    # Build the project
-    - script:
-        name: go build
-        code: |
-          go build ./...
-
-    # Test the project
-    - script:
-        name: go test
-        code: |
-          go test ./...
+deploy:
+    steps:
+        - install-packages:
+            packages: git ssh-client
+        - leipert/git-push:
+            gh_oauth: $GIT_TOKEN
+            repo: fischcheng/fischcheng.github.io
+            branch: master
+            basedir: public
