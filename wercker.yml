@@ -20,7 +20,6 @@ build:
   steps:
     - arjen/hugo-build:
         version: "0.15"
-        theme: academic
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
 
@@ -31,6 +30,5 @@ deploy:
         - leipert/git-push:
             gh_oauth: $GITHUB_TOKEN
             gh_pages: true
-            repo: fischcheng/fischcheng.github.io
-            branch: master
+            gh_pages_domain: fischcheng.github.io
             basedir: public
