@@ -27,7 +27,7 @@ deploy:
         - install-packages:
             packages: git ssh-client
         - leipert/git-push:
-            gh_oauth: $GITHUB_TOKEN
+            gh_oauth: $Git_Token
             gh_pages: true
-            repo: fischcheng/fischcheng.github.io
             branch: master
+            basedir: public
