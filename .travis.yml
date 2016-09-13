@@ -1,0 +1,24 @@
+language: go
+go:
+    - "1.5.1"
+
+env:
+    global:
+        - SSH_KEY="id_rsa"
+        - GIT_NAME="fischcheng"
+        - GIT_EMAIL="fischcheng@gmail.com"
+        - SOURCE_DIR="public"
+        - DEPLOY_BRANCH="source"
+
+before_script:
+    - go get -u -v github.com/spf13/hugo
+
+script:
+    - hugo
+
+env:
+  global:
+    secure: C51fq7pyatW673rVhVbyy95drsweGwmU91GnqOiI05U94A6bOIUiBd3n3CwihGEaH/fps7DXtmXnkjdjxmvJDoDn5vY2eikL3AQtVIjXAlpJM/lyuwmMmH32i8xHHxwGb5GYZuAMEOOeo3ZhmFuMsmHMJACU1cQzpkSHrfCfqAVZYeNsjswlHxuNGnBqU7efaeREao5IL9v77TlHbJE1OmqmSfH4hiwWmDo/Q6efPX77pVYmr8XV+F8Odf4vhw0UEZlq4vwqE2gjg5FxnDREqbJZ2piMUMzgZJ212UmYevQvrCJ+bOQcUR4DRwDvsHEwoMI04K3K6tmePz+/uwYVKarh5n5EIepMHxY4KrH9Q/4B1gGeR8pszY5NQ0gNfRgar/ZAFG0jhagSdgYyJ7Zeg18l7B4iKlTvT7j0HPOPxbWH041zfBCDnSLLAiCKJ3zIvYi9JWJGoXo5lTXg5KBQf75ze6xDxnwxeDo+cspf+OiNS3sBfAvQl6c5a+6HBlmkxb5liyGc6YqF9+VQ8dVvlAR4pCVPXBNMI827f4qTsNRbC1590/ps8/X/T8gBfkrKNszRhlj3OMD4OCMbQ4k1LvXBsZAvyXQSyFjkmyijEBCWXM6t1riv+lrfIvLG4+LC1sLG62l5dYtQKG/tjMfwIlplnDDDh9g8HV0O6T/wue8=
+
+after_success:
+    - make travis
