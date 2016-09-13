@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.15" />
+    <meta name="author" content="Yu Cheng 鄭嵎">
+    <meta name="description" content="PhD candidate">
+
+    <link rel="stylesheet" href="https://fischcheng.github.iocss/highlight.min.css">
+    <link rel="stylesheet" href="https://fischcheng.github.iocss/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fischcheng.github.iocss/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fischcheng.github.iocss/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker">
+    <link rel="stylesheet" href="https://fischcheng.github.iocss/hugo-academic.css">
+    
+    <link rel="stylesheet" href="https://fischcheng.github.iocss/green.css">
+    
+
+    <link rel="shortcut icon" href="https://fischcheng.github.ioimg/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run">
+
+    <title>Workflow for a CCSM4 run | Yu Cheng</title>
+
+</head>
+<body id="top">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://fischcheng.github.io">Yu Cheng</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io#top">Home</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io#publications">Publications</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io#posts">Posts</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io#projects">Research</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io#works">Works</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io#contact">Contact</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        
+
+        <h1 itemprop="name">Workflow for a CCSM4 run</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-07-28 17:06:00 &#43;0000 UTC" itemprop="datePublished">Thu, Jul 28, 2016</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://fischcheng.github.iotags/ccsm4">CCSM4</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.iotags/pop2">POP2</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.iotags/cesm">CESM</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.iotags/model">model</a>
+        
+    </span>
+    
+    
+
+    
+        
+<div class="share-box">
+    <ul class="share">
+        <li>
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2016%2f07%2f28%2fworkflow-for-a-ccsm4-run" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Workflow%20for%20a%20CCSM4%20run&amp;url=https%3a%2f%2ffischcheng.github.io%2f2016%2f07%2f28%2fworkflow-for-a-ccsm4-run" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2016%2f07%2f28%2fworkflow-for-a-ccsm4-run&amp;title=Workflow%20for%20a%20CCSM4%20run" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2016%2f07%2f28%2fworkflow-for-a-ccsm4-run&amp;title=Workflow%20for%20a%20CCSM4%20run" target="_blank">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+        <li>
+            <a class="email" href="mailto:?subject=Workflow%20for%20a%20CCSM4%20run&amp;body=https%3a%2f%2ffischcheng.github.io%2f2016%2f07%2f28%2fworkflow-for-a-ccsm4-run">
+                <i class="fa fa-envelope"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    
+
+</div>
+
+
+        <div class="article-style" itemprop="articleBody">
+            
+
+<h3 id="basic-approach-startup-run">Basic approach, startup run:</h3>
+
+<ol>
+<li><p>Create a new case using the script under <code>~/CCSM4/scripts</code>, following the template: PATH, compset, resolution and machine file. Compset B is the fully coupled mode.</p>
+
+<pre><code>./create_newcase -case ~/ccsm4/$casename \
+                       -compset B_2000 \
+                       -res 0.9x1.25_gx1v6 \
+                       -mach bluefire 
+</code></pre></li>
+
+<li><p>Go to the $CASEROOT directory, <code>~/ccsm4/$case</code>, modify the processor layout (<code>env_mach_pes.xml</code>) or <code>env_conf.xml</code> files, then configure and build the model:</p>
+
+<pre><code>./configure -case
+./$casename.$mach.build  
+</code></pre></li>
+
+<li><p>Create Production test (Optional): This will clone the current case and create a parallel folder <code>../$casename_ERT.x$mach</code>. Go to the folder, and execute following commands:</p>
+
+<pre><code>./$casename_ERT.$mach.build
+bsub &lt; $casename_ERT.$mach.test
+cat TestStatus
+</code></pre></li>
+
+<li><p>Once pass the test run, go back to the <code>$CASEROOT</code>, modify the <code>env_run.xml</code> as well as <code>%casename.$mach.run</code>. Using the given <code>xmlchange</code> script is recommended. The <code>%casename.$mach.run</code> is the batch submit script. Depending on the machines, it could be executed through <code>bsub</code> or <code>qsub</code>. In the <code>env_run.xml</code> file, one can edit items such as <code>STOP_N</code>, <code>STOP_OPTION</code> and <code>RESUBMIT</code>, to adjust the simulation length, as well as the resubmit frequencies. This modifications don&rsquo;t require rebuilding executables.</p></li>
+</ol>
+
+<h3 id="a-branch-or-hybrid-run">A branch or hybrid run:</h3>
+
+<ol>
+<li>Follow Step 1 in the previous example to create a new case <code>$casename2</code>.</li>
+
+<li><p>Edit <code>env_conf.xml</code>:</p>
+
+<pre><code>xmlchange -file env_conf.xml -id RUN_TYPE    -val branch
+xmlchange -file env_conf.xml -id RUN_REFCASE -val $casename1
+xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
+</code></pre></li>
+
+<li><p>For a hybrid run, set <code>RUN_TYPE</code> to <code>hybrid</code> instead.</p></li>
+
+<li><p>Configure and build the case executable.</p>
+
+<pre><code>./configure -case
+./$casename.$mach.build   
+</code></pre></li>
+
+<li><p>Copy the necessary restart/initial data into <code>$RUNROOT</code>, a path similar to <code>.../exe/$casename2/run</code></p></li>
+
+<li><p>Repeat Step 4 in the previous example.</p></li>
+</ol>
+
+<p>&ndash;</p>
+
+<h3 id="file-locking-explained">File locking explained:</h3>
+
+<p>Locking variables is a feature of CCSM that prevents users from changing variables after they have been resolved (used) in other parts of the scripts system. The variables in env_case are locked when create_newcase is called. The env_conf and env_mach_pes variables are locked when configure is called. The env_build variables are locked when CCSM is built, and the env_run variables are never locked and can be changed anytime. In addition, the Macros file is locked as part of the build step. The <code>$CASEROOT/LockedFiles</code> directory saves copies of the xml files to facilitate the locking feature.</p>
+
+<p>&ndash;</p>
+
+<p>More advanced use cases can be found in Chapter 9 of the <a href="http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf">CCSM4 user guide</a></p>
+
+        </div>
+
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions"><span aria-hidden="true">&larr;</span> Renovate this place and new resolutions!</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'yucheng';
+    var disqus_identifier = 'https:\/\/fischcheng.github.io\/2016\/07\/28\/workflow-for-a-ccsm4-run';
+    var disqus_title = 'Workflow for a CCSM4 run';
+    var disqus_url = 'https:\/\/fischcheng.github.io\/2016\/07\/28\/workflow-for-a-ccsm4-run';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 Yu Cheng &middot; 
+
+            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://fischcheng.github.iojs/jquery-1.12.3.min.js"></script>
+        <script src="https://fischcheng.github.iojs/bootstrap.min.js"></script>
+        <script src="https://fischcheng.github.iojs/hugo-academic.js"></script>
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+
+    </body>
+</html>
+
