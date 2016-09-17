@@ -16,6 +16,11 @@ googleAnalytics = ""
   fractions = false
   plainIDAnchors = true
 
+# color-codes for highlighting derived from this style
+PygmentsCodeFences= true
+pygmentsStyle= "monokai"
+
+
 [permalinks]
     post = "/:year/:month/:day/:slug"
 
