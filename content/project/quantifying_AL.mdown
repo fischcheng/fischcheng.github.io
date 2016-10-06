@@ -13,6 +13,7 @@ external_link = ""
 #### Motivation
 The Agulhas current and its leakage of warm and salty indian-ocean water, play crucial role in the climate system by influencing Atlantic Meridional Overturning Circulation stability. While the ocean circulation models are not capable due to lacking of couplings, and the fully-coupled climate models fail because of inability to resolve mesoscale features, the high-resolution coupled model is the only viable tool to access this topic.
 
+
 #### Dataset
 Due to limitation of computing resources, and the interests of longterm time-scale variabilities, current generation coupled-climate models are conventionally configured to horizontal resolution of 1.0 degree, and outputs are usuall stored monthly. This configuration leads to poor performances in simulating mesoscale features. In Agulhas current context, these models fail to reasonably simulate features such as Agulhas return current, Auglhas Ring, and therefore Agulhas leakage. Here, my work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. 
 
