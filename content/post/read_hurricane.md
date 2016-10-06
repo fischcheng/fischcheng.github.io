@@ -20,7 +20,7 @@ Last night, Matthew with the maximum sustained wind at 140 mph, was a category 4
 
 Growing up in Taiwan and coming from atmospheric sciences background, I have experienced many typhoons.  Just recently, I visited Taiwan from 9/14 to 9/27. During that short period, three major typhoons (Meranti, Malakas, and Megi) hit the little island. My return flight to the US nearly got canceled -- my wife and I were sitting on the grounded but shaky aircraft for almost an hour. So honestly, I am surprised to see my colleagues' hurricane preparation. 
 
-I mean, it should be like this. General public are aware of the threats and cooperate with the government to evacuate. Schools and companies grant enough time for students and employees to get prepared for the approaching storm. There is no such thing as overpreparation. It's the right attitude facing any threats at such magnitude. Instead, people in Taiwan always blame everything on the Central Weather Bureau and local governments without being sufficient prepared.
+I mean, it should be like this. General public are aware of the threats and cooperate with the government to evacuate. Schools and companies grant enough time for students and employees to get prepared for the approaching storm. There is no such thing as overpreparation. It's the right attitude facing any threats at such magnitude. Instead, people in Taiwan always blame everything on the Central Weather Bureau and local governments without being sufficiently prepared.
 
 *check out recent typhoons in Taiwan!*
 <center>
@@ -46,7 +46,7 @@ The best way to track the latest hurricane forecast is to visit the [national we
 5. For the currently wind affected area, check the [surface wind field plot](http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?radii#contents). It shows the maximum possible extent of a given wind speed within particular quadrants around the tropical cyclone. By definition, Hurricane force winds exceeds 74mph and Tropical Storm force winds are no less than 39mph, so the later cover a much larger area. 
 {{< figure src="/img/hurricane03.png" title="force wind affected area" >}}
 
-6. Now comes to the [force wind speed probabilities.](http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?tswind120#contents) These plots indicate that the cumulative possibility that a specific area will experience winds over a certain threshold. Users can change the cumulative periods (up to 120hrs), and the wind thresholds (tropical storm force, 50knots and hurricane force.)
+6. Now comes to the [force wind speed probabilities.](http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?tswind120#contents) These plots indicate the cumulative possibility that a specific area will experience winds over a certain threshold. Users can change the cumulative periods (up to 120hrs), and the wind thresholds (tropical storm force, 50knots and hurricane force.)
 {{< figure src="/img/hurricane04.png" title="force wind speed probabilities" >}}
 
 7. Rainfall and storm surges are more difficult to predict. But NWS also provides such products. 
