@@ -13,7 +13,7 @@ url_code = ""
 url_dataset = ""
 url_pdf = ""
 url_project = "project/quantifying_AL"
-url_slides = "https://miami.box.com/s/1ra0ipluss87lk5kdgayw10uycv3to75"
+url_slides = "https://1drv.ms/b/s!AuB_mliF0-yg2_0Ui02a13EwpPcLnQ"
 url_video = ""
 
 +++
