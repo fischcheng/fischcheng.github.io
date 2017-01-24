@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ccsm on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/ccsm/</link>
-    <description>Recent content in Ccsm on Yu Cheng</description>
+    <title>Westerlies on Yu Cheng</title>
+    <link>https://fischcheng.github.io/tags/westerlies/</link>
+    <description>Recent content in Westerlies on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
     <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://fischcheng.github.io/tags/ccsm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fischcheng.github.io/tags/westerlies/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
@@ -111,69 +111,6 @@
 &lt;h4 id=&#34;future-work&#34;&gt;Future work&lt;/h4&gt;
 
 &lt;p&gt;As the high-resolution climate change simulation still ongoing, we are eager to find out the long-term trends of Agulhas leakage and its effects on the regional climate, South Atlantic Ocean, and Atlantic Meridional Overturning Circulation. We would like to investigate the heat content and northward heat transport variability in the Southern Ocean in our coupled simulation, and relate such to Agulhas leakage.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Quantifying Agulhas leakage in a high-resolution coupled climate model</title>
-      <link>https://fischcheng.github.io/project/quantifying_AL/</link>
-      <pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://fischcheng.github.io/project/quantifying_AL/</guid>
-      <description>
-
-&lt;h4 id=&#34;motivation&#34;&gt;Motivation&lt;/h4&gt;
-
-&lt;p&gt;The Agulhas current and its leakage of warm and salty indian-ocean water, play crucial role in the climate system by influencing Atlantic Meridional Overturning Circulation stability. While the ocean circulation models are not capable due to lacking of couplings, and the fully-coupled climate models fail because of inability to resolve mesoscale features, the high-resolution coupled model is the only viable tool to access this topic.&lt;/p&gt;
-
-&lt;h4 id=&#34;dataset&#34;&gt;Dataset&lt;/h4&gt;
-
-&lt;p&gt;Due to limitation of computing resources, and the interests of longterm time-scale variabilities, current generation coupled-climate models are conventionally configured to horizontal resolution of 1.0 degree, and outputs are usuall stored monthly. This configuration leads to poor performances in simulating mesoscale features. In Agulhas current context, these models fail to reasonably simulate features such as Agulhas return current, Auglhas Ring, and therefore Agulhas leakage. Here, my work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively.&lt;/p&gt;
-
-&lt;h4 id=&#34;quantifying-agulhas-leakage&#34;&gt;Quantifying Agulhas leakage&lt;/h4&gt;
-
-&lt;p&gt;The first difficulty we must overcome is quantifying Agulhas leakage robustly.In numerical models, where we have gridded data, a widely accepted approach to quantify Agulhas leakage is Lagrangian particle tracking.&lt;/p&gt;
-
-&lt;p&gt;With the aid of Connectivity Modeling System (CMS), we release particles along the ACT array. Each particle is tagged with a volume flux equivalent to the local velocity times the corresponding grid cell size. They are advected by local velocity fields from CCSM3.5 forward in time for two years. Tracking every particle trajectories, we can determine whether one particle crossing the GoodHope line, which basin it ends up in, and, above all, the timing of last-crossing. Summing up the number of last-crossing particles of every time-step, we can establish time-series of Agulhas leakage.&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-
-&lt;div 
-class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
-	&lt;iframe src=&#34;https://www.youtube.com/embed/lP9AS70c4oU&#34; type=&#34;text/html&#34;
-		allowfullscreen
-		frameborder=&#34;0&#34;
-		width=&#34;80%&#34;
-		height=&#34;385&#34;
-
-	&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;temporal-resolution&#34;&gt;Temporal Resolution&lt;/h4&gt;
-
-&lt;p&gt;The approach mentioned above is fairly simple; however, there are many technical diffculties we must solve. First, lagrangian calculations in previous studies are mostly based on &lt;a href=&#34;http://stockage.univ-brest.fr/~grima/Ariane/&#34;&gt;Ariane&lt;/a&gt; toolbox, which is not applicable to CCSM3.5 due to grid setup. Therefore, we use CMS instead. In addition, most of previos studies use Ocean General Circulation Model outputs with high temopral resolution (typically 5-daily output.), while most of Coupled Model outputs are archieved  monthly, which is not ideal for lagrangian particle tracking.&lt;/p&gt;
-
-&lt;p&gt;To Adress these problems, we have tested different strategies, including releasing frequency, offshore boundary of releasing, particles with same the volume and so on. We also conducted several experiments using different temopral-resolution velocity fields to adress the degree of degradation of Agulhas leakage estimates of temporal-averaging.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;http://www.rsmas.miami.edu/users/ycheng/media/AL_pent_vs_mon.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;p2d vs m2d Agulhas leakage timeseries&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;h4 id=&#34;future-work&#34;&gt;Future work&lt;/h4&gt;
-
-&lt;p&gt;We&amp;rsquo;ve established a robust way to quantify Agulhas leakage in high-resolution CCSM3.5 output, with which we obtain much more resonable Agulhas Leakage estimates (~20Sv) than previous estimates based on coarse-resolution CCSM4 simulation. Our next plan is to apply such method to a complete 54year high-resolution pre-industrial CCSM3.5 run, and to a currently-running 20-Centuray climate change run to evaluate the variability of Agulhas leakage and possibliy to link such variability to other climate modes, such as El Niño, AMO and Indian Ocean Dipole. In particular, we are very interested in seeing the variability of Agulhas Leakage in the climate-change condition, because the inter-basin exchange is believed to counteract the global-warming effect on the AMOC.&lt;/p&gt;
 </description>
     </item>
     

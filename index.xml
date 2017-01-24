@@ -7,8 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Thu, 06 Oct 2016 00:42:30 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jan 2017 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>about</title>
+      <link>https://fischcheng.github.io/home/about/</link>
+      <pubDate>Tue, 24 Jan 2017 03:00:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/home/about/</guid>
+      <description>
+
+&lt;h1 id=&#34;about&#34;&gt;About&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m a PhD student/Research assistant in the department of physical oceanography, Rosenstiel School of Marine &amp;amp; Atmospheric Science, University of Miami, working under the supervision of Dr. Lisa Beal and Dr. Ben Kirtman. My work focuses on identifing the missing links between Agulhas leakage and the Atlantic Meridional Overturning circulation using a High-Resolution coupled climate model.&lt;/p&gt;
+
+&lt;p&gt;Beside research, I am a big fan of every sports with racquets. I play in local tennis league, school badminton club and restringing racquets is one of my greatest passions. In fact, the Miami Open every March is one of the reasons that urged me to make the decision to come here. I&amp;rsquo;ve volunteered for the tournament multiple times. If you happen to be in the region and want to hit the fuzzy yellow ball around, please contact me!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://1drv.ms/b/s!AuB_mliF0-yg2_0VfMaxiKmTEQlMlQ&#34;&gt;Curriculum Vitae&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to read the NWS hurricane warning</title>
@@ -435,18 +453,106 @@ build:
     </item>
     
     <item>
-      <title>about</title>
-      <link>https://fischcheng.github.io/home/about/</link>
-      <pubDate>Sun, 11 Sep 2016 03:00:00 +0000</pubDate>
+      <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
+      <link>https://fischcheng.github.io/project/largescale_forcing/</link>
+      <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/home/about/</guid>
+      <guid>https://fischcheng.github.io/project/largescale_forcing/</guid>
       <description>
 
-&lt;h1 id=&#34;about&#34;&gt;About&lt;/h1&gt;
+&lt;h4 id=&#34;motivation&#34;&gt;Motivation&lt;/h4&gt;
 
-&lt;p&gt;I&amp;rsquo;m a PhD student/Research assistant in the department of physical oceanography, Rosenstiel School of Marine &amp;amp; Atmospheric Science, University of Miami, working under the supervision of Dr. Lisa Beal and Dr. Ben Kirtman. My work is trying to identify the missing links between Agulhas leakage and the Atlantic Meridional Overturning circulation in a High-Resolution coupled climate model.&lt;/p&gt;
+&lt;p&gt;In our early work, we have shown that Agulhas leakage is highly variable at daily to seasonal time scales, presumably dominated by the passage of Agulhas Rings. Decadal trends of Agulhas leakage are oftend attributed to the changes of Southern Hemisphere westerlies by previous studies. We hypothesize that, at interannual time scales, leakage variability is constrained by large-scale wind forcing, minifesting itself as changing large-scale velocity fields.&lt;/p&gt;
 
-&lt;p&gt;Beside research, I am a big fan of every sports with racquets. I play in local tennis league, school badminton club and restringing racquets is one of my greatest passions. In fact, the Miami OPEN every March is one of the reasons that urged me to make the decision to come here. I&amp;rsquo;ve volunteered for the tournament for since I came to Miami four years ago. If you happen to be in the region and want to hit fuzzy green balls around, but lacking partners, please contact me!&lt;/p&gt;
+&lt;h4 id=&#34;method&#34;&gt;Method&lt;/h4&gt;
+
+&lt;p&gt;Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. All the velocity fields used in this project is from an ongoing twentieth century climate change simulation with observed CO2 forcing. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p&gt;
+
+&lt;p&gt;Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields&amp;rsquo; temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig1_schematic_shuffling_trans.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shuffled experiments&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;h4 id=&#34;time-series-comparison&#34;&gt;Time series comparison&lt;/h4&gt;
+
+&lt;p&gt;Applying a 24-months low-possed fileds allow us to compare the interannual leakage variability between the testing cases and the reference case. As shown in Fig. 2, the timeseries correlate well above 0.6 (p&amp;lt;0.01). A Coherence analysis further support the hypothesis: leakage time series between cases are highly coherent over time scales longer than 1000 days (Fig. 3).&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shuffled timeseries&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig5_coherence_spectra_11taper.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;coherence&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;h4 id=&#34;regional-climate-imprints&#34;&gt;Regional climate imprints&lt;/h4&gt;
+
+&lt;p&gt;Leakage variability at this time scale is highly associated with the poleward shift of Southern Hemisphere westerlies, as shown in the regression of such to the low-passed Agulhas leakage time series (Fig. 4).&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;westerlies&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;By regressing various climate variables from both atmosphere and ocean, we are able to show some regional climate patterns associated with interannual leakage variability (Fig. 5)&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;all6&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&#34;future-work&#34;&gt;Future work&lt;/h4&gt;
+
+&lt;p&gt;As the high-resolution climate change simulation still ongoing, we are eager to find out the long-term trends of Agulhas leakage and its effects on the regional climate, South Atlantic Ocean, and Atlantic Meridional Overturning Circulation. We would like to investigate the heat content and northward heat transport variability in the Southern Ocean in our coupled simulation, and relate such to Agulhas leakage.&lt;/p&gt;
 </description>
     </item>
     
@@ -733,81 +839,6 @@ Back to work on leakage, digging something more that supporting the claim that A
 
 &lt;p&gt;&lt;strong&gt;Who read this paper?&lt;/strong&gt;
 Yu Cheng&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Building a statistic blog with Pelican</title>
-      <link>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican</link>
-      <pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate>
-      
-      <guid>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican</guid>
-      <description>
-
-&lt;h4 id=&#34;once-upon-a-time&#34;&gt;Once upon a time&amp;hellip;&lt;/h4&gt;
-
-&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;laquo;blog&amp;raquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;laquo;blog&amp;raquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
-
-&lt;h4 id=&#34;pelican-i-love-this-bird&#34;&gt;Pelican: I love this bird!!&lt;/h4&gt;
-
-&lt;p&gt;I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34;&gt;https://github.com/getpelican&lt;/a&gt;
-&lt;p align=&#34;center&#34;&gt;
-{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
-&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;overview&#34;&gt;Overview&lt;/h4&gt;
-
-&lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;themes&#34;&gt;Themes&lt;/h4&gt;
-
-&lt;p&gt;One of the reasons that I chose Pelican is the active community on Github. As mentioned above, pelican templates are generated by Jinja2, which is a template engine powered by Python. A set of themes including templates of different pages and stylesheets. There are many high-quality themes available on github, which can be easily downloaded using following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::bash
-git clone https://github.com/getpelican/pelican-themes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This blog is powered by pelican-bootstraps3 theme; few other themes I would also like to try are Pelican-pure, Mockingbird and Notmyidea. Additional stylesheet can be easily integrated by changing the setting in &lt;em&gt;configuration.py&lt;/em&gt;. To switch between different themes, just modify this line in your &lt;em&gt;configuration.py&lt;/em&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::python
-THEME = &amp;quot;pelican-bootstrap3&amp;quot;  # or whatever themes you like
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;customize&#34;&gt;Customize&lt;/h4&gt;
-
-&lt;p&gt;This is a more tricky part, due to my limited knowledge of CSS and Jinja2. So far I&amp;rsquo;ve only managed to change the background color, font size, line-height and link-hover style of my header. Even though the syntax of CSS is very straightforward, lacking of nested structure, it is very difficult to read the CCS stylesheet by someone else: one must figure out the class/ID names of each elements in the html files, and locate corresponding tags in the minified CSS file. I&amp;rsquo;ve found a Sublime-Text package to unminify the CSS, yet still find it difficult to change even a single property. Currently, I am attempting to use SASS/COMPASS to rewrite the stylesheet.&lt;/p&gt;
-
-&lt;h4 id=&#34;plugins&#34;&gt;Plugins&lt;/h4&gt;
-
-&lt;p&gt;One of greatest feature of Pelican is to include modular plugins into your static site. Same as Pelican-themes, these plugins can be downloaded easily from github.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::bash
-git clone https://github.com/getpelican/pelican-plugins.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::python
-# Plugins
-PLUGIN_PATH = &#39;/Users/yucheng/Desktop/Other/MyPage/pelican-plugin&#39;
-PLUGINS = [&#39;liquid_tags.img&#39;, &#39;liquid_tags.video&#39;,
-           &#39;liquid_tags.youtube&#39;, &#39;liquid_tags.vimeo&#39;,
-            &#39;liquid_tags.include_code&#39;, &#39;liquid_tags.notebook&#39;,&#39;render_math&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
-
-&lt;p&gt;Pelican is a really powerful static-site generator, using Python. All options you may play with are in the &lt;em&gt;configuration.py&lt;/em&gt; and the &lt;em&gt;syltesheet.css&lt;/em&gt;. The official documentation of Pelican is rather complete, not to mention the active developer-base. If you are a Python lover, it won&amp;rsquo;t take you too long to setup a really polished and somehow-dynamic static site. So, look no further, among numerous static-site engines, Pelican is definitely one of the best.&lt;/p&gt;
 </description>
     </item>
     
