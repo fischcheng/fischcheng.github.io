@@ -69,3 +69,24 @@ a:hover {
 .btn-primary.btn-outline:active {
     background-color: rgb(76,175,80);
 }
+
+
+figcaption {
+    display: block;
+    margin-top: 0.75em;
+    line-height: 1.25;
+    font-size: 1rem;
+    margin-bottom: 1.65rem;
+    font-family: 'Lato', sans-serif;
+    counter-increment: captions;
+    text-align: center
+}
+
+figcaption h4 {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    text-align: center
+}
+

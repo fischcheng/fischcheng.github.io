@@ -87,16 +87,16 @@
 
 <p>Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. All the velocity fields used in this project is from an ongoing twentieth century climate change simulation with observed CO2 forcing. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].</p>
 
-<p>Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields&rsquo; temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.</p>
+<p>Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (Fig.1). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields&rsquo; temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.</p>
 
 
 <figure >
     
-        <img src="/img/large-scale/fig1_schematic_shuffling_trans.png" />
+        <img src="/img/large-scale/fig1_schematic_shuffling_trans.png" width="800" />
     
     
     <figcaption>
-        <h4>shuffled experiments</h4>
+        <h4>Diagram for shuffling and shifting experiments.</h4>
         
     </figcaption>
     
@@ -110,11 +110,11 @@
 
 <figure >
     
-        <img src="/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png" />
+        <img src="/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png" width="600" />
     
     
     <figcaption>
-        <h4>shuffled timeseries</h4>
+        <h4>24-months low-passed leakage timeseries</h4>
         
     </figcaption>
     
@@ -124,11 +124,11 @@
 
 <figure >
     
-        <img src="/img/large-scale/fig5_coherence_spectra_11taper.png" />
+        <img src="/img/large-scale/fig5_coherence_spectra_11taper.png" width="600" />
     
     
     <figcaption>
-        <h4>coherence</h4>
+        <h4>coherence square of Agulhas leakage timeseries</h4>
         
     </figcaption>
     
@@ -142,11 +142,11 @@
 
 <figure >
     
-        <img src="/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png" />
+        <img src="/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png" width="600" />
     
     
     <figcaption>
-        <h4>westerlies</h4>
+        <h4>Westerlies response to interannual leakage variability</h4>
         
     </figcaption>
     
@@ -158,11 +158,11 @@
 <p>
 <figure >
     
-        <img src="/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png" />
+        <img src="/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png" width="600" />
     
     
     <figcaption>
-        <h4>all6</h4>
+        <h4>Regional imprints of low-passed Agulhas leakage</h4>
         
     </figcaption>
     

@@ -26,16 +26,16 @@
 
 &lt;p&gt;Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. All the velocity fields used in this project is from an ongoing twentieth century climate change simulation with observed CO2 forcing. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p&gt;
 
-&lt;p&gt;Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields&amp;rsquo; temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.&lt;/p&gt;
+&lt;p&gt;Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (Fig.1). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields&amp;rsquo; temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.&lt;/p&gt;
 
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig1_schematic_shuffling_trans.png&#34; /&gt;
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig1_schematic_shuffling_trans.png&#34; width=&#34;800&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;shuffled experiments&lt;/h4&gt;
+        &lt;h4&gt;Diagram for shuffling and shifting experiments.&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
@@ -49,11 +49,11 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png&#34; /&gt;
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;shuffled timeseries&lt;/h4&gt;
+        &lt;h4&gt;24-months low-passed leakage timeseries&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
@@ -63,11 +63,11 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig5_coherence_spectra_11taper.png&#34; /&gt;
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig5_coherence_spectra_11taper.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;coherence&lt;/h4&gt;
+        &lt;h4&gt;coherence square of Agulhas leakage timeseries&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
@@ -81,11 +81,11 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png&#34; /&gt;
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;westerlies&lt;/h4&gt;
+        &lt;h4&gt;Westerlies response to interannual leakage variability&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
@@ -97,11 +97,11 @@
 &lt;p&gt;
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; /&gt;
+        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;all6&lt;/h4&gt;
+        &lt;h4&gt;Regional imprints of low-passed Agulhas leakage&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
