@@ -7,8 +7,68 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Tue, 24 Jan 2017 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Feb 2017 00:42:30 -0500</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iPython notebook gallery</title>
+      <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</link>
+      <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</guid>
+      <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
+
+&lt;p&gt;Python is a thing that I picked up in the graduate school. I not only use &lt;code&gt;Python&lt;/code&gt; to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. &lt;code&gt;Ipython&lt;/code&gt; stands for &lt;em&gt;Interactive Python&lt;/em&gt;. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to &lt;code&gt;Ipython&lt;/code&gt; project in 2011, and it has evolved into an enormous spin-off project called &lt;code&gt;Jupyter&lt;/code&gt; in 2014. Such notebooks connect to different &lt;em&gt;kernels.&lt;/em&gt; There are many kernels compatible with &lt;code&gt;Ipython/Jupyter&lt;/code&gt;, including &lt;code&gt;Python&lt;/code&gt; (natürlich!), &lt;code&gt;Julia&lt;/code&gt;, &lt;code&gt;R&lt;/code&gt;, and &lt;code&gt;Haskell&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I love using Ipython notebooks because I can run code, comment in Markdown and plot inline on the same page. Everything is then easily exported to shareable formats such as pdf, HTML, Latex, even presentation slides.&lt;/p&gt;
+
+&lt;p&gt;Ths description quoted from Jupyter.org:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In 2013, I participated in a research cruise &amp;laquo;Meteor 100/2&amp;raquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Satellite SST and onboard observed wind-vectors&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;center&gt;
+
+&lt;div 
+class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
+	&lt;iframe src=&#34;https://www.youtube.com/embed/jx_bGld1eLM&#34; type=&#34;text/html&#34;
+		allowfullscreen
+		frameborder=&#34;0&#34;
+		width=&#34;80%&#34;
+		height=&#34;385&#34;
+
+	&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>about</title>
@@ -791,54 +851,6 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;h4 id=&#34;future-work&#34;&gt;Future work&lt;/h4&gt;
 
 &lt;p&gt;We&amp;rsquo;ve established a robust way to quantify Agulhas leakage in high-resolution CCSM3.5 output, with which we obtain much more resonable Agulhas Leakage estimates (~20Sv) than previous estimates based on coarse-resolution CCSM4 simulation. Our next plan is to apply such method to a complete 54year high-resolution pre-industrial CCSM3.5 run, and to a currently-running 20-Centuray climate change run to evaluate the variability of Agulhas leakage and possibliy to link such variability to other climate modes, such as El Niño, AMO and Indian Ocean Dipole. In particular, we are very interested in seeing the variability of Agulhas Leakage in the climate-change condition, because the inter-basin exchange is believed to counteract the global-warming effect on the AMOC.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Agulhas Group meeting notes, 2014-07-10</title>
-      <link>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10</link>
-      <pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate>
-      
-      <guid>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.clim-past.net/9/2631/2013/cp-9-2631-2013.html&#34;&gt;P. Scussolini, E. van Sebille, J.V. Durgadoo: Paleo Agulhas rings enter the subtropical gyre during the penultimate deglaciation&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The maximum strength of Agulhas leakage is identified during the glacial Termination II. The authors attempt to demonstrate the leakage, mostly in the form of rings, was effectively incorporated into the South Atlantic gyre, instead of retroflecting back to Southern or Indian ocean.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What methods do the authors use to address the questions?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;They investigate the presence of paleo Agulhas rings from a sediment core on the central Walvis Ridge (64PE-174P13, 29.45.71&amp;rsquo;S, 2.24.10&amp;rsquo;E, 2914m deep). By selecting the appropriate species of plaktic foraminifer, they aim to target the salinity and temperature anomalies induced by the leakage at the depth of the thermocline.&lt;/li&gt;
-&lt;li&gt;Analyzing INALT01 60yr model output to relate density perturbations at thermocline depth to the passage of individual rings over the core site. They concluded that the increasing variability of density at thermocline depth can be contributed to increasing passage of Agulhas rings.&lt;/li&gt;
-&lt;li&gt;Using this relation as a basis of proxy of Agulhas leakage, they generate a time series of individual Globorotalia truncatulinoides O_18 variability to infer the variability of Agulhas leakage.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;What are the authors&amp;rsquo; main conclusions?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Strong relation between SSH and potential density at 452m variability is prominent in INALT01. Fig3 shows the temporal variability induced by individual Agulhas ring crossings the chosen core location. The largest density troughs can be attributed to passing Agulhas rings. Out of average 6 rings/year, the core site captures on average one to two full rings according to a Fourier analysis of SSH on the location.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The time series shows high levels of pycnocline depth variability at the site, suggesting enhanced numbers of Agulhas rings moving into the South Atlantic Gyre around glacial Termination II.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Their results closely follow the previous quantifications of Agulhas leakage from the east of the Cape Basin (other sediments cores.), showing that Indian Ocean waters enter the South Atlantic circulation.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;What are the implications of the results?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;By targeting the isotopes in appropriate species, scientists can not only study certain era of sediments cores, but also specific levels of the ocean.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;This result is a crucial support for the view of a prominent role of the Agulhas leakage in the shift from a glacial to an interglacial mode of the Atlantic circulation.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Even though the increased leakage during the glacial termination did make it into subtropical gyre, the corresponding salt and heat were not neccesarily advected across the equator. However, modeling evidence show that the heat and salt from the Leakage do not have to reach the North Atlantic to impact the AMOC.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Why did you choose this paper?&lt;/strong&gt;
-Back to work on leakage, digging something more that supporting the claim that Agulhas leakage has impact on Atlantic circulation.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Who read this paper?&lt;/strong&gt;
-Yu Cheng&lt;/p&gt;
 </description>
     </item>
     
