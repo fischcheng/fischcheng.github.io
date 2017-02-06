@@ -11,6 +11,40 @@
     <atom:link href="https://fischcheng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Gibbs SeaWater Oceanographic Package for Python</title>
+      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</link>
+      <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</guid>
+      <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the *&lt;em&gt;heat transport&lt;/em&gt;, the following formula is used:&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+\int \rho C_{p}v\theta dx dz
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate such using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of &lt;strong&gt;Gibbs SeaWater Oceanographic Package&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Gibbs-SeaWater (GSW) Oceanographic Toolbox&lt;/strong&gt; contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this &lt;a href=&#34;http://www.teos-10.org/software.htm#1&#34;&gt;link&lt;/a&gt;. Also can be found are the abundant &lt;a href=&#34;http://www.teos-10.org/pubs/gsw/html/gsw_contents.html&#34;&gt;documentations&lt;/a&gt;. The &lt;a href=&#34;https://github.com/TEOS-10/python-gsw&#34;&gt;python version&lt;/a&gt; can be easily installed through the standard pip channel, simply type &lt;code&gt;pip install gsw&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So far, I used several functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;gsw.p_from_z(depth,latitude): caclculate in situ pressure (in dbar) from depth (in meter)&lt;/li&gt;
+&lt;li&gt;gsw.CT_from_pt(Salinity,Potential_Temperature): convert potential temperature (CCSM output) to in conservative emperature&lt;/li&gt;
+&lt;li&gt;gsw.t_from_CT(Salinity,Conservative_Temperature,Pressure): convert conservative temperature to in situ temperature&lt;/li&gt;
+&lt;li&gt;gsw.rho_t_exact(salinity,temperature,pressure): calculate seawater density from field variables&lt;/li&gt;
+&lt;li&gt;gsw.cp_t_exact(salinity,temperature,pressure): calculate the heat capacity of seawater from field variables&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For every physical oceanographer, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&amp;rsquo;t recall I have ever heard of &lt;strong&gt;Conservative Temperature&lt;/strong&gt;. It struck me as the first time I learned about potential temperature. I never read anything about it in the bunch of Physical Oceanography textbooks I own.&lt;/p&gt;
+
+&lt;p&gt;Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as  “Potential Enthalpy” . Dividing the  “Potential Enthalpy” by the fixed “heat capacity” ($c_{0}=3991.867$) yields the Conservative Temperature. It is said that the $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>iPython notebook gallery</title>
       <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>

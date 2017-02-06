@@ -21,9 +21,9 @@
     
 
     <link rel="shortcut icon" href="https://fischcheng.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery">
+    <link rel="canonical" href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python">
 
-    <title>iPython notebook gallery | Yu Cheng</title>
+    <title>Gibbs SeaWater Oceanographic Package for Python | Yu Cheng</title>
 
 </head>
 <body id="top">
@@ -72,11 +72,11 @@
     <article class="article" itemscope itemtype="http://schema.org/Article">
         
             
-            <img src="https://www.software.ac.uk/sites/default/files/images/content/jupyter-main-logo.svg" class="article-banner" itemprop="image">
+            <img src="https://pbs.twimg.com/media/CGkZIOiWgAAoEo_.jpg" class="article-banner" itemprop="image">
             
         
 
-        <h1 itemprop="name">iPython notebook gallery</h1>
+        <h1 itemprop="name">Gibbs SeaWater Oceanographic Package for Python</h1>
 
         
 
@@ -94,11 +94,9 @@
         
         <a class="article-tag-link" href="https://fischcheng.github.io/tags/python">python</a>, 
         
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/ncl">ncl</a>, 
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/gsw">gsw</a>, 
         
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/scripts">scripts</a>, 
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/galley">galley</a>
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/seawater">seawater</a>
         
     </span>
     
@@ -109,27 +107,27 @@
 <div class="share-box">
     <ul class="share">
         <li>
-            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fipython-notebook-gallery" target="_blank">
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python" target="_blank">
                 <i class="fa fa-facebook"></i>
             </a>
         </li>
         <li>
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=iPython%20notebook%20gallery&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fipython-notebook-gallery" target="_blank">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python" target="_blank">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         <li>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fipython-notebook-gallery&amp;title=iPython%20notebook%20gallery" target="_blank">
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python&amp;title=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python" target="_blank">
                 <i class="fa fa-linkedin"></i>
             </a>
         </li>
         <li>
-            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fipython-notebook-gallery&amp;title=iPython%20notebook%20gallery" target="_blank">
+            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python&amp;title=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python" target="_blank">
                 <i class="fa fa-weibo"></i>
             </a>
         </li>
         <li>
-            <a class="email" href="mailto:?subject=iPython%20notebook%20gallery&amp;body=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fipython-notebook-gallery">
+            <a class="email" href="mailto:?subject=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python&amp;body=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python">
                 <i class="fa fa-envelope"></i>
             </a>
         </li>
@@ -143,57 +141,31 @@
 
 
         <div class="article-style" itemprop="articleBody">
-            <p>Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.</p>
+            <p>Recently, I&rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following <a href="http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1">Dong et al. 2011</a>. To calculate the *<em>heat transport</em>, the following formula is used:</p>
 
-<p>Python is a thing that I picked up in the graduate school. I not only use <code>Python</code> to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. <code>Ipython</code> stands for <em>Interactive Python</em>. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to <code>Ipython</code> project in 2011, and it has evolved into an enormous spin-off project called <code>Jupyter</code> in 2014. Such notebooks connect to different <em>kernels.</em> There are many kernels compatible with <code>Ipython/Jupyter</code>, including <code>Python</code> (natürlich!), <code>Julia</code>, <code>R</code>, and <code>Haskell</code>.</p>
+<p>\begin{equation}
+\int \rho C_{p}v\theta dx dz
+\end{equation}</p>
 
-<p>I love using Ipython notebooks because I can run code, comment in Markdown and plot inline on the same page. Everything is then easily exported to shareable formats such as pdf, HTML, Latex, even presentation slides.</p>
+<p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate such using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.</p>
 
-<p>Ths description quoted from Jupyter.org:</p>
+<p>The <strong>Gibbs-SeaWater (GSW) Oceanographic Toolbox</strong> contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this <a href="http://www.teos-10.org/software.htm#1">link</a>. Also can be found are the abundant <a href="http://www.teos-10.org/pubs/gsw/html/gsw_contents.html">documentations</a>. The <a href="https://github.com/TEOS-10/python-gsw">python version</a> can be easily installed through the standard pip channel, simply type <code>pip install gsw</code>.</p>
 
-<blockquote>
-<p>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</p>
-</blockquote>
-
-<p>In 2013, I participated in a research cruise &laquo;Meteor 100/2&raquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.</p>
-
-
-<figure >
-    
-        <img src="https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif" width="600" />
-    
-    
-    <figcaption>
-        <h4>Satellite SST and onboard observed wind-vectors</h4>
-        
-    </figcaption>
-    
-</figure>
-
-
-<p>Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by <em>Jupyter.org</em>. Below are some links to my early works in the notebook format:</p>
+<p>So far, I used several functions:</p>
 
 <ul>
-<li><a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb">Plotting routine for Meteor 100/2</a></li>
-<li><a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb">Along-track wind-observation and animation</a></li>
-<li><a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1">Linear Inverse Modeling data validation, predictability study</a></li>
-<li><a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb">Reduced Gravity model showing equatorial waves</a></li>
+<li>gsw.p_from_z(depth,latitude): caclculate in situ pressure (in dbar) from depth (in meter)</li>
+<li>gsw.CT_from_pt(Salinity,Potential_Temperature): convert potential temperature (CCSM output) to in conservative emperature</li>
+<li>gsw.t_from_CT(Salinity,Conservative_Temperature,Pressure): convert conservative temperature to in situ temperature</li>
+<li>gsw.rho_t_exact(salinity,temperature,pressure): calculate seawater density from field variables</li>
+<li>gsw.cp_t_exact(salinity,temperature,pressure): calculate the heat capacity of seawater from field variables</li>
 </ul>
 
-<p><center>
+<p>For every physical oceanographer, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&rsquo;t recall I have ever heard of <strong>Conservative Temperature</strong>. It struck me as the first time I learned about potential temperature. I never read anything about it in the bunch of Physical Oceanography textbooks I own.</p>
 
-<div 
-class="magnific-video mpf-iframe embed video-player ">
-	<iframe src="https://www.youtube.com/embed/jx_bGld1eLM" type="text/html"
-		allowfullscreen
-		frameborder="0"
-		width="80%"
-		height="385"
+<p>Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as  “Potential Enthalpy” . Dividing the  “Potential Enthalpy” by the fixed “heat capacity” ($c_{0}=3991.867$) yields the Conservative Temperature. It is said that the $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).</p>
 
-	></iframe>
-</div>
-
-</center></p>
+<p>ref: <a href="http://www.teos-10.org/pubs/Getting_Started.pdf">getting started with TEOS-10 and the GSW Oceanographic Toolbox</a></p>
 
         </div>
 
@@ -202,11 +174,9 @@ class="magnific-video mpf-iframe embed video-player ">
     <nav>
     <ul class="pager">
         
-        <li class="previous"><a href="https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning"><span aria-hidden="true">&larr;</span> How to read the NWS hurricane warning</a></li>
+        <li class="previous"><a href="https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery"><span aria-hidden="true">&larr;</span> iPython notebook gallery</a></li>
         
 
-        
-        <li class="next"><a href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python">Gibbs SeaWater Oceanographic Package for Python <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>
@@ -217,9 +187,9 @@ class="magnific-video mpf-iframe embed video-player ">
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'yucheng';
-    var disqus_identifier = 'https:\/\/fischcheng.github.io\/2017\/02\/05\/ipython-notebook-gallery';
-    var disqus_title = 'iPython notebook gallery';
-    var disqus_url = 'https:\/\/fischcheng.github.io\/2017\/02\/05\/ipython-notebook-gallery';
+    var disqus_identifier = 'https:\/\/fischcheng.github.io\/2017\/02\/05\/gibbs-seawater-oceanographic-package-for-python';
+    var disqus_title = 'Gibbs SeaWater Oceanographic Package for Python';
+    var disqus_url = 'https:\/\/fischcheng.github.io\/2017\/02\/05\/gibbs-seawater-oceanographic-package-for-python';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

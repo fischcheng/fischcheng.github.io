@@ -21,9 +21,9 @@
     
 
     <link rel="shortcut icon" href="https://fischcheng.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://fischcheng.github.io/tags/scripts/">
+    <link rel="canonical" href="https://fischcheng.github.io/tags/seawater/">
 
-    <title>Scripts | Yu Cheng</title>
+    <title>Seawater | Yu Cheng</title>
 
 </head>
 <body id="top">
@@ -72,8 +72,14 @@
     
     
     <div>
-        <h2><a href="https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery">iPython notebook gallery</a></h2>
-        <div class="article-style"><p><p>Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.</p>
+        <h2><a href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python">Gibbs SeaWater Oceanographic Package for Python</a></h2>
+        <div class="article-style"><p><p>Recently, I&rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following <a href="http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1">Dong et al. 2011</a>. To calculate the *<em>heat transport</em>, the following formula is used:</p>
+
+<p>\begin{equation}
+\int \rho C_{p}v\theta dx dz
+\end{equation}</p>
+
+<p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate such using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.</p>
 </p></div>
     </div>
     

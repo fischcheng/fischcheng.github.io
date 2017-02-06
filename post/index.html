@@ -77,6 +77,63 @@
     <div>
         
             
+            <a href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python">
+            <img src="https://pbs.twimg.com/media/CGkZIOiWgAAoEo_.jpg" class="article-banner" itemprop="image" style="width: 50%; height: 50%">
+            </a>
+            
+        
+
+
+        <h2><a href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python">Gibbs SeaWater Oceanographic Package for Python</a></h2>
+        
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-02-05 00:42:30 -0500 -0500" itemprop="datePublished">Sun, Feb 5, 2017</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/python">python</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/gsw">gsw</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/seawater">seawater</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+
+        <div class="article-style"><p>
+        
+            Recently, I&rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following <a href="http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1">Dong et al. 2011</a>. To calculate the *<em>heat transport</em>, the following formula is used:</p>
+
+<p>\begin{equation}
+\int \rho C_{p}v\theta dx dz
+\end{equation}</p>
+
+<p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate such using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.
+        
+        </p></div>  
+    
+    </div>
+
+    
+    
+    <div>
+        
+            
             <a href="https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery">
             <img src="https://www.software.ac.uk/sites/default/files/images/content/jupyter-main-logo.svg" class="article-banner" itemprop="image" style="width: 50%; height: 50%">
             </a>
@@ -119,7 +176,7 @@
 
         <div class="article-style"><p>
         
-            Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks. Python is a thing that I picked up in the graduate school.
+            Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.
         
         </p></div>  
     
@@ -166,7 +223,7 @@
 
         <div class="article-style"><p>
         
-            The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home. Last night, Matthew with the maximum sustained wind at 140 mph, was a category 4 hurricane (&gt;130mph).
+            The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.
         
         </p></div>  
     
@@ -508,53 +565,6 @@
         <div class="article-style"><p>
         
             P. Scussolini, E. van Sebille, J.V. Durgadoo: Paleo Agulhas rings enter the subtropical gyre during the penultimate deglaciation What scientific questions are the authors addressing? The maximum strength of Agulhas leakage is identified during the glacial Termination II. The authors attempt to demonstrate the leakage, mostly in the form of rings, was effectively incorporated into the South Atlantic gyre, instead of retroflecting back to Southern or Indian ocean. What methods do the authors use to address the questions?
-        
-        </p></div>  
-    
-    </div>
-
-    
-    
-    <div>
-        
-
-
-        <h2><a href="https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican">Building a statistic blog with Pelican</a></h2>
-        
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2014-06-10 12:05:00 &#43;0000 UTC" itemprop="datePublished">Tue, Jun 10, 2014</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/pelican">pelican</a>, 
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/python">python</a>, 
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/markdown">markdown</a>, 
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/bootstrap">bootstrap</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-
-        <div class="article-style"><p>
-        
-            Once upon a time&hellip; I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &laquo;blog&raquo; became a everyday word. All of a sudden, a vibrant and powerful &laquo;blog&raquo;, usually implemented with guestbook and albums is just few clicks away.
         
         </p></div>  
     
