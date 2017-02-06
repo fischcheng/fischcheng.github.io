@@ -147,7 +147,7 @@
 \int \rho C_{p}v\theta dx dz
 \end{equation}</p>
 
-<p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate such using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.</p>
+<p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate them using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.</p>
 
 <p>The <strong>Gibbs-SeaWater (GSW) Oceanographic Toolbox</strong> contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this <a href="http://www.teos-10.org/software.htm#1">link</a>. Also can be found are the abundant <a href="http://www.teos-10.org/pubs/gsw/html/gsw_contents.html">documentations</a>. The <a href="https://github.com/TEOS-10/python-gsw">python version</a> can be easily installed through the standard pip channel, simply type <code>pip install gsw</code>.</p>
 
@@ -155,15 +155,15 @@
 
 <ul>
 <li>gsw.p_from_z(depth,latitude): caclculate in situ pressure (in dbar) from depth (in meter)</li>
-<li>gsw.CT_from_pt(Salinity,Potential_Temperature): convert potential temperature (CCSM output) to in conservative emperature</li>
+<li>gsw.CT_from_pt(Salinity,Potential_Temperature): convert potential temperature (CCSM output) to conservative emperature</li>
 <li>gsw.t_from_CT(Salinity,Conservative_Temperature,Pressure): convert conservative temperature to in situ temperature</li>
 <li>gsw.rho_t_exact(salinity,temperature,pressure): calculate seawater density from field variables</li>
 <li>gsw.cp_t_exact(salinity,temperature,pressure): calculate the heat capacity of seawater from field variables</li>
 </ul>
 
-<p>For every physical oceanographer, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&rsquo;t recall I have ever heard of <strong>Conservative Temperature</strong>. It struck me as the first time I learned about potential temperature. I never read anything about it in the bunch of Physical Oceanography textbooks I own.</p>
+<p>For any physical oceanographers, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&rsquo;t recall I have ever heard of <strong>Conservative Temperature</strong>. It struck me as the first time I learned about potential temperature.</p>
 
-<p>Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as  “Potential Enthalpy” . Dividing the  “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. It is said that the $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).</p>
+<p>Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as “Potential Enthalpy”. Dividing the “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).</p>
 
 <p>ref: <a href="http://www.teos-10.org/pubs/Getting_Started.pdf">getting started with TEOS-10 and the GSW Oceanographic Toolbox</a></p>
 
