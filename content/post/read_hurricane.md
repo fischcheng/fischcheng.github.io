@@ -10,6 +10,8 @@ imgurl=false
 
 The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out -- Publix was like a war zone when I was ordered to pick up some bottled water on my way home. 
 
+<!--more-->
+
 Last night, Matthew with the maximum sustained wind at 140 mph, was a category 4 hurricane (>130mph). Last time a major hurricane (category 3 and above) made a landfall in the US was back in 2005 (Wilma at 120 mph). I slowly began to understand peoples' reactions.
 
 <center>

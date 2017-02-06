@@ -10,6 +10,8 @@ imgurl= true
 
 Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks. 
 
+<!--more-->
+
 Python is a thing that I picked up in the graduate school. I not only use `Python` to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. `Ipython` stands for *Interactive Python*. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to `Ipython` project in 2011, and it has evolved into an enormous spin-off project called `Jupyter` in 2014. Such notebooks connect to different *kernels.* There are many kernels compatible with `Ipython/Jupyter`, including `Python` (natürlich!), `Julia`, `R`, and `Haskell`.
 
 I love using Ipython notebooks because I can run code, comment in Markdown and plot inline on the same page. Everything is then easily exported to shareable formats such as pdf, HTML, Latex, even presentation slides. 
