@@ -16,7 +16,7 @@
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
       <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the *&lt;em&gt;heat transport&lt;/em&gt;, the following formula is used:&lt;/p&gt;
+      <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
 \int \rho C_{p}v\theta dx dz
@@ -38,7 +38,7 @@
 
 &lt;p&gt;For every physical oceanographer, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&amp;rsquo;t recall I have ever heard of &lt;strong&gt;Conservative Temperature&lt;/strong&gt;. It struck me as the first time I learned about potential temperature. I never read anything about it in the bunch of Physical Oceanography textbooks I own.&lt;/p&gt;
 
-&lt;p&gt;Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as  “Potential Enthalpy” . Dividing the  “Potential Enthalpy” by the fixed “heat capacity” ($c_{0}=3991.867$) yields the Conservative Temperature. It is said that the $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).&lt;/p&gt;
+&lt;p&gt;Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as  “Potential Enthalpy” . Dividing the  “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. It is said that the $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).&lt;/p&gt;
 
 &lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;
 </description>
