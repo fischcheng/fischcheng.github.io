@@ -21,9 +21,9 @@
     
 
     <link rel="shortcut icon" href="https://fischcheng.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python">
+    <link rel="canonical" href="https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas">
 
-    <title>Gibbs SeaWater Oceanographic Package for Python | Yu Cheng</title>
+    <title>Fill in the missing data using Python pandas | Yu Cheng</title>
 
 </head>
 <body id="top">
@@ -72,18 +72,18 @@
     <article class="article" itemscope itemtype="http://schema.org/Article">
         
             
-            <img src="https://pbs.twimg.com/media/CGkZIOiWgAAoEo_.jpg" class="article-banner" itemprop="image">
+            <img src="http://pandas.pydata.org/_static/pandas_logo.png" class="article-banner" itemprop="image">
             
         
 
-        <h1 itemprop="name">Gibbs SeaWater Oceanographic Package for Python</h1>
+        <h1 itemprop="name">Fill in the missing data using Python pandas</h1>
 
         
 
 <div class="article-metadata">
 
     <span class="article-date">
-        <time datetime="2017-02-05 00:42:30 -0500 -0500" itemprop="datePublished">Sun, Feb 5, 2017</time>
+        <time datetime="2017-02-13 00:42:30 -0500 -0500" itemprop="datePublished">Mon, Feb 13, 2017</time>
     </span>
 
     
@@ -94,9 +94,9 @@
         
         <a class="article-tag-link" href="https://fischcheng.github.io/tags/python">python</a>, 
         
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/gsw">gsw</a>, 
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/pandas">pandas</a>, 
         
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/seawater">seawater</a>
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/timeseries">timeseries</a>
         
     </span>
     
@@ -107,27 +107,27 @@
 <div class="share-box">
     <ul class="share">
         <li>
-            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python" target="_blank">
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f13%2ffill-in-the-missing-data-using-python-pandas" target="_blank">
                 <i class="fa fa-facebook"></i>
             </a>
         </li>
         <li>
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python" target="_blank">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Fill%20in%20the%20missing%20data%20using%20Python%20pandas&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f13%2ffill-in-the-missing-data-using-python-pandas" target="_blank">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         <li>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python&amp;title=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python" target="_blank">
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f13%2ffill-in-the-missing-data-using-python-pandas&amp;title=Fill%20in%20the%20missing%20data%20using%20Python%20pandas" target="_blank">
                 <i class="fa fa-linkedin"></i>
             </a>
         </li>
         <li>
-            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python&amp;title=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python" target="_blank">
+            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f13%2ffill-in-the-missing-data-using-python-pandas&amp;title=Fill%20in%20the%20missing%20data%20using%20Python%20pandas" target="_blank">
                 <i class="fa fa-weibo"></i>
             </a>
         </li>
         <li>
-            <a class="email" href="mailto:?subject=Gibbs%20SeaWater%20Oceanographic%20Package%20for%20Python&amp;body=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f05%2fgibbs-seawater-oceanographic-package-for-python">
+            <a class="email" href="mailto:?subject=Fill%20in%20the%20missing%20data%20using%20Python%20pandas&amp;body=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f13%2ffill-in-the-missing-data-using-python-pandas">
                 <i class="fa fa-envelope"></i>
             </a>
         </li>
@@ -141,31 +141,62 @@
 
 
         <div class="article-style" itemprop="articleBody">
-            <p>Recently, I&rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following <a href="http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1">Dong et al. 2011</a>. To calculate the heat transport, the following formula is used:</p>
+            
 
-<p>\begin{equation}
-\int \rho C_{p}v\theta dx dz
-\end{equation}</p>
+<p>One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.</p>
 
-<p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate them using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.</p>
+<blockquote>
+<p>pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</p>
+</blockquote>
 
-<p>The <strong>Gibbs-SeaWater (GSW) Oceanographic Toolbox</strong> contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this <a href="http://www.teos-10.org/software.htm#1">link</a>. Also can be found are the abundant <a href="http://www.teos-10.org/pubs/gsw/html/gsw_contents.html">documentations</a>. The <a href="https://github.com/TEOS-10/python-gsw">python version</a> can be easily installed through the standard pip channel, simply type <code>pip install gsw</code>.</p>
+<p>At the core of Pandas are the data structures: <em>Series</em>, <em>DataFrame</em> and <em>Panel</em>. The ones I used the most are the first two. A <em>Series</em> is an array labeled with timestamps, and a <em>DataFrame</em> consists of many <em>Series</em>. In a real-world use case, I use pandas to generate a range of time-axis, which is then attached to my Agulhas leakage time-series. After doing that, the value at a specific timestep can be easily retrieved by calling <code>Series['timestamp'].</code> And to plot the whole time series is as simple as <code>Series.plot().</code></p>
 
-<p>So far, I used several functions:</p>
+<p>For a <em>DataFrame</em>, to see the key statistics of a <em>DataFrame</em> with many columns, simply use <code>DataFrame.describe()</code>. A table with mean, standard deviation, counts, and percentiles will then pop up. To compare multiple time series visually, naively put <code>DataFrame.plot().</code></p>
 
-<ul>
-<li>gsw.p_from_z(depth,latitude): caclculate in situ pressure (in dbar) from depth (in meter)</li>
-<li>gsw.CT_from_pt(Salinity,Potential_Temperature): convert potential temperature (CCSM output) to conservative emperature</li>
-<li>gsw.t_from_CT(Salinity,Conservative_Temperature,Pressure): convert conservative temperature to in situ temperature</li>
-<li>gsw.rho_t_exact(salinity,temperature,pressure): calculate seawater density from field variables</li>
-<li>gsw.cp_t_exact(salinity,temperature,pressure): calculate the heat capacity of seawater from field variables</li>
-</ul>
+<h4 id="working-with-missing-data">Working with missing data</h4>
 
-<p>For any physical oceanographers, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&rsquo;t recall I have ever heard of <strong>Conservative Temperature</strong>. It struck me as the first time I learned about potential temperature.</p>
+<p>Recently, I am calculating the Atlantic Ocean Heat Content (OHC).</p>
 
-<p>Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as “Potential Enthalpy”. Dividing the “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).</p>
+<pre><code class="language-python">#headers=['date','OHC2000','OHC300','OHC700']
+OHC_multilevels=DataFrame.from_csv('OHC_HRC07_1951-2002.csv')  # If it's pandas generated, this is much easier.
+OHC_multilevels.plot()
+</code></pre>
 
-<p>ref: <a href="http://www.teos-10.org/pubs/Getting_Started.pdf">getting started with TEOS-10 and the GSW Oceanographic Toolbox</a></p>
+
+<figure >
+    
+        <img src="/img/output_32_1.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Atlantic OHC in multiple layers 1951-2002</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>Obviously, something fishy happened near 1952 and again in 1971. Several months have values close to zero, which is unlikely. Going back to the data, I confirmed that the temperature and salinity fields of those months are missing. To clean up the time series, I first assigned <code>None</code> to those months, and interpolate linearly using the neighboring months. Three time series in the same <em>DataFrame</em> are processed using following two lines.</p>
+
+<pre><code class="language-python">OHC_multilevels[OHC_multilevels&lt;100]=None
+OHC_multilevels.interpolate().plot()
+</code></pre>
+
+
+<figure >
+    
+        <img src="/img/output_33_1.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>filled missing data with linear interpolation</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>This is just a glimpse of the awesomness of pandas. More details can be found in the <a href="http://pandas.pydata.org/pandas-docs/stable/overview.html">official documentation</a>.</p>
 
         </div>
 
@@ -174,11 +205,9 @@
     <nav>
     <ul class="pager">
         
-        <li class="previous"><a href="https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery"><span aria-hidden="true">&larr;</span> iPython notebook gallery</a></li>
+        <li class="previous"><a href="https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python"><span aria-hidden="true">&larr;</span> Gibbs SeaWater Oceanographic Package for Python</a></li>
         
 
-        
-        <li class="next"><a href="https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas">Fill in the missing data using Python pandas <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>
@@ -189,9 +218,9 @@
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'yucheng';
-    var disqus_identifier = 'https:\/\/fischcheng.github.io\/2017\/02\/05\/gibbs-seawater-oceanographic-package-for-python';
-    var disqus_title = 'Gibbs SeaWater Oceanographic Package for Python';
-    var disqus_url = 'https:\/\/fischcheng.github.io\/2017\/02\/05\/gibbs-seawater-oceanographic-package-for-python';
+    var disqus_identifier = 'https:\/\/fischcheng.github.io\/2017\/02\/13\/fill-in-the-missing-data-using-python-pandas';
+    var disqus_title = 'Fill in the missing data using Python pandas';
+    var disqus_url = 'https:\/\/fischcheng.github.io\/2017\/02\/13\/fill-in-the-missing-data-using-python-pandas';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

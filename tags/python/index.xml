@@ -7,8 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Sun, 05 Feb 2017 00:42:30 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 Feb 2017 00:42:30 -0500</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fill in the missing data using Python pandas</title>
+      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</link>
+      <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</guid>
+      <description>
+
+&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At the core of Pandas are the data structures: &lt;em&gt;Series&lt;/em&gt;, &lt;em&gt;DataFrame&lt;/em&gt; and &lt;em&gt;Panel&lt;/em&gt;. The ones I used the most are the first two. A &lt;em&gt;Series&lt;/em&gt; is an array labeled with timestamps, and a &lt;em&gt;DataFrame&lt;/em&gt; consists of many &lt;em&gt;Series&lt;/em&gt;. In a real-world use case, I use pandas to generate a range of time-axis, which is then attached to my Agulhas leakage time-series. After doing that, the value at a specific timestep can be easily retrieved by calling &lt;code&gt;Series[&#39;timestamp&#39;].&lt;/code&gt; And to plot the whole time series is as simple as &lt;code&gt;Series.plot().&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For a &lt;em&gt;DataFrame&lt;/em&gt;, to see the key statistics of a &lt;em&gt;DataFrame&lt;/em&gt; with many columns, simply use &lt;code&gt;DataFrame.describe()&lt;/code&gt;. A table with mean, standard deviation, counts, and percentiles will then pop up. To compare multiple time series visually, naively put &lt;code&gt;DataFrame.plot().&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;working-with-missing-data&#34;&gt;Working with missing data&lt;/h4&gt;
+
+&lt;p&gt;Recently, I am calculating the Atlantic Ocean Heat Content (OHC).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#headers=[&#39;date&#39;,&#39;OHC2000&#39;,&#39;OHC300&#39;,&#39;OHC700&#39;]
+OHC_multilevels=DataFrame.from_csv(&#39;OHC_HRC07_1951-2002.csv&#39;)  # If it&#39;s pandas generated, this is much easier.
+OHC_multilevels.plot()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/output_32_1.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Atlantic OHC in multiple layers 1951-2002&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Obviously, something fishy happened near 1952 and again in 1971. Several months have values close to zero, which is unlikely. Going back to the data, I confirmed that the temperature and salinity fields of those months are missing. To clean up the time series, I first assigned &lt;code&gt;None&lt;/code&gt; to those months, and interpolate linearly using the neighboring months. Three time series in the same &lt;em&gt;DataFrame&lt;/em&gt; are processed using following two lines.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;OHC_multilevels[OHC_multilevels&amp;lt;100]=None
+OHC_multilevels.interpolate().plot()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fischcheng.github.io/img/output_33_1.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;filled missing data with linear interpolation&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Gibbs SeaWater Oceanographic Package for Python</title>
