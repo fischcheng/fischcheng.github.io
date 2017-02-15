@@ -14,6 +14,7 @@ One of the many advantages of Python is its abundant and often powerful Librarie
 
 >pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 
+
 At the core of Pandas are the data structures: *Series*, *DataFrame* and *Panel*. The ones I used the most are the first two. A *Series* is an array labeled with timestamps, and a *DataFrame* consists of many *Series*. In a real-world use case, I use pandas to generate a range of time-axis, which is then attached to my Agulhas leakage time-series. After doing that, the value at a specific timestep can be easily retrieved by calling `Series['timestamp'].` And to plot the whole time series is as simple as `Series.plot().` 
 
 For a *DataFrame*, to see the key statistics of a *DataFrame* with many columns, simply use `DataFrame.describe()`. A table with mean, standard deviation, counts, and percentiles will then pop up. To compare multiple time series visually, naively put `DataFrame.plot().` 
