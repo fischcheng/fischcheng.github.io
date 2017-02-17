@@ -33,9 +33,9 @@ I have completed following courses:
 Course Projects:
 
 * Autonomous Underwater Vehicles: REMUS-100 and its application in coastal current study (MPO 503)
-* and Circumglobal teleconnection and jet-stream waveguide (MPO 511).
-* Seasonality and trends in Agulhas Retroflection (MPO612)
-* Western boundary current separation: potential vorticity crisis (MPO611). 
+* and Circumglobal teleconnection and jet-stream waveguide (MPO 511)
+* [Seasonality and trends in Agulhas Retroflection (MPO612)](https://1drv.ms/b/s!AuB_mliF0-yg3MgBQmTqCX8bHo8X1w)
+* [Western boundary current separation: potential vorticity crisis (MPO611)](https://1drv.ms/b/s!AuB_mliF0-yg3MgCRZMv16aUof586A)
 * [Spectrum Analysis of Agulhas Current & Agulhas Leakage Timeseries (using matplotlib/ipython)](http://www.rsmas.miami.edu/users/ycheng/pdfs/mpo524_project_yucheng)
 *  [Degradation of Agulhas Leakage estimates corresponding to temporal resolution](http://www.rsmas.miami.edu/users/ycheng/pdfs/MPO675_yucheng_final_written.pdf);[Presentation slides](http://www.rsmas.miami.edu/users/ycheng/pdfs/MPO675_final.pdf)
 
