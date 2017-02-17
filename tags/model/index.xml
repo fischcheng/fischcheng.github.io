@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Model on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/model/</link>
-    <description>Recent content in Model on Yu Cheng</description>
+    <title>Yu Cheng</title>
+    <link>https://fischcheng.github.io/tags/model/index.xml</link>
+    <description>Recent content on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Thu, 28 Jul 2016 17:06:00 +0000</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/tags/model/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,9 +15,7 @@
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
       <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</guid>
-      <description>
-
-&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Create a new case using the script under &lt;code&gt;~/CCSM4/scripts&lt;/code&gt;, following the template: PATH, compset, resolution and machine file. Compset B is the fully coupled mode.&lt;/p&gt;
@@ -28,13 +25,16 @@
                        -res 0.9x1.25_gx1v6 \
                        -mach bluefire 
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;li&gt;&lt;p&gt;Go to the $CASEROOT directory, &lt;code&gt;~/ccsm4/$case&lt;/code&gt;, modify the processor layout (&lt;code&gt;env_mach_pes.xml&lt;/code&gt;) or &lt;code&gt;env_conf.xml&lt;/code&gt; files, then configure and build the model:&lt;/p&gt;
+&lt;p&gt;
+2. Go to the $CASEROOT directory, &lt;code&gt;~/ccsm4/$case&lt;/code&gt;, modify the processor layout (&lt;code&gt;env_mach_pes.xml&lt;/code&gt;) or &lt;code&gt;env_conf.xml&lt;/code&gt; files, then configure and build the model:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./configure -case
-./$casename.$mach.build  
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;    ./configure -case
+    ./$casename.$mach.build  
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Create Production test (Optional): This will clone the current case and create a parallel folder &lt;code&gt;../$casename_ERT.x$mach&lt;/code&gt;. Go to the folder, and execute following commands:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;./$casename_ERT.$mach.build
@@ -78,8 +78,7 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
 
 &lt;p&gt;&amp;ndash;&lt;/p&gt;
 
-&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

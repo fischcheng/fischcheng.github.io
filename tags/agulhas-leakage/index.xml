@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Agulhas Leakage on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/agulhas-leakage/</link>
-    <description>Recent content in Agulhas Leakage on Yu Cheng</description>
+    <title>Yu Cheng</title>
+    <link>https://fischcheng.github.io/tags/agulhas-leakage/index.xml</link>
+    <description>Recent content on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/tags/agulhas-leakage/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -94,7 +93,7 @@
 
 &lt;p&gt;By regressing various climate variables from both atmosphere and ocean, we are able to show some regional climate patterns associated with interannual leakage variability (Fig. 5)&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; width=&#34;600&#34; /&gt;
@@ -106,7 +105,7 @@
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;h4 id=&#34;future-work&#34;&gt;Future work&lt;/h4&gt;
 

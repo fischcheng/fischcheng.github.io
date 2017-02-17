@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generator" content="Hugo 0.17" />
     <meta name="author" content="Yu Cheng 鄭嵎">
     <meta name="description" content="PhD candidate">
 
@@ -149,6 +149,8 @@
 
 <p>The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate them using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of <strong>Gibbs SeaWater Oceanographic Package</strong>.</p>
 
+<p></p>
+
 <p>The <strong>Gibbs-SeaWater (GSW) Oceanographic Toolbox</strong> contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this <a href="http://www.teos-10.org/software.htm#1">link</a>. Also can be found are the abundant <a href="http://www.teos-10.org/pubs/gsw/html/gsw_contents.html">documentations</a>. The <a href="https://github.com/TEOS-10/python-gsw">python version</a> can be easily installed through the standard pip channel, simply type <code>pip install gsw</code>.</p>
 
 <p>So far, I used several functions:</p>
@@ -166,7 +168,6 @@
 <p>Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as “Potential Enthalpy”. Dividing the “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).</p>
 
 <p>ref: <a href="http://www.teos-10.org/pubs/Getting_Started.pdf">getting started with TEOS-10 and the GSW Oceanographic Toolbox</a></p>
-
         </div>
 
     </article>

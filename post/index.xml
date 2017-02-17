@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Yu Cheng</title>
-    <link>https://fischcheng.github.io/post/</link>
-    <description>Recent content in Posts on Yu Cheng</description>
+    <title>Post-rsses on Yu Cheng</title>
+    <link>https://fischcheng.github.io/post/index.xml</link>
+    <description>Recent content in Post-rsses on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
@@ -16,9 +16,9 @@
       <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
       
       <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</guid>
-      <description>
+      <description>&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
 
-&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.&lt;/p&gt;
@@ -71,8 +71,7 @@ OHC_multilevels.interpolate().plot()
 &lt;/figure&gt;
 
 
-&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -88,6 +87,8 @@ OHC_multilevels.interpolate().plot()
 \end{equation}&lt;/p&gt;
 
 &lt;p&gt;The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate them using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of &lt;strong&gt;Gibbs SeaWater Oceanographic Package&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Gibbs-SeaWater (GSW) Oceanographic Toolbox&lt;/strong&gt; contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this &lt;a href=&#34;http://www.teos-10.org/software.htm#1&#34;&gt;link&lt;/a&gt;. Also can be found are the abundant &lt;a href=&#34;http://www.teos-10.org/pubs/gsw/html/gsw_contents.html&#34;&gt;documentations&lt;/a&gt;. The &lt;a href=&#34;https://github.com/TEOS-10/python-gsw&#34;&gt;python version&lt;/a&gt; can be easily installed through the standard pip channel, simply type &lt;code&gt;pip install gsw&lt;/code&gt;.&lt;/p&gt;
 
@@ -105,8 +106,7 @@ OHC_multilevels.interpolate().plot()
 
 &lt;p&gt;Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as “Potential Enthalpy”. Dividing the “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).&lt;/p&gt;
 
-&lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -116,6 +116,8 @@ OHC_multilevels.interpolate().plot()
       
       <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</guid>
       <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Python is a thing that I picked up in the graduate school. I not only use &lt;code&gt;Python&lt;/code&gt; to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. &lt;code&gt;Ipython&lt;/code&gt; stands for &lt;em&gt;Interactive Python&lt;/em&gt;. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to &lt;code&gt;Ipython&lt;/code&gt; project in 2011, and it has evolved into an enormous spin-off project called &lt;code&gt;Jupyter&lt;/code&gt; in 2014. Such notebooks connect to different &lt;em&gt;kernels.&lt;/em&gt; There are many kernels compatible with &lt;code&gt;Ipython/Jupyter&lt;/code&gt;, including &lt;code&gt;Python&lt;/code&gt; (natürlich!), &lt;code&gt;Julia&lt;/code&gt;, &lt;code&gt;R&lt;/code&gt;, and &lt;code&gt;Haskell&lt;/code&gt;.&lt;/p&gt;
 
@@ -165,8 +167,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 	&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -175,9 +176,9 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
       <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
       
       <guid>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning</guid>
-      <description>
+      <description>&lt;p&gt;The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p&gt;
 
-&lt;p&gt;The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Last night, Matthew with the maximum sustained wind at 140 mph, was a category 4 hurricane (&amp;gt;130mph). Last time a major hurricane (category 3 and above) made a landfall in the US was back in 2005 (Wilma at 120 mph). I slowly began to understand peoples&amp;rsquo; reactions.&lt;/p&gt;
 
@@ -319,8 +320,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.aoml.noaa.gov/hrd/tcfaq/A3.html&#34;&gt;NOAA Hurricane Research Devision&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34;&gt;Definition of the NHC Track Forecast Cone&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/prepare/wwa.php&#34;&gt;Hurricane Preparedness - Watches &amp;amp; Warnings&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+&lt;/ol&gt;</description>
     </item>
     
     <item>
@@ -495,7 +495,7 @@ build:
             branch: master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;https://fischcheng.github.io/img/wercker02.png&#34; /&gt;
@@ -507,7 +507,7 @@ build:
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -560,7 +560,6 @@ build:
 |-- layouts
 `-- static
 
-
 5 directories, 1 file
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
@@ -599,9 +598,7 @@ build:
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
       <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</guid>
-      <description>
-
-&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Create a new case using the script under &lt;code&gt;~/CCSM4/scripts&lt;/code&gt;, following the template: PATH, compset, resolution and machine file. Compset B is the fully coupled mode.&lt;/p&gt;
@@ -611,13 +608,16 @@ build:
                        -res 0.9x1.25_gx1v6 \
                        -mach bluefire 
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;li&gt;&lt;p&gt;Go to the $CASEROOT directory, &lt;code&gt;~/ccsm4/$case&lt;/code&gt;, modify the processor layout (&lt;code&gt;env_mach_pes.xml&lt;/code&gt;) or &lt;code&gt;env_conf.xml&lt;/code&gt; files, then configure and build the model:&lt;/p&gt;
+&lt;p&gt;
+2. Go to the $CASEROOT directory, &lt;code&gt;~/ccsm4/$case&lt;/code&gt;, modify the processor layout (&lt;code&gt;env_mach_pes.xml&lt;/code&gt;) or &lt;code&gt;env_conf.xml&lt;/code&gt; files, then configure and build the model:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./configure -case
-./$casename.$mach.build  
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;    ./configure -case
+    ./$casename.$mach.build  
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Create Production test (Optional): This will clone the current case and create a parallel folder &lt;code&gt;../$casename_ERT.x$mach&lt;/code&gt;. Go to the folder, and execute following commands:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;./$casename_ERT.$mach.build
@@ -661,8 +661,7 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
 
 &lt;p&gt;&amp;ndash;&lt;/p&gt;
 
-&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -810,7 +809,8 @@ Yu Cheng&lt;/p&gt;
 &lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;themes&#34;&gt;Themes&lt;/h4&gt;

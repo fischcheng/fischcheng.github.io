@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scripts on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/scripts/</link>
-    <description>Recent content in Scripts on Yu Cheng</description>
+    <title>Yu Cheng</title>
+    <link>https://fischcheng.github.io/tags/scripts/index.xml</link>
+    <description>Recent content on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Sun, 05 Feb 2017 00:42:30 -0500</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,6 +16,8 @@
       
       <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</guid>
       <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Python is a thing that I picked up in the graduate school. I not only use &lt;code&gt;Python&lt;/code&gt; to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. &lt;code&gt;Ipython&lt;/code&gt; stands for &lt;em&gt;Interactive Python&lt;/em&gt;. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to &lt;code&gt;Ipython&lt;/code&gt; project in 2011, and it has evolved into an enormous spin-off project called &lt;code&gt;Jupyter&lt;/code&gt; in 2014. Such notebooks connect to different &lt;em&gt;kernels.&lt;/em&gt; There are many kernels compatible with &lt;code&gt;Ipython/Jupyter&lt;/code&gt;, including &lt;code&gt;Python&lt;/code&gt; (natürlich!), &lt;code&gt;Julia&lt;/code&gt;, &lt;code&gt;R&lt;/code&gt;, and &lt;code&gt;Haskell&lt;/code&gt;.&lt;/p&gt;
 
@@ -66,8 +67,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 	&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

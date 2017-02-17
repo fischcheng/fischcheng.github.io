@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generator" content="Hugo 0.17" />
     <meta name="author" content="Yu Cheng 鄭嵎">
     <meta name="description" content="PhD candidate">
 
@@ -139,9 +139,7 @@
 
 
         <div class="article-style" itemprop="articleBody">
-            
-
-<h3 id="basic-approach-startup-run">Basic approach, startup run:</h3>
+            <h3 id="basic-approach-startup-run">Basic approach, startup run:</h3>
 
 <ol>
 <li><p>Create a new case using the script under <code>~/CCSM4/scripts</code>, following the template: PATH, compset, resolution and machine file. Compset B is the fully coupled mode.</p>
@@ -151,13 +149,16 @@
                        -res 0.9x1.25_gx1v6 \
                        -mach bluefire 
 </code></pre></li>
+</ol>
 
-<li><p>Go to the $CASEROOT directory, <code>~/ccsm4/$case</code>, modify the processor layout (<code>env_mach_pes.xml</code>) or <code>env_conf.xml</code> files, then configure and build the model:</p>
+<p>
+2. Go to the $CASEROOT directory, <code>~/ccsm4/$case</code>, modify the processor layout (<code>env_mach_pes.xml</code>) or <code>env_conf.xml</code> files, then configure and build the model:</p>
 
-<pre><code>./configure -case
-./$casename.$mach.build  
-</code></pre></li>
+<pre><code>    ./configure -case
+    ./$casename.$mach.build  
+</code></pre>
 
+<ol>
 <li><p>Create Production test (Optional): This will clone the current case and create a parallel folder <code>../$casename_ERT.x$mach</code>. Go to the folder, and execute following commands:</p>
 
 <pre><code>./$casename_ERT.$mach.build
@@ -202,7 +203,6 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
 <p>&ndash;</p>
 
 <p>More advanced use cases can be found in Chapter 9 of the <a href="http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf">CCSM4 user guide</a></p>
-
         </div>
 
     </article>

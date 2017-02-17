@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nws on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/nws/</link>
-    <description>Recent content in Nws on Yu Cheng</description>
+    <title>Yu Cheng</title>
+    <link>https://fischcheng.github.io/tags/nws/index.xml</link>
+    <description>Recent content on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Thu, 06 Oct 2016 00:42:30 -0500</lastBuildDate>
     <atom:link href="https://fischcheng.github.io/tags/nws/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,9 +15,9 @@
       <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
       
       <guid>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning</guid>
-      <description>
+      <description>&lt;p&gt;The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p&gt;
 
-&lt;p&gt;The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Last night, Matthew with the maximum sustained wind at 140 mph, was a category 4 hurricane (&amp;gt;130mph). Last time a major hurricane (category 3 and above) made a landfall in the US was back in 2005 (Wilma at 120 mph). I slowly began to understand peoples&amp;rsquo; reactions.&lt;/p&gt;
 
@@ -160,8 +159,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.aoml.noaa.gov/hrd/tcfaq/A3.html&#34;&gt;NOAA Hurricane Research Devision&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34;&gt;Definition of the NHC Track Forecast Cone&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/prepare/wwa.php&#34;&gt;Hurricane Preparedness - Watches &amp;amp; Warnings&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+&lt;/ol&gt;</description>
     </item>
     
   </channel>
