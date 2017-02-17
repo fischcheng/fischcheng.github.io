@@ -12,4 +12,4 @@ I'm a PhD student/Research assistant in the department of physical oceanography,
 
 Beside research, I am a big fan of every sports with racquets. I play in local tennis league, school badminton club and restringing racquets is one of my greatest passions. In fact, the Miami Open every March is one of the reasons that urged me to make the decision to come here. I've volunteered for the tournament multiple times. If you happen to be in the region and want to hit the fuzzy yellow ball around, please contact me!
 
-[Curriculum Vitae](https://1drv.ms/b/s!AuB_mliF0-yg2_0VfMaxiKmTEQlMlQ)
+[Curriculum Vitae](/pdf/cv_2017.pdf)
