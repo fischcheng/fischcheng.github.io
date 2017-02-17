@@ -12,8 +12,8 @@ build:
         code: |
             git submodule update --init --recursive
 
-    - arjen/hugo-build@1.11.0:
-        version: "0.15"
+    - arjen/hugo-build@1.14.1:
+        version: "HEAD"
         theme: "hugo-academic"
         flags: --buildDrafts=true
 
