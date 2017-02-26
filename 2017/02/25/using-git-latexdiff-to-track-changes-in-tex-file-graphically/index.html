@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="Yu Cheng 鄭嵎">
+    <meta name="description" content="PhD candidate">
+
+    <link rel="stylesheet" href="https://fischcheng.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://fischcheng.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fischcheng.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fischcheng.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker">
+    <link rel="stylesheet" href="https://fischcheng.github.io/css/hugo-academic.css">
+    
+    <link rel="stylesheet" href="https://fischcheng.github.io/css/green.css">
+    
+
+    <link rel="shortcut icon" href="https://fischcheng.github.io/img/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically">
+
+    <title>Using git-latexdiff to track changes in tex-file graphically | Yu Cheng</title>
+
+</head>
+<body id="top">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://fischcheng.github.io/">Yu Cheng</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io/#top">Home</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io/#publications">Publications</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io/#posts">Posts</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io/#projects">Research</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io/#works">Works</a></li>
+                
+                <li class="nav-item"><a href="https://fischcheng.github.io/#contact">Contact</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+        
+            
+            <img src="https://i.stack.imgur.com/7i08Q.png" class="article-banner" itemprop="image">
+            
+        
+
+        <h1 itemprop="name">Using git-latexdiff to track changes in tex-file graphically</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-02-25 20:13:52 -0500 -0500" itemprop="datePublished">Sat, Feb 25, 2017</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/latex">latex</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/git">git</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/thesis">thesis</a>, 
+        
+        <a class="article-tag-link" href="https://fischcheng.github.io/tags/trick">trick</a>
+        
+    </span>
+    
+    
+
+    
+        
+<div class="share-box">
+    <ul class="share">
+        <li>
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f25%2fusing-git-latexdiff-to-track-changes-in-tex-file-graphically" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=Using%20git-latexdiff%20to%20track%20changes%20in%20tex-file%20graphically&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f25%2fusing-git-latexdiff-to-track-changes-in-tex-file-graphically" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f25%2fusing-git-latexdiff-to-track-changes-in-tex-file-graphically&amp;title=Using%20git-latexdiff%20to%20track%20changes%20in%20tex-file%20graphically" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f25%2fusing-git-latexdiff-to-track-changes-in-tex-file-graphically&amp;title=Using%20git-latexdiff%20to%20track%20changes%20in%20tex-file%20graphically" target="_blank">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+        <li>
+            <a class="email" href="mailto:?subject=Using%20git-latexdiff%20to%20track%20changes%20in%20tex-file%20graphically&amp;body=https%3a%2f%2ffischcheng.github.io%2f2017%2f02%2f25%2fusing-git-latexdiff-to-track-changes-in-tex-file-graphically">
+                <i class="fa fa-envelope"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    
+
+</div>
+
+
+        <div class="article-style" itemprop="articleBody">
+            <p>It&rsquo;s been a while since I started using <code>git</code>. The version control system helps to track changes in computer files and coordinating work on those files among multiple people. Composing a manuscript is nothing unlike developing a program. If multiple authors work on the same manuscript, <code>git</code> can be very helpful to avoid conflicts. If you are the only author, <code>git</code> can help you to document what has been changed since the last commit or put your advisor&rsquo;s comment in another branch.</p>
+
+<p></p>
+
+<p>I&rsquo;m a big fan of \Latex. It&rsquo;s powerful and elegant. With a given template, one should only focus on the content. However, when it comes to tracking changes, \Latex is a lightyear behind Word. Fortunately, I recently bumped into a program <code>latexdiff</code>, which visually tracks changes between \Latex generated pdfs, much like how Word does. Before, I often manually color the lines I changed when sending to my advisor.</p>
+
+<p><code>git-latexdiff</code> is a wrapper around <code>git</code> and <code>latexdiff</code>. Instead of manually generating dummy tex files of different names (and also the auxiliary files), <code>git-latexdiff</code> can graphically show the differences between various versions of a LaTeX-generated pdf. Below is an example of how I incorporate these tools to my workflow.</p>
+
+<h3 id="git-basics">Git basics</h3>
+
+<ul>
+<li>You can turn any folders into <em>git-tracking</em> folders by typing the command <code>git init .</code> in the targeting folder.</li>
+<li><code>git add .</code>: add all files in the folder to staging</li>
+<li><code>git commit</code>: commit changes to head (the changes are still local)</li>
+<li>These committed changes can then be pushed to a remote repository hosted on GitHub or gitlab.</li>
+<li><code>git checkout -b branchname</code> to create and switch to new branch (<code>git checkout branchname</code> to switch after commit if the branch already exists)</li>
+<li><code>git status</code> to check current branch and status</li>
+<li>After you are satisfied with the changes you made in a developing branch, merge back to <code>master</code> by <code>git merge branchname</code>, assuming the current branch is <code>master</code>.</li>
+<li>Many GUI git <a href="https://git-scm.com/download/gui/linux">clients</a> can save the day if you are not used to command lines. For now, I am using <em>GitKraken</em>.</li>
+</ul>
+
+<h3 id="track-changes">Track changes</h3>
+
+<p><code>latexdiff</code> works like this:</p>
+
+<pre><code class="language-latex">latexdiff draft.tex revision.tex &gt; diff.tex
+</code></pre>
+
+<p>To compare the difference between first two versions of .tex, a third dummy diff.tex is created, along with many auxiliary files. Check this <a href="https://www.sharelatex.com/blog/2013/02/16/using-latexdiff-for-marking-changes-to-tex-documents.html">link</a> for better control over <code>latexdiff</code>. Using <code>git-latexdiff</code>, one can track the differences between the same file on different branches or versions, like this:</p>
+
+<pre><code class="language-latex">git latexdiff --latexmk --append-context2cmd=&quot;abstract&quot; --main Largescale_eddy_interannual_AL.tex master advisor
+</code></pre>
+
+<p><code>git-latexdiff</code> also has many additional options. More detailed information can be found <a href="https://www.slideshare.net/sppmg/latex-with-git">here</a> and the gitlab page of <a href="https://gitlab.com/git-latexdiff/git-latexdiff"><code>git-latexdiff</code> project</a>.</p>
+        </div>
+
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas"><span aria-hidden="true">&larr;</span> Fill in the missing data using Python pandas</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'yucheng';
+    var disqus_identifier = 'https:\/\/fischcheng.github.io\/2017\/02\/25\/using-git-latexdiff-to-track-changes-in-tex-file-graphically';
+    var disqus_title = 'Using git-latexdiff to track changes in tex-file graphically';
+    var disqus_url = 'https:\/\/fischcheng.github.io\/2017\/02\/25\/using-git-latexdiff-to-track-changes-in-tex-file-graphically';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 Yu Cheng &middot; 
+
+            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://fischcheng.github.io/js/jquery-1.12.3.min.js"></script>
+        <script src="https://fischcheng.github.io/js/bootstrap.min.js"></script>
+        <script src="https://fischcheng.github.io/js/hugo-academic.js"></script>
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+
+    </body>
+</html>
+
