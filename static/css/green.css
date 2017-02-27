@@ -5,6 +5,66 @@
  *  https://github.com/gcushen/hugo-academic
  **************************************************/
 
+html {
+  font-family: 'Merriweather', serif;
+  font-size: 13px;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.7;
+}
+@media screen and (min-width: 58em) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+body {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: inherit;
+  color: inherit;
+  margin-top: 71px; /* Offset body content by navbar height. */
+  padding-top: 0;
+  counter-reset: captions;
+}
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin-bottom: .5rem;
+  line-height: 1.25;
+  color: #313131;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2.1rem;
+}
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+h3 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
 a,
 a:visited,
 h3.article-title a:hover {
