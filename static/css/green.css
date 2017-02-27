@@ -7,13 +7,13 @@
 
 html {
   font-family: 'Merriweather', serif;
-  font-size: 13px;
+  font-size: 16px;
   color: rgba(0,0,0,0.8);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 @media screen and (min-width: 58em) {
   html {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
@@ -23,7 +23,7 @@ body {
   font-size: 1rem;
   line-height: inherit;
   color: inherit;
-  margin-top: 71px; /* Offset body content by navbar height. */
+  margin-top: 70px; /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
 }
