@@ -30,9 +30,15 @@ a:hover {
 /* navigation button color open hovering*/
 .navbar-default .navbar-nav li a:hover,
 .btn-primary,
-.btn-primary.btn-outline {
+.btn-primary.btn-outline,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
     color: rgb(76,175,80);
 }
+
+
+
 
 /* Articles */
 

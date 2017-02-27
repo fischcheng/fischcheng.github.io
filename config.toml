@@ -1,24 +1,31 @@
 baseurl = "https://fischcheng.github.io/"
 title = "Yu Cheng"
 copyright = "&copy; 2016 Yu Cheng"
-languageCode = "en-us"
+#languageCode = "en-us"
 theme = "hugo-academic"
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+
+
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = "yucheng"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = ""
+googleAnalytics = "UA-92668349-1"
+
+
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 
 [blackfriday]
-  angledQuotes = true
-  fractions = false
-  plainIDAnchors = true
-
+hrefTargetBlank = true
+fractions = false
 # color-codes for highlighting derived from this style
-PygmentsCodeFences= true
-pygmentsStyle= "monokai"
+#PygmentsCodeFences= true
+#pygmentsStyle= "monokai"
 
 
 [permalinks]
@@ -28,10 +35,16 @@ pygmentsStyle= "monokai"
   name = "Yu Cheng 鄭嵎"
   role = "PhD candidate"
   organization = "RSMAS / University of Miami"
+  organization_url = "http://www.rsmas.miami.edu"
   avatar = "headshot.jpg"
   email = "yucheng@rsmas.miami.edu"
   address = "4600 Rickenbacker Causeway, Miami, FL 33149, USA"
   #phone = "786 503 3366"
+  office_hours = ""
+  phone = ""
+  #skype = "dennis_yu0123"
+  telegram = ""
+
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
@@ -47,61 +60,31 @@ pygmentsStyle= "monokai"
   custom_css = ["green.css"]   # change the default color theme to green using a custom_css, can be altered later
   custom_js  = []
 
-  # Biography section.
-  # Section will only be displayed if `content/home/about.md` exists.
-  [params.about]
-    interests = ["Largescale ocean circulation", "climate variability and modeling"]
-    str_interests = "Interests"
-    str_education = "Education"
 
-    # [[params.about.education]]
-    #   course = "PhD in Meteorology and Physical Oceanography"
-    #   institution = "University of Miami"
-    #   year = ongoing
-
-    [[params.about.education]]
-      course = "BSc in Atmospheric Sciences"
-      institution = "National Taiwan University"
-      year = 2010
+  #highlighting
+  highlight = true
+  highlight_languages = ["python","ncl","matlab","latex"]
+  highlight_style = "github"
+  highlight_version = "9.9.0"
 
 
-  # Selected Publications section.
-  # Section will only be displayed if there are publications with `selected = true` in their `+++` preamble.
-  [params.publications_selected]
-    detailed_list = true
-    title = "Selected Publications"
-    subtitle = ""
+  # Publication types.
+  #   Used to categorize publications.
+  #   The index of the publication type in the list is used as its unique numerical identifier.
+  #   The numeric ID is used in a publication's frontmatter to categorize it.
+  #   The language can be edited below.
+  #   For multi-lingual sites, copy this block to each language section at the end of this file.
+  publication_types = [
+    'Uncategorized',  # 0
+    'Conference proceedings',  # 1
+    'Journal',  # 2
+    'Work in progress',  # 3
+    'Technical report',  # 4
+    'Book',  # 5
+    'Book chapter'  # 6
+  ]
 
-  # Publications section.
-  # Section will only be displayed if there are publications in `content/publication/`.
-  [params.publications]
-    count = 10
-    detailed_list = false
-    title = "Recent Publications"
-    subtitle = ""
-    str_all = "More Publications"
 
-  # Posts section.
-  # Section will only be displayed if there are posts in `content/post/`.
-  [params.posts]
-    count = 5
-    title = "Recent Posts"
-    subtitle = ""
-    str_all = "More Posts"
-    str_read_more = "Read more"
-
-  # Projects section.  <<< change this
-  # Section will only be displayed if there are projects in `content/research/`.
-  [params.projects]
-    title = "Research"
-    subtitle = "Agulhas leakage and climate"
-
-  # Contact section.
-  [params.contact]
-    enable = true
-    title = "Contact"
-    subtitle = ""
-    autolink = true  # Automatically link email and phone?
 
   # Social/Academic Networking
   #
@@ -145,7 +128,7 @@ pygmentsStyle= "monokai"
 
 [[menu.main]]
   name = "Home"
-  url = "#top"
+  url = "#about"
   weight = 1
 
 [[menu.main]]
@@ -159,16 +142,31 @@ pygmentsStyle= "monokai"
   weight = 3
 
 [[menu.main]]
-  name = "Research"
-  url = "#projects"
+  name = "Talks"
+  url = "#talks"
   weight = 4
+
+[[menu.main]]
+  name = "Projects"
+  url = "#projects"
+  weight = 5
 
 [[menu.main]]
   name = "Works"
   url = "#works"
-  weight = 5
+  weight = 6
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 6
+  weight = 7
+
+
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
+
+[languages.en]
+  languageCode = "en-us"

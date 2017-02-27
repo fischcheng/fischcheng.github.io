@@ -11,7 +11,7 @@ It's been a while since I started using `git`. The version control system helps 
 
 <!--more-->
 
-I'm a big fan of \Latex. It's powerful and elegant. With a given template, one should only focus on the content. However, when it comes to tracking changes, \Latex is a lightyear behind Word. Fortunately, I recently bumped into a program `latexdiff`, which visually tracks changes between \Latex generated pdfs, much like how Word does. Before, I often manually color the lines I changed when sending to my advisor. 
+I'm a big fan of $\Latex$. It's powerful and elegant. With a given template, one should only focus on the content. However, when it comes to tracking changes, $\Latex$ is a lightyear behind Word. Fortunately, I recently bumped into a program `latexdiff`, which visually tracks changes between $\Latex$ generated pdfs, much like how Word does. Before, I often manually color the lines I changed when sending to my advisor. 
 
 `git-latexdiff` is a wrapper around `git` and `latexdiff`. Instead of manually generating dummy tex files of different names (and also the auxiliary files), `git-latexdiff` can graphically show the differences between various versions of a LaTeX-generated pdf. Below is an example of how I incorporate these tools to my workflow.
 

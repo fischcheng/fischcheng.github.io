@@ -6,6 +6,13 @@ tags = ["python","pandas","timeseries"]
 title = "Fill in the missing data using Python pandas"
 image = "http://pandas.pydata.org/_static/pandas_logo.png"
 imgurl= true
+summary = ""
+
+[header]
+image = "http://pandas.pydata.org/_static/pandas_logo.png"
+caption = "Image credit: [**pydata.org**](http://pandas.pydata.org/)"
+preview = false
+
 +++
 
 One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas. 

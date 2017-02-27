@@ -3,8 +3,8 @@ date = "2016-09-11T00:00:00"
 draft = false
 title = "Works"
 subtitle = ""
-section_id = 10
-weight = 10
+widget = "custom"
+weight = 20
 +++
 
 I am a teaching assistant for the following courses at University of Miami:

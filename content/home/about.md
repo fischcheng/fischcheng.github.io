@@ -1,12 +1,35 @@
 +++
-date = "2017-01-24T03:00:00"
+# About/Biography widget.
+
+date = "2016-04-20T00:00:00"
 draft = false
-title = "about"
-section_id = 0
-weight = 0
+
+widget = "about"
+
+# Order that this section will appear in.
+weight = 1
+
+# List your academic interests.
+[interests]
+  interests = [
+    "Largescale ocean circulation",
+    "climate variability and modeling"
+  ]
+
+# List your qualifications (such as academic degrees).
+[[education.courses]]
+  course = "PhD in Meteorology and Physical Oceanography"
+  institution = "University of Miami"
+  year = 2017
+
+[[education.courses]]
+  course = "BSc in Atmospheric Sciences"
+  institution = "National Taiwan University"
+  year = 2010
+
 +++
 
-# About
+# Biography
 
 I'm a PhD student/Research assistant in the department of physical oceanography, Rosenstiel School of Marine & Atmospheric Science, University of Miami, working under the supervision of Dr. Lisa Beal and Dr. Ben Kirtman. My work focuses on identifying the missing links between Agulhas leakage and the Atlantic Meridional Overturning circulation using a High-Resolution coupled climate model.  
 

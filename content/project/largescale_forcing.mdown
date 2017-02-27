@@ -1,12 +1,19 @@
 +++
 client_name = ""
 date = "2016-07-30"
-image = ""
-image_preview = ""
+
 summary = "The interannual variability of Agulhas leakage is accessed in an ocean eddy resolving coupled simulation to test the hypothesis that, on such timescales large-scale forcing dominates leakage variability, regardless of eddy structures."
 tags = ["Agulhas leakage","CCSM","climate variability", "westerlies", "wind forcing"]
 title = "Large-scale forcing dominates interannual variability of Agulhas leakage"
 external_link = ""
+
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "headers/largescale.png"
+
+# Optional featured image (relative to `static/img/` folder).
+[header]
+caption = "Image Credit: me :smile:"
+image = "headers/largescale.png"
 
 +++
 

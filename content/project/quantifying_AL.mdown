@@ -1,12 +1,18 @@
 +++
 client_name = ""
 date = "2014-07-30"
-image = "http://www.saeon.ac.za/enewsletter/archives/2011/april2011/images/0402big.jpg"
-image_preview = ""
 summary = "The senstivity of leakage estimates to the model output velocity frequency needs to be addressed before we can apply it to investigate its link to climate variability."
 tags = ["Agulhas leakage","CCSM","climate variability"]
 title = "Quantifying Agulhas leakage in a high-resolution coupled climate model"
 external_link = ""
+
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "headers/agulhas_noaa.jpg"
+
+# Optional featured image (relative to `static/img/` folder).
+[header]
+caption = "Image credit: [NOAA/PMEL](https://www.pmel.noaa.gov/ocs/ARC)"
+image = "headers/agulhas_noaa.jpg"
 
 +++
 
