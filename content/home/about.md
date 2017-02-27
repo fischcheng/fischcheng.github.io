@@ -17,10 +17,10 @@ weight = 1
   ]
 
 # List your qualifications (such as academic degrees).
-[[education.courses]]
-  course = "PhD in Meteorology and Physical Oceanography"
-  institution = "University of Miami"
-  year = 2017
+#[[education.courses]]
+  #course = "PhD in Meteorology and Physical Oceanography"
+  #institution = "University of Miami"
+  #year = 2017
 
 [[education.courses]]
   course = "BSc in Atmospheric Sciences"
