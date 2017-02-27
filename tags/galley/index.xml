@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Galley on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/galley/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Galley on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/galley/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/galley/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>iPython notebook gallery</title>
@@ -29,7 +29,7 @@
 &lt;p&gt;The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In 2013, I participated in a research cruise &amp;laquo;Meteor 100/2&amp;raquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
+&lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor 100/2&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -48,10 +48,10 @@
 &lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34; target=&#34;_blank&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34; target=&#34;_blank&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34; target=&#34;_blank&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb&#34; target=&#34;_blank&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;center&gt;

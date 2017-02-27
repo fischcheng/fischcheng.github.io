@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Mocha on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/mocha/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Mocha on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/mocha/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/mocha/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Agulhas Group meeting note 2014-06-05</title>
@@ -15,7 +15,7 @@
       <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
       
       <guid>https://fischcheng.github.io/2014/06/05/agulhas-group-meeting-note-2014-06-05</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1002/2014GL059473/abstract&#34;&gt;C. D. Roberts, L. Jackson andD. McNeall, 2014: Is the 2004–2012 reduction of the Atlantic meridional overturning circulation significant?&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1002/2014GL059473/abstract&#34; target=&#34;_blank&#34;&gt;C. D. Roberts, L. Jackson andD. McNeall, 2014: Is the 2004–2012 reduction of the Atlantic meridional overturning circulation significant?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;/p&gt;
 

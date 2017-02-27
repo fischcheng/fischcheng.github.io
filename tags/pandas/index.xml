@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Pandas on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/pandas/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Pandas on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fill in the missing data using Python pandas</title>
@@ -70,7 +70,7 @@ OHC_multilevels.interpolate().plot()
 &lt;/figure&gt;
 
 
-&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34; target=&#34;_blank&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

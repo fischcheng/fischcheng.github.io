@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks on Yu Cheng</title>
+    <link>https://fischcheng.github.io/talk/index.xml</link>
+    <description>Recent content in Recent &amp; Upcoming Talks on Yu Cheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Seminar</title>
+      <link>https://fischcheng.github.io/talk/UW_seminar/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/talk/UW_seminar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>1-hour seminar</title>
+      <link>https://fischcheng.github.io/talk/seminar_1hr/</link>
+      <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/talk/seminar_1hr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing the skill of 30-day climate model output for Lagrangian analyses of Agulhas Leakage</title>
+      <link>https://fischcheng.github.io/talk/lom_london/</link>
+      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/talk/lom_london/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quantifying Agulhas leakage in coupled climate models</title>
+      <link>https://fischcheng.github.io/talk/iugg_prague/</link>
+      <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://fischcheng.github.io/talk/iugg_prague/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

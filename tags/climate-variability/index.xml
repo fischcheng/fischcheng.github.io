@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Climate Variability on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/climate-variability/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Climate Variability on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/climate-variability/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/climate-variability/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
@@ -152,7 +152,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;h4 id=&#34;temporal-resolution&#34;&gt;Temporal Resolution&lt;/h4&gt;
 
-&lt;p&gt;The approach mentioned above is fairly simple; however, there are many technical diffculties we must solve. First, lagrangian calculations in previous studies are mostly based on &lt;a href=&#34;http://stockage.univ-brest.fr/~grima/Ariane/&#34;&gt;Ariane&lt;/a&gt; toolbox, which is not applicable to CCSM3.5 due to grid setup. Therefore, we use CMS instead. In addition, most of previos studies use Ocean General Circulation Model outputs with high temopral resolution (typically 5-daily output.), while most of Coupled Model outputs are archieved  monthly, which is not ideal for lagrangian particle tracking.&lt;/p&gt;
+&lt;p&gt;The approach mentioned above is fairly simple; however, there are many technical diffculties we must solve. First, lagrangian calculations in previous studies are mostly based on &lt;a href=&#34;http://stockage.univ-brest.fr/~grima/Ariane/&#34; target=&#34;_blank&#34;&gt;Ariane&lt;/a&gt; toolbox, which is not applicable to CCSM3.5 due to grid setup. Therefore, we use CMS instead. In addition, most of previos studies use Ocean General Circulation Model outputs with high temopral resolution (typically 5-daily output.), while most of Coupled Model outputs are archieved  monthly, which is not ideal for lagrangian particle tracking.&lt;/p&gt;
 
 &lt;p&gt;To Adress these problems, we have tested different strategies, including releasing frequency, offshore boundary of releasing, particles with same the volume and so on. We also conducted several experiments using different temopral-resolution velocity fields to adress the degree of degradation of Agulhas leakage estimates of temporal-averaging.&lt;/p&gt;
 

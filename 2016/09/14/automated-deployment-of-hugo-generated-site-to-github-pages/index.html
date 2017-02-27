@@ -2,152 +2,251 @@
 <html lang="en-us">
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.17" />
-    <meta name="author" content="Yu Cheng 鄭嵎">
-    <meta name="description" content="PhD candidate">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.18.1" />
+  <meta name="author" content="Yu Cheng 鄭嵎">
+  <meta name="description" content="PhD candidate">
 
-    <link rel="stylesheet" href="https://fischcheng.github.io/css/highlight.min.css">
-    <link rel="stylesheet" href="https://fischcheng.github.io/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fischcheng.github.io/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fischcheng.github.io/css/academicons.min.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker">
-    <link rel="stylesheet" href="https://fischcheng.github.io/css/hugo-academic.css">
+  
+  
+  
     
-    <link rel="stylesheet" href="https://fischcheng.github.io/css/green.css">
+  
+  
     
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/green.css">
+  
 
-    <link rel="shortcut icon" href="https://fischcheng.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages">
+  <link rel="alternate" href="https://fischcheng.github.io/index.xml" type="application/rss+xml" title="Yu Cheng">
+  <link rel="feed" href="https://fischcheng.github.io/index.xml" type="application/rss+xml" title="Yu Cheng">
 
-    <title>Automated deployment of Hugo generated site to Github pages  | Yu Cheng</title>
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages">
+
+  
+
+  <title>Automated deployment of Hugo generated site to Github pages  | Yu Cheng</title>
 
 </head>
-<body id="top">
-
-
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
-    <div class="container">
+  <div class="container">
 
-        
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://fischcheng.github.io/">Yu Cheng</a>
-        </div>
-
-        
-        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
-
-            
-            <ul class="nav navbar-nav navbar-right">
-                
-                <li class="nav-item"><a href="https://fischcheng.github.io/#top">Home</a></li>
-                
-                <li class="nav-item"><a href="https://fischcheng.github.io/#publications">Publications</a></li>
-                
-                <li class="nav-item"><a href="https://fischcheng.github.io/#posts">Posts</a></li>
-                
-                <li class="nav-item"><a href="https://fischcheng.github.io/#projects">Research</a></li>
-                
-                <li class="nav-item"><a href="https://fischcheng.github.io/#works">Works</a></li>
-                
-                <li class="nav-item"><a href="https://fischcheng.github.io/#contact">Contact</a></li>
-                
-            </ul>
-
-        </div>
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Yu Cheng</a>
     </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#works">
+            
+            <span>Works</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
 </nav>
 
-<div class="container">
 
-    <article class="article" itemscope itemtype="http://schema.org/Article">
-        
-            
-            <img src="https://tbd.kaitoy.xyz/images/hugo-logo.png" class="article-banner" itemprop="image">
-            
-        
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
-        <h1 itemprop="name">Automated deployment of Hugo generated site to Github pages </h1>
+  
 
-        
+  <div class="article-container">
+    <h1 itemprop="name">Automated deployment of Hugo generated site to Github pages </h1>
+    
 
 <div class="article-metadata">
 
-    <span class="article-date">
-        <time datetime="2016-09-14 20:54:16 -0500 -0500" itemprop="datePublished">Wed, Sep 14, 2016</time>
-    </span>
+  <span class="article-date">
+    <time datetime="2016-09-14 20:54:16 -0500 -0500" itemprop="datePublished">
+      Wed, Sep 14, 2016
+    </time>
+  </span>
 
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/hugo">hugo</a>, 
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/blog">blog</a>, 
-        
-        <a class="article-tag-link" href="https://fischcheng.github.io/tags/pelican">pelican</a>
-        
-    </span>
-    
-    
+  
 
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
     
-        
-<div class="share-box">
-    <ul class="share">
-        <li>
-            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages" target="_blank">
-                <i class="fa fa-facebook"></i>
-            </a>
-        </li>
-        <li>
-            <a class="twitter" href="https://twitter.com/intent/tweet?text=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20&amp;url=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages" target="_blank">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        <li>
-            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages&amp;title=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20" target="_blank">
-                <i class="fa fa-linkedin"></i>
-            </a>
-        </li>
-        <li>
-            <a class="weibo" href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages&amp;title=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20" target="_blank">
-                <i class="fa fa-weibo"></i>
-            </a>
-        </li>
-        <li>
-            <a class="email" href="mailto:?subject=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20&amp;body=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages">
-                <i class="fa fa-envelope"></i>
-            </a>
-        </li>
-    </ul>
+    <a href="/tags/hugo">hugo</a
+    >, 
+    
+    <a href="/tags/blog">blog</a
+    >, 
+    
+    <a href="/tags/pelican">pelican</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20&amp;url=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages&amp;title=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages&amp;title=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Automated%20deployment%20of%20Hugo%20generated%20site%20to%20Github%20pages%20&amp;body=https%3a%2f%2ffischcheng.github.io%2f2016%2f09%2f14%2fautomated-deployment-of-hugo-generated-site-to-github-pages">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
 </div>
 
 
-    
+  
 
 </div>
 
+    <div class="article-style" itemprop="articleBody">
+      
 
-        <div class="article-style" itemprop="articleBody">
-            
-
-<p>In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&rsquo;ve made. The source codes for this site can be found <a href="https://github.com/fischcheng/fischcheng.github.io">here</a>.</p>
+<p>In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&rsquo;ve made. The source codes for this site can be found <a href="https://github.com/fischcheng/fischcheng.github.io" target="_blank">here</a>.</p>
 
 <h3 id="basic-setting-in-my-config-toml-for-the-academic-theme">Basic setting in my config.toml for the Academic Theme</h3>
 
-<p>Many beautifully designed themes are already <a href="http://themes.gohugo.io">available</a>. I decided to use the <a href="http://themes.gohugo.io/academic/">academic theme</a>, because it&rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the <a href="http://themes.gohugo.io/theme/academic/">demo website</a> in action.</p>
+<p>Many beautifully designed themes are already <a href="http://themes.gohugo.io" target="_blank">available</a>. I decided to use the <a href="http://themes.gohugo.io/academic/" target="_blank">academic theme</a>, because it&rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the <a href="http://themes.gohugo.io/theme/academic/" target="_blank">demo website</a> in action.</p>
 
 <p>In <code>config.toml</code>, one can set the universal variables used by Hugo to generate HTML pages. For example:</p>
 
@@ -235,7 +334,7 @@ theme = &quot;hugo-academic&quot;
 
 <h3 id="github-pages-user-site-or-project-site">Github pages, user site or project site</h3>
 
-<p>Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under <code>master</code> branch will be displayed under this address <code>https://&lt;username&gt;.github.io</code>, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under <code>gh-pages</code> branch can be accessed under <code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>. Github even provides an Automatic Generator to help to create a project site. More details can be found <a href="https://pages.github.com">here</a>.</p>
+<p>Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under <code>master</code> branch will be displayed under this address <code>https://&lt;username&gt;.github.io</code>, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under <code>gh-pages</code> branch can be accessed under <code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>. Github even provides an Automatic Generator to help to create a project site. More details can be found <a href="https://pages.github.com" target="_blank">here</a>.</p>
 
 <p>My website is a user site. Under this repo <code>fischcheng.github.io</code>, the <code>source</code> branch archived all changes to the source codes, and <code>master</code> branch store the Hugo-generated HTML pages.</p>
 
@@ -243,9 +342,9 @@ theme = &quot;hugo-academic&quot;
 
 <p>The default way to build a hugo site is simple, invoke <code>hugo</code> under the site root. A <code>public</code> folder will be created, containing every HTML pages and copied stylesheets and static files (banner images and profile icons or so). Push this folder to the <code>master</code> branch, and voila, the site is online.</p>
 
-<p>What if a single <code>push</code> to the <code>source</code> branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&rsquo;s official <a href="https://gohugo.io/tutorials/automated-deployments/">site</a>. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.</p>
+<p>What if a single <code>push</code> to the <code>source</code> branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&rsquo;s official <a href="https://gohugo.io/tutorials/automated-deployments/" target="_blank">site</a>. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.</p>
 
-<p><a href="http://wercker.com">Wercker</a> is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on <a href="docker">Docker</a>. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented <em>steps</em>. In our case, the application consists of two steps <em>build hugo</em> and <em>deploy to GitHub.</em></p>
+<p><a href="http://wercker.com" target="_blank">Wercker</a> is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on <a href="docker" target="_blank">Docker</a>. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented <em>steps</em>. In our case, the application consists of two steps <em>build hugo</em> and <em>deploy to GitHub.</em></p>
 
 
 <figure >
@@ -261,11 +360,11 @@ theme = &quot;hugo-academic&quot;
 </figure>
 
 
-<p>The first task is to create the config.yml (<a href="https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml">link to mine</a>) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.</p>
+<p>The first task is to create the config.yml (<a href="https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml" target="_blank">link to mine</a>) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.</p>
 
 <h4 id="build">Build</h4>
 
-<p>Following the official guide, I used this <a href="https://github.com/ArjenSchwarz/wercker-step-hugo-build">step</a> to trigger Hugo to build HTML pages. However, my first try didn&rsquo;t successfully generate the pages correctly, because the <code>arjen/hugo-build</code> step couldn&rsquo;t find the <code>hugo-academic</code> theme. For easier tracking and updating, I forked the <code>hugo-academic</code> repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the <code>hugo-academic</code> theme. Kudos to this <a href="https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/">post</a> which helped me to track this issue down.</p>
+<p>Following the official guide, I used this <a href="https://github.com/ArjenSchwarz/wercker-step-hugo-build" target="_blank">step</a> to trigger Hugo to build HTML pages. However, my first try didn&rsquo;t successfully generate the pages correctly, because the <code>arjen/hugo-build</code> step couldn&rsquo;t find the <code>hugo-academic</code> theme. For easier tracking and updating, I forked the <code>hugo-academic</code> repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the <code>hugo-academic</code> theme. Kudos to this <a href="https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/" target="_blank">post</a> which helped me to track this issue down.</p>
 
 <pre><code class="language-yaml">box: debian
 
@@ -288,11 +387,11 @@ build:
 
 <h4 id="deploy">Deploy</h4>
 
-<p>There is no more such thing as &laquo;Add deploy target&raquo; in Wercker. The interface has changed to the new &laquo;workflows of pipelines.&raquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.</p>
+<p>There is no more such thing as &ldquo;Add deploy target&rdquo; in Wercker. The interface has changed to the new &ldquo;workflows of pipelines.&rdquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.</p>
 
-<p>So I poked around and realized that, even if the second <code>deploy</code> step is included in the <code>wercker.yml</code>, one still needs to manually add a new &laquo;pipeline&raquo; under the &laquo;workflow&raquo; tab. Upon creating a new pipeline, the &laquo;YML pipeline name&raquo; must be in the predefined names in the <code>wercker.yml</code>.</p>
+<p>So I poked around and realized that, even if the second <code>deploy</code> step is included in the <code>wercker.yml</code>, one still needs to manually add a new &ldquo;pipeline&rdquo; under the &ldquo;workflow&rdquo; tab. Upon creating a new pipeline, the &ldquo;YML pipeline name&rdquo; must be in the predefined names in the <code>wercker.yml</code>.</p>
 
-<p>Here I used this <a href="https://github.com/leipert/step-git-push">step</a> to deploy the built site to GitHub. Each pipeline starts from scratch, so for the <code>deploy</code> pipeline, the <code>git</code> package needs to be installed again. On also has to setup the environment variable <code>$Git_Token</code>, acquired from Github setting.</p>
+<p>Here I used this <a href="https://github.com/leipert/step-git-push" target="_blank">step</a> to deploy the built site to GitHub. Each pipeline starts from scratch, so for the <code>deploy</code> pipeline, the <code>git</code> package needs to be installed again. On also has to setup the environment variable <code>$Git_Token</code>, acquired from Github setting.</p>
 
 <pre><code class="language-yaml">deploy:
     steps:
@@ -321,26 +420,33 @@ build:
 </figure>
 
 
-        </div>
+    </div>
+  </div>
 
-    </article>
+</article>
 
-    <nav>
-    <ul class="pager">
-        
-        <li class="previous"><a href="https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo"><span aria-hidden="true">&larr;</span> Switch from Pelican to Hugo</a></li>
-        
-
-        
-        <li class="next"><a href="https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning">How to read the NWS hurricane warning <span aria-hidden="true">&rarr;</span></a></li>
-        
-    </ul>
-</nav>
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo"><span
+      aria-hidden="true">&larr;</span> Switch from Pelican to Hugo</a></li>
+    
 
     
+    <li class="next"><a href="https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning">How to read the NWS hurricane warning <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
 <section id="comments">
-    <div id="disqus_thread">
-        <div id="disqus_thread"></div>
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'yucheng';
     var disqus_identifier = 'https:\/\/fischcheng.github.io\/2016\/09\/14\/automated-deployment-of-hugo-generated-site-to-github-pages';
@@ -355,47 +461,92 @@ build:
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+  </div>
 </section>
 
 
-
 </div>
+
 <footer class="site-footer">
-    <div class="container">
-        <p class="powered-by">
+  <div class="container">
+    <p class="powered-by">
 
-            &copy; 2016 Yu Cheng &middot; 
+      &copy; 2016 Yu Cheng &middot; 
 
-            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
 
-            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
 
-        </p>
-    </div>
+    </p>
+  </div>
 </footer>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-        <script src="https://fischcheng.github.io/js/jquery-1.12.3.min.js"></script>
-        <script src="https://fischcheng.github.io/js/bootstrap.min.js"></script>
-        <script src="https://fischcheng.github.io/js/hugo-academic.js"></script>
-        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
 
-        
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-92668349-1', 'auto');
+        ga('send', 'pageview');
 
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
 
-        
-        
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
-        
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
-    </body>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/python.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/ncl.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/matlab.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/latex.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
 </html>
 

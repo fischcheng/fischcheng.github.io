@@ -1,14 +1,130 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Post-rsses on Yu Cheng</title>
+    <title>Posts on Yu Cheng</title>
     <link>https://fischcheng.github.io/post/index.xml</link>
-    <description>Recent content in Post-rsses on Yu Cheng</description>
+    <description>Recent content in Posts on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Sat, 25 Feb 2017 20:13:52 -0500</lastBuildDate>
-    <atom:link href="https://fischcheng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Feb 2017 00:28:36 -0500</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Updated Hugo Academic theme to sync the upstream repo</title>
+      <link>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo</link>
+      <pubDate>Mon, 27 Feb 2017 00:28:36 -0500</pubDate>
+      
+      <guid>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo</guid>
+      <description>
+
+&lt;p&gt;I just updated the Hugo-Academic theme from the upstream repo. The structure has been greatly changed. Now each section on the &lt;code&gt;index.html&lt;/code&gt; is a widget. Changing Research Interests and Education is no longer inside the &lt;code&gt;config.toml&lt;/code&gt;, but the &lt;code&gt;about.md&lt;/code&gt; as metadata. I also added a Talk widget, and the Project widget now showcase my research in cards.&lt;/p&gt;
+
+&lt;p&gt;Below I would like to try out some new features:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;emojis&#34;&gt;Emojis!!!&lt;/h2&gt;
+
+&lt;p&gt;Now the Hugo-Academic theme supports Emojis natively. Check &lt;a href=&#34;http://www.webpagefx.com/tools/emoji-cheat-sheet/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for a cheat-sheet of available Emojis.&lt;/p&gt;
+
+&lt;p&gt;😃
+😪
+🎾
+👍
+🀄
+Tomorrow is Vicky&amp;rsquo;s defense! 📅&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;blockquotes&#34;&gt;Blockquotes&lt;/h2&gt;
+
+&lt;p&gt;This is not part of the theme. I updated the custom css file to achieve this effect.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Carl Sagan&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;syntax-highlighting-using-highlight-js&#34;&gt;Syntax highlighting using highlight.js&lt;/h2&gt;
+
+&lt;p&gt;Python:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pandas import Series, DataFrame, Panel
+import gsw
+import scipy.io as sio
+fulllist=sorted(glob.glob(&#39;/raid60/kirtman/HRC07/ocn/mo_nc4/*.nc&#39;))
+
+months=pd.period_range(&#39;1951-01&#39;, &#39;2002-12&#39;, freq=&#39;M&#39;) 
+OHC300_HRC07=Series(OHC300,index=months)
+OHC700_HRC07=Series(OHC700,index=months)
+OHC2000_HRC07=Series(OHC2000,index=months)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Matlab:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-matlab&#34;&gt;MMend=str2num(end_date(6:7)); 
+DDend=str2num(end_date(9:10));
+
+for yrid=find(yyy==YYs):find(yyy==YYe)
+ if (yrid==find(yyy==YYs))
+   mstart=MMs;
+ else
+   mstart=1;
+ end
+ if (yrid==find(yyy==YYe))
+   mend=MMend;
+ else
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For available languages and styles, check &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;twitter-tweet&#34;&gt;Twitter Tweet&lt;/h2&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Running wild with &lt;a href=&#34;https://twitter.com/BearGrylls&#34;&gt;@BearGrylls&lt;/a&gt; &lt;a href=&#34;https://t.co/RG3pRquOuu&#34;&gt;pic.twitter.com/RG3pRquOuu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Roger Federer (@rogerfederer) &lt;a href=&#34;https://twitter.com/rogerfederer/status/833394043585376256&#34;&gt;February 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;youtube-video&#34;&gt;Youtube video&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/GTqicHqhb1A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;alerts&#34;&gt;Alerts&lt;/h2&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;It&amp;rsquo;s about time to sleep!&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;Hope this will help you.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;hr /&gt;
+
+&lt;p&gt;Some more options in the Hugo-Academic &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/managing-content/&#34; target=&#34;_blank&#34;&gt;Theme&lt;/a&gt;. That&amp;rsquo;s all for now. I guess the only thing I missed about Pelican was its plugin to embed ipython notebook cells to the post. Haven&amp;rsquo;t found a hugo-shortcode for that purpose yet. Or maybe a shortcode to embed an Instagram post?&lt;/p&gt;
+
+&lt;p&gt;Wow, there is a built-in shortcode for Instagram!&lt;/p&gt;
+
+&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-version=&#34;7&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;No one does #lineart quite like @jonathanlovers. Love this for @airbnb&amp;#39;s #OneAirbnb2017. 〰➰✍🏻&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;A post shared by Design Milk (@designmilk) on &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2017-02-25T02:32:28+00:00&#34;&gt;Feb 24, 2017 at 6:32pm PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;script async defer src=&#34;//platform.instagram.com/en_US/embeds.js&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>Using git-latexdiff to track changes in tex-file graphically</title>
@@ -20,7 +136,7 @@
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;m a big fan of \Latex. It&amp;rsquo;s powerful and elegant. With a given template, one should only focus on the content. However, when it comes to tracking changes, \Latex is a lightyear behind Word. Fortunately, I recently bumped into a program &lt;code&gt;latexdiff&lt;/code&gt;, which visually tracks changes between \Latex generated pdfs, much like how Word does. Before, I often manually color the lines I changed when sending to my advisor.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a big fan of $\Latex$. It&amp;rsquo;s powerful and elegant. With a given template, one should only focus on the content. However, when it comes to tracking changes, $\Latex$ is a lightyear behind Word. Fortunately, I recently bumped into a program &lt;code&gt;latexdiff&lt;/code&gt;, which visually tracks changes between $\Latex$ generated pdfs, much like how Word does. Before, I often manually color the lines I changed when sending to my advisor.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; is a wrapper around &lt;code&gt;git&lt;/code&gt; and &lt;code&gt;latexdiff&lt;/code&gt;. Instead of manually generating dummy tex files of different names (and also the auxiliary files), &lt;code&gt;git-latexdiff&lt;/code&gt; can graphically show the differences between various versions of a LaTeX-generated pdf. Below is an example of how I incorporate these tools to my workflow.&lt;/p&gt;
 
@@ -34,7 +150,7 @@
 &lt;li&gt;&lt;code&gt;git checkout -b branchname&lt;/code&gt; to create and switch to new branch (&lt;code&gt;git checkout branchname&lt;/code&gt; to switch after commit if the branch already exists)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git status&lt;/code&gt; to check current branch and status&lt;/li&gt;
 &lt;li&gt;After you are satisfied with the changes you made in a developing branch, merge back to &lt;code&gt;master&lt;/code&gt; by &lt;code&gt;git merge branchname&lt;/code&gt;, assuming the current branch is &lt;code&gt;master&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Many GUI git &lt;a href=&#34;https://git-scm.com/download/gui/linux&#34;&gt;clients&lt;/a&gt; can save the day if you are not used to command lines. For now, I am using &lt;em&gt;GitKraken&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Many GUI git &lt;a href=&#34;https://git-scm.com/download/gui/linux&#34; target=&#34;_blank&#34;&gt;clients&lt;/a&gt; can save the day if you are not used to command lines. For now, I am using &lt;em&gt;GitKraken&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;track-changes&#34;&gt;Track changes&lt;/h3&gt;
@@ -44,12 +160,12 @@
 &lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;latexdiff draft.tex revision.tex &amp;gt; diff.tex
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;To compare the difference between first two versions of .tex, a third dummy diff.tex is created, along with many auxiliary files. Check this &lt;a href=&#34;https://www.sharelatex.com/blog/2013/02/16/using-latexdiff-for-marking-changes-to-tex-documents.html&#34;&gt;link&lt;/a&gt; for better control over &lt;code&gt;latexdiff&lt;/code&gt;. Using &lt;code&gt;git-latexdiff&lt;/code&gt;, one can track the differences between the same file on different branches or versions, like this:&lt;/p&gt;
+&lt;p&gt;To compare the difference between first two versions of .tex, a third dummy diff.tex is created, along with many auxiliary files. Check this &lt;a href=&#34;https://www.sharelatex.com/blog/2013/02/16/using-latexdiff-for-marking-changes-to-tex-documents.html&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; for better control over &lt;code&gt;latexdiff&lt;/code&gt;. Using &lt;code&gt;git-latexdiff&lt;/code&gt;, one can track the differences between the same file on different branches or versions, like this:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;git latexdiff --latexmk --append-context2cmd=&amp;quot;abstract&amp;quot; --main Largescale_eddy_interannual_AL.tex master advisor
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; also has many additional options. More detailed information can be found &lt;a href=&#34;https://www.slideshare.net/sppmg/latex-with-git&#34;&gt;here&lt;/a&gt; and the gitlab page of &lt;a href=&#34;https://gitlab.com/git-latexdiff/git-latexdiff&#34;&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; project&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; also has many additional options. More detailed information can be found &lt;a href=&#34;https://www.slideshare.net/sppmg/latex-with-git&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and the gitlab page of &lt;a href=&#34;https://gitlab.com/git-latexdiff/git-latexdiff&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; project&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -113,7 +229,7 @@ OHC_multilevels.interpolate().plot()
 &lt;/figure&gt;
 
 
-&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34; target=&#34;_blank&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -122,7 +238,7 @@ OHC_multilevels.interpolate().plot()
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
       <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
+      <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34; target=&#34;_blank&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
 \int \rho C_{p}v\theta dx dz
@@ -132,7 +248,7 @@ OHC_multilevels.interpolate().plot()
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;The &lt;strong&gt;Gibbs-SeaWater (GSW) Oceanographic Toolbox&lt;/strong&gt; contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this &lt;a href=&#34;http://www.teos-10.org/software.htm#1&#34;&gt;link&lt;/a&gt;. Also can be found are the abundant &lt;a href=&#34;http://www.teos-10.org/pubs/gsw/html/gsw_contents.html&#34;&gt;documentations&lt;/a&gt;. The &lt;a href=&#34;https://github.com/TEOS-10/python-gsw&#34;&gt;python version&lt;/a&gt; can be easily installed through the standard pip channel, simply type &lt;code&gt;pip install gsw&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Gibbs-SeaWater (GSW) Oceanographic Toolbox&lt;/strong&gt; contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this &lt;a href=&#34;http://www.teos-10.org/software.htm#1&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;. Also can be found are the abundant &lt;a href=&#34;http://www.teos-10.org/pubs/gsw/html/gsw_contents.html&#34; target=&#34;_blank&#34;&gt;documentations&lt;/a&gt;. The &lt;a href=&#34;https://github.com/TEOS-10/python-gsw&#34; target=&#34;_blank&#34;&gt;python version&lt;/a&gt; can be easily installed through the standard pip channel, simply type &lt;code&gt;pip install gsw&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;So far, I used several functions:&lt;/p&gt;
 
@@ -148,7 +264,7 @@ OHC_multilevels.interpolate().plot()
 
 &lt;p&gt;Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as “Potential Enthalpy”. Dividing the “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).&lt;/p&gt;
 
-&lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34; target=&#34;_blank&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -171,7 +287,7 @@ OHC_multilevels.interpolate().plot()
 &lt;p&gt;The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In 2013, I participated in a research cruise &amp;laquo;Meteor 100/2&amp;raquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
+&lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor 100/2&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -190,10 +306,10 @@ OHC_multilevels.interpolate().plot()
 &lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34; target=&#34;_blank&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34; target=&#34;_blank&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34; target=&#34;_blank&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb&#34; target=&#34;_blank&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;center&gt;
@@ -267,7 +383,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;h3 id=&#34;how-to-read-the-nws-hurricane-warning&#34;&gt;How to read the NWS hurricane warning?&lt;/h3&gt;
 
-&lt;p&gt;The best way to track the latest hurricane forecast is to visit the &lt;a href=&#34;http://www.nhc.noaa.gov/#MATTHEW&#34;&gt;national weather service website&lt;/a&gt;.  I&amp;rsquo;m no hurricane/typhoon specialist (like I always said, I dived into the ocean when I came to Miami). Thanks to my colleagues, I finally got a grip on reading the NWS hurricane warnings. They are very different from the ones issued by Taiwanese weather bureau, and I would like to share some of my findings below:&lt;/p&gt;
+&lt;p&gt;The best way to track the latest hurricane forecast is to visit the &lt;a href=&#34;http://www.nhc.noaa.gov/#MATTHEW&#34; target=&#34;_blank&#34;&gt;national weather service website&lt;/a&gt;.  I&amp;rsquo;m no hurricane/typhoon specialist (like I always said, I dived into the ocean when I came to Miami). Thanks to my colleagues, I finally got a grip on reading the NWS hurricane warnings. They are very different from the ones issued by Taiwanese weather bureau, and I would like to share some of my findings below:&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -286,9 +402,9 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;ol&gt;
 &lt;li&gt;Concise punch line on the top (as for the 2 am warning): &lt;strong&gt;&amp;hellip;MATTHEW POUNDING PORTIONS OF THE CENTRAL BAHAMAS&amp;hellip; &amp;hellip;EXPECTED TO INTENSIFY AS IT APPROACHES FLORIDA&amp;hellip;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;The essential hurricane statistics on the top-left including location, moving direction and speed, minimum pressure and maximum sustained wind.&lt;/li&gt;
-&lt;li&gt;For more detailed paragraphs, checked the Public Advisory, Forecast advisory and discussion, and their Spanish versions. Check their official guide on &lt;a href=&#34;http://www.nhc.noaa.gov/help/tcp.shtml&#34;&gt;how to read a public advisory.&lt;/a&gt; I personally enjoy reading the Forecast advisory.&lt;/li&gt;
+&lt;li&gt;For more detailed paragraphs, checked the Public Advisory, Forecast advisory and discussion, and their Spanish versions. Check their official guide on &lt;a href=&#34;http://www.nhc.noaa.gov/help/tcp.shtml&#34; target=&#34;_blank&#34;&gt;how to read a public advisory.&lt;/a&gt; I personally enjoy reading the Forecast advisory.&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;For the path forecast, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?5-daynl#contents&#34;&gt;Warnings/Cone&lt;/a&gt;. Over 2/3 of chances that the center of the hurricane will stay in the white zone on the map. However, the area it may affect is much broader, considering its rain bands and hurricane force winds. Also there is still 1/3 of chances that the center of the hurricane will be outside that cone. More details can be found &lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34;&gt;here&lt;/a&gt;.
+&lt;li&gt;&lt;p&gt;For the path forecast, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?5-daynl#contents&#34; target=&#34;_blank&#34;&gt;Warnings/Cone&lt;/a&gt;. Over 2/3 of chances that the center of the hurricane will stay in the white zone on the map. However, the area it may affect is much broader, considering its rain bands and hurricane force winds. Also there is still 1/3 of chances that the center of the hurricane will be outside that cone. More details can be found &lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
 
 &lt;figure &gt;
     
@@ -303,7 +419,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;/figure&gt;
 &lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;For the currently wind affected area, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?radii#contents&#34;&gt;surface wind field plot&lt;/a&gt;. It shows the maximum possible extent of a given wind speed within particular quadrants around the tropical cyclone. By definition, Hurricane force winds exceeds 74mph and Tropical Storm force winds are no less than 39mph, so the later cover a much larger area.
+&lt;li&gt;&lt;p&gt;For the currently wind affected area, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?radii#contents&#34; target=&#34;_blank&#34;&gt;surface wind field plot&lt;/a&gt;. It shows the maximum possible extent of a given wind speed within particular quadrants around the tropical cyclone. By definition, Hurricane force winds exceeds 74mph and Tropical Storm force winds are no less than 39mph, so the later cover a much larger area.
 
 &lt;figure &gt;
     
@@ -318,7 +434,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;/figure&gt;
 &lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Now comes to the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?tswind120#contents&#34;&gt;force wind speed probabilities.&lt;/a&gt; These plots indicate the cumulative possibility that a specific area will experience winds over a certain threshold. Users can change the cumulative periods (up to 120hrs), and the wind thresholds (tropical storm force, 50knots and hurricane force.)
+&lt;li&gt;&lt;p&gt;Now comes to the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?tswind120#contents&#34; target=&#34;_blank&#34;&gt;force wind speed probabilities.&lt;/a&gt; These plots indicate the cumulative possibility that a specific area will experience winds over a certain threshold. Users can change the cumulative periods (up to 120hrs), and the wind thresholds (tropical storm force, 50knots and hurricane force.)
 
 &lt;figure &gt;
     
@@ -359,9 +475,9 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;p&gt;References:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.aoml.noaa.gov/hrd/tcfaq/A3.html&#34;&gt;NOAA Hurricane Research Devision&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34;&gt;Definition of the NHC Track Forecast Cone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/prepare/wwa.php&#34;&gt;Hurricane Preparedness - Watches &amp;amp; Warnings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.aoml.noaa.gov/hrd/tcfaq/A3.html&#34; target=&#34;_blank&#34;&gt;NOAA Hurricane Research Devision&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34; target=&#34;_blank&#34;&gt;Definition of the NHC Track Forecast Cone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nhc.noaa.gov/prepare/wwa.php&#34; target=&#34;_blank&#34;&gt;Hurricane Preparedness - Watches &amp;amp; Warnings&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
     
@@ -373,11 +489,11 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
       <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</guid>
       <description>
 
-&lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;basic-setting-in-my-config-toml-for-the-academic-theme&#34;&gt;Basic setting in my config.toml for the Academic Theme&lt;/h3&gt;
 
-&lt;p&gt;Many beautifully designed themes are already &lt;a href=&#34;http://themes.gohugo.io&#34;&gt;available&lt;/a&gt;. I decided to use the &lt;a href=&#34;http://themes.gohugo.io/academic/&#34;&gt;academic theme&lt;/a&gt;, because it&amp;rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the &lt;a href=&#34;http://themes.gohugo.io/theme/academic/&#34;&gt;demo website&lt;/a&gt; in action.&lt;/p&gt;
+&lt;p&gt;Many beautifully designed themes are already &lt;a href=&#34;http://themes.gohugo.io&#34; target=&#34;_blank&#34;&gt;available&lt;/a&gt;. I decided to use the &lt;a href=&#34;http://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34;&gt;academic theme&lt;/a&gt;, because it&amp;rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the &lt;a href=&#34;http://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;demo website&lt;/a&gt; in action.&lt;/p&gt;
 
 &lt;p&gt;In &lt;code&gt;config.toml&lt;/code&gt;, one can set the universal variables used by Hugo to generate HTML pages. For example:&lt;/p&gt;
 
@@ -465,7 +581,7 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;h3 id=&#34;github-pages-user-site-or-project-site&#34;&gt;Github pages, user site or project site&lt;/h3&gt;
 
-&lt;p&gt;Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code&gt;master&lt;/code&gt; branch will be displayed under this address &lt;code&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code&gt;gh-pages&lt;/code&gt; branch can be accessed under &lt;code&gt;http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code&gt;. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href=&#34;https://pages.github.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code&gt;master&lt;/code&gt; branch will be displayed under this address &lt;code&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code&gt;gh-pages&lt;/code&gt; branch can be accessed under &lt;code&gt;http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code&gt;. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My website is a user site. Under this repo &lt;code&gt;fischcheng.github.io&lt;/code&gt;, the &lt;code&gt;source&lt;/code&gt; branch archived all changes to the source codes, and &lt;code&gt;master&lt;/code&gt; branch store the Hugo-generated HTML pages.&lt;/p&gt;
 
@@ -473,9 +589,9 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;p&gt;The default way to build a hugo site is simple, invoke &lt;code&gt;hugo&lt;/code&gt; under the site root. A &lt;code&gt;public&lt;/code&gt; folder will be created, containing every HTML pages and copied stylesheets and static files (banner images and profile icons or so). Push this folder to the &lt;code&gt;master&lt;/code&gt; branch, and voila, the site is online.&lt;/p&gt;
 
-&lt;p&gt;What if a single &lt;code&gt;push&lt;/code&gt; to the &lt;code&gt;source&lt;/code&gt; branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&amp;rsquo;s official &lt;a href=&#34;https://gohugo.io/tutorials/automated-deployments/&#34;&gt;site&lt;/a&gt;. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.&lt;/p&gt;
+&lt;p&gt;What if a single &lt;code&gt;push&lt;/code&gt; to the &lt;code&gt;source&lt;/code&gt; branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&amp;rsquo;s official &lt;a href=&#34;https://gohugo.io/tutorials/automated-deployments/&#34; target=&#34;_blank&#34;&gt;site&lt;/a&gt;. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt; is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on &lt;a href=&#34;docker&#34;&gt;Docker&lt;/a&gt;. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented &lt;em&gt;steps&lt;/em&gt;. In our case, the application consists of two steps &lt;em&gt;build hugo&lt;/em&gt; and &lt;em&gt;deploy to GitHub.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://wercker.com&#34; target=&#34;_blank&#34;&gt;Wercker&lt;/a&gt; is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on &lt;a href=&#34;docker&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt;. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented &lt;em&gt;steps&lt;/em&gt;. In our case, the application consists of two steps &lt;em&gt;build hugo&lt;/em&gt; and &lt;em&gt;deploy to GitHub.&lt;/em&gt;&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -491,11 +607,11 @@ theme = &amp;quot;hugo-academic&amp;quot;
 &lt;/figure&gt;
 
 
-&lt;p&gt;The first task is to create the config.yml (&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml&#34;&gt;link to mine&lt;/a&gt;) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p&gt;
+&lt;p&gt;The first task is to create the config.yml (&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml&#34; target=&#34;_blank&#34;&gt;link to mine&lt;/a&gt;) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p&gt;
 
 &lt;h4 id=&#34;build&#34;&gt;Build&lt;/h4&gt;
 
-&lt;p&gt;Following the official guide, I used this &lt;a href=&#34;https://github.com/ArjenSchwarz/wercker-step-hugo-build&#34;&gt;step&lt;/a&gt; to trigger Hugo to build HTML pages. However, my first try didn&amp;rsquo;t successfully generate the pages correctly, because the &lt;code&gt;arjen/hugo-build&lt;/code&gt; step couldn&amp;rsquo;t find the &lt;code&gt;hugo-academic&lt;/code&gt; theme. For easier tracking and updating, I forked the &lt;code&gt;hugo-academic&lt;/code&gt; repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the &lt;code&gt;hugo-academic&lt;/code&gt; theme. Kudos to this &lt;a href=&#34;https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;post&lt;/a&gt; which helped me to track this issue down.&lt;/p&gt;
+&lt;p&gt;Following the official guide, I used this &lt;a href=&#34;https://github.com/ArjenSchwarz/wercker-step-hugo-build&#34; target=&#34;_blank&#34;&gt;step&lt;/a&gt; to trigger Hugo to build HTML pages. However, my first try didn&amp;rsquo;t successfully generate the pages correctly, because the &lt;code&gt;arjen/hugo-build&lt;/code&gt; step couldn&amp;rsquo;t find the &lt;code&gt;hugo-academic&lt;/code&gt; theme. For easier tracking and updating, I forked the &lt;code&gt;hugo-academic&lt;/code&gt; repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the &lt;code&gt;hugo-academic&lt;/code&gt; theme. Kudos to this &lt;a href=&#34;https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/&#34; target=&#34;_blank&#34;&gt;post&lt;/a&gt; which helped me to track this issue down.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;box: debian
 
@@ -518,11 +634,11 @@ build:
 
 &lt;h4 id=&#34;deploy&#34;&gt;Deploy&lt;/h4&gt;
 
-&lt;p&gt;There is no more such thing as &amp;laquo;Add deploy target&amp;raquo; in Wercker. The interface has changed to the new &amp;laquo;workflows of pipelines.&amp;raquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.&lt;/p&gt;
+&lt;p&gt;There is no more such thing as &amp;ldquo;Add deploy target&amp;rdquo; in Wercker. The interface has changed to the new &amp;ldquo;workflows of pipelines.&amp;rdquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.&lt;/p&gt;
 
-&lt;p&gt;So I poked around and realized that, even if the second &lt;code&gt;deploy&lt;/code&gt; step is included in the &lt;code&gt;wercker.yml&lt;/code&gt;, one still needs to manually add a new &amp;laquo;pipeline&amp;raquo; under the &amp;laquo;workflow&amp;raquo; tab. Upon creating a new pipeline, the &amp;laquo;YML pipeline name&amp;raquo; must be in the predefined names in the &lt;code&gt;wercker.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So I poked around and realized that, even if the second &lt;code&gt;deploy&lt;/code&gt; step is included in the &lt;code&gt;wercker.yml&lt;/code&gt;, one still needs to manually add a new &amp;ldquo;pipeline&amp;rdquo; under the &amp;ldquo;workflow&amp;rdquo; tab. Upon creating a new pipeline, the &amp;ldquo;YML pipeline name&amp;rdquo; must be in the predefined names in the &lt;code&gt;wercker.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here I used this &lt;a href=&#34;https://github.com/leipert/step-git-push&#34;&gt;step&lt;/a&gt; to deploy the built site to GitHub. Each pipeline starts from scratch, so for the &lt;code&gt;deploy&lt;/code&gt; pipeline, the &lt;code&gt;git&lt;/code&gt; package needs to be installed again. On also has to setup the environment variable &lt;code&gt;$Git_Token&lt;/code&gt;, acquired from Github setting.&lt;/p&gt;
+&lt;p&gt;Here I used this &lt;a href=&#34;https://github.com/leipert/step-git-push&#34; target=&#34;_blank&#34;&gt;step&lt;/a&gt; to deploy the built site to GitHub. Each pipeline starts from scratch, so for the &lt;code&gt;deploy&lt;/code&gt; pipeline, the &lt;code&gt;git&lt;/code&gt; package needs to be installed again. On also has to setup the environment variable &lt;code&gt;$Git_Token&lt;/code&gt;, acquired from Github setting.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;deploy:
     steps:
@@ -579,7 +695,7 @@ build:
 
 &lt;h3 id=&#34;hugo-workflow&#34;&gt;Hugo workflow&lt;/h3&gt;
 
-&lt;p&gt;Let me walk you through the basics of building a Hugo-powered website. For more details, readers are referred to the official Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;quickstart guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let me walk you through the basics of building a Hugo-powered website. For more details, readers are referred to the official Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34; target=&#34;_blank&#34;&gt;quickstart guide&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Install Hugo binary: for OS X (and the future Mac OS) users, it&amp;rsquo;s recommended to do it through homebrew, just like for most open-source software.&lt;/p&gt;
@@ -612,9 +728,9 @@ build:
 
 &lt;li&gt;&lt;p&gt;&lt;code&gt;config.toml&lt;/code&gt; is the key configuration file to let Hugo know how to render the contents.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Pick a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;here&lt;/a&gt; or build your own. To apply a theme, one needs to create a &lt;code&gt;themes&lt;/code&gt; folder under the root, and &lt;code&gt;git clone&lt;/code&gt; or make a new-theme directory under this folder. Then switching themes can be achieved by adding a line in &lt;code&gt;config.toml&lt;/code&gt; file like this &lt;code&gt;theme = &amp;quot;hugo-academic&amp;quot;&lt;/code&gt;, or tell hugo which theme to build with using this command &lt;code&gt;hugo server --theme=hugo_theme_name&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Pick a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; or build your own. To apply a theme, one needs to create a &lt;code&gt;themes&lt;/code&gt; folder under the root, and &lt;code&gt;git clone&lt;/code&gt; or make a new-theme directory under this folder. Then switching themes can be achieved by adding a line in &lt;code&gt;config.toml&lt;/code&gt; file like this &lt;code&gt;theme = &amp;quot;hugo-academic&amp;quot;&lt;/code&gt;, or tell hugo which theme to build with using this command &lt;code&gt;hugo server --theme=hugo_theme_name&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Check the results by running a virtual server, which automatically listens to any changes you make and render HTML in real time. Go to &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt; to see your shiny new site in action.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Check the results by running a virtual server, which automatically listens to any changes you make and render HTML in real time. Go to &lt;a href=&#34;http://localhost:1313/&#34; target=&#34;_blank&#34;&gt;http://localhost:1313/&lt;/a&gt; to see your shiny new site in action.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;hugo server --watch
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -703,7 +819,7 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
 
 &lt;p&gt;&amp;ndash;&lt;/p&gt;
 
-&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34; target=&#34;_blank&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -726,7 +842,7 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
       <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
       
       <guid>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://link.springer.com/article/10.1007/s00382-016-3220-6&#34;&gt;Andrew Hoell, Chris Funk, Jens Zinke, Laura Harrison: Modulation of the Southern Africa precipitation response to the El Niño Southern Oscillation by the subtropical Indian Ocean Dipole&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://link.springer.com/article/10.1007/s00382-016-3220-6&#34; target=&#34;_blank&#34;&gt;Andrew Hoell, Chris Funk, Jens Zinke, Laura Harrison: Modulation of the Southern Africa precipitation response to the El Niño Southern Oscillation by the subtropical Indian Ocean Dipole&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;br /&gt;
 How the phase of the SIOD and therefore the SST anomaly expression of the Indian Ocean, modulates the Southern Africa precipitation response to ENSO?&lt;/p&gt;
@@ -779,7 +895,7 @@ Yu Cheng&lt;/p&gt;
       <pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate>
       
       <guid>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.clim-past.net/9/2631/2013/cp-9-2631-2013.html&#34;&gt;P. Scussolini, E. van Sebille, J.V. Durgadoo: Paleo Agulhas rings enter the subtropical gyre during the penultimate deglaciation&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.clim-past.net/9/2631/2013/cp-9-2631-2013.html&#34; target=&#34;_blank&#34;&gt;P. Scussolini, E. van Sebille, J.V. Durgadoo: Paleo Agulhas rings enter the subtropical gyre during the penultimate deglaciation&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;/p&gt;
 
@@ -831,18 +947,18 @@ Yu Cheng&lt;/p&gt;
 
 &lt;h4 id=&#34;once-upon-a-time&#34;&gt;Once upon a time&amp;hellip;&lt;/h4&gt;
 
-&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;laquo;blog&amp;raquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;laquo;blog&amp;raquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
+&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
 
 &lt;h4 id=&#34;pelican-i-love-this-bird&#34;&gt;Pelican: I love this bird!!&lt;/h4&gt;
 
 &lt;p&gt;I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34;&gt;https://github.com/getpelican&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34; target=&#34;_blank&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34; target=&#34;_blank&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34; target=&#34;_blank&#34;&gt;https://github.com/getpelican&lt;/a&gt;
 &lt;p align=&#34;center&#34;&gt;
-{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
+{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34; target=&#34;_blank&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
 &lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -851,7 +967,7 @@ Yu Cheng&lt;/p&gt;
 &lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34; target=&#34;_blank&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -881,7 +997,7 @@ THEME = &amp;quot;pelican-bootstrap3&amp;quot;  # or whatever themes you like
 git clone https://github.com/getpelican/pelican-plugins.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
+&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34; target=&#34;_blank&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;:::python
 # Plugins
@@ -903,7 +1019,7 @@ PLUGINS = [&#39;liquid_tags.img&#39;, &#39;liquid_tags.video&#39;,
       <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
       
       <guid>https://fischcheng.github.io/2014/06/05/agulhas-group-meeting-note-2014-06-05</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1002/2014GL059473/abstract&#34;&gt;C. D. Roberts, L. Jackson andD. McNeall, 2014: Is the 2004–2012 reduction of the Atlantic meridional overturning circulation significant?&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1002/2014GL059473/abstract&#34; target=&#34;_blank&#34;&gt;C. D. Roberts, L. Jackson andD. McNeall, 2014: Is the 2004–2012 reduction of the Atlantic meridional overturning circulation significant?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;/p&gt;
 

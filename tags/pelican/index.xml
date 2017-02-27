@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Pelican on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/pelican/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Pelican on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Automated deployment of Hugo generated site to Github pages </title>
@@ -17,11 +17,11 @@
       <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</guid>
       <description>
 
-&lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;basic-setting-in-my-config-toml-for-the-academic-theme&#34;&gt;Basic setting in my config.toml for the Academic Theme&lt;/h3&gt;
 
-&lt;p&gt;Many beautifully designed themes are already &lt;a href=&#34;http://themes.gohugo.io&#34;&gt;available&lt;/a&gt;. I decided to use the &lt;a href=&#34;http://themes.gohugo.io/academic/&#34;&gt;academic theme&lt;/a&gt;, because it&amp;rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the &lt;a href=&#34;http://themes.gohugo.io/theme/academic/&#34;&gt;demo website&lt;/a&gt; in action.&lt;/p&gt;
+&lt;p&gt;Many beautifully designed themes are already &lt;a href=&#34;http://themes.gohugo.io&#34; target=&#34;_blank&#34;&gt;available&lt;/a&gt;. I decided to use the &lt;a href=&#34;http://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34;&gt;academic theme&lt;/a&gt;, because it&amp;rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the &lt;a href=&#34;http://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;demo website&lt;/a&gt; in action.&lt;/p&gt;
 
 &lt;p&gt;In &lt;code&gt;config.toml&lt;/code&gt;, one can set the universal variables used by Hugo to generate HTML pages. For example:&lt;/p&gt;
 
@@ -109,7 +109,7 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;h3 id=&#34;github-pages-user-site-or-project-site&#34;&gt;Github pages, user site or project site&lt;/h3&gt;
 
-&lt;p&gt;Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code&gt;master&lt;/code&gt; branch will be displayed under this address &lt;code&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code&gt;gh-pages&lt;/code&gt; branch can be accessed under &lt;code&gt;http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code&gt;. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href=&#34;https://pages.github.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code&gt;master&lt;/code&gt; branch will be displayed under this address &lt;code&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code&gt;gh-pages&lt;/code&gt; branch can be accessed under &lt;code&gt;http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code&gt;. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My website is a user site. Under this repo &lt;code&gt;fischcheng.github.io&lt;/code&gt;, the &lt;code&gt;source&lt;/code&gt; branch archived all changes to the source codes, and &lt;code&gt;master&lt;/code&gt; branch store the Hugo-generated HTML pages.&lt;/p&gt;
 
@@ -117,9 +117,9 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;p&gt;The default way to build a hugo site is simple, invoke &lt;code&gt;hugo&lt;/code&gt; under the site root. A &lt;code&gt;public&lt;/code&gt; folder will be created, containing every HTML pages and copied stylesheets and static files (banner images and profile icons or so). Push this folder to the &lt;code&gt;master&lt;/code&gt; branch, and voila, the site is online.&lt;/p&gt;
 
-&lt;p&gt;What if a single &lt;code&gt;push&lt;/code&gt; to the &lt;code&gt;source&lt;/code&gt; branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&amp;rsquo;s official &lt;a href=&#34;https://gohugo.io/tutorials/automated-deployments/&#34;&gt;site&lt;/a&gt;. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.&lt;/p&gt;
+&lt;p&gt;What if a single &lt;code&gt;push&lt;/code&gt; to the &lt;code&gt;source&lt;/code&gt; branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&amp;rsquo;s official &lt;a href=&#34;https://gohugo.io/tutorials/automated-deployments/&#34; target=&#34;_blank&#34;&gt;site&lt;/a&gt;. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt; is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on &lt;a href=&#34;docker&#34;&gt;Docker&lt;/a&gt;. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented &lt;em&gt;steps&lt;/em&gt;. In our case, the application consists of two steps &lt;em&gt;build hugo&lt;/em&gt; and &lt;em&gt;deploy to GitHub.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://wercker.com&#34; target=&#34;_blank&#34;&gt;Wercker&lt;/a&gt; is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on &lt;a href=&#34;docker&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt;. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented &lt;em&gt;steps&lt;/em&gt;. In our case, the application consists of two steps &lt;em&gt;build hugo&lt;/em&gt; and &lt;em&gt;deploy to GitHub.&lt;/em&gt;&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -135,11 +135,11 @@ theme = &amp;quot;hugo-academic&amp;quot;
 &lt;/figure&gt;
 
 
-&lt;p&gt;The first task is to create the config.yml (&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml&#34;&gt;link to mine&lt;/a&gt;) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p&gt;
+&lt;p&gt;The first task is to create the config.yml (&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml&#34; target=&#34;_blank&#34;&gt;link to mine&lt;/a&gt;) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p&gt;
 
 &lt;h4 id=&#34;build&#34;&gt;Build&lt;/h4&gt;
 
-&lt;p&gt;Following the official guide, I used this &lt;a href=&#34;https://github.com/ArjenSchwarz/wercker-step-hugo-build&#34;&gt;step&lt;/a&gt; to trigger Hugo to build HTML pages. However, my first try didn&amp;rsquo;t successfully generate the pages correctly, because the &lt;code&gt;arjen/hugo-build&lt;/code&gt; step couldn&amp;rsquo;t find the &lt;code&gt;hugo-academic&lt;/code&gt; theme. For easier tracking and updating, I forked the &lt;code&gt;hugo-academic&lt;/code&gt; repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the &lt;code&gt;hugo-academic&lt;/code&gt; theme. Kudos to this &lt;a href=&#34;https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;post&lt;/a&gt; which helped me to track this issue down.&lt;/p&gt;
+&lt;p&gt;Following the official guide, I used this &lt;a href=&#34;https://github.com/ArjenSchwarz/wercker-step-hugo-build&#34; target=&#34;_blank&#34;&gt;step&lt;/a&gt; to trigger Hugo to build HTML pages. However, my first try didn&amp;rsquo;t successfully generate the pages correctly, because the &lt;code&gt;arjen/hugo-build&lt;/code&gt; step couldn&amp;rsquo;t find the &lt;code&gt;hugo-academic&lt;/code&gt; theme. For easier tracking and updating, I forked the &lt;code&gt;hugo-academic&lt;/code&gt; repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the &lt;code&gt;hugo-academic&lt;/code&gt; theme. Kudos to this &lt;a href=&#34;https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/&#34; target=&#34;_blank&#34;&gt;post&lt;/a&gt; which helped me to track this issue down.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;box: debian
 
@@ -162,11 +162,11 @@ build:
 
 &lt;h4 id=&#34;deploy&#34;&gt;Deploy&lt;/h4&gt;
 
-&lt;p&gt;There is no more such thing as &amp;laquo;Add deploy target&amp;raquo; in Wercker. The interface has changed to the new &amp;laquo;workflows of pipelines.&amp;raquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.&lt;/p&gt;
+&lt;p&gt;There is no more such thing as &amp;ldquo;Add deploy target&amp;rdquo; in Wercker. The interface has changed to the new &amp;ldquo;workflows of pipelines.&amp;rdquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.&lt;/p&gt;
 
-&lt;p&gt;So I poked around and realized that, even if the second &lt;code&gt;deploy&lt;/code&gt; step is included in the &lt;code&gt;wercker.yml&lt;/code&gt;, one still needs to manually add a new &amp;laquo;pipeline&amp;raquo; under the &amp;laquo;workflow&amp;raquo; tab. Upon creating a new pipeline, the &amp;laquo;YML pipeline name&amp;raquo; must be in the predefined names in the &lt;code&gt;wercker.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So I poked around and realized that, even if the second &lt;code&gt;deploy&lt;/code&gt; step is included in the &lt;code&gt;wercker.yml&lt;/code&gt;, one still needs to manually add a new &amp;ldquo;pipeline&amp;rdquo; under the &amp;ldquo;workflow&amp;rdquo; tab. Upon creating a new pipeline, the &amp;ldquo;YML pipeline name&amp;rdquo; must be in the predefined names in the &lt;code&gt;wercker.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here I used this &lt;a href=&#34;https://github.com/leipert/step-git-push&#34;&gt;step&lt;/a&gt; to deploy the built site to GitHub. Each pipeline starts from scratch, so for the &lt;code&gt;deploy&lt;/code&gt; pipeline, the &lt;code&gt;git&lt;/code&gt; package needs to be installed again. On also has to setup the environment variable &lt;code&gt;$Git_Token&lt;/code&gt;, acquired from Github setting.&lt;/p&gt;
+&lt;p&gt;Here I used this &lt;a href=&#34;https://github.com/leipert/step-git-push&#34; target=&#34;_blank&#34;&gt;step&lt;/a&gt; to deploy the built site to GitHub. Each pipeline starts from scratch, so for the &lt;code&gt;deploy&lt;/code&gt; pipeline, the &lt;code&gt;git&lt;/code&gt; package needs to be installed again. On also has to setup the environment variable &lt;code&gt;$Git_Token&lt;/code&gt;, acquired from Github setting.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;deploy:
     steps:
@@ -223,7 +223,7 @@ build:
 
 &lt;h3 id=&#34;hugo-workflow&#34;&gt;Hugo workflow&lt;/h3&gt;
 
-&lt;p&gt;Let me walk you through the basics of building a Hugo-powered website. For more details, readers are referred to the official Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;quickstart guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let me walk you through the basics of building a Hugo-powered website. For more details, readers are referred to the official Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34; target=&#34;_blank&#34;&gt;quickstart guide&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Install Hugo binary: for OS X (and the future Mac OS) users, it&amp;rsquo;s recommended to do it through homebrew, just like for most open-source software.&lt;/p&gt;
@@ -256,9 +256,9 @@ build:
 
 &lt;li&gt;&lt;p&gt;&lt;code&gt;config.toml&lt;/code&gt; is the key configuration file to let Hugo know how to render the contents.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Pick a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;here&lt;/a&gt; or build your own. To apply a theme, one needs to create a &lt;code&gt;themes&lt;/code&gt; folder under the root, and &lt;code&gt;git clone&lt;/code&gt; or make a new-theme directory under this folder. Then switching themes can be achieved by adding a line in &lt;code&gt;config.toml&lt;/code&gt; file like this &lt;code&gt;theme = &amp;quot;hugo-academic&amp;quot;&lt;/code&gt;, or tell hugo which theme to build with using this command &lt;code&gt;hugo server --theme=hugo_theme_name&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Pick a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; or build your own. To apply a theme, one needs to create a &lt;code&gt;themes&lt;/code&gt; folder under the root, and &lt;code&gt;git clone&lt;/code&gt; or make a new-theme directory under this folder. Then switching themes can be achieved by adding a line in &lt;code&gt;config.toml&lt;/code&gt; file like this &lt;code&gt;theme = &amp;quot;hugo-academic&amp;quot;&lt;/code&gt;, or tell hugo which theme to build with using this command &lt;code&gt;hugo server --theme=hugo_theme_name&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Check the results by running a virtual server, which automatically listens to any changes you make and render HTML in real time. Go to &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt; to see your shiny new site in action.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Check the results by running a virtual server, which automatically listens to any changes you make and render HTML in real time. Go to &lt;a href=&#34;http://localhost:1313/&#34; target=&#34;_blank&#34;&gt;http://localhost:1313/&lt;/a&gt; to see your shiny new site in action.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;hugo server --watch
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -302,18 +302,18 @@ build:
 
 &lt;h4 id=&#34;once-upon-a-time&#34;&gt;Once upon a time&amp;hellip;&lt;/h4&gt;
 
-&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;laquo;blog&amp;raquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;laquo;blog&amp;raquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
+&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
 
 &lt;h4 id=&#34;pelican-i-love-this-bird&#34;&gt;Pelican: I love this bird!!&lt;/h4&gt;
 
 &lt;p&gt;I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34;&gt;https://github.com/getpelican&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34; target=&#34;_blank&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34; target=&#34;_blank&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34; target=&#34;_blank&#34;&gt;https://github.com/getpelican&lt;/a&gt;
 &lt;p align=&#34;center&#34;&gt;
-{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
+{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34; target=&#34;_blank&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
 &lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -322,7 +322,7 @@ build:
 &lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34; target=&#34;_blank&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -352,7 +352,7 @@ THEME = &amp;quot;pelican-bootstrap3&amp;quot;  # or whatever themes you like
 git clone https://github.com/getpelican/pelican-plugins.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
+&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34; target=&#34;_blank&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;:::python
 # Plugins

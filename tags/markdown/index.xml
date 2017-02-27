@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Markdown on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/markdown/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Markdown on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Building a statistic blog with Pelican</title>
@@ -19,18 +19,18 @@
 
 &lt;h4 id=&#34;once-upon-a-time&#34;&gt;Once upon a time&amp;hellip;&lt;/h4&gt;
 
-&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;laquo;blog&amp;raquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;laquo;blog&amp;raquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
+&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
 
 &lt;h4 id=&#34;pelican-i-love-this-bird&#34;&gt;Pelican: I love this bird!!&lt;/h4&gt;
 
 &lt;p&gt;I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34;&gt;https://github.com/getpelican&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34; target=&#34;_blank&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34; target=&#34;_blank&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34; target=&#34;_blank&#34;&gt;https://github.com/getpelican&lt;/a&gt;
 &lt;p align=&#34;center&#34;&gt;
-{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
+{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34; target=&#34;_blank&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
 &lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -39,7 +39,7 @@
 &lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34; target=&#34;_blank&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -69,7 +69,7 @@ THEME = &amp;quot;pelican-bootstrap3&amp;quot;  # or whatever themes you like
 git clone https://github.com/getpelican/pelican-plugins.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
+&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34; target=&#34;_blank&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;:::python
 # Plugins

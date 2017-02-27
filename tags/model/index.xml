@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yu Cheng</title>
+    <title>Model on Yu Cheng</title>
     <link>https://fischcheng.github.io/tags/model/index.xml</link>
-    <description>Recent content on Yu Cheng</description>
+    <description>Recent content in Model on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="https://fischcheng.github.io/tags/model/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/model/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Workflow for a CCSM4 run</title>
@@ -78,7 +78,7 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
 
 &lt;p&gt;&amp;ndash;&lt;/p&gt;
 
-&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34; target=&#34;_blank&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
