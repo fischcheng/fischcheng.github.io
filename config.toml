@@ -3,6 +3,7 @@ title = "Yu Cheng"
 copyright = "&copy; 2016 Yu Cheng"
 #languageCode = "en-us"
 theme = "hugo-academic"
+#theme = "Academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
@@ -161,7 +162,6 @@ fractions = false
   name = "Contact"
   url = "#contact"
   weight = 7
-
 
 
 [taxonomies]

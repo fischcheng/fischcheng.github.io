@@ -13,7 +13,8 @@ widget = "posts"
 weight = 3
 
 # Show posts that contain the following tags. Default to any tags.
-tags = []
+tags_include = []
+tags_exclude = []
 
 # Number of posts to list.
 count = 5
