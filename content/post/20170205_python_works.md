@@ -29,7 +29,7 @@ Like I said, Ipython Notebooks are easily shareable, in particular through the n
 * [Plotting routine for Meteor 100/2](http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb)
 * [Along-track wind-observation and animation](http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb)
 * [Linear Inverse Modeling data validation, predictability study](http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1)
-* [Reduced Gravity model showing equatorial waves](http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p3.ipynb)
+* [Reduced Gravity model showing equatorial waves](https://github.com/fischcheng/fischcheng.github.io/blob/source/static/notebook/p3.ipynb)
 
 <center>
 {{< youtube2 src="jx_bGld1eLM" width="80%">}}
