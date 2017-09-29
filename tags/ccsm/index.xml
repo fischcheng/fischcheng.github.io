@@ -2,12 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ccsm on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/ccsm/index.xml</link>
+    <link>https://fischcheng.github.io/tags/ccsm/</link>
     <description>Recent content in Ccsm on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="/tags/ccsm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/ccsm/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
@@ -115,10 +116,10 @@
     
     <item>
       <title>Quantifying Agulhas leakage in a high-resolution coupled climate model</title>
-      <link>https://fischcheng.github.io/project/quantifying_AL/</link>
+      <link>https://fischcheng.github.io/project/quantifying_al/</link>
       <pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/project/quantifying_AL/</guid>
+      <guid>https://fischcheng.github.io/project/quantifying_al/</guid>
       <description>
 
 &lt;h4 id=&#34;motivation&#34;&gt;Motivation&lt;/h4&gt;

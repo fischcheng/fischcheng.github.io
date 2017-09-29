@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yu Cheng on Yu Cheng</title>
-    <link>https://fischcheng.github.io/index.xml</link>
+    <link>https://fischcheng.github.io/</link>
     <description>Recent content in Yu Cheng on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Seminar</title>
-      <link>https://fischcheng.github.io/talk/UW_seminar/</link>
+      <link>https://fischcheng.github.io/talk/uw_seminar/</link>
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/talk/UW_seminar/</guid>
+      <guid>https://fischcheng.github.io/talk/uw_seminar/</guid>
       <description></description>
     </item>
     
@@ -30,10 +30,10 @@
     
     <item>
       <title>Updated Hugo Academic theme to sync the upstream repo</title>
-      <link>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo</link>
+      <link>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</link>
       <pubDate>Mon, 27 Feb 2017 00:28:36 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo</guid>
+      <guid>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</guid>
       <description>
 
 &lt;p&gt;I just updated the Hugo-Academic theme from the upstream repo. The structure has been greatly changed. Now each section on the &lt;code&gt;index.html&lt;/code&gt; is a widget. Changing Research Interests and Education is no longer inside the &lt;code&gt;config.toml&lt;/code&gt;, but the &lt;code&gt;about.md&lt;/code&gt; as metadata. I also added a Talk widget, and the Project widget now showcase my research in cards.&lt;/p&gt;
@@ -50,7 +50,7 @@
 😪
 🎾
 👍
-🀄
+🀄️
 Tomorrow is Vicky&amp;rsquo;s defense! 📅&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -104,7 +104,7 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
 
 &lt;h2 id=&#34;twitter-tweet&#34;&gt;Twitter Tweet&lt;/h2&gt;
 
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Running wild with &lt;a href=&#34;https://twitter.com/BearGrylls&#34;&gt;@BearGrylls&lt;/a&gt; &lt;a href=&#34;https://t.co/RG3pRquOuu&#34;&gt;pic.twitter.com/RG3pRquOuu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Roger Federer (@rogerfederer) &lt;a href=&#34;https://twitter.com/rogerfederer/status/833394043585376256&#34;&gt;February 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Running wild with &lt;a href=&#34;https://twitter.com/BearGrylls?ref_src=twsrc%5Etfw&#34;&gt;@BearGrylls&lt;/a&gt; &lt;a href=&#34;https://t.co/RG3pRquOuu&#34;&gt;pic.twitter.com/RG3pRquOuu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Roger Federer (@rogerfederer) &lt;a href=&#34;https://twitter.com/rogerfederer/status/833394043585376256?ref_src=twsrc%5Etfw&#34;&gt;February 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
 &lt;hr /&gt;
@@ -113,7 +113,7 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/GTqicHqhb1A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/GTqicHqhb1A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
 
@@ -146,10 +146,10 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
     
     <item>
       <title>Using git-latexdiff to track changes in tex-file graphically</title>
-      <link>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically</link>
+      <link>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</link>
       <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically</guid>
+      <guid>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s been a while since I started using &lt;code&gt;git&lt;/code&gt;. The version control system helps to track changes in computer files and coordinating work on those files among multiple people. Composing a manuscript is nothing unlike developing a program. If multiple authors work on the same manuscript, &lt;code&gt;git&lt;/code&gt; can be very helpful to avoid conflicts. If you are the only author, &lt;code&gt;git&lt;/code&gt; can help you to document what has been changed since the last commit or put your advisor&amp;rsquo;s comment in another branch.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -188,10 +188,10 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
     
     <item>
       <title>Fill in the missing data using Python pandas</title>
-      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</link>
+      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
       <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</guid>
+      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
       <description>&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -252,10 +252,10 @@ OHC_multilevels.interpolate().plot()
     
     <item>
       <title>Gibbs SeaWater Oceanographic Package for Python</title>
-      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</link>
+      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</guid>
+      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34; target=&#34;_blank&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
@@ -287,10 +287,10 @@ OHC_multilevels.interpolate().plot()
     
     <item>
       <title>iPython notebook gallery</title>
-      <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</link>
+      <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</guid>
+      <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</guid>
       <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -348,10 +348,10 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
     
     <item>
       <title>How to read the NWS hurricane warning</title>
-      <link>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning</link>
+      <link>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning/</link>
       <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning</guid>
+      <guid>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning/</guid>
       <description>&lt;p&gt;The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -501,10 +501,10 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
     
     <item>
       <title>Automated deployment of Hugo generated site to Github pages </title>
-      <link>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</link>
+      <link>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</link>
       <pubDate>Wed, 14 Sep 2016 20:54:16 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</guid>
+      <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</guid>
       <description>
 
 &lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -689,10 +689,10 @@ build:
     
     <item>
       <title>Switch from Pelican to Hugo</title>
-      <link>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo</link>
+      <link>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</link>
       <pubDate>Wed, 14 Sep 2016 01:16:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo</guid>
+      <guid>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</guid>
       <description>
 
 &lt;p&gt;Being a big fan of all things Python, I built the last two incarnations of this site with Pelican. I even went to the length to set up a Travis CI to automatically build and deploy to GitHub pages. That was the beginning of the summer and only two new posts ever since.&lt;/p&gt;
@@ -874,10 +874,10 @@ build:
     
     <item>
       <title>Workflow for a CCSM4 run</title>
-      <link>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</link>
+      <link>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</link>
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</guid>
+      <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</guid>
       <description>&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
 
 &lt;ol&gt;
@@ -946,10 +946,10 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
     
     <item>
       <title>Renovate this place and new resolutions!</title>
-      <link>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions</link>
+      <link>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</link>
       <pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions</guid>
+      <guid>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve just spent the long weekend updating my nearly-abandoned website. This year, I have passed my qualifying exam (February), and the paper I&amp;rsquo;ve been working on for almost an year is now finally accepted.&lt;/p&gt;
 
 &lt;p&gt;The website has been changed to a GitHub user-page, instead of a project-page. Also, now the website is automatically generated by Travis-CI, a very popular service recently, testing and deploying the codes to ensure portability. All the changes and new posts are made on my laptop. Html pages are built by Pelican/Python3, on the /source branch. A push to the remote host will trigger Travis-CI. With a little help from ghp-import, the Travis-CI-generated pages will be force-pushed to the /master branch. Voila, that is the website now you are looking at.&lt;/p&gt;
@@ -960,10 +960,10 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
     
     <item>
       <title>Agulhas Group meeting notes 2016-06-29</title>
-      <link>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</link>
+      <link>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29/</link>
       <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</guid>
+      <guid>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://link.springer.com/article/10.1007/s00382-016-3220-6&#34; target=&#34;_blank&#34;&gt;Andrew Hoell, Chris Funk, Jens Zinke, Laura Harrison: Modulation of the Southern Africa precipitation response to the El Niño Southern Oscillation by the subtropical Indian Ocean Dipole&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What scientific questions are the authors addressing?&lt;/strong&gt;&lt;br /&gt;

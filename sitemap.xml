@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
     
     <url>
-      <loc>https://fischcheng.github.io/talk/UW_seminar/</loc>
+    
+      <loc>https://fischcheng.github.io/talk/uw_seminar/</loc>
       <lastmod>2017-04-19T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,6 +13,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/talk/seminar_1hr/</loc>
       <lastmod>2017-04-05T00:00:00+00:00</lastmod>
     </url>
@@ -20,7 +22,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo</loc>
+    
+      <loc>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</loc>
       <lastmod>2017-02-27T00:28:36-05:00</lastmod>
     </url>
     
@@ -28,7 +31,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically</loc>
+    
+      <loc>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</loc>
       <lastmod>2017-02-25T20:13:52-05:00</lastmod>
     </url>
     
@@ -36,7 +40,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</loc>
+    
+      <loc>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</loc>
       <lastmod>2017-02-13T00:42:30-05:00</lastmod>
     </url>
     
@@ -44,7 +49,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</loc>
+    
+      <loc>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
     </url>
     
@@ -52,7 +58,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery</loc>
+    
+      <loc>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
     </url>
     
@@ -60,6 +67,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -68,6 +76,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -76,6 +85,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -84,7 +94,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning</loc>
+    
+      <loc>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning/</loc>
       <lastmod>2016-10-06T00:42:30-05:00</lastmod>
     </url>
     
@@ -92,7 +103,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</loc>
+    
+      <loc>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</loc>
       <lastmod>2016-09-14T20:54:16-05:00</lastmod>
     </url>
     
@@ -100,7 +112,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo</loc>
+    
+      <loc>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</loc>
       <lastmod>2016-09-14T01:16:30-05:00</lastmod>
     </url>
     
@@ -108,6 +121,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/project/largescale_forcing/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
     </url>
@@ -116,7 +130,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</loc>
+    
+      <loc>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</loc>
       <lastmod>2016-07-28T17:06:00+00:00</lastmod>
     </url>
     
@@ -124,7 +139,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions</loc>
+    
+      <loc>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</loc>
       <lastmod>2016-07-05T16:06:00+00:00</lastmod>
     </url>
     
@@ -132,7 +148,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29</loc>
+    
+      <loc>https://fischcheng.github.io/2016/07/04/agulhas-group-meeting-notes-2016-06-29/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
     </url>
     
@@ -140,6 +157,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/publication/quantifying-agulhas-leakage/</loc>
       <lastmod>2016-06-28T00:00:00+00:00</lastmod>
     </url>
@@ -148,6 +166,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/publication/osm2016-poster/</loc>
       <lastmod>2016-02-21T00:00:00+00:00</lastmod>
     </url>
@@ -156,7 +175,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2015/09/29/recently</loc>
+    
+      <loc>https://fischcheng.github.io/2015/09/29/recently/</loc>
       <lastmod>2015-09-29T11:47:00+00:00</lastmod>
     </url>
     
@@ -164,6 +184,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/talk/lom_london/</loc>
       <lastmod>2015-09-24T00:00:00+00:00</lastmod>
     </url>
@@ -172,6 +193,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/publication/iugg2015_slides/</loc>
       <lastmod>2015-06-28T00:00:00+00:00</lastmod>
     </url>
@@ -180,6 +202,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/talk/iugg_prague/</loc>
       <lastmod>2015-06-28T00:00:00+00:00</lastmod>
     </url>
@@ -188,6 +211,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/publication/spice-anomaly/</loc>
       <lastmod>2015-06-11T00:00:00+00:00</lastmod>
     </url>
@@ -196,7 +220,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/project/quantifying_AL/</loc>
+    
+      <loc>https://fischcheng.github.io/project/quantifying_al/</loc>
       <lastmod>2014-07-30T00:00:00+00:00</lastmod>
     </url>
     
@@ -204,7 +229,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10</loc>
+    
+      <loc>https://fischcheng.github.io/2014/07/17/agulhas-group-meeting-notes-2014-07-10/</loc>
       <lastmod>2014-07-17T16:50:00+00:00</lastmod>
     </url>
     
@@ -212,7 +238,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican</loc>
+    
+      <loc>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican/</loc>
       <lastmod>2014-06-10T12:05:00+00:00</lastmod>
     </url>
     
@@ -220,7 +247,8 @@
     
     
     <url>
-      <loc>https://fischcheng.github.io/2014/06/05/agulhas-group-meeting-note-2014-06-05</loc>
+    
+      <loc>https://fischcheng.github.io/2014/06/05/agulhas-group-meeting-note-2014-06-05/</loc>
       <lastmod>2014-06-05T16:07:00+00:00</lastmod>
     </url>
     
@@ -228,6 +256,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/agulhas-leakage/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -237,6 +266,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/amoc/</loc>
       <lastmod>2014-06-05T16:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -246,6 +276,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/blog/</loc>
       <lastmod>2016-09-14T20:54:16-05:00</lastmod>
       <priority>0</priority>
@@ -255,6 +286,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/bootstrap/</loc>
       <lastmod>2014-06-10T12:05:00+00:00</lastmod>
       <priority>0</priority>
@@ -264,6 +296,16 @@
     
     
     <url>
+    
+      <loc>https://fischcheng.github.io/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://fischcheng.github.io/tags/ccsm/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -273,6 +315,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/ccsm4/</loc>
       <lastmod>2016-07-28T17:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -282,6 +325,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/cesm/</loc>
       <lastmod>2016-07-28T17:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -291,6 +335,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/climate-models/</loc>
       <lastmod>2014-06-05T16:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -300,6 +345,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/climate-variability/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -309,6 +355,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/cmip5/</loc>
       <lastmod>2014-06-05T16:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -318,6 +365,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/enso/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -327,6 +375,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/evacuation/</loc>
       <lastmod>2016-10-06T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -336,6 +385,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/galley/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -345,6 +395,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/git/</loc>
       <lastmod>2017-02-25T20:13:52-05:00</lastmod>
       <priority>0</priority>
@@ -354,6 +405,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/github/</loc>
       <lastmod>2016-07-05T16:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -363,6 +415,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/gsw/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -371,10 +424,8 @@
   
     
     
-  
-    
-    
     <url>
+    
       <loc>https://fischcheng.github.io/tags/hugo/</loc>
       <lastmod>2016-09-14T20:54:16-05:00</lastmod>
       <priority>0</priority>
@@ -384,6 +435,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/hurricane/</loc>
       <lastmod>2016-10-06T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -393,6 +445,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/latex/</loc>
       <lastmod>2017-02-25T20:13:52-05:00</lastmod>
       <priority>0</priority>
@@ -402,6 +455,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/markdown/</loc>
       <lastmod>2014-06-10T12:05:00+00:00</lastmod>
       <priority>0</priority>
@@ -411,6 +465,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/mocha/</loc>
       <lastmod>2014-06-05T16:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -420,6 +475,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/model/</loc>
       <lastmod>2016-07-28T17:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -429,6 +485,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/ncl/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -438,6 +495,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/nws/</loc>
       <lastmod>2016-10-06T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -447,6 +505,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/paleoclimate/</loc>
       <lastmod>2014-07-17T16:50:00+00:00</lastmod>
       <priority>0</priority>
@@ -456,6 +515,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/pandas/</loc>
       <lastmod>2017-02-13T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -465,6 +525,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/pelican/</loc>
       <lastmod>2016-09-14T20:54:16-05:00</lastmod>
       <priority>0</priority>
@@ -474,6 +535,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/pop2/</loc>
       <lastmod>2016-07-28T17:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -483,6 +545,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/post/</loc>
       <lastmod>2017-02-27T00:28:36-05:00</lastmod>
     </url>
@@ -491,6 +554,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/precipitation/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -500,6 +564,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/project/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -509,6 +574,16 @@
     
     
     <url>
+    
+      <loc>https://fischcheng.github.io/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://fischcheng.github.io/tags/python/</loc>
       <lastmod>2017-02-13T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -518,6 +593,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/rant/</loc>
       <lastmod>2015-09-29T11:47:00+00:00</lastmod>
       <priority>0</priority>
@@ -527,6 +603,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/scripts/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -536,6 +613,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/seawater/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -545,6 +623,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/sediments/</loc>
       <lastmod>2014-07-17T16:50:00+00:00</lastmod>
       <priority>0</priority>
@@ -554,6 +633,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/siod/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -563,6 +643,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/southern-africa/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -572,7 +653,9 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -580,6 +663,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/thesis/</loc>
       <lastmod>2017-02-25T20:13:52-05:00</lastmod>
       <priority>0</priority>
@@ -589,6 +673,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/timeseries/</loc>
       <lastmod>2017-02-13T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -598,6 +683,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/travis-ci/</loc>
       <lastmod>2016-07-05T16:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -607,6 +693,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/trend/</loc>
       <lastmod>2014-06-05T16:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -616,6 +703,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/trick/</loc>
       <lastmod>2017-02-25T20:13:52-05:00</lastmod>
       <priority>0</priority>
@@ -625,6 +713,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/warning/</loc>
       <lastmod>2016-10-06T00:42:30-05:00</lastmod>
       <priority>0</priority>
@@ -634,6 +723,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/westerlies/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -643,6 +733,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/tags/wind-forcing/</loc>
       <lastmod>2016-07-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -652,6 +743,7 @@
     
     
     <url>
+    
       <loc>https://fischcheng.github.io/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>

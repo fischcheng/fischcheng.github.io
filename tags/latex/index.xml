@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Latex on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/latex/index.xml</link>
+    <link>https://fischcheng.github.io/tags/latex/</link>
     <description>Recent content in Latex on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Feb 2017 20:13:52 -0500</lastBuildDate>
+    <atom:link href="/tags/latex/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using git-latexdiff to track changes in tex-file graphically</title>
-      <link>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically</link>
+      <link>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</link>
       <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically</guid>
+      <guid>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s been a while since I started using &lt;code&gt;git&lt;/code&gt;. The version control system helps to track changes in computer files and coordinating work on those files among multiple people. Composing a manuscript is nothing unlike developing a program. If multiple authors work on the same manuscript, &lt;code&gt;git&lt;/code&gt; can be very helpful to avoid conflicts. If you are the only author, &lt;code&gt;git&lt;/code&gt; can help you to document what has been changed since the last commit or put your advisor&amp;rsquo;s comment in another branch.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;

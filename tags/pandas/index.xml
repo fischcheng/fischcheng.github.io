@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pandas on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/pandas/index.xml</link>
+    <link>https://fischcheng.github.io/tags/pandas/</link>
     <description>Recent content in Pandas on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2017 00:42:30 -0500</lastBuildDate>
+    <atom:link href="/tags/pandas/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fill in the missing data using Python pandas</title>
-      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</link>
+      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
       <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas</guid>
+      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
       <description>&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;

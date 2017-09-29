@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/blog/index.xml</link>
+    <link>https://fischcheng.github.io/tags/blog/</link>
     <description>Recent content in Blog on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Sep 2016 20:54:16 -0500</lastBuildDate>
+    <atom:link href="/tags/blog/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Automated deployment of Hugo generated site to Github pages </title>
-      <link>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</link>
+      <link>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</link>
       <pubDate>Wed, 14 Sep 2016 20:54:16 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages</guid>
+      <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</guid>
       <description>
 
 &lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -199,10 +200,10 @@ build:
     
     <item>
       <title>Switch from Pelican to Hugo</title>
-      <link>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo</link>
+      <link>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</link>
       <pubDate>Wed, 14 Sep 2016 01:16:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo</guid>
+      <guid>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</guid>
       <description>
 
 &lt;p&gt;Being a big fan of all things Python, I built the last two incarnations of this site with Pelican. I even went to the length to set up a Travis CI to automatically build and deploy to GitHub pages. That was the beginning of the summer and only two new posts ever since.&lt;/p&gt;

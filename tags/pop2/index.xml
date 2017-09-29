@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pop2 on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/pop2/index.xml</link>
+    <link>https://fischcheng.github.io/tags/pop2/</link>
     <description>Recent content in Pop2 on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="/tags/pop2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jul 2016 17:06:00 +0000</lastBuildDate>
+    <atom:link href="/tags/pop2/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Workflow for a CCSM4 run</title>
-      <link>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</link>
+      <link>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</link>
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run</guid>
+      <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</guid>
       <description>&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
 
 &lt;ol&gt;

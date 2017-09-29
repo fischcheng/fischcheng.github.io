@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gsw on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/gsw/index.xml</link>
+    <link>https://fischcheng.github.io/tags/gsw/</link>
     <description>Recent content in Gsw on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <atom:link href="/tags/gsw/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Feb 2017 00:42:30 -0500</lastBuildDate>
+    <atom:link href="/tags/gsw/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Gibbs SeaWater Oceanographic Package for Python</title>
-      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</link>
+      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python</guid>
+      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34; target=&#34;_blank&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
