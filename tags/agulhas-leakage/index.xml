@@ -7,8 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Yu Cheng</copyright>
-    <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 11:00:40 -0700</lastBuildDate>
     <atom:link href="/tags/agulhas-leakage/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Climate changes in the high-resolution 20th century simulation</title>
+      <link>https://fischcheng.github.io/project/change-hrc/</link>
+      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
+      
+      <guid>https://fischcheng.github.io/project/change-hrc/</guid>
+      <description>
+
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+
+&lt;p&gt;Previous studies suggest that leakage has increased since the late 1960s [Biastoch et al., 2009, Biastoch et al., 2015, Loveday et al., 2015], consistent with the observed changes in westerlies [Marshall 2003, Swart and Fyfe 2012]. We began to wonder if such changes exist in our climate change simulation HRC07. After all, none of the above-listed works were done with an ocean-eddy resolving coupled model like our in-house CCSM3.5.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://fischcheng.github.io/img/Global_annual_mean_SST_HRC07.png&#34; alt=&#34;SST_HRC07&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;However, the early attempts revealed that the climate change simulation HRC07 suffered a lot from the spin-up process, specifically the global mean SST. The 10yr idle run before 1940 seems not enough. SST dives first before rising again and peaks around 1960. Therefore, instead of focusing on the linear trends of climate change run, we would like to use the two control runs to remove the common model drift between cases to isolate the real &amp;ldquo;warming signal&amp;rdquo; in the climate change simulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://fischcheng.github.io/img/Dedrifted_annual_mean_SST.png&#34; alt=&#34;SST_dedrifted&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;method&#34;&gt;Method&lt;/h3&gt;
+
+&lt;p&gt;Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. Three different runs are employed in this study: a 20th-century climate change simulation with observed CO&lt;sub&gt;2&lt;/sub&gt; forcing (HRC07), and two present-day control simulation with year-2000 CO&lt;sub&gt;2&lt;/sub&gt;  forcing. All of them are initialized from the same spun-up year 2000 initial conditions, although at lower-resolution. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p&gt;
+
+&lt;p&gt;To remove the model drift in the HRC07, we take two approaches: (1) subtract HRC07 from the cubic spline fit of HRC08/09 and (2) takes the difference of (HRC08+HRC09)/2 -HRC07 at every timestep for many variables. It is expected that the difference might increase in first few years because the effect of high CO&lt;sub&gt;2&lt;/sub&gt;  in the year 2000 is still lingering in HRC07. Global mean SST shown above is a good example. However, note that the equilibrium timescale differs from variable to variable. To rule out the initial-shock, we do not feel comfortable just rule out the first three decades.&lt;/p&gt;
+
+&lt;p&gt;So, instead of focusing on the linear trend based on regression of a prescribed period (which is usually very subjective), in this study, we will focus on the the changes between first 20 and last 20 years of the available record 1948-2007. First, we will focus on the differences in Agulhas leakage and westerlies, and try to compare such to the low-res CMIP5 historical CCSM run. Then we will progress to identify the changes in ocean circulation associated with the increasing AL in HRC07.&lt;/p&gt;
+
+&lt;p&gt;(developing)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
