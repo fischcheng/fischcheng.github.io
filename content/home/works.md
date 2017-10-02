@@ -49,5 +49,6 @@ Seminar Talks:
 ---
 Extracurricular:
 
+* NASA Summer School on Satellite Observations and Climate Models, JPL/Caltech, 2017
 * METEOR 100/2 cruise from Namibia to Mauritius, 2013
 * Community Earth System Model Tutorial, NCAR, Boulder, CO, 2013
