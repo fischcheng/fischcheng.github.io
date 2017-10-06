@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.30-DEV" />
+  <meta name="author" content="Yu Cheng 鄭嵎">
+  <meta name="description" content="PhD candidate">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css">
+    
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/green.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-92668349-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="https://fischcheng.github.io/index.xml" type="application/rss+xml" title="Yu Cheng">
+  <link rel="feed" href="https://fischcheng.github.io/index.xml" type="application/rss+xml" title="Yu Cheng">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://fischcheng.github.io/2017/10/05/remove-model-drift-using-control-run-simulations/">
+
+  
+
+  <title>Remove model drift using control run simulations | Yu Cheng</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Yu Cheng</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#works">
+            
+            <span>Works</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Remove model drift using control run simulations</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2017-10-05 00:16:43 -0400 -0400" itemprop="datePublished">
+      Thu, Oct 5, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/note">note</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/python">python</a
+    >, 
+    
+    <a href="/tags/polynomial">polynomial</a
+    >, 
+    
+    <a href="/tags/model-drift">Model drift</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Remove%20model%20drift%20using%20control%20run%20simulations&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f10%2f05%2fremove-model-drift-using-control-run-simulations%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffischcheng.github.io%2f2017%2f10%2f05%2fremove-model-drift-using-control-run-simulations%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffischcheng.github.io%2f2017%2f10%2f05%2fremove-model-drift-using-control-run-simulations%2f&amp;title=Remove%20model%20drift%20using%20control%20run%20simulations"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffischcheng.github.io%2f2017%2f10%2f05%2fremove-model-drift-using-control-run-simulations%2f&amp;title=Remove%20model%20drift%20using%20control%20run%20simulations"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Remove%20model%20drift%20using%20control%20run%20simulations&amp;body=https%3a%2f%2ffischcheng.github.io%2f2017%2f10%2f05%2fremove-model-drift-using-control-run-simulations%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Recently, I&rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO<sub>2</sub> held fixed in year 2000 level. Following Gupta et al., [2013]<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO<sub>2</sub>, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO<sub>2</sub> level that takes few decades to reach the new equilibrium.</p>
+
+<p>Below, I&rsquo;d like to document my experience of cubic fitting the surface temperature (TS) locally at each grid point. Removing these drifts from the TS in the climate change run yields the de-drifted TS dataset. This post highlights several packages I&rsquo;ve been using most frequently, including numpy, xarray and cartopy.</p>
+
+<pre><code class="language-python">f1 = './data/TS.ens.all.nc'
+ds1 = xarray.open_dataset(f1, decode_times=True, chunks={'lat':200,'lon':200})
+TS_annual=ds1.TS.resample('12MS',dim='time')
+</code></pre>
+
+<p>These lines load in a NetCDF file with 69 years of monthly mean TS (time: 69, lat: 384, lon: 576) in (200x200) chunks. The chunk is the built-in support of <a href="https://dask.pydata.org/en/latest/" target="_blank"><code>Dask</code></a> in <a href="http://xarray.pydata.org" target="_blank"><code>Xarray</code></a>. <code>Xarray</code> is a very powerful package. It attempts to extend the labeled data power of <code>Pandas</code> to the multi-dimensional datasets that we often work on in geophysical sciences.</p>
+
+<pre><code class="language-python">import matplotlib.dates as dates
+from numpy.polynomial.polynomial import polyval,polyfit
+import xarray
+def driftfit(arr):
+    stacked = arr.stack(loc=('lat', 'lon'))
+    timenum=dates.date2num(stacked.time.to_index().to_pydatetime())
+    regressions = polyfit(timenum, stacked, 3) 
+    drift_stacked= polyval(timenum,regressions)
+    foo = xarray.DataArray(drift_stacked.T, coords=[stacked['time'], stacked['loc']], dims=['time', 'loc'],name=arr.name)
+    arr_drift=foo.unstack('loc')
+    return arr_drift
+</code></pre>
+
+<p>This is a function to fit a 3rd order polynomial to the 69-year surface temperature of each grid cell. It stacks locations of the input array using <code>arr.stack(loc=('lat', 'lon'))</code>, and using <code>numpy.polynomial.polynomial.polyfit</code> to find the cubic fit of the local temperature time series over 69 years. The coefficients are then converted back to the polynomials using <code>polyval(timenum,regressions)</code>. Next step is to generate a DataArray from numpy.array so that I can unstack the array correctly and keep the metadata from the input DataArray.</p>
+
+<div class="alert alert-note">
+  <p>One interesting and confusing thing I noticed: not all <code>polyfit</code> are created equal. The <code>numpy.polyfit</code> outputs the polynomial coefficients from the highest power, while the <code>numpy.polynomial.polynomial.polyfit</code> does the other way round. And so are the input order of their corresponding <code>polyval</code>.</p>
+
+</div>
+
+
+<p>I then load in the climate change run and remove the cubic fit from it. Two functions <code>lintrend</code> and <code>trendts</code> are constructed similarly to <code>driftfit</code>, so I left out the details. The former output the coefficient of the first order polynomial (the slope), and the later output the trend time series.</p>
+
+<pre><code class="language-python">ensfit=driftfit(TS_annual)
+
+f2 = './data/TS.HRC07.all.nc'
+ds2 = xarray.open_dataset(f2, decode_times=True, chunks={'lat':200,'lon':200})
+TS_HRC07_annual=ds2.TS.resample('12MS',dim='time')
+TS_HRC07_dedrift=TS_HRC07_annual-ensfit
+trend_HRC07=lintrend(TS_HRC07_dedrift)
+trendTS_HRC07=trendts(TS_HRC07_dedrift)
+</code></pre>
+
+
+<figure >
+    
+        <img src="/img/fit_and_HRC07.png" />
+    
+    
+    <figcaption>
+        <h4>HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>After removing the drift from each location, I plot out the linear trend map of TS for the HRC07 run using <code>cartopy</code>.</p>
+
+<pre><code class="language-python">plt.figure(figsize=(13,5))
+ax = plt.subplot(111, projection=ccrs.PlateCarree()) #ccrs.Mollweide()
+mm = ax.pcolormesh(ds1.lon,
+                   ds1.lat,
+                   trend_HRC07*365*10,                   
+                   vmin=-.5,
+                   vmax=.5,
+                   transform=ccrs.PlateCarree(),cmap=cmo.balance )
+ax.set_global()
+#ax.set_extent([-180, 180, -70, 70])
+ax.coastlines();
+cb=plt.colorbar(mm,ax=ax,fraction=0.046, pad=0.01)
+
+
+#ax.set_xticks([0, 60, 120, 180, 240, 300, 360], crs=ccrs.PlateCarree())
+
+ax.set_xticks([-180,-120,-60,0, 60, 120, 180], crs=ccrs.PlateCarree())
+ax.set_yticks([-90, -60, -30, 0, 30, 60, 90], crs=ccrs.PlateCarree())
+lon_formatter = LongitudeFormatter()
+lat_formatter = LatitudeFormatter()
+ax.xaxis.set_major_formatter(lon_formatter)
+ax.yaxis.set_major_formatter(lat_formatter)
+
+
+ax.set_title('dedrifted HRC07 Temperature linear trend ')
+cb.set_label('degC/decade')
+
+plt.show()
+</code></pre>
+
+
+<figure >
+    
+        <img src="/img/dedrifted_HRC07_trend_map.png" />
+    
+    
+    <figcaption>
+        <h4>HRC07 TS linear trends from 1953 to 2008 with model drift removed</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Gupta, A. S., N. C. Jourdain, J. N. Brown, and D. Monselesan, 2013: Climate Drift in the CMIP5 Models*. J. Climate, 26, 8597–8615, doi:10.1175/JCLI-D-12-00521.1.
+ <a class="footnote-return" href="#fnref:1"><sup>^</sup></a></li>
+</ol>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+
+
+<div class="article-container">
+  <h3>Related</h3>
+  <ul>
+    
+    <li><a href="/2017/02/13/fill-in-the-missing-data-using-python-pandas/">Fill in the missing data using Python pandas</a></li>
+    
+    <li><a href="/2017/02/05/ipython-notebook-gallery/">iPython notebook gallery</a></li>
+    
+    <li><a href="/2017/02/05/gibbs-seawater-oceanographic-package-for-python/">Gibbs SeaWater Oceanographic Package for Python</a></li>
+    
+    <li><a href="/2016/07/05/renovate-this-place-and-new-resolutions/">Renovate this place and new resolutions!</a></li>
+    
+    <li><a href="/2014/06/10/building-a-statistic-blog-with-pelican/">Building a statistic blog with Pelican</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/"><span
+      aria-hidden="true">&larr;</span> Updated Hugo Academic theme to sync the upstream repo</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yucheng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 Yu Cheng &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ncl.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/matlab.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
