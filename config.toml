@@ -66,8 +66,8 @@ fractions = false
   highlight = true
   highlight_languages = ["python","ncl","matlab","latex"]
   #highlight_style = "github"
-  highlight_style = "monokai-sublime"
-  highlight_version = "9.9.0"
+  highlight_style = "foundation"
+  highlight_version = "9.12.0"
 
 
   # Publication types.
