@@ -13,7 +13,9 @@ weight = 1
 [interests]
   interests = [
     "Largescale ocean circulation",
-    "climate variability and modeling"
+    "Climate variability and modeling",
+    "Data Visualization",
+    "Ocean's role in the climate"
   ]
 
 # List your qualifications (such as academic degrees).
