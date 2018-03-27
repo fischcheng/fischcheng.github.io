@@ -12,7 +12,7 @@ build:
         code: |
             git submodule update --init --recursive
 
-    - arjen/hugo-build@1.21.1:
+    - arjen/hugo-build@1.29.1:
         version: "HEAD"
         theme: "hugo-academic"
         flags: --buildDrafts=true

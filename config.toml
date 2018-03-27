@@ -1,12 +1,15 @@
-baseurl = "https://fischcheng.github.io/"
+#baseurl = "https://fischcheng.github.io/"
+baseurl = "/"
+
 title = "Yu Cheng"
-copyright = "&copy; 2016 Yu Cheng"
+copyright = "&copy; 2018 Yu Cheng"
 #languageCode = "en-us"
 theme = "hugo-academic"
-#theme = "Academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
-
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+paginate = 10
 
 
 # Enable comments by entering your Disqus shortname
@@ -22,21 +25,29 @@ defaultContentLanguageInSubdir = false
 
 
 [blackfriday]
-hrefTargetBlank = true
-fractions = false
+  hrefTargetBlank = true  # `true` opens external links in a new tab.
+  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+
 # color-codes for highlighting derived from this style
 #PygmentsCodeFences= true
 #pygmentsStyle= "monokai"
 
 
+[outputs]
+  home = [ "HTML", "CSS", "RSS" ]
+  section = [ "HTML", "RSS" ]
+
+
 [permalinks]
-    post = "/:year/:month/:day/:slug"
+  post = "/:year/:month/:day/:slug"
 
 [params]
   name = "Yu Cheng 鄭嵎"
-  role = "PhD candidate"
-  organization = "RSMAS / University of Miami"
-  organization_url = "http://www.rsmas.miami.edu"
+  role = "Graduate Assistant"
+
+  organizations = [ { name = "University of Miami", url = "http://www.rsmas.miami.edu" } ]
+  gravatar = false
   avatar = "headshot.jpg"
   email = "yucheng@rsmas.miami.edu"
   address = "4600 Rickenbacker Causeway, Miami, FL 33149, USA"
@@ -45,11 +56,47 @@ fractions = false
   phone = ""
   #skype = "dennis_yu0123"
   telegram = ""
+  
+  # New param
+  color_theme = "forest"
+  font = "default"
+  
 
+
+  # Enable/disable map in Contact widget.
+  # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
+  # a map provider below.
+  # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
+  #   https://developers.google.com/maps/documentation/javascript/get-api-key
+  # To use OpenStreetMap tiles, set `map = 2`.
+  # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
+  #   https://www.mapbox.com/studio/account/tokens
+  # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+  #
+  # Map provider:
+  #   0: No map
+  #   1: Google Maps
+  #   2: OpenStreetMap (Mapnik)
+  #   3: OpenStreetMap (Mapbox)
+  # Map location
+  map = 1
+  map_api_key = "AIzaSyBkC29BdSmvvjV11yiZp4lUr7s_7dcpXrg"
+  latitude = "25.732575"
+  longitude = "-80.162762"
+  zoom = 16
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
   date_format = "Mon, Jan 2, 2006"
+
+  # Show estimated reading time for posts?
+  reading_time = true
+
+  # Display comment count? Requires commenting to be enabled.
+  comment_count = true
+
+  # Display next/previous section pager?
+  section_pager = false
 
   # Enable global LaTeX math rendering? If false, you can enable it locally on a per page basis.
   math = true
@@ -60,6 +107,8 @@ fractions = false
   # Link custom CSS and JS assets (relative to /static/css and /static/js respectively)
   custom_css = ["green.css"]   # change the default color theme to green using a custom_css, can be altered later
   custom_js  = []
+
+
 
 
   #highlighting
@@ -78,14 +127,36 @@ fractions = false
   #   For multi-lingual sites, copy this block to each language section at the end of this file.
   publication_types = [
     'Uncategorized',  # 0
-    'Conference proceedings',  # 1
-    'Journal',  # 2
-    'Work in progress',  # 3
-    'Technical report',  # 4
+    'Conference paper',  # 1
+    'Journal article',  # 2
+    'Manuscript',  # 3
+    'Report',  # 4
     'Book',  # 5
-    'Book chapter'  # 6
+    'Book section'  # 6
   ]
 
+  # Configuration for specific widget:
+  [params.talks]
+    # Show talk time?
+    time = true
+
+  # Configuration of publication pages.
+  [params.publications]
+    # Date format (refer to Go's date format: http://fuckinggodateformat.com )
+    #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+    date_format = "January, 2006"
+
+  # Configuration of project pages.
+  [params.projects]
+    # List publications and talks related to the project?
+    list_children = true
+
+    # Publication list format.
+    #   0 = Simple
+    #   1 = Detailed
+    #   2 = APA
+    #   3 = MLA
+    publication_format = 3
 
 
   # Social/Academic Networking
@@ -110,9 +181,9 @@ fractions = false
     link = "https://twitter.com/fischcheng"
 
   [[params.social]]
-    icon = "facebook"
+    icon = "linkedin"
     icon_pack = "fa"
-    link = "https://www.facebook.com/fischcheng"
+    link = "https://www.linkedin.com/in/yu-cheng-seattle"
 
   [[params.social]]
     icon = "google-scholar"
@@ -127,6 +198,10 @@ fractions = false
 
 # Navigation Links
 #   The weight parameter defines the order that the links will appear in.
+
+[params.menus]
+  # Align the main menu to the right of the page? (true/false)
+  align_right = true
 
 [[menu.main]]
   name = "Home"
@@ -164,10 +239,15 @@ fractions = false
   weight = 7
 
 
+# Taxonomies.
 [taxonomies]
   tag = "tags"
   category = "categories"
   publication_type = "publication_types"
 
-[languages.en]
+# Languages
+#   Create a [languages.X] block for each language you want, where X is the language ID.
+
+# Configure the English version of the website.
+[Languages.en]
   languageCode = "en-us"
