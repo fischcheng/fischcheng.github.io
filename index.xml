@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yu Cheng on Yu Cheng</title>
-    <link>https://fischcheng.github.io/</link>
+    <link>/</link>
     <description>Recent content in Yu Cheng on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Remove model drift using control run simulations</title>
-      <link>https://fischcheng.github.io/2017/10/05/remove-model-drift-using-control-run-simulations/</link>
+      <link>/2017/10/05/remove-model-drift-using-control-run-simulations/</link>
       <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/10/05/remove-model-drift-using-control-run-simulations/</guid>
+      <guid>/2017/10/05/remove-model-drift-using-control-run-simulations/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO&lt;sub&gt;2&lt;/sub&gt; held fixed in year 2000 level. Following Gupta et al., [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO&lt;sub&gt;2&lt;/sub&gt;, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO&lt;sub&gt;2&lt;/sub&gt; level that takes few decades to reach the new equilibrium.&lt;/p&gt;
 
 &lt;p&gt;Below, I&amp;rsquo;d like to document my experience of cubic fitting the surface temperature (TS) locally at each grid point. Removing these drifts from the TS in the climate change run yields the de-drifted TS dataset. This post highlights several packages I&amp;rsquo;ve been using most frequently, including numpy, xarray and cartopy.&lt;/p&gt;
@@ -63,7 +63,7 @@ trendTS_HRC07=trendts(TS_HRC07_dedrift)
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/fit_and_HRC07.png&#34; /&gt;
+        &lt;img src=&#34;/img/fit_and_HRC07.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -109,7 +109,7 @@ plt.show()
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/dedrifted_HRC07_trend_map.png&#34; /&gt;
+        &lt;img src=&#34;/img/dedrifted_HRC07_trend_map.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -135,21 +135,21 @@ plt.show()
     
     <item>
       <title>Climate changes in the high-resolution 20th century simulation</title>
-      <link>https://fischcheng.github.io/project/change-hrc/</link>
+      <link>/project/change-hrc/</link>
       <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
       
-      <guid>https://fischcheng.github.io/project/change-hrc/</guid>
+      <guid>/project/change-hrc/</guid>
       <description>
 
 &lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
 
 &lt;p&gt;Previous studies suggest that leakage has increased since the late 1960s [Biastoch et al., 2009, Biastoch et al., 2015, Loveday et al., 2015], consistent with the observed changes in westerlies [Marshall 2003, Swart and Fyfe 2012]. We began to wonder if such changes exist in our climate change simulation HRC07. After all, none of the above-listed works were done with an ocean-eddy resolving coupled model like our in-house CCSM3.5.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://fischcheng.github.io/img/Global_annual_mean_SST_HRC07.png&#34; alt=&#34;SST_HRC07&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/Global_annual_mean_SST_HRC07.png&#34; alt=&#34;SST_HRC07&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;However, the early attempts revealed that the climate change simulation HRC07 suffered a lot from the spin-up process, specifically the global mean SST. The 10yr idle run before 1940 seems not enough. SST dives first before rising again and peaks around 1960. Therefore, instead of focusing on the linear trends of climate change run, we would like to use the two control runs to remove the common model drift between cases to isolate the real &amp;ldquo;warming signal&amp;rdquo; in the climate change simulation.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://fischcheng.github.io/img/Dedrifted_annual_mean_SST.png&#34; alt=&#34;SST_dedrifted&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/Dedrifted_annual_mean_SST.png&#34; alt=&#34;SST_dedrifted&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;method&#34;&gt;Method&lt;/h3&gt;
 
@@ -164,29 +164,29 @@ plt.show()
     </item>
     
     <item>
-      <title>Agulhas leakage variability in a coupled climate system: controls and responses</title>
-      <link>https://fischcheng.github.io/talk/uw_seminar/</link>
-      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Assessing the skill of 30-day climate model output for Lagrangian analyses of Agulhas Leakage</title>
+      <link>/talk/lom_london/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/talk/uw_seminar/</guid>
+      <guid>/talk/lom_london/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>1-hour seminar</title>
-      <link>https://fischcheng.github.io/talk/seminar_1hr/</link>
-      <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Agulhas leakage variability in a coupled climate system: controls and responses</title>
+      <link>/talk/uw_seminar/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/talk/seminar_1hr/</guid>
+      <guid>/talk/uw_seminar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Updated Hugo Academic theme to sync the upstream repo</title>
-      <link>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</link>
+      <link>/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</link>
       <pubDate>Mon, 27 Feb 2017 00:28:36 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</guid>
+      <guid>/2017/02/27/updated-hugo-academic-theme-to-sync-the-upstream-repo/</guid>
       <description>
 
 &lt;p&gt;I just updated the Hugo-Academic theme from the upstream repo. The structure has been greatly changed. Now each section on the &lt;code&gt;index.html&lt;/code&gt; is a widget. Changing Research Interests and Education is no longer inside the &lt;code&gt;config.toml&lt;/code&gt;, but the &lt;code&gt;about.md&lt;/code&gt; as metadata. I also added a Talk widget, and the Project widget now showcase my research in cards.&lt;/p&gt;
@@ -258,7 +258,8 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
 &lt;h2 id=&#34;twitter-tweet&#34;&gt;Twitter Tweet&lt;/h2&gt;
 
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Running wild with &lt;a href=&#34;https://twitter.com/BearGrylls?ref_src=twsrc%5Etfw&#34;&gt;@BearGrylls&lt;/a&gt; &lt;a href=&#34;https://t.co/RG3pRquOuu&#34;&gt;pic.twitter.com/RG3pRquOuu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Roger Federer (@rogerfederer) &lt;a href=&#34;https://twitter.com/rogerfederer/status/833394043585376256?ref_src=twsrc%5Etfw&#34;&gt;February 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
 
 &lt;hr /&gt;
 
@@ -292,17 +293,17 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
 
 &lt;p&gt;Wow, there is a built-in shortcode for Instagram!&lt;/p&gt;
 
-&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-version=&#34;7&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;No one does #lineart quite like @jonathanlovers. Love this for @airbnb&amp;#39;s #OneAirbnb2017. 〰➰✍🏻&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;A post shared by Design Milk (@designmilk) on &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2017-02-25T02:32:28+00:00&#34;&gt;Feb 24, 2017 at 6:32pm PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;script async defer src=&#34;//platform.instagram.com/en_US/embeds.js&#34;&gt;&lt;/script&gt;
+&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-permalink=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/&#34; data-instgrm-version=&#34;8&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;No one does #lineart quite like @jonathanlovers. Love this for @airbnb&amp;#39;s #OneAirbnb2017. 〰➰✍🏻&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;A post shared by &lt;a href=&#34;https://www.instagram.com/designmilk/&#34; style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&#34; target=&#34;_blank&#34;&gt; Design Milk&lt;/a&gt; (@designmilk) on &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2017-02-25T02:32:28+00:00&#34;&gt;Feb 24, 2017 at 6:32pm PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;script async defer src=&#34;//www.instagram.com/embed.js&#34;&gt;&lt;/script&gt;
 </description>
     </item>
     
     <item>
       <title>Using git-latexdiff to track changes in tex-file graphically</title>
-      <link>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</link>
+      <link>/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</link>
       <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</guid>
+      <guid>/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s been a while since I started using &lt;code&gt;git&lt;/code&gt;. The version control system helps to track changes in computer files and coordinating work on those files among multiple people. Composing a manuscript is nothing unlike developing a program. If multiple authors work on the same manuscript, &lt;code&gt;git&lt;/code&gt; can be very helpful to avoid conflicts. If you are the only author, &lt;code&gt;git&lt;/code&gt; can help you to document what has been changed since the last commit or put your advisor&amp;rsquo;s comment in another branch.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -341,10 +342,10 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
     
     <item>
       <title>Fill in the missing data using Python pandas</title>
-      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
+      <link>/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
       <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
+      <guid>/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
       <description>&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -369,7 +370,7 @@ OHC_multilevels.plot()
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/output_32_1.png&#34; width=&#34;600&#34; /&gt;
+        &lt;img src=&#34;/img/output_32_1.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -389,7 +390,7 @@ OHC_multilevels.interpolate().plot()
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/output_33_1.png&#34; width=&#34;600&#34; /&gt;
+        &lt;img src=&#34;/img/output_33_1.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -405,10 +406,10 @@ OHC_multilevels.interpolate().plot()
     
     <item>
       <title>Gibbs SeaWater Oceanographic Package for Python</title>
-      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</link>
+      <link>/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</guid>
+      <guid>/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34; target=&#34;_blank&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
@@ -440,10 +441,10 @@ OHC_multilevels.interpolate().plot()
     
     <item>
       <title>iPython notebook gallery</title>
-      <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</link>
+      <link>/2017/02/05/ipython-notebook-gallery/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</guid>
+      <guid>/2017/02/05/ipython-notebook-gallery/</guid>
       <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -458,7 +459,7 @@ OHC_multilevels.interpolate().plot()
 &lt;p&gt;The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor 100/2&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
+&lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor &lt;sup&gt;100&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -477,7 +478,7 @@ OHC_multilevels.interpolate().plot()
 &lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34; target=&#34;_blank&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34; target=&#34;_blank&#34;&gt;Plotting routine for Meteor &lt;sup&gt;100&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34; target=&#34;_blank&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34; target=&#34;_blank&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/static/notebook/p3.ipynb&#34; target=&#34;_blank&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
@@ -500,11 +501,20 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
     </item>
     
     <item>
+      <title>1-hour seminar</title>
+      <link>/talk/seminar_1hr/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/seminar_1hr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>How to read the NWS hurricane warning</title>
-      <link>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning/</link>
+      <link>/2016/10/06/how-to-read-the-nws-hurricane-warning/</link>
       <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/10/06/how-to-read-the-nws-hurricane-warning/</guid>
+      <guid>/2016/10/06/how-to-read-the-nws-hurricane-warning/</guid>
       <description>&lt;p&gt;The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -517,7 +527,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;h3 id=&#34;more-like-overreactions&#34;&gt;More like overreactions?&lt;/h3&gt;
 
-&lt;p&gt;Growing up in Taiwan and coming from atmospheric sciences background, I have experienced many typhoons.  Just recently, I visited Taiwan from 9/14 to 9/27. During that short period, three major typhoons (Meranti, Malakas, and Megi) hit the little island. My return flight to the US nearly got canceled &amp;ndash; my wife and I were sitting on the grounded but shaky aircraft for almost an hour. So honestly, I am surprised to see my colleagues&amp;rsquo; hurricane preparation.&lt;/p&gt;
+&lt;p&gt;Growing up in Taiwan and coming from atmospheric sciences background, I have experienced many typhoons.  Just recently, I visited Taiwan from &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;14&lt;/sub&gt; to &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;27&lt;/sub&gt;. During that short period, three major typhoons (Meranti, Malakas, and Megi) hit the little island. My return flight to the US nearly got canceled &amp;ndash; my wife and I were sitting on the grounded but shaky aircraft for almost an hour. So honestly, I am surprised to see my colleagues&amp;rsquo; hurricane preparation.&lt;/p&gt;
 
 &lt;p&gt;I mean, it should be like this. General public are aware of the threats and cooperate with the government to evacuate. Schools and companies grant enough time for students and employees to get prepared for the approaching storm. There is no such thing as overpreparation. It&amp;rsquo;s the right attitude facing any threats at such magnitude. Instead, people in Taiwan always blame everything on the Central Weather Bureau and local governments without being sufficiently prepared.&lt;/p&gt;
 
@@ -559,7 +569,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/hurricane01.png&#34; /&gt;
+        &lt;img src=&#34;/img/hurricane01.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -575,11 +585,11 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;li&gt;The essential hurricane statistics on the top-left including location, moving direction and speed, minimum pressure and maximum sustained wind.&lt;/li&gt;
 &lt;li&gt;For more detailed paragraphs, checked the Public Advisory, Forecast advisory and discussion, and their Spanish versions. Check their official guide on &lt;a href=&#34;http://www.nhc.noaa.gov/help/tcp.shtml&#34; target=&#34;_blank&#34;&gt;how to read a public advisory.&lt;/a&gt; I personally enjoy reading the Forecast advisory.&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;For the path forecast, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?5-daynl#contents&#34; target=&#34;_blank&#34;&gt;Warnings/Cone&lt;/a&gt;. Over 2/3 of chances that the center of the hurricane will stay in the white zone on the map. However, the area it may affect is much broader, considering its rain bands and hurricane force winds. Also there is still 1/3 of chances that the center of the hurricane will be outside that cone. More details can be found &lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+&lt;li&gt;&lt;p&gt;For the path forecast, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?5-daynl#contents&#34; target=&#34;_blank&#34;&gt;Warnings/Cone&lt;/a&gt;. Over &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of chances that the center of the hurricane will stay in the white zone on the map. However, the area it may affect is much broader, considering its rain bands and hurricane force winds. Also there is still &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of chances that the center of the hurricane will be outside that cone. More details can be found &lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/hurricane02.png&#34; /&gt;
+        &lt;img src=&#34;/img/hurricane02.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -594,7 +604,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/hurricane03.png&#34; /&gt;
+        &lt;img src=&#34;/img/hurricane03.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -609,7 +619,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/hurricane04.png&#34; /&gt;
+        &lt;img src=&#34;/img/hurricane04.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -631,7 +641,7 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/hurricane05.png&#34; /&gt;
+        &lt;img src=&#34;/img/hurricane05.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -654,10 +664,10 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
     
     <item>
       <title>Automated deployment of Hugo generated site to Github pages </title>
-      <link>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</link>
+      <link>/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</link>
       <pubDate>Wed, 14 Sep 2016 20:54:16 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</guid>
+      <guid>/2016/09/14/automated-deployment-of-hugo-generated-site-to-github-pages/</guid>
       <description>
 
 &lt;p&gt;In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -767,7 +777,7 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/wercker01.png&#34; /&gt;
+        &lt;img src=&#34;/img/wercker01.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -827,7 +837,7 @@ build:
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/wercker02.png&#34; /&gt;
+        &lt;img src=&#34;/img/wercker02.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -842,10 +852,10 @@ build:
     
     <item>
       <title>Switch from Pelican to Hugo</title>
-      <link>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</link>
+      <link>/2016/09/14/switch-from-pelican-to-hugo/</link>
       <pubDate>Wed, 14 Sep 2016 01:16:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/09/14/switch-from-pelican-to-hugo/</guid>
+      <guid>/2016/09/14/switch-from-pelican-to-hugo/</guid>
       <description>
 
 &lt;p&gt;Being a big fan of all things Python, I built the last two incarnations of this site with Pelican. I even went to the length to set up a Travis CI to automatically build and deploy to GitHub pages. That was the beginning of the summer and only two new posts ever since.&lt;/p&gt;
@@ -923,10 +933,10 @@ build:
     
     <item>
       <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
-      <link>https://fischcheng.github.io/project/largescale_forcing/</link>
+      <link>/project/largescale_forcing/</link>
       <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/project/largescale_forcing/</guid>
+      <guid>/project/largescale_forcing/</guid>
       <description>
 
 &lt;h4 id=&#34;motivation&#34;&gt;Motivation&lt;/h4&gt;
@@ -942,7 +952,7 @@ build:
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig1_schematic_shuffling_trans.png&#34; width=&#34;800&#34; /&gt;
+        &lt;img src=&#34;/img/large-scale/fig1_schematic_shuffling_trans.png&#34; width=&#34;800&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -960,7 +970,7 @@ build:
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png&#34; width=&#34;600&#34; /&gt;
+        &lt;img src=&#34;/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -974,7 +984,7 @@ build:
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig5_coherence_spectra_11taper.png&#34; width=&#34;600&#34; /&gt;
+        &lt;img src=&#34;/img/large-scale/fig5_coherence_spectra_11taper.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -992,7 +1002,7 @@ build:
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png&#34; width=&#34;600&#34; /&gt;
+        &lt;img src=&#34;/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -1008,7 +1018,7 @@ build:
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://fischcheng.github.io/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; width=&#34;600&#34; /&gt;
+        &lt;img src=&#34;/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; width=&#34;600&#34; /&gt;
     
     
     &lt;figcaption&gt;
@@ -1027,10 +1037,10 @@ build:
     
     <item>
       <title>Workflow for a CCSM4 run</title>
-      <link>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</link>
+      <link>/2016/07/28/workflow-for-a-ccsm4-run/</link>
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/07/28/workflow-for-a-ccsm4-run/</guid>
+      <guid>/2016/07/28/workflow-for-a-ccsm4-run/</guid>
       <description>&lt;h3 id=&#34;basic-approach-startup-run&#34;&gt;Basic approach, startup run:&lt;/h3&gt;
 
 &lt;ol&gt;
@@ -1095,20 +1105,6 @@ xmlchange -file env_conf.xml -id RUN_REFDATE -val 0001-02-01
 &lt;p&gt;&amp;ndash;&lt;/p&gt;
 
 &lt;p&gt;More advanced use cases can be found in Chapter 9 of the &lt;a href=&#34;http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/ug.pdf&#34; target=&#34;_blank&#34;&gt;CCSM4 user guide&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Renovate this place and new resolutions!</title>
-      <link>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</link>
-      <pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate>
-      
-      <guid>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve just spent the long weekend updating my nearly-abandoned website. This year, I have passed my qualifying exam (February), and the paper I&amp;rsquo;ve been working on for almost an year is now finally accepted.&lt;/p&gt;
-
-&lt;p&gt;The website has been changed to a GitHub user-page, instead of a project-page. Also, now the website is automatically generated by Travis-CI, a very popular service recently, testing and deploying the codes to ensure portability. All the changes and new posts are made on my laptop. Html pages are built by Pelican/Python3, on the /source branch. A push to the remote host will trigger Travis-CI. With a little help from ghp-import, the Travis-CI-generated pages will be force-pushed to the /master branch. Voila, that is the website now you are looking at.&lt;/p&gt;
-
-&lt;p&gt;Through this little-over-two-days endeavor, I now had more knowledge on Github, Travis-CI, and more control on my own website templates. Now it&amp;rsquo;s just the matter of keeping things rolling &amp;ndash; I made the resolution to post more frequently. In fact, I have just updated the Work page to include some of my recent presentations and abstracts. I will also post some of the notes from our group meeting.&lt;/p&gt;
-</description>
     </item>
     
   </channel>

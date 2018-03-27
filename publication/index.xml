@@ -2,47 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Yu Cheng</title>
-    <link>https://fischcheng.github.io/publication/</link>
+    <link>/publication/</link>
     <description>Recent content in Publications on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/publication/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Quantifying Agulhas Leakage in a High-Resolution Climate Model</title>
-      <link>https://fischcheng.github.io/publication/quantifying-agulhas-leakage/</link>
+      <link>/publication/quantifying-agulhas-leakage/</link>
       <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/publication/quantifying-agulhas-leakage/</guid>
+      <guid>/publication/quantifying-agulhas-leakage/</guid>
       <description></description>
     </item>
     
     <item>
       <title> Investigating the relationship between Agulhas leakage and Southern Hemisphere westerlies in a coupled system</title>
-      <link>https://fischcheng.github.io/publication/osm2016-poster/</link>
+      <link>/publication/osm2016-poster/</link>
       <pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/publication/osm2016-poster/</guid>
+      <guid>/publication/osm2016-poster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quantifying Agulhas leakage in coupled climate models</title>
-      <link>https://fischcheng.github.io/publication/iugg2015_slides/</link>
+      <link>/publication/iugg2015_slides/</link>
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/publication/iugg2015_slides/</guid>
+      <guid>/publication/iugg2015_slides/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A new Eulerian method to estimate “spicy” Agulhas leakage in climate models</title>
-      <link>https://fischcheng.github.io/publication/spice-anomaly/</link>
+      <link>/publication/spice-anomaly/</link>
       <pubDate>Thu, 11 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/publication/spice-anomaly/</guid>
+      <guid>/publication/spice-anomaly/</guid>
       <description></description>
     </item>
     
