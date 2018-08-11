@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fundamentals on Yu Cheng</title>
+    <link>/tags/fundamentals/</link>
+    <description>Recent content in Fundamentals on Yu Cheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
+    <lastBuildDate>Mon, 27 Nov 2017 10:41:52 -0700</lastBuildDate>
+    
+	<atom:link href="/tags/fundamentals/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lagrangian ocean analysis: Fundamentals and practices</title>
+      <link>/publication/lom/</link>
+      <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
+      
+      <guid>/publication/lom/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

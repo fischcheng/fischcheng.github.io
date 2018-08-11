@@ -2,73 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripts on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/scripts/</link>
+    <link>/tags/scripts/</link>
     <description>Recent content in Scripts on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Sun, 05 Feb 2017 00:42:30 -0500</lastBuildDate>
-    <atom:link href="/tags/scripts/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>iPython notebook gallery</title>
-      <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</link>
+      <link>/2017/02/05/ipython-notebook-gallery/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</guid>
+      <guid>/2017/02/05/ipython-notebook-gallery/</guid>
       <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Python is a thing that I picked up in the graduate school. I not only use &lt;code&gt;Python&lt;/code&gt; to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. &lt;code&gt;Ipython&lt;/code&gt; stands for &lt;em&gt;Interactive Python&lt;/em&gt;. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to &lt;code&gt;Ipython&lt;/code&gt; project in 2011, and it has evolved into an enormous spin-off project called &lt;code&gt;Jupyter&lt;/code&gt; in 2014. Such notebooks connect to different &lt;em&gt;kernels.&lt;/em&gt; There are many kernels compatible with &lt;code&gt;Ipython/Jupyter&lt;/code&gt;, including &lt;code&gt;Python&lt;/code&gt; (natürlich!), &lt;code&gt;Julia&lt;/code&gt;, &lt;code&gt;R&lt;/code&gt;, and &lt;code&gt;Haskell&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I love using Ipython notebooks because I can run code, comment in Markdown and plot inline on the same page. Everything is then easily exported to shareable formats such as pdf, HTML, Latex, even presentation slides.&lt;/p&gt;
-
-&lt;p&gt;Ths description quoted from Jupyter.org:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor 100/2&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Satellite SST and onboard observed wind-vectors&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34; target=&#34;_blank&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34; target=&#34;_blank&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34; target=&#34;_blank&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/static/notebook/p3.ipynb&#34; target=&#34;_blank&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;center&gt;
-
-&lt;div 
-class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
-	&lt;iframe src=&#34;https://www.youtube.com/embed/jx_bGld1eLM&#34; type=&#34;text/html&#34;
-		allowfullscreen
-		frameborder=&#34;0&#34;
-		width=&#34;80%&#34;
-		height=&#34;385&#34;
-
-	&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;/center&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

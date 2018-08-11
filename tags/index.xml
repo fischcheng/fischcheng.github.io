@@ -2,147 +2,472 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>https://fischcheng.github.io/tags/academic/</link>
+      <link>/tags/academic/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/academic/</guid>
-      <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
-</description>
+      <guid>/tags/academic/</guid>
+      <description>Here is a list of all the content that has been tagged as academic.</description>
     </item>
     
     <item>
-      <title>Agulhas Leakage</title>
-      <link>https://fischcheng.github.io/tags/agulhas-leakage/</link>
-      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
+      <title>AMOC</title>
+      <link>/tags/amoc/</link>
+      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/agulhas-leakage/</guid>
+      <guid>/tags/amoc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Amoc</title>
-      <link>https://fischcheng.github.io/tags/amoc/</link>
-      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
+      <title>Agulhas leakage</title>
+      <link>/tags/agulhas-leakage/</link>
+      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/amoc/</guid>
+      <guid>/tags/agulhas-leakage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>https://fischcheng.github.io/tags/blog/</link>
+      <link>/tags/blog/</link>
       <pubDate>Wed, 14 Sep 2016 20:54:16 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/blog/</guid>
+      <guid>/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bootstrap</title>
-      <link>https://fischcheng.github.io/tags/bootstrap/</link>
+      <link>/tags/bootstrap/</link>
       <pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/bootstrap/</guid>
+      <guid>/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ccsm</title>
-      <link>https://fischcheng.github.io/tags/ccsm/</link>
+      <title>CCSM</title>
+      <link>/tags/ccsm/</link>
       <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/ccsm/</guid>
+      <guid>/tags/ccsm/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ccsm4</title>
-      <link>https://fischcheng.github.io/tags/ccsm4/</link>
+      <title>CCSM4</title>
+      <link>/tags/ccsm4/</link>
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/ccsm4/</guid>
+      <guid>/tags/ccsm4/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cesm</title>
-      <link>https://fischcheng.github.io/tags/cesm/</link>
+      <title>CESM</title>
+      <link>/tags/cesm/</link>
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/cesm/</guid>
+      <guid>/tags/cesm/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Climate Change</title>
-      <link>https://fischcheng.github.io/tags/climate-change/</link>
-      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
-      
-      <guid>https://fischcheng.github.io/tags/climate-change/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Climate Models</title>
-      <link>https://fischcheng.github.io/tags/climate-models/</link>
+      <title>CMIP5</title>
+      <link>/tags/cmip5/</link>
       <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/climate-models/</guid>
+      <guid>/tags/cmip5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Climate Variability</title>
-      <link>https://fischcheng.github.io/tags/climate-variability/</link>
+      <title>Climate change</title>
+      <link>/tags/climate-change/</link>
+      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
+      
+      <guid>/tags/climate-change/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Climate models</title>
+      <link>/tags/climate-models/</link>
+      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
+      
+      <guid>/tags/climate-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Climate variability</title>
+      <link>/tags/climate-variability/</link>
       <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/climate-variability/</guid>
+      <guid>/tags/climate-variability/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cmip5</title>
-      <link>https://fischcheng.github.io/tags/cmip5/</link>
-      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
-      
-      <guid>https://fischcheng.github.io/tags/cmip5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Enso</title>
-      <link>https://fischcheng.github.io/tags/enso/</link>
+      <title>ENSO</title>
+      <link>/tags/enso/</link>
       <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/enso/</guid>
+      <guid>/tags/enso/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Evacuation</title>
-      <link>https://fischcheng.github.io/tags/evacuation/</link>
+      <link>/tags/evacuation/</link>
       <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/evacuation/</guid>
+      <guid>/tags/evacuation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fundamentals</title>
+      <link>/tags/fundamentals/</link>
+      <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
+      
+      <guid>/tags/fundamentals/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Galley</title>
-      <link>https://fischcheng.github.io/tags/galley/</link>
+      <link>/tags/galley/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/tags/galley/</guid>
+      <guid>/tags/galley/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>/tags/github/</link>
+      <pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate>
+      
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gsw</title>
+      <link>/tags/gsw/</link>
+      <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/gsw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Wed, 14 Sep 2016 20:54:16 -0500</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hurricane</title>
+      <link>/tags/hurricane/</link>
+      <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/hurricane/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lagrangian Particle Tracking</title>
+      <link>/tags/lagrangian-particle-tracking/</link>
+      <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
+      
+      <guid>/tags/lagrangian-particle-tracking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
+      <link>/tags/latex/</link>
+      <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
+      
+      <guid>/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MOCHA</title>
+      <link>/tags/mocha/</link>
+      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
+      
+      <guid>/tags/mocha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>/tags/markdown/</link>
+      <pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate>
+      
+      <guid>/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Model</title>
+      <link>/tags/model/</link>
+      <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
+      
+      <guid>/tags/model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Model drift</title>
+      <link>/tags/model-drift/</link>
+      <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
+      
+      <guid>/tags/model-drift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ncl</title>
+      <link>/tags/ncl/</link>
+      <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/ncl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nws</title>
+      <link>/tags/nws/</link>
+      <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/nws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ocean Circulation</title>
+      <link>/tags/ocean-circulation/</link>
+      <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
+      
+      <guid>/tags/ocean-circulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>POP2</title>
+      <link>/tags/pop2/</link>
+      <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
+      
+      <guid>/tags/pop2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paleoclimate</title>
+      <link>/tags/paleoclimate/</link>
+      <pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate>
+      
+      <guid>/tags/paleoclimate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas</title>
+      <link>/tags/pandas/</link>
+      <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pelican</title>
+      <link>/tags/pelican/</link>
+      <pubDate>Wed, 14 Sep 2016 20:54:16 -0500</pubDate>
+      
+      <guid>/tags/pelican/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Polynomial</title>
+      <link>/tags/polynomial/</link>
+      <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
+      
+      <guid>/tags/polynomial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Precipitation</title>
+      <link>/tags/precipitation/</link>
+      <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
+      
+      <guid>/tags/precipitation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rant</title>
+      <link>/tags/rant/</link>
+      <pubDate>Tue, 29 Sep 2015 11:47:00 +0000</pubDate>
+      
+      <guid>/tags/rant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SIOD</title>
+      <link>/tags/siod/</link>
+      <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
+      
+      <guid>/tags/siod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scripts</title>
+      <link>/tags/scripts/</link>
+      <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seawater</title>
+      <link>/tags/seawater/</link>
+      <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/seawater/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sediments</title>
+      <link>/tags/sediments/</link>
+      <pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate>
+      
+      <guid>/tags/sediments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Southern Africa</title>
+      <link>/tags/southern-africa/</link>
+      <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
+      
+      <guid>/tags/southern-africa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thesis</title>
+      <link>/tags/thesis/</link>
+      <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
+      
+      <guid>/tags/thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Timeseries</title>
+      <link>/tags/timeseries/</link>
+      <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/timeseries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travis-CI</title>
+      <link>/tags/travis-ci/</link>
+      <pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate>
+      
+      <guid>/tags/travis-ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trend</title>
+      <link>/tags/trend/</link>
+      <pubDate>Thu, 05 Jun 2014 16:07:00 +0000</pubDate>
+      
+      <guid>/tags/trend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trick</title>
+      <link>/tags/trick/</link>
+      <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
+      
+      <guid>/tags/trick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Warning</title>
+      <link>/tags/warning/</link>
+      <pubDate>Thu, 06 Oct 2016 00:42:30 -0500</pubDate>
+      
+      <guid>/tags/warning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Westerlies</title>
+      <link>/tags/westerlies/</link>
+      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
+      
+      <guid>/tags/westerlies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wind forcing</title>
+      <link>/tags/wind-forcing/</link>
+      <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wind-forcing/</guid>
       <description></description>
     </item>
     

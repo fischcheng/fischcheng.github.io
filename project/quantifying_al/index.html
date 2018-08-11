@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.36.1" />
+  <meta name="generator" content="Hugo 0.46" />
   <meta name="author" content="Yu Cheng 鄭嵎">
 
   
@@ -14,11 +14,8 @@
   
   
     
-      
-    
   
-  <meta name="description" content="Motivation The Agulhas current and its leakage of warm and salty indian-ocean water, play crucial role in the climate system by influencing Atlantic Meridional Overturning Circulation stability. While the ocean circulation models are not capable due to lacking of couplings, and the fully-coupled climate models fail because of inability to resolve mesoscale features, the high-resolution coupled model is the only viable tool to access this topic.
-Dataset Due to limitation of computing resources, and the interests of longterm time-scale variabilities, current generation coupled-climate models are conventionally configured to horizontal resolution of 1.">
+  <meta name="description" content="The senstivity of leakage estimates to the model output velocity frequency needs to be addressed before we can apply it to investigate its link to climate variability.">
 
   
   <link rel="alternate" hreflang="en-us" href="/project/quantifying_al/">
@@ -30,40 +27,53 @@ Dataset Due to limitation of computing resources, and the interests of longterm 
 
   
   
+  
   <meta name="theme-color" content="#4caf50">
   
+
+  
   
   
   
     
-  
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
     
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css">
     
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-  
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
   
   
   
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
   
+
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/green.css">
   
 
   
+  
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
       ga('create', 'UA-92668349-1', 'auto');
+      
       ga('require', 'eventTracker');
       ga('require', 'outboundLinkTracker');
       ga('require', 'urlChangeTracker');
@@ -74,12 +84,13 @@ Dataset Due to limitation of computing resources, and the interests of longterm 
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
     
   
+  
 
   
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Yu Cheng">
   <link rel="feed" href="/index.xml" type="application/rss+xml" title="Yu Cheng">
   
-
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
@@ -94,8 +105,7 @@ Dataset Due to limitation of computing resources, and the interests of longterm 
   <meta property="og:site_name" content="Yu Cheng">
   <meta property="og:url" content="/project/quantifying_al/">
   <meta property="og:title" content="Quantifying Agulhas leakage in a high-resolution coupled climate model | Yu Cheng">
-  <meta property="og:description" content="Motivation The Agulhas current and its leakage of warm and salty indian-ocean water, play crucial role in the climate system by influencing Atlantic Meridional Overturning Circulation stability. While the ocean circulation models are not capable due to lacking of couplings, and the fully-coupled climate models fail because of inability to resolve mesoscale features, the high-resolution coupled model is the only viable tool to access this topic.
-Dataset Due to limitation of computing resources, and the interests of longterm time-scale variabilities, current generation coupled-climate models are conventionally configured to horizontal resolution of 1."><meta property="og:image" content="/img/headers/agulhas_noaa.jpg">
+  <meta property="og:description" content="The senstivity of leakage estimates to the model output velocity frequency needs to be addressed before we can apply it to investigate its link to climate variability."><meta property="og:image" content="/img/headers/agulhas_noaa.jpg">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2014-07-30T00:00:00&#43;00:00">
@@ -104,6 +114,13 @@ Dataset Due to limitation of computing resources, and the interests of longterm 
   
 
   
+
+  <!DOCTYPE html>
+<html lang="en-us">
+<head>
+	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
+</head>
+
 
   <title>Quantifying Agulhas leakage in a high-resolution coupled climate model | Yu Cheng</title>
 
@@ -248,25 +265,6 @@ Dataset Due to limitation of computing resources, and the interests of longterm 
 
         
         
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
       
 
       
@@ -382,19 +380,18 @@ class="magnific-video mpf-iframe embed video-player ">
 
 <p>To Adress these problems, we have tested different strategies, including releasing frequency, offshore boundary of releasing, particles with same the volume and so on. We also conducted several experiments using different temopral-resolution velocity fields to adress the degree of degradation of Agulhas leakage estimates of temporal-averaging.</p>
 
+<figure>
 
-<figure >
-    
-        <img src="http://www.rsmas.miami.edu/users/ycheng/media/AL_pent_vs_mon.png" />
-    
-    
-    <figcaption>
-        <h4>p2d vs m2d Agulhas leakage timeseries</h4>
-        
-    </figcaption>
-    
+<img src="http://www.rsmas.miami.edu/users/ycheng/media/AL_pent_vs_mon.png" />
+
+
+
+<figcaption data-pre="Figure " data-post=":" >
+  <h4>p2d vs m2d Agulhas leakage timeseries</h4>
+  
+</figcaption>
+
 </figure>
-
 
 <h4 id="future-work">Future work</h4>
 
@@ -407,11 +404,11 @@ class="magnific-video mpf-iframe embed video-player ">
 
 <div class="article-tags">
   
-  <a class="btn btn-primary btn-outline" href="/tags/agulhas-leakage">Agulhas leakage</a>
+  <a class="label label-default" href="/tags/agulhas-leakage/">Agulhas leakage</a>
   
-  <a class="btn btn-primary btn-outline" href="/tags/ccsm">CCSM</a>
+  <a class="label label-default" href="/tags/ccsm/">CCSM</a>
   
-  <a class="btn btn-primary btn-outline" href="/tags/climate-variability">climate variability</a>
+  <a class="label label-default" href="/tags/climate-variability/">climate variability</a>
   
 </div>
 
@@ -435,11 +432,11 @@ class="magnific-video mpf-iframe embed video-player ">
         <h2>Talks</h2>
         
           <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/Event">
-  <i class="fa fa-comment-o pub-icon" aria-hidden="true"></i>
+  <i class="fa fa-calendar pub-icon" aria-hidden="true"></i>
   <span itemprop="name"><a href="/talk/iugg_prague/">Quantifying Agulhas leakage in coupled climate models</a></span>
   <div itemprop="startDate">
     
-    Sun, Jun 28, 2015
+    June 28, 2015
     
       12:00 AM
     
@@ -466,9 +463,11 @@ class="magnific-video mpf-iframe embed video-player ">
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="/project/quantifying_AL/">
-  Project
-</a>
+  
+  <a class="btn btn-primary btn-outline btn-xs" href="/project/quantifying_al/">
+    Project
+  </a>
+  
 
 
 
@@ -486,6 +485,9 @@ class="magnific-video mpf-iframe embed video-player ">
 
 <footer class="site-footer">
   <div class="container">
+
+    
+
     <p class="powered-by">
 
       &copy; 2018 Yu Cheng &middot; 
@@ -534,55 +536,62 @@ class="magnific-video mpf-iframe embed video-player ">
 
     
     
-    <script id="dsq-count-scr" src="//yucheng.disqus.com/count.js" async></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
     
 
     
-    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBkC29BdSmvvjV11yiZp4lUr7s_7dcpXrg"></script>
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ncl.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/matlab.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
     
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
-    
-    
     <script src="/js/hugo-academic.js"></script>
     
 
     
     
-      
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-      
 
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ncl.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/matlab.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
-      
-
-      
-
-      <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    
+    <script id="dsq-count-scr" src="//yucheng.disqus.com/count.js" async></script>
     
 
     
     
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+
     
     
 

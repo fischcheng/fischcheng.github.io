@@ -11,6 +11,24 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Agulhas leakage variability and its climate implications in a coupled system</title>
+      <link>/talk/rcec_seminar/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/rcec_seminar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agulhas Leakage Variability and Its Climate Implication in a Coupled System</title>
+      <link>/talk/defense/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/defense/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lagrangian ocean analysis: Fundamentals and practices</title>
       <link>/publication/lom/</link>
       <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
@@ -25,7 +43,7 @@
       <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
       
       <guid>/2017/10/05/remove-model-drift-using-control-run-simulations/</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO&lt;sub&gt;2&lt;/sub&gt; held fixed in year 2000 level. Following Gupta et al., [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO&lt;sub&gt;2&lt;/sub&gt;, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO&lt;sub&gt;2&lt;/sub&gt; level that takes few decades to reach the new equilibrium.&lt;/p&gt;
+      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO&lt;sub&gt;2&lt;/sub&gt; held fixed in year 2000 level. Following Gupta et al., [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO&lt;sub&gt;2&lt;/sub&gt;, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO&lt;sub&gt;2&lt;/sub&gt; level that takes few decades to reach the new equilibrium.&lt;/p&gt;
 
 &lt;p&gt;Below, I&amp;rsquo;d like to document my experience of cubic fitting the surface temperature (TS) locally at each grid point. Removing these drifts from the TS in the climate change run yields the de-drifted TS dataset. This post highlights several packages I&amp;rsquo;ve been using most frequently, including numpy, xarray and cartopy.&lt;/p&gt;
 
@@ -69,19 +87,18 @@ trend_HRC07=lintrend(TS_HRC07_dedrift)
 trendTS_HRC07=trendts(TS_HRC07_dedrift)
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/fit_and_HRC07.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/fit_and_HRC07.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
 
 &lt;p&gt;After removing the drift from each location, I plot out the linear trend map of TS for the HRC07 run using &lt;code&gt;cartopy&lt;/code&gt;.&lt;/p&gt;
 
@@ -115,21 +132,20 @@ cb.set_label(&#39;degC/decade&#39;)
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/dedrifted_HRC07_trend_map.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;HRC07 TS linear trends from 1953 to 2008 with model drift removed&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/dedrifted_HRC07_trend_map.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;HRC07 TS linear trends from 1953 to 2008 with model drift removed&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
 
-
-&lt;p&gt;The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.&lt;/p&gt;
+&lt;p&gt;The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -275,9 +291,9 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
 &lt;h2 id=&#34;youtube-video&#34;&gt;Youtube video&lt;/h2&gt;
 
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/GTqicHqhb1A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
- &lt;/div&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/GTqicHqhb1A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
 
 &lt;hr /&gt;
@@ -302,7 +318,9 @@ for yrid=find(yyy==YYs):find(yyy==YYe)
 
 &lt;p&gt;Wow, there is a built-in shortcode for Instagram!&lt;/p&gt;
 
-&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-permalink=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/&#34; data-instgrm-version=&#34;8&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;No one does #lineart quite like @jonathanlovers. Love this for @airbnb&amp;#39;s #OneAirbnb2017. 〰➰✍🏻&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;A post shared by &lt;a href=&#34;https://www.instagram.com/designmilk/&#34; style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&#34; target=&#34;_blank&#34;&gt; Design Milk&lt;/a&gt; (@designmilk) on &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2017-02-25T02:32:28+00:00&#34;&gt;Feb 24, 2017 at 6:32pm PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-permalink=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/?utm_source=ig_embed&#34; data-instgrm-version=&#34;9&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/p/BQ6v1Qlj1vT/?utm_source=ig_embed&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;No one does #lineart quite like @jonathanlovers. Love this for @airbnb&amp;#39;s #OneAirbnb2017. 〰➰✍🏻&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;A post shared by &lt;a href=&#34;https://www.instagram.com/designmilk/?utm_source=ig_embed&#34; style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&#34; target=&#34;_blank&#34;&gt; Design Milk&lt;/a&gt; (@designmilk) on &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2017-02-25T02:32:28+00:00&#34;&gt;Feb 24, 2017 at 6:32pm PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;script async defer src=&#34;//www.instagram.com/embed.js&#34;&gt;&lt;/script&gt;
 </description>
     </item>
@@ -376,19 +394,18 @@ OHC_multilevels=DataFrame.from_csv(&#39;OHC_HRC07_1951-2002.csv&#39;)  # If it&#
 OHC_multilevels.plot()
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/output_32_1.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Atlantic OHC in multiple layers 1951-2002&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/output_32_1.png&#34; width=&#34;600&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Atlantic OHC in multiple layers 1951-2002&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
 
 &lt;p&gt;Obviously, something fishy happened near 1952 and again in 1971. Several months have values close to zero, which is unlikely. Going back to the data, I confirmed that the temperature and salinity fields of those months are missing. To clean up the time series, I first assigned &lt;code&gt;None&lt;/code&gt; to those months, and interpolate linearly using the neighboring months. Three time series in the same &lt;em&gt;DataFrame&lt;/em&gt; are processed using following two lines.&lt;/p&gt;
 
@@ -396,19 +413,18 @@ OHC_multilevels.plot()
 OHC_multilevels.interpolate().plot()
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/output_33_1.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;filled missing data with linear interpolation&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/output_33_1.png&#34; width=&#34;600&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;filled missing data with linear interpolation&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
 
 &lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34; target=&#34;_blank&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
@@ -470,19 +486,18 @@ OHC_multilevels.interpolate().plot()
 
 &lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor &lt;sup&gt;100&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Satellite SST and onboard observed wind-vectors&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif&#34; width=&#34;600&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Satellite SST and onboard observed wind-vectors&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
 
 &lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
 
@@ -575,19 +590,18 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 
 &lt;p&gt;The best way to track the latest hurricane forecast is to visit the &lt;a href=&#34;http://www.nhc.noaa.gov/#MATTHEW&#34; target=&#34;_blank&#34;&gt;national weather service website&lt;/a&gt;.  I&amp;rsquo;m no hurricane/typhoon specialist (like I always said, I dived into the ocean when I came to Miami). Thanks to my colleagues, I finally got a grip on reading the NWS hurricane warnings. They are very different from the ones issued by Taiwanese weather bureau, and I would like to share some of my findings below:&lt;/p&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/hurricane01.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;NWS hurricane warning&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/hurricane01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;NWS hurricane warning&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Concise punch line on the top (as for the 2 am warning): &lt;strong&gt;&amp;hellip;MATTHEW POUNDING PORTIONS OF THE CENTRAL BAHAMAS&amp;hellip; &amp;hellip;EXPECTED TO INTENSIFY AS IT APPROACHES FLORIDA&amp;hellip;&lt;/strong&gt;&lt;/li&gt;
@@ -595,49 +609,46 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;li&gt;For more detailed paragraphs, checked the Public Advisory, Forecast advisory and discussion, and their Spanish versions. Check their official guide on &lt;a href=&#34;http://www.nhc.noaa.gov/help/tcp.shtml&#34; target=&#34;_blank&#34;&gt;how to read a public advisory.&lt;/a&gt; I personally enjoy reading the Forecast advisory.&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;For the path forecast, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?5-daynl#contents&#34; target=&#34;_blank&#34;&gt;Warnings/Cone&lt;/a&gt;. Over &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of chances that the center of the hurricane will stay in the white zone on the map. However, the area it may affect is much broader, considering its rain bands and hurricane force winds. Also there is still &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of chances that the center of the hurricane will be outside that cone. More details can be found &lt;a href=&#34;http://www.nhc.noaa.gov/aboutcone.shtml&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/hurricane02.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;forecast path&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;/img/hurricane02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;forecast path&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;For the currently wind affected area, check the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?radii#contents&#34; target=&#34;_blank&#34;&gt;surface wind field plot&lt;/a&gt;. It shows the maximum possible extent of a given wind speed within particular quadrants around the tropical cyclone. By definition, Hurricane force winds exceeds 74mph and Tropical Storm force winds are no less than 39mph, so the later cover a much larger area.
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/hurricane03.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;force wind affected area&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;/img/hurricane03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;force wind affected area&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Now comes to the &lt;a href=&#34;http://www.nhc.noaa.gov/refresh/graphics_at4+shtml/034341.shtml?tswind120#contents&#34; target=&#34;_blank&#34;&gt;force wind speed probabilities.&lt;/a&gt; These plots indicate the cumulative possibility that a specific area will experience winds over a certain threshold. Users can change the cumulative periods (up to 120hrs), and the wind thresholds (tropical storm force, 50knots and hurricane force.)
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/hurricane04.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;force wind speed probabilities&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;/img/hurricane04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;force wind speed probabilities&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Rainfall and storm surges are more difficult to predict. But NWS also provides such products.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -647,19 +658,18 @@ class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
 &lt;ol&gt;
 &lt;li&gt;I was surprised to see that Matthew reached 140mph last night. However, I realized that NWS takes 1-min average maximum sustained wind to define hurricane intensity. In West Pacific, 10-min average is used instead. So I&amp;rsquo;m less impressed by Matthew now. But let&amp;rsquo;s check back in 24 hrs since it is predicted to regroup and intensify again before reaching Florida.&lt;/li&gt;
 &lt;li&gt;Interesting read on the differences between watches and warnings:
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/hurricane05.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Watches vs Warnings&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-&lt;/li&gt;
+&lt;img src=&#34;/img/hurricane05.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Watches vs Warnings&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;References:&lt;/p&gt;
@@ -783,19 +793,18 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;p&gt;&lt;a href=&#34;http://wercker.com&#34; target=&#34;_blank&#34;&gt;Wercker&lt;/a&gt; is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on &lt;a href=&#34;docker&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt;. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented &lt;em&gt;steps&lt;/em&gt;. In our case, the application consists of two steps &lt;em&gt;build hugo&lt;/em&gt; and &lt;em&gt;deploy to GitHub.&lt;/em&gt;&lt;/p&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/wercker01.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Wercker dashboard: to find existed steps, click the Registry tab; to create your own applications and steps, access the Create tab.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/wercker01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Wercker dashboard: to find existed steps, click the Registry tab; to create your own applications and steps, access the Create tab.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
 
 &lt;p&gt;The first task is to create the config.yml (&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml&#34; target=&#34;_blank&#34;&gt;link to mine&lt;/a&gt;) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p&gt;
 
@@ -843,204 +852,18 @@ build:
             branch: master
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;figure&gt;
 
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/wercker02.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Click deploy pipeline to setup included environment variables. Get the Github access token from Github profile setting.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+&lt;img src=&#34;/img/wercker02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Click deploy pipeline to setup included environment variables. Get the Github access token from Github profile setting.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
 &lt;/figure&gt;
-
-</description>
-    </item>
-    
-    <item>
-      <title>Switch from Pelican to Hugo</title>
-      <link>/2016/09/14/switch-from-pelican-to-hugo/</link>
-      <pubDate>Wed, 14 Sep 2016 01:16:30 -0500</pubDate>
-      
-      <guid>/2016/09/14/switch-from-pelican-to-hugo/</guid>
-      <description>
-
-&lt;p&gt;Being a big fan of all things Python, I built the last two incarnations of this site with Pelican. I even went to the length to set up a Travis CI to automatically build and deploy to GitHub pages. That was the beginning of the summer and only two new posts ever since.&lt;/p&gt;
-
-&lt;p&gt;Recently, my boss has brought up the topic of building a group website. Also, there is a joint-project website needs to be done. Most other groups in the school have their group website, mostly hosted by Weebly, Wordpress or Wix. Those website services certainly have pros. For one, a Weebly site can easily allow multiple contributors. But most customization and advanced features are usually not free.&lt;/p&gt;
-
-&lt;p&gt;So, I shared my experience of hosting a static site on Github pages and showed off my Pelican-powered website. By generating your own website, hosted by some popular cloud services (i.e. Amazon S3 and Github), one has full control to the contents and styles. All other responsive features such as site analytics and commenting can be achieved by integrating with existed online services.&lt;/p&gt;
-
-&lt;h3 id=&#34;static-site-generators&#34;&gt;Static site generators&lt;/h3&gt;
-
-&lt;p&gt;Options are plenty, to name a few, Jekyll, Octopress, Pelican, Middleman, and Hugo. They were written in different languages (Ruby, JavaScript, Python and Go, etc.) but serve the same goal &amp;ndash; construct the bare bone of a website and render the contents to the publishable HTML pages.&lt;/p&gt;
-
-&lt;p&gt;Not every site generators were created equal. Folks from different languages tend to choose the one they are familiar with. That was why I used Pelican initially. For the time-being, I realized that Pelican community is not very active, and theme options seems a bit thin. Jekyll is more matured, and there are already numerous professional-like themes available. However, it is Hugo that caught my eyes.&lt;/p&gt;
-
-&lt;p&gt;Hugo has certainly attracted many people from Jekyll. The binary itself is written in Go, and no other dependencies are necessary. It renders Markdown file to HTML really fast (we are talking about millisecond here.) Its structure makes switching between themes and customization overwriting the chosen theme super easy. Also, Hugo was the name I had during the 7-day intensive Spanish program that I completed in the past summer.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tbd.kaitoy.xyz/images/hugo-logo.png&#34; alt=&#34;banner&#34; title=&#34;hugo&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;hugo-workflow&#34;&gt;Hugo workflow&lt;/h3&gt;
-
-&lt;p&gt;Let me walk you through the basics of building a Hugo-powered website. For more details, readers are referred to the official Hugo &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34; target=&#34;_blank&#34;&gt;quickstart guide&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Install Hugo binary: for OS X (and the future Mac OS) users, it&amp;rsquo;s recommended to do it through homebrew, just like for most open-source software.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew install hugo
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Create a new site under the desired root directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo new site sitename
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The generated directory have the following layout:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.
-|-- archetypes
-|-- config.toml
-|-- content
-|-- data
-|-- layouts
-`-- static
-
-5 directories, 1 file
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Create new posts under the content folder:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo new post/postname.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;config.toml&lt;/code&gt; is the key configuration file to let Hugo know how to render the contents.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Pick a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; or build your own. To apply a theme, one needs to create a &lt;code&gt;themes&lt;/code&gt; folder under the root, and &lt;code&gt;git clone&lt;/code&gt; or make a new-theme directory under this folder. Then switching themes can be achieved by adding a line in &lt;code&gt;config.toml&lt;/code&gt; file like this &lt;code&gt;theme = &amp;quot;hugo-academic&amp;quot;&lt;/code&gt;, or tell hugo which theme to build with using this command &lt;code&gt;hugo server --theme=hugo_theme_name&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Check the results by running a virtual server, which automatically listens to any changes you make and render HTML in real time. Go to &lt;a href=&#34;http://localhost:1313/&#34; target=&#34;_blank&#34;&gt;http://localhost:1313/&lt;/a&gt; to see your shiny new site in action.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server --watch
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build the pages by invoking &lt;code&gt;hugo&lt;/code&gt;. Generated HTML pages will by default be stored under &lt;code&gt;public&lt;/code&gt; folder. It is this folder you need to find a home to host.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;comments-and-tips&#34;&gt;comments and tips&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Posts are usually written in Markdown, though it also supports other markup languages. Markdown is really elegant and easy to use, definitely worth picking up.&lt;/li&gt;
-&lt;li&gt;The equivalent of &lt;em&gt;extension&lt;/em&gt; in Hugo is &lt;em&gt;shortcodes&lt;/em&gt;, which are stored under &lt;code&gt;layout/shortcodes&lt;/code&gt; directory. These pre-defined snippets can allow site-owner to embed Youtube, Vimeo players and individual tweet into their posts.&lt;/li&gt;
-&lt;li&gt;Most themes support &lt;em&gt;Disqus&lt;/em&gt; for commenting or &lt;em&gt;google-analytic&lt;/em&gt; for analyzing website usage.&lt;/li&gt;
-&lt;li&gt;The format of metadata in the markdown files might be different from those using other site-generators. So, migrating old posts to Hugo needs some works (could be easily down with some simple parsing scripts.)&lt;/li&gt;
-&lt;li&gt;Add customized CSS stylesheet under &lt;code&gt;static&lt;/code&gt; to overwrite settings in the chosen theme.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Large-scale forcing dominates interannual variability of Agulhas leakage</title>
-      <link>/project/largescale_forcing/</link>
-      <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/project/largescale_forcing/</guid>
-      <description>
-
-&lt;h4 id=&#34;motivation&#34;&gt;Motivation&lt;/h4&gt;
-
-&lt;p&gt;In our early work, we have shown that Agulhas leakage is highly variable at daily to seasonal time scales, presumably dominated by the passage of Agulhas Rings. Decadal trends of Agulhas leakage are oftend attributed to the changes of Southern Hemisphere westerlies by previous studies. We hypothesize that, at interannual time scales, leakage variability is constrained by large-scale wind forcing, minifesting itself as changing large-scale velocity fields.&lt;/p&gt;
-
-&lt;h4 id=&#34;method&#34;&gt;Method&lt;/h4&gt;
-
-&lt;p&gt;Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. All the velocity fields used in this project is from an ongoing twentieth century climate change simulation with observed CO2 forcing. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p&gt;
-
-&lt;p&gt;Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (Fig.1). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields&amp;rsquo; temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/large-scale/fig1_schematic_shuffling_trans.png&#34; width=&#34;800&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Diagram for shuffling and shifting experiments.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;h4 id=&#34;time-series-comparison&#34;&gt;Time series comparison&lt;/h4&gt;
-
-&lt;p&gt;Applying a 24-months low-possed fileds allow us to compare the interannual leakage variability between the testing cases and the reference case. As shown in Fig. 2, the timeseries correlate well above 0.6 (p&amp;lt;0.01). A Coherence analysis further support the hypothesis: leakage time series between cases are highly coherent over time scales longer than 1000 days (Fig. 3).&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;24-months low-passed leakage timeseries&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/large-scale/fig5_coherence_spectra_11taper.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;coherence square of Agulhas leakage timeseries&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;h4 id=&#34;regional-climate-imprints&#34;&gt;Regional climate imprints&lt;/h4&gt;
-
-&lt;p&gt;Leakage variability at this time scale is highly associated with the poleward shift of Southern Hemisphere westerlies, as shown in the regression of such to the low-passed Agulhas leakage time series (Fig. 4).&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Westerlies response to interannual leakage variability&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;By regressing various climate variables from both atmosphere and ocean, we are able to show some regional climate patterns associated with interannual leakage variability (Fig. 5)&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Regional imprints of low-passed Agulhas leakage&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;h4 id=&#34;future-work&#34;&gt;Future work&lt;/h4&gt;
-
-&lt;p&gt;As the high-resolution climate change simulation still ongoing, we are eager to find out the long-term trends of Agulhas leakage and its effects on the regional climate, South Atlantic Ocean, and Atlantic Meridional Overturning Circulation. We would like to investigate the heat content and northward heat transport variability in the Southern Ocean in our coupled simulation, and relate such to Agulhas leakage.&lt;/p&gt;
 </description>
     </item>
     

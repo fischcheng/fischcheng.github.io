@@ -2,207 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/python/</link>
+    <link>/tags/python/</link>
     <description>Recent content in Python on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Thu, 05 Oct 2017 00:16:43 -0400</lastBuildDate>
-    <atom:link href="/tags/python/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Remove model drift using control run simulations</title>
-      <link>https://fischcheng.github.io/2017/10/05/remove-model-drift-using-control-run-simulations/</link>
+      <link>/2017/10/05/remove-model-drift-using-control-run-simulations/</link>
       <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/10/05/remove-model-drift-using-control-run-simulations/</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO&lt;sub&gt;2&lt;/sub&gt; held fixed in year 2000 level. Following Gupta et al., [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO&lt;sub&gt;2&lt;/sub&gt;, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO&lt;sub&gt;2&lt;/sub&gt; level that takes few decades to reach the new equilibrium.&lt;/p&gt;
-
-&lt;p&gt;Below, I&amp;rsquo;d like to document my experience of cubic fitting the surface temperature (TS) locally at each grid point. Removing these drifts from the TS in the climate change run yields the de-drifted TS dataset. This post highlights several packages I&amp;rsquo;ve been using most frequently, including numpy, xarray and cartopy.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f1 = &#39;./data/TS.ens.all.nc&#39;
-ds1 = xarray.open_dataset(f1, decode_times=True, chunks={&#39;lat&#39;:200,&#39;lon&#39;:200})
-TS_annual=ds1.TS.resample(&#39;12MS&#39;,dim=&#39;time&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;These lines load in a NetCDF file with 69 years of monthly mean TS (time: 69, lat: 384, lon: 576) in (200x200) chunks. The chunk is the built-in support of &lt;a href=&#34;https://dask.pydata.org/en/latest/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Dask&lt;/code&gt;&lt;/a&gt; in &lt;a href=&#34;http://xarray.pydata.org&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Xarray&lt;/code&gt;&lt;/a&gt;. &lt;code&gt;Xarray&lt;/code&gt; is a very powerful package. It attempts to extend the labeled data power of &lt;code&gt;Pandas&lt;/code&gt; to the multi-dimensional datasets that we often work on in geophysical sciences.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.dates as dates
-from numpy.polynomial.polynomial import polyval,polyfit
-import xarray
-def driftfit(arr):
-    stacked = arr.stack(loc=(&#39;lat&#39;, &#39;lon&#39;))
-    timenum=dates.date2num(stacked.time.to_index().to_pydatetime())
-    regressions = polyfit(timenum, stacked, 3) 
-    drift_stacked= polyval(timenum,regressions)
-    foo = xarray.DataArray(drift_stacked.T, coords=[stacked[&#39;time&#39;], stacked[&#39;loc&#39;]], dims=[&#39;time&#39;, &#39;loc&#39;],name=arr.name)
-    arr_drift=foo.unstack(&#39;loc&#39;)
-    return arr_drift
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is a function to fit a 3rd order polynomial to the 69-year surface temperature of each grid cell. It stacks locations of the input array using &lt;code&gt;arr.stack(loc=(&#39;lat&#39;, &#39;lon&#39;))&lt;/code&gt;, and using &lt;code&gt;numpy.polynomial.polynomial.polyfit&lt;/code&gt; to find the cubic fit of the local temperature time series over 69 years. The coefficients are then converted back to the polynomials using &lt;code&gt;polyval(timenum,regressions)&lt;/code&gt;. Next step is to generate a DataArray from numpy.array so that I can unstack the array correctly and keep the metadata from the input DataArray.&lt;/p&gt;
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;One interesting and confusing thing I noticed: not all &lt;code&gt;polyfit&lt;/code&gt; are created equal. The &lt;code&gt;numpy.polyfit&lt;/code&gt; outputs the polynomial coefficients from the highest power, while the &lt;code&gt;numpy.polynomial.polynomial.polyfit&lt;/code&gt; does the other way round. And so are the input order of their corresponding &lt;code&gt;polyval&lt;/code&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;p&gt;I then load in the climate change run and remove the cubic fit from it. Two functions &lt;code&gt;lintrend&lt;/code&gt; and &lt;code&gt;trendts&lt;/code&gt; are constructed similarly to &lt;code&gt;driftfit&lt;/code&gt;, so I left out the details. The former output the coefficient of the first order polynomial (the slope), and the later output the trend time series.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ensfit=driftfit(TS_annual)
-
-f2 = &#39;./data/TS.HRC07.all.nc&#39;
-ds2 = xarray.open_dataset(f2, decode_times=True, chunks={&#39;lat&#39;:200,&#39;lon&#39;:200})
-TS_HRC07_annual=ds2.TS.resample(&#39;12MS&#39;,dim=&#39;time&#39;)
-TS_HRC07_dedrift=TS_HRC07_annual-ensfit
-trend_HRC07=lintrend(TS_HRC07_dedrift)
-trendTS_HRC07=trendts(TS_HRC07_dedrift)
-&lt;/code&gt;&lt;/pre&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fischcheng.github.io/img/fit_and_HRC07.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;After removing the drift from each location, I plot out the linear trend map of TS for the HRC07 run using &lt;code&gt;cartopy&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plt.figure(figsize=(13,5))
-ax = plt.subplot(111, projection=ccrs.PlateCarree()) #ccrs.Mollweide()
-mm = ax.pcolormesh(ds1.lon,
-                   ds1.lat,
-                   trend_HRC07*365*10,                   
-                   vmin=-.5,
-                   vmax=.5,
-                   transform=ccrs.PlateCarree(),cmap=cmo.balance )
-ax.set_global()
-#ax.set_extent([-180, 180, -70, 70])
-ax.coastlines();
-cb=plt.colorbar(mm,ax=ax,fraction=0.046, pad=0.01)
-
-
-#ax.set_xticks([0, 60, 120, 180, 240, 300, 360], crs=ccrs.PlateCarree())
-
-ax.set_xticks([-180,-120,-60,0, 60, 120, 180], crs=ccrs.PlateCarree())
-ax.set_yticks([-90, -60, -30, 0, 30, 60, 90], crs=ccrs.PlateCarree())
-lon_formatter = LongitudeFormatter()
-lat_formatter = LatitudeFormatter()
-ax.xaxis.set_major_formatter(lon_formatter)
-ax.yaxis.set_major_formatter(lat_formatter)
-
-
-ax.set_title(&#39;dedrifted HRC07 Temperature linear trend &#39;)
-cb.set_label(&#39;degC/decade&#39;)
-
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fischcheng.github.io/img/dedrifted_HRC07_trend_map.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;HRC07 TS linear trends from 1953 to 2008 with model drift removed&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;Gupta, A. S., N. C. Jourdain, J. N. Brown, and D. Monselesan, 2013: Climate Drift in the CMIP5 Models*. J. Climate, 26, 8597–8615, doi:10.1175/JCLI-D-12-00521.1.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <guid>/2017/10/05/remove-model-drift-using-control-run-simulations/</guid>
+      <description>Recently, I&amp;rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO2 held fixed in year 2000 level. Following Gupta et al., [2013]1, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years).</description>
     </item>
     
     <item>
       <title>Fill in the missing data using Python pandas</title>
-      <link>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
+      <link>/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
       <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
+      <guid>/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
       <description>&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;At the core of Pandas are the data structures: &lt;em&gt;Series&lt;/em&gt;, &lt;em&gt;DataFrame&lt;/em&gt; and &lt;em&gt;Panel&lt;/em&gt;. The ones I used the most are the first two. A &lt;em&gt;Series&lt;/em&gt; is an array labeled with timestamps, and a &lt;em&gt;DataFrame&lt;/em&gt; consists of many &lt;em&gt;Series&lt;/em&gt;. In a real-world use case, I use pandas to generate a range of time-axis, which is then attached to my Agulhas leakage time-series. After doing that, the value at a specific timestep can be easily retrieved by calling &lt;code&gt;Series[&#39;timestamp&#39;].&lt;/code&gt; And to plot the whole time series is as simple as &lt;code&gt;Series.plot().&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;For a &lt;em&gt;DataFrame&lt;/em&gt;, to see the key statistics of a &lt;em&gt;DataFrame&lt;/em&gt; with many columns, simply use &lt;code&gt;DataFrame.describe()&lt;/code&gt;. A table with mean, standard deviation, counts, and percentiles will then pop up. To compare multiple time series visually, naively put &lt;code&gt;DataFrame.plot().&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;working-with-missing-data&#34;&gt;Working with missing data&lt;/h4&gt;
-
-&lt;p&gt;Recently, I am calculating the Atlantic Ocean Heat Content (OHC).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#headers=[&#39;date&#39;,&#39;OHC2000&#39;,&#39;OHC300&#39;,&#39;OHC700&#39;]
-OHC_multilevels=DataFrame.from_csv(&#39;OHC_HRC07_1951-2002.csv&#39;)  # If it&#39;s pandas generated, this is much easier.
-OHC_multilevels.plot()
-&lt;/code&gt;&lt;/pre&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fischcheng.github.io/img/output_32_1.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Atlantic OHC in multiple layers 1951-2002&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;Obviously, something fishy happened near 1952 and again in 1971. Several months have values close to zero, which is unlikely. Going back to the data, I confirmed that the temperature and salinity fields of those months are missing. To clean up the time series, I first assigned &lt;code&gt;None&lt;/code&gt; to those months, and interpolate linearly using the neighboring months. Three time series in the same &lt;em&gt;DataFrame&lt;/em&gt; are processed using following two lines.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;OHC_multilevels[OHC_multilevels&amp;lt;100]=None
-OHC_multilevels.interpolate().plot()
-&lt;/code&gt;&lt;/pre&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fischcheng.github.io/img/output_33_1.png&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;filled missing data with linear interpolation&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href=&#34;http://pandas.pydata.org/pandas-docs/stable/overview.html&#34; target=&#34;_blank&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Gibbs SeaWater Oceanographic Package for Python</title>
-      <link>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</link>
+      <link>/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</guid>
+      <guid>/2017/02/05/gibbs-seawater-oceanographic-package-for-python/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;m looking into the Meridional Heat Transport across the 35$^{\circ}$S in our high-resolution CCSM simulation following &lt;a href=&#34;http://journals.ametsoc.org/doi/abs/10.1175/2011JPO4549.1&#34; target=&#34;_blank&#34;&gt;Dong et al. 2011&lt;/a&gt;. To calculate the heat transport, the following formula is used:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
@@ -211,176 +46,37 @@ OHC_multilevels.interpolate().plot()
 
 &lt;p&gt;The tricky part is whether one should use temporal and spatial-varying values of $C_{p}$ (seawater heat capacity) and $\rho$ (seawater density). Since density and heat capacity are not among the standard outputs, I went on looking for some standard libraries to calculate them using the fields I have: temperature, pressure, and salinity. Soon, I found the Python version of &lt;strong&gt;Gibbs SeaWater Oceanographic Package&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;Gibbs-SeaWater (GSW) Oceanographic Toolbox&lt;/strong&gt; contains the TEOS-10 subroutines for evaluating the thermodynamic properties of pure water (using IAPWS-09) and seawater (using IAPWS-08 for the saline part). You can download the toolbox in differnt languages through this &lt;a href=&#34;http://www.teos-10.org/software.htm#1&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;. Also can be found are the abundant &lt;a href=&#34;http://www.teos-10.org/pubs/gsw/html/gsw_contents.html&#34; target=&#34;_blank&#34;&gt;documentations&lt;/a&gt;. The &lt;a href=&#34;https://github.com/TEOS-10/python-gsw&#34; target=&#34;_blank&#34;&gt;python version&lt;/a&gt; can be easily installed through the standard pip channel, simply type &lt;code&gt;pip install gsw&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So far, I used several functions:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;gsw.p_from_z(depth,latitude): caclculate in situ pressure (in dbar) from depth (in meter)&lt;/li&gt;
-&lt;li&gt;gsw.CT_from_pt(Salinity,Potential_Temperature): convert potential temperature (CCSM output) to conservative emperature&lt;/li&gt;
-&lt;li&gt;gsw.t_from_CT(Salinity,Conservative_Temperature,Pressure): convert conservative temperature to in situ temperature&lt;/li&gt;
-&lt;li&gt;gsw.rho_t_exact(salinity,temperature,pressure): calculate seawater density from field variables&lt;/li&gt;
-&lt;li&gt;gsw.cp_t_exact(salinity,temperature,pressure): calculate the heat capacity of seawater from field variables&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For any physical oceanographers, the temperature, salinity and pressure trio cannot be missed. Considering the compressibility, potential temperature and potential density are usually introduced next. But, I don&amp;rsquo;t recall I have ever heard of &lt;strong&gt;Conservative Temperature&lt;/strong&gt;. It struck me as the first time I learned about potential temperature.&lt;/p&gt;
-
-&lt;p&gt;Potential Temperature ($\theta$) and Conservative Temperature ($\Theta$) are actually not that different. They are defined similarly involving the thought experiment that adiabatically (no heating) bringing the deep water to the sea surface (p=0). The temperature of the fluid parcel after the procedure is the Potential Temperature, and the parcel has the enthalpy defined as “Potential Enthalpy”. Dividing the “Potential Enthalpy” by the fixed “heat capacity” ($c_{p}^{0}=3991.867 [JKg^{-1}K^{-1}]$) yields the Conservative Temperature. $\Theta$ better represents the “heat content” of seawater and because $\Theta$ is almost a perfectly conservative variable, the meridional “heat” flux is very accurately given by the meridional flux of $\Theta$ (as opposed to the meridional flux of $\theta$).&lt;/p&gt;
-
-&lt;p&gt;ref: &lt;a href=&#34;http://www.teos-10.org/pubs/Getting_Started.pdf&#34; target=&#34;_blank&#34;&gt;getting started with TEOS-10 and the GSW Oceanographic Toolbox&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>iPython notebook gallery</title>
-      <link>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</link>
+      <link>/2017/02/05/ipython-notebook-gallery/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/05/ipython-notebook-gallery/</guid>
+      <guid>/2017/02/05/ipython-notebook-gallery/</guid>
       <description>&lt;p&gt;Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Python is a thing that I picked up in the graduate school. I not only use &lt;code&gt;Python&lt;/code&gt; to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. &lt;code&gt;Ipython&lt;/code&gt; stands for &lt;em&gt;Interactive Python&lt;/em&gt;. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to &lt;code&gt;Ipython&lt;/code&gt; project in 2011, and it has evolved into an enormous spin-off project called &lt;code&gt;Jupyter&lt;/code&gt; in 2014. Such notebooks connect to different &lt;em&gt;kernels.&lt;/em&gt; There are many kernels compatible with &lt;code&gt;Ipython/Jupyter&lt;/code&gt;, including &lt;code&gt;Python&lt;/code&gt; (natürlich!), &lt;code&gt;Julia&lt;/code&gt;, &lt;code&gt;R&lt;/code&gt;, and &lt;code&gt;Haskell&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I love using Ipython notebooks because I can run code, comment in Markdown and plot inline on the same page. Everything is then easily exported to shareable formats such as pdf, HTML, Latex, even presentation slides.&lt;/p&gt;
-
-&lt;p&gt;Ths description quoted from Jupyter.org:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In 2013, I participated in a research cruise &amp;ldquo;Meteor 100/2&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif&#34; width=&#34;600&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Satellite SST and onboard observed wind-vectors&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em&gt;Jupyter.org&lt;/em&gt;. Below are some links to my early works in the notebook format:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb&#34; target=&#34;_blank&#34;&gt;Plotting routine for Meteor 100/2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb&#34; target=&#34;_blank&#34;&gt;Along-track wind-observation and animation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1&#34; target=&#34;_blank&#34;&gt;Linear Inverse Modeling data validation, predictability study&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/fischcheng/fischcheng.github.io/blob/source/static/notebook/p3.ipynb&#34; target=&#34;_blank&#34;&gt;Reduced Gravity model showing equatorial waves&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;center&gt;
-
-&lt;div 
-class=&#34;magnific-video mpf-iframe embed video-player &#34;&gt;
-	&lt;iframe src=&#34;https://www.youtube.com/embed/jx_bGld1eLM&#34; type=&#34;text/html&#34;
-		allowfullscreen
-		frameborder=&#34;0&#34;
-		width=&#34;80%&#34;
-		height=&#34;385&#34;
-
-	&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;/center&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Renovate this place and new resolutions!</title>
-      <link>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</link>
+      <link>/2016/07/05/renovate-this-place-and-new-resolutions/</link>
       <pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2016/07/05/renovate-this-place-and-new-resolutions/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve just spent the long weekend updating my nearly-abandoned website. This year, I have passed my qualifying exam (February), and the paper I&amp;rsquo;ve been working on for almost an year is now finally accepted.&lt;/p&gt;
-
-&lt;p&gt;The website has been changed to a GitHub user-page, instead of a project-page. Also, now the website is automatically generated by Travis-CI, a very popular service recently, testing and deploying the codes to ensure portability. All the changes and new posts are made on my laptop. Html pages are built by Pelican/Python3, on the /source branch. A push to the remote host will trigger Travis-CI. With a little help from ghp-import, the Travis-CI-generated pages will be force-pushed to the /master branch. Voila, that is the website now you are looking at.&lt;/p&gt;
-
-&lt;p&gt;Through this little-over-two-days endeavor, I now had more knowledge on Github, Travis-CI, and more control on my own website templates. Now it&amp;rsquo;s just the matter of keeping things rolling &amp;ndash; I made the resolution to post more frequently. In fact, I have just updated the Work page to include some of my recent presentations and abstracts. I will also post some of the notes from our group meeting.&lt;/p&gt;
-</description>
+      <guid>/2016/07/05/renovate-this-place-and-new-resolutions/</guid>
+      <description>I&amp;rsquo;ve just spent the long weekend updating my nearly-abandoned website. This year, I have passed my qualifying exam (February), and the paper I&amp;rsquo;ve been working on for almost an year is now finally accepted.
+The website has been changed to a GitHub user-page, instead of a project-page. Also, now the website is automatically generated by Travis-CI, a very popular service recently, testing and deploying the codes to ensure portability. All the changes and new posts are made on my laptop.</description>
     </item>
     
     <item>
       <title>Building a statistic blog with Pelican</title>
-      <link>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican/</link>
+      <link>/2014/06/10/building-a-statistic-blog-with-pelican/</link>
       <pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate>
       
-      <guid>https://fischcheng.github.io/2014/06/10/building-a-statistic-blog-with-pelican/</guid>
-      <description>
-
-&lt;h4 id=&#34;once-upon-a-time&#34;&gt;Once upon a time&amp;hellip;&lt;/h4&gt;
-
-&lt;p&gt;I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p&gt;
-
-&lt;h4 id=&#34;pelican-i-love-this-bird&#34;&gt;Pelican: I love this bird!!&lt;/h4&gt;
-
-&lt;p&gt;I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&#34; target=&#34;_blank&#34;&gt;http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&#34; target=&#34;_blank&#34;&gt;http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/getpelican&#34; target=&#34;_blank&#34;&gt;https://github.com/getpelican&lt;/a&gt;
-&lt;p align=&#34;center&#34;&gt;
-{% img &lt;a href=&#34;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&#34; target=&#34;_blank&#34;&gt;http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg&lt;/a&gt; 400 500 %}
-&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;overview&#34;&gt;Overview&lt;/h4&gt;
-
-&lt;p&gt;Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em&gt;configuration.py&lt;/em&gt; file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/&#34; target=&#34;_blank&#34;&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;themes&#34;&gt;Themes&lt;/h4&gt;
-
-&lt;p&gt;One of the reasons that I chose Pelican is the active community on Github. As mentioned above, pelican templates are generated by Jinja2, which is a template engine powered by Python. A set of themes including templates of different pages and stylesheets. There are many high-quality themes available on github, which can be easily downloaded using following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::bash
-git clone https://github.com/getpelican/pelican-themes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This blog is powered by pelican-bootstraps3 theme; few other themes I would also like to try are Pelican-pure, Mockingbird and Notmyidea. Additional stylesheet can be easily integrated by changing the setting in &lt;em&gt;configuration.py&lt;/em&gt;. To switch between different themes, just modify this line in your &lt;em&gt;configuration.py&lt;/em&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::python
-THEME = &amp;quot;pelican-bootstrap3&amp;quot;  # or whatever themes you like
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;customize&#34;&gt;Customize&lt;/h4&gt;
-
-&lt;p&gt;This is a more tricky part, due to my limited knowledge of CSS and Jinja2. So far I&amp;rsquo;ve only managed to change the background color, font size, line-height and link-hover style of my header. Even though the syntax of CSS is very straightforward, lacking of nested structure, it is very difficult to read the CCS stylesheet by someone else: one must figure out the class/ID names of each elements in the html files, and locate corresponding tags in the minified CSS file. I&amp;rsquo;ve found a Sublime-Text package to unminify the CSS, yet still find it difficult to change even a single property. Currently, I am attempting to use SASS/COMPASS to rewrite the stylesheet.&lt;/p&gt;
-
-&lt;h4 id=&#34;plugins&#34;&gt;Plugins&lt;/h4&gt;
-
-&lt;p&gt;One of greatest feature of Pelican is to include modular plugins into your static site. Same as Pelican-themes, these plugins can be downloaded easily from github.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::bash
-git clone https://github.com/getpelican/pelican-plugins.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Curretnly, I am using the Liquid-tags plugin by &lt;a href=&#34;mailto:jakevdp@cs.washington.edu&#34; target=&#34;_blank&#34;&gt;Jake Vanderplas&lt;/a&gt; to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em&gt;configuration.py&lt;/em&gt;. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:::python
-# Plugins
-PLUGIN_PATH = &#39;/Users/yucheng/Desktop/Other/MyPage/pelican-plugin&#39;
-PLUGINS = [&#39;liquid_tags.img&#39;, &#39;liquid_tags.video&#39;,
-           &#39;liquid_tags.youtube&#39;, &#39;liquid_tags.vimeo&#39;,
-            &#39;liquid_tags.include_code&#39;, &#39;liquid_tags.notebook&#39;,&#39;render_math&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
-
-&lt;p&gt;Pelican is a really powerful static-site generator, using Python. All options you may play with are in the &lt;em&gt;configuration.py&lt;/em&gt; and the &lt;em&gt;syltesheet.css&lt;/em&gt;. The official documentation of Pelican is rather complete, not to mention the active developer-base. If you are a Python lover, it won&amp;rsquo;t take you too long to setup a really polished and somehow-dynamic static site. So, look no further, among numerous static-site engines, Pelican is definitely one of the best.&lt;/p&gt;
-</description>
+      <guid>/2014/06/10/building-a-statistic-blog-with-pelican/</guid>
+      <description>Once upon a time&amp;hellip; I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away.</description>
     </item>
     
   </channel>

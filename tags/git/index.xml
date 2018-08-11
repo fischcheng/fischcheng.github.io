@@ -2,54 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Yu Cheng</title>
-    <link>https://fischcheng.github.io/tags/git/</link>
+    <link>/tags/git/</link>
     <description>Recent content in Git on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Yu Cheng</copyright>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Sat, 25 Feb 2017 20:13:52 -0500</lastBuildDate>
-    <atom:link href="/tags/git/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Using git-latexdiff to track changes in tex-file graphically</title>
-      <link>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</link>
+      <link>/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</link>
       <pubDate>Sat, 25 Feb 2017 20:13:52 -0500</pubDate>
       
-      <guid>https://fischcheng.github.io/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</guid>
+      <guid>/2017/02/25/using-git-latexdiff-to-track-changes-in-tex-file-graphically/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s been a while since I started using &lt;code&gt;git&lt;/code&gt;. The version control system helps to track changes in computer files and coordinating work on those files among multiple people. Composing a manuscript is nothing unlike developing a program. If multiple authors work on the same manuscript, &lt;code&gt;git&lt;/code&gt; can be very helpful to avoid conflicts. If you are the only author, &lt;code&gt;git&lt;/code&gt; can help you to document what has been changed since the last commit or put your advisor&amp;rsquo;s comment in another branch.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m a big fan of $\Latex$. It&amp;rsquo;s powerful and elegant. With a given template, one should only focus on the content. However, when it comes to tracking changes, $\Latex$ is a lightyear behind Word. Fortunately, I recently bumped into a program &lt;code&gt;latexdiff&lt;/code&gt;, which visually tracks changes between $\Latex$ generated pdfs, much like how Word does. Before, I often manually color the lines I changed when sending to my advisor.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; is a wrapper around &lt;code&gt;git&lt;/code&gt; and &lt;code&gt;latexdiff&lt;/code&gt;. Instead of manually generating dummy tex files of different names (and also the auxiliary files), &lt;code&gt;git-latexdiff&lt;/code&gt; can graphically show the differences between various versions of a LaTeX-generated pdf. Below is an example of how I incorporate these tools to my workflow.&lt;/p&gt;
-
-&lt;h3 id=&#34;git-basics&#34;&gt;Git basics&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;You can turn any folders into &lt;em&gt;git-tracking&lt;/em&gt; folders by typing the command &lt;code&gt;git init .&lt;/code&gt; in the targeting folder.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;: add all files in the folder to staging&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git commit&lt;/code&gt;: commit changes to head (the changes are still local)&lt;/li&gt;
-&lt;li&gt;These committed changes can then be pushed to a remote repository hosted on GitHub or gitlab.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git checkout -b branchname&lt;/code&gt; to create and switch to new branch (&lt;code&gt;git checkout branchname&lt;/code&gt; to switch after commit if the branch already exists)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git status&lt;/code&gt; to check current branch and status&lt;/li&gt;
-&lt;li&gt;After you are satisfied with the changes you made in a developing branch, merge back to &lt;code&gt;master&lt;/code&gt; by &lt;code&gt;git merge branchname&lt;/code&gt;, assuming the current branch is &lt;code&gt;master&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Many GUI git &lt;a href=&#34;https://git-scm.com/download/gui/linux&#34; target=&#34;_blank&#34;&gt;clients&lt;/a&gt; can save the day if you are not used to command lines. For now, I am using &lt;em&gt;GitKraken&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;track-changes&#34;&gt;Track changes&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;latexdiff&lt;/code&gt; works like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;latexdiff draft.tex revision.tex &amp;gt; diff.tex
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To compare the difference between first two versions of .tex, a third dummy diff.tex is created, along with many auxiliary files. Check this &lt;a href=&#34;https://www.sharelatex.com/blog/2013/02/16/using-latexdiff-for-marking-changes-to-tex-documents.html&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; for better control over &lt;code&gt;latexdiff&lt;/code&gt;. Using &lt;code&gt;git-latexdiff&lt;/code&gt;, one can track the differences between the same file on different branches or versions, like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;git latexdiff --latexmk --append-context2cmd=&amp;quot;abstract&amp;quot; --main Largescale_eddy_interannual_AL.tex master advisor
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; also has many additional options. More detailed information can be found &lt;a href=&#34;https://www.slideshare.net/sppmg/latex-with-git&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and the gitlab page of &lt;a href=&#34;https://gitlab.com/git-latexdiff/git-latexdiff&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;git-latexdiff&lt;/code&gt; project&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

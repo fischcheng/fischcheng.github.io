@@ -6,15 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.36.1" />
+  <meta name="generator" content="Hugo 0.46" />
   <meta name="author" content="Yu Cheng 鄭嵎">
 
   
   
   
   
-    
-      
     
   
   <meta name="description" content="Recently, I&rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO2 held fixed in year 2000 level. Following Gupta et al., [2013]1, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years).">
@@ -29,40 +27,53 @@
 
   
   
+  
   <meta name="theme-color" content="#4caf50">
   
+
+  
   
   
   
     
-  
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
     
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css">
     
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-  
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
   
   
   
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
   
+
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/green.css">
   
 
   
+  
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
       ga('create', 'UA-92668349-1', 'auto');
+      
       ga('require', 'eventTracker');
       ga('require', 'outboundLinkTracker');
       ga('require', 'urlChangeTracker');
@@ -73,12 +84,13 @@
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
     
   
+  
 
   
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Yu Cheng">
   <link rel="feed" href="/index.xml" type="application/rss+xml" title="Yu Cheng">
   
-
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
@@ -102,6 +114,13 @@
   
 
   
+
+  <!DOCTYPE html>
+<html lang="en-us">
+<head>
+	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
+</head>
+
 
   <title>Remove model drift using control run simulations | Yu Cheng</title>
 
@@ -246,25 +265,6 @@
 
         
         
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
       
 
       
@@ -287,13 +287,21 @@
 
 <div class="article-metadata">
 
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Yu Cheng 鄭嵎">
+  </span>
+  
+
   <span class="article-date">
     
-    <time datetime="2017-10-05 00:16:43 -0400 -0400" itemprop="datePublished dateModified">
-      Thu, Oct 5, 2017
+    <meta content="2017-10-05 00:16:43 -0400 -0400" itemprop="datePublished">
+    <time datetime="2017-10-05 00:16:43 -0400 -0400" itemprop="dateModified">
+      October 5, 2017
     </time>
   </span>
-  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Yu Cheng 鄭嵎">
   </span>
 
@@ -317,8 +325,7 @@
   <span class="article-categories">
     <i class="fa fa-folder"></i>
     
-    <a href="/categories/note">note</a
-    >
+    <a href="/categories/note/">note</a>
     
   </span>
   
@@ -372,7 +379,7 @@
 
 
     <div class="article-style" itemprop="articleBody">
-      <p>Recently, I&rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO<sub>2</sub> held fixed in year 2000 level. Following Gupta et al., [2013]<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO<sub>2</sub>, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO<sub>2</sub> level that takes few decades to reach the new equilibrium.</p>
+      <p>Recently, I&rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO<sub>2</sub> held fixed in year 2000 level. Following Gupta et al., [2013]<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO<sub>2</sub>, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO<sub>2</sub> level that takes few decades to reach the new equilibrium.</p>
 
 <p>Below, I&rsquo;d like to document my experience of cubic fitting the surface temperature (TS) locally at each grid point. Removing these drifts from the TS in the climate change run yields the de-drifted TS dataset. This post highlights several packages I&rsquo;ve been using most frequently, including numpy, xarray and cartopy.</p>
 
@@ -416,19 +423,18 @@ trend_HRC07=lintrend(TS_HRC07_dedrift)
 trendTS_HRC07=trendts(TS_HRC07_dedrift)
 </code></pre>
 
+<figure>
 
-<figure >
-    
-        <img src="/img/fit_and_HRC07.png" />
-    
-    
-    <figcaption>
-        <h4>HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.</h4>
-        
-    </figcaption>
-    
+<img src="/img/fit_and_HRC07.png" />
+
+
+
+<figcaption data-pre="Figure " data-post=":" >
+  <h4>HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.</h4>
+  
+</figcaption>
+
 </figure>
-
 
 <p>After removing the drift from each location, I plot out the linear trend map of TS for the HRC07 run using <code>cartopy</code>.</p>
 
@@ -462,21 +468,20 @@ cb.set_label('degC/decade')
 plt.show()
 </code></pre>
 
+<figure>
 
-<figure >
-    
-        <img src="/img/dedrifted_HRC07_trend_map.png" />
-    
-    
-    <figcaption>
-        <h4>HRC07 TS linear trends from 1953 to 2008 with model drift removed</h4>
-        
-    </figcaption>
-    
+<img src="/img/dedrifted_HRC07_trend_map.png" />
+
+
+
+<figcaption data-pre="Figure " data-post=":" >
+  <h4>HRC07 TS linear trends from 1953 to 2008 with model drift removed</h4>
+  
+</figcaption>
+
 </figure>
 
-
-<p>The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.</p>
+<p>The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.</p>
 <div class="footnotes">
 
 <hr />
@@ -494,11 +499,11 @@ plt.show()
 
 <div class="article-tags">
   
-  <a class="btn btn-primary btn-outline" href="/tags/python">python</a>
+  <a class="label label-default" href="/tags/python/">python</a>
   
-  <a class="btn btn-primary btn-outline" href="/tags/polynomial">polynomial</a>
+  <a class="label label-default" href="/tags/polynomial/">polynomial</a>
   
-  <a class="btn btn-primary btn-outline" href="/tags/model-drift">Model drift</a>
+  <a class="label label-default" href="/tags/model-drift/">Model drift</a>
   
 </div>
 
@@ -514,9 +519,9 @@ plt.show()
         
         <li><a href="/2017/02/13/fill-in-the-missing-data-using-python-pandas/">Fill in the missing data using Python pandas</a></li>
         
-        <li><a href="/2017/02/05/ipython-notebook-gallery/">iPython notebook gallery</a></li>
-        
         <li><a href="/2017/02/05/gibbs-seawater-oceanographic-package-for-python/">Gibbs SeaWater Oceanographic Package for Python</a></li>
+        
+        <li><a href="/2017/02/05/ipython-notebook-gallery/">iPython notebook gallery</a></li>
         
         <li><a href="/2016/07/05/renovate-this-place-and-new-resolutions/">Renovate this place and new resolutions!</a></li>
         
@@ -559,6 +564,9 @@ plt.show()
 
 <footer class="site-footer">
   <div class="container">
+
+    
+
     <p class="powered-by">
 
       &copy; 2018 Yu Cheng &middot; 
@@ -607,55 +615,62 @@ plt.show()
 
     
     
-    <script id="dsq-count-scr" src="//yucheng.disqus.com/count.js" async></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
     
 
     
-    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBkC29BdSmvvjV11yiZp4lUr7s_7dcpXrg"></script>
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ncl.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/matlab.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
     
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
-    
-    
     <script src="/js/hugo-academic.js"></script>
     
 
     
     
-      
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-      
 
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ncl.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/matlab.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
-      
-
-      
-
-      <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    
+    <script id="dsq-count-scr" src="//yucheng.disqus.com/count.js" async></script>
     
 
     
     
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+
     
     
 
