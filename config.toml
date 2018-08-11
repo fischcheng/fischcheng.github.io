@@ -23,11 +23,11 @@ googleAnalytics = "UA-92668349-1"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
-
+# https://gohugo.io/getting-started/configuration/#configure-blackfriday
 [blackfriday]
   hrefTargetBlank = true  # `true` opens external links in a new tab.
   fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
-  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+  #smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 # color-codes for highlighting derived from this style
 #PygmentsCodeFences= true
@@ -44,13 +44,13 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Yu Cheng 鄭嵎"
-  role = "Graduate Assistant"
+  role = "Research Associate"
 
   organizations = [ { name = "University of Miami", url = "http://www.rsmas.miami.edu" } ]
   gravatar = false
   avatar = "headshot.jpg"
   email = "yucheng@rsmas.miami.edu"
-  address = "4600 Rickenbacker Causeway, Miami, FL 33149, USA"
+  #address = "4600 Rickenbacker Causeway, Miami, FL 33149, USA"
   #phone = "786 503 3366"
   office_hours = ""
   phone = ""
@@ -79,15 +79,15 @@ defaultContentLanguageInSubdir = false
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
   # Map location
-  map = 1
-  map_api_key = "AIzaSyBkC29BdSmvvjV11yiZp4lUr7s_7dcpXrg"
-  latitude = "25.732575"
-  longitude = "-80.162762"
-  zoom = 16
+  #map = 0
+  #map_api_key = "AIzaSyBkC29BdSmvvjV11yiZp4lUr7s_7dcpXrg"
+  #latitude = "25.732575"
+  #longitude = "-80.162762"
+  #zoom = 16
 
-  # Date format (refer to Go's date format: http://flippinggodateformat.com )
+  # Date format (refer to https://sourcethemes.com/academic/docs/customization/#date-format )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
-  date_format = "Mon, Jan 2, 2006"
+  date_format = "January 2, 2006"
 
   # Show estimated reading time for posts?
   reading_time = true
@@ -233,10 +233,10 @@ defaultContentLanguageInSubdir = false
   url = "#works"
   weight = 6
 
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 7
+#[[menu.main]]
+#  name = "Contact"
+#  url = "#contact"
+#  weight = 7
 
 
 # Taxonomies.

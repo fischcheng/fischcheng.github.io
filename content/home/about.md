@@ -31,11 +31,11 @@ weight = 1
 
 +++
 
-# Biography
+# Hi there,
 
-I'm a PhD student/Research assistant in the department of ocean sciences, Rosenstiel School of Marine & Atmospheric Science, University of Miami, working under the supervision of Dr. Lisa Beal and Dr. Ben Kirtman. My work focuses on identifying the missing links between Agulhas leakage and the Atlantic Meridional Overturning circulation using a High-Resolution coupled climate model. Specifically, I track millions of virtual particles to quantify Agulhas leakage. I defended my thesis early this year, and will complete my PhD by May. 
+I'm a physical oceanographer/climate modeler in the department of ocean sciences at the Rosenstiel School of Marine & Atmospheric Science of University of Miami. My research focuses on identifying the missing links between Agulhas leakage and the Atlantic Meridional Overturning circulation using a High-Resolution coupled climate model. Specifically, I track millions of virtual particles to quantify Agulhas leakage. Coming from a atmospheric science background, I want to combine my experiences in climate modeling, scientific programming and physical oceanography to ask more challenging questions.
 
-Beside research, I am a big fan of any sports with racquets. I play in local tennis leagues, school badminton club and restringing racquets is one of my greatest passions. In fact, the Miami Open every March is one of the reasons that urged me to decide to come here. I've volunteered for the tournament multiple times as ballperson. If you happen to be in the region and want to hit the fuzzy yellow ball around, please contact me!
+Beside research, I am a big fan of any sports with racquets. I play in local tennis leagues, school badminton club and restringing racquets is one of my passions. I relocated to Seattle last summer due to family concern, and am now actively seeking for job positions. 
 
 * [Curriculum Vitae](/pdf/cv_2018.pdf)
-* [Resume](/pdf/resume_2018.pdf)
+* [Resume](/pdf/resume_2018_v2.pdf)
