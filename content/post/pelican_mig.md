@@ -3,7 +3,7 @@ date = "2014-06-10T12:05:00"
 draft = false
 #image = "banners/getting-started.png"
 tags = ["pelican", "python", "markdown", "bootstrap"]
-title = "Building a statistic blog with Pelican"
+title = "Building a static blog with Pelican"
 math = false
 +++
 
