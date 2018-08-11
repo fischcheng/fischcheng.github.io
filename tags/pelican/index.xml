@@ -43,11 +43,11 @@ The website has been changed to a GitHub user-page, instead of a project-page. A
     </item>
     
     <item>
-      <title>Building a statistic blog with Pelican</title>
-      <link>/2014/06/10/building-a-statistic-blog-with-pelican/</link>
+      <title>Building a static blog with Pelican</title>
+      <link>/2014/06/10/building-a-static-blog-with-pelican/</link>
       <pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate>
       
-      <guid>/2014/06/10/building-a-statistic-blog-with-pelican/</guid>
+      <guid>/2014/06/10/building-a-static-blog-with-pelican/</guid>
       <description>Once upon a time&amp;hellip; I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away.</description>
     </item>
     
