@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/2018/08/16/parsing-a-.xlsx-file-generated-by-labchart/</loc>
+      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/talk/rcec_seminar/</loc>
       <lastmod>2018-06-01T00:00:00+00:00</lastmod>
     </url>
@@ -384,6 +392,15 @@
     
     <url>
     
+      <loc>/categories/data/</loc>
+      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/enso/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -458,6 +475,15 @@
     
       <loc>/tags/hurricane/</loc>
       <lastmod>2016-10-06T00:42:30-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/labchart/</loc>
+      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -574,7 +600,7 @@
     <url>
     
       <loc>/tags/pandas/</loc>
-      <lastmod>2017-02-13T00:42:30-05:00</lastmod>
+      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -601,7 +627,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2017-10-05T00:16:43-04:00</lastmod>
+      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
     </url>
     
   
@@ -646,6 +672,15 @@
     
       <loc>/tags/rant/</loc>
       <lastmod>2015-09-29T11:47:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/real-world-data/</loc>
+      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
       <priority>0</priority>
     </url>
     

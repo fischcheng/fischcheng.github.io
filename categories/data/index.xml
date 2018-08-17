@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pandas on Yu Cheng</title>
-    <link>/tags/pandas/</link>
-    <description>Recent content in Pandas on Yu Cheng</description>
+    <title>Data on Yu Cheng</title>
+    <link>/categories/data/</link>
+    <description>Recent content in Data on Yu Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 Yu Cheng</copyright>
     <lastBuildDate>Thu, 16 Aug 2018 15:26:08 -0700</lastBuildDate>
     
-	<atom:link href="/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/data/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,17 +20,6 @@
       <guid>/2018/08/16/parsing-a-.xlsx-file-generated-by-labchart/</guid>
       <description>My wife often complains about manually repeating a lot of steps for her research. With a little python skill, I would love to help. So I asked her what she&amp;rsquo;s been working on recently. One of her experiments aims to measure the change of pressure and volume of a mouse&amp;rsquo;s heart, the pressure-volume loop of heart contraction/relaxation.
 The data are collected through LabChart Pro, and there are options to output to different formats, including .</description>
-    </item>
-    
-    <item>
-      <title>Fill in the missing data using Python pandas</title>
-      <link>/2017/02/13/fill-in-the-missing-data-using-python-pandas/</link>
-      <pubDate>Mon, 13 Feb 2017 00:42:30 -0500</pubDate>
-      
-      <guid>/2017/02/13/fill-in-the-missing-data-using-python-pandas/</guid>
-      <description>&lt;p&gt;One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
