@@ -4,7 +4,7 @@ date = 2018-08-15T19:01:23-07:00
 draft = true
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Yu Cheng"]
+authors = [""]
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -20,7 +20,18 @@ categories = ["data"]
 image = "https://1.bp.blogspot.com/-TdSVEkNmg_0/W3SqZPK-riI/AAAAAAAABgo/2BZt0iK7oDQb6msGH9_5G-DM2xBug0H2gCLcBGAs/s1600/MODIS.png"
 caption = "credit: http://wasmoke.blogspot.com/"
 preview = false
-
+summary = false
 +++
+
+The past week has be tough for people in Seattle. 
+
+
+
+<iframe id="altairchart"
+    src="/img/wildfire_charts.html" width=800 height=970 
+    scrolling="no" frameborder="no">
+</iframe>
+
+
 
 
