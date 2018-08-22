@@ -31,11 +31,29 @@
     </item>
     
     <item>
+      <title>AQI</title>
+      <link>/tags/aqi/</link>
+      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
+      
+      <guid>/tags/aqi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Agulhas leakage</title>
       <link>/tags/agulhas-leakage/</link>
       <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
       
       <guid>/tags/agulhas-leakage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Altair</title>
+      <link>/tags/altair/</link>
+      <pubDate>Thu, 16 Aug 2018 19:01:23 -0700</pubDate>
+      
+      <guid>/tags/altair/</guid>
       <description></description>
     </item>
     
@@ -96,7 +114,7 @@
     <item>
       <title>Climate change</title>
       <link>/tags/climate-change/</link>
-      <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
+      <pubDate>Thu, 16 Aug 2018 19:01:23 -0700</pubDate>
       
       <guid>/tags/climate-change/</guid>
       <description></description>
@@ -292,6 +310,15 @@
     </item>
     
     <item>
+      <title>PM2.5</title>
+      <link>/tags/pm2.5/</link>
+      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
+      
+      <guid>/tags/pm2.5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>POP2</title>
       <link>/tags/pop2/</link>
       <pubDate>Thu, 28 Jul 2016 17:06:00 +0000</pubDate>
@@ -373,6 +400,15 @@
     </item>
     
     <item>
+      <title>Remote sensing</title>
+      <link>/tags/remote-sensing/</link>
+      <pubDate>Thu, 16 Aug 2018 19:01:23 -0700</pubDate>
+      
+      <guid>/tags/remote-sensing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SIOD</title>
       <link>/tags/siod/</link>
       <pubDate>Mon, 04 Jul 2016 17:07:00 +0000</pubDate>
@@ -382,11 +418,29 @@
     </item>
     
     <item>
+      <title>Satellite</title>
+      <link>/tags/satellite/</link>
+      <pubDate>Thu, 16 Aug 2018 19:01:23 -0700</pubDate>
+      
+      <guid>/tags/satellite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scripts</title>
       <link>/tags/scripts/</link>
       <pubDate>Sun, 05 Feb 2017 00:42:30 -0500</pubDate>
       
       <guid>/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seattle smoke</title>
+      <link>/tags/seattle-smoke/</link>
+      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
+      
+      <guid>/tags/seattle-smoke/</guid>
       <description></description>
     </item>
     
@@ -405,6 +459,15 @@
       <pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate>
       
       <guid>/tags/sediments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smoke</title>
+      <link>/tags/smoke/</link>
+      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
+      
+      <guid>/tags/smoke/</guid>
       <description></description>
     </item>
     
@@ -477,6 +540,15 @@
       <pubDate>Mon, 02 Oct 2017 11:00:40 -0700</pubDate>
       
       <guid>/tags/westerlies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wildfires</title>
+      <link>/tags/wildfires/</link>
+      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
+      
+      <guid>/tags/wildfires/</guid>
       <description></description>
     </item>
     

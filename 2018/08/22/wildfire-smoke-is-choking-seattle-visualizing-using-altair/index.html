@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.46" />
+  <meta name="author" content="Yu Cheng 鄭嵎">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &ldquo;smoking seven cigarettes in a day.&rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/green.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-92668349-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Yu Cheng">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Yu Cheng">
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@https://twitter.com/fischcheng">
+  <meta property="twitter:creator" content="@https://twitter.com/fischcheng">
+  
+  <meta property="og:site_name" content="Yu Cheng">
+  <meta property="og:url" content="/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/">
+  <meta property="og:title" content="Wildfire Smoke is Choking Seattle: visualizing using Altair | Yu Cheng">
+  <meta property="og:description" content="Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &ldquo;smoking seven cigarettes in a day.&rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening."><meta property="og:image" content="/img/http:/1y4yclbm79aqghpm1xoezrdw.wpengine.netdna-cdn.com/wp-content/uploads/2018/08/seattle-smoke-smoky-haze_KIRO-7_620.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-08-22T11:07:23-07:00">
+  
+  <meta property="article:modified_time" content="2018-08-22T11:07:23-07:00">
+  
+
+  
+
+  <!DOCTYPE html>
+<html lang="en-us">
+<head>
+	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker|Bungee+Outline|Bungee+Shade">
+</head>
+
+
+  <title>Wildfire Smoke is Choking Seattle: visualizing using Altair | Yu Cheng</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Yu Cheng</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#works">
+            
+            <span>Works</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+<div class="article-header">
+
+  
+  
+    <img src="http://1y4yclbm79aqghpm1xoezrdw.wpengine.netdna-cdn.com/wp-content/uploads/2018/08/seattle-smoke-smoky-haze_KIRO-7_620.jpg" class="article-banner" itemprop="image">
+  
+
+  <span class="article-header-caption">credit: <a href="http://mynorthwest.com/" target="_blank">http://mynorthwest.com/</a></span>
+</div>
+
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Wildfire Smoke is Choking Seattle: visualizing using Altair</h1>
+
+    
+
+<div class="article-metadata">
+
+  
+  
+  
+  <div>
+    
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">Yu Cheng</span>
+    </span>
+    
+  </div>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-08-22 11:07:23 -0700 -0700" itemprop="datePublished">
+    <time datetime="2018-08-22 11:07:23 -0700 -0700" itemprop="dateModified">
+      August 22, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Yu Cheng 鄭嵎">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data/">data</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Wildfire%20Smoke%20is%20Choking%20Seattle%3a%20visualizing%20using%20Altair&amp;url=%2f2018%2f08%2f22%2fwildfire-smoke-is-choking-seattle-visualizing-using-altair%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2f2018%2f08%2f22%2fwildfire-smoke-is-choking-seattle-visualizing-using-altair%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2018%2f08%2f22%2fwildfire-smoke-is-choking-seattle-visualizing-using-altair%2f&amp;title=Wildfire%20Smoke%20is%20Choking%20Seattle%3a%20visualizing%20using%20Altair"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2f2018%2f08%2f22%2fwildfire-smoke-is-choking-seattle-visualizing-using-altair%2f&amp;title=Wildfire%20Smoke%20is%20Choking%20Seattle%3a%20visualizing%20using%20Altair"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Wildfire%20Smoke%20is%20Choking%20Seattle%3a%20visualizing%20using%20Altair&amp;body=%2f2018%2f08%2f22%2fwildfire-smoke-is-choking-seattle-visualizing-using-altair%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &ldquo;<a href="https://www.vox.com/energy-and-environment/2018/8/21/17761908/seattle-air-quality-haze-smoke-wildfire-health" target="_blank">smoking seven cigarettes in a day</a>.&rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.</p>
+
+<p>Here is the experimental smoke forecast from NWS&rsquo; tweet on Tuesday:</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another round of <a href="https://twitter.com/hashtag/smoke?src=hash&amp;ref_src=twsrc%5Etfw">#smoke</a> from the wildfires in north central Washington and British Columbia is expected to impact the area this afternoon. This will keep smoke thick, at least through Wednesday. Smoke conditions at: <a href="https://t.co/cgLa9sAQBQ">https://t.co/cgLa9sAQBQ</a> <a href="https://twitter.com/hashtag/WAwx?src=hash&amp;ref_src=twsrc%5Etfw">#WAwx</a> <a href="https://t.co/cgJHU5SS7u">pic.twitter.com/cgJHU5SS7u</a></p>&mdash; NWS Seattle (@NWSSeattle) <a href="https://twitter.com/NWSSeattle/status/1031999007864705024?ref_src=twsrc%5Etfw">August 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>News articles seem to be obsessed with the AQI number. When I tried plotting out the AQI levels in Seattle in the past week, I realized that the AQI is unitless, but the data I found has a typical aerosol measurement unit $\mu g/m^{3}$. So I dived deeper to find out more details about AQI, which I&rsquo;d like to explain below.</p>
+
+<p>According to the EPA website, the AQI focuses on health effects, not strictly bounded to particle concentration. An AQI value of 100 corresponds to the national air quality standard for that pollutant, and EPA currently published AQI for four pollutants, <em>ground level ozone, particle pollution, carbon monoxide, and sulfur dioxide.</em> The number we saw in the news articles is for the particle pollution, specifically the <strong>PM2.5</strong>. Because the AQI 100 depends on the national standard, the AQI scale varies between countries and the regulatory agencies. Here is the current scale published by EPA:</p>
+
+<figure>
+
+<img src="/img/aqi_scale.png" />
+
+
+
+<figcaption data-pre="Figure " data-post=":" >
+  <h4><a href="https://airnow.gov/index.cfm?action=aqibasics.aqi" target="_blank">https://airnow.gov/index.cfm?action=aqibasics.aqi</a></h4>
+  
+</figcaption>
+
+</figure>
+
+<p>However, the conversion between AQI and particle concentration is not linear. It is also not clear to me, what the averaging period of the reported AQI number is. After some googling, I found a <a href="https://www.epa.gov/sites/production/files/2014-05/documents/zell-aqi.pdf" target="_blank">chart</a> published by EPA, but the conversion is based on the 24-hr average of particle concentration.</p>
+
+<p>The station-based PM2.5 data is harder to find then I expected. Kudos to the Puget Sound Clean Air Agency providing a fantastic online <a href="https://secure.pscleanair.org/AirGraphing//AirGraphing" target="_blank">graphing tool</a> and the downloadable data. Below I plotted the PM2.5 concentration in the past 10 days using Altair, a declarative statistical visualization library for Python, based on Vega and Vega-Lite.</p>
+
+<iframe id="altairchart"
+    src="/img/AQI_0810_0822_24hrs.html" width=850 height=400 
+    scrolling="no" frameborder="no">
+</iframe>
+
+<p>Last Wednesday, the 24hrs-averaged PM2.5 concentration reached 95.4 $\mu g/m^{3}$, which is at the <em>Unhealthy</em> level. Yesterday the PM2.5 peaked at 154.9 $\mu g/m^{3}$, which is classified <em>Very Unhealthy</em>. Fortunately, the index seems to be declining in the past 24 hours.</p>
+
+<hr />
+
+<p>Walk-through of the plot:</p>
+
+<ol>
+<li><p>Clean up the dataframe: Altair takes in dataframes as data source. I changed the dtypes and name of my two columns. One limitation is that Altair doesn&rsquo;t recognize the index. So anything you want to plot need to be columns (use reset_index)</p></li>
+
+<li><p>Define the AQI levels as a dataframe <code>source,</code> set the legend and corresponding colors and plot the rectangles using: <code>alt.Chart(source).mark_rect()</code></p></li>
+
+<li><p>The line plot of PM2.5  with vertical line and circle while mouse hovering is composed of five elements (or layers): selectors, rule, line, point and text. This is adapted from <a href="https://altair-viz.github.io/gallery/multiline_tooltip.html" target="_blank">one of the examples</a> in Altair&rsquo;s gallery.</p></li>
+
+<li><p>Combine the line plot and the rectengle, simply <code>(rect+layer).configure_axis(grid=False)</code></p></li>
+</ol>
+
+<p>To my knowledge, the interactive plots you&rsquo;ve seen on the internet mostly involve javascript. Altair is no exception. It&rsquo;s a wrapper that translates your python commands to <a href="https://vega.github.io/vega-lite/" target="_blank">vega-lite/vega</a>-readable json objects. I really like the idea of &ldquo;visualization grammar&rdquo; that divides visualization into several building blocks. Vega/Vega-lite can take json objects and create rich interactive visualizations. I&rsquo;ve been following Altair for quite a while, but only recently I decided to give it a spin. It&rsquo;s my first plot using Altair. I&rsquo;ll share more thoughts about Altair in future posts.</p>
+
+<script src="//gist.github.com/fischcheng/f5942f05606f58c4a42a6049922ff994.js"></script>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="label label-default" href="/tags/wildfires/">wildfires</a>
+  
+  <a class="label label-default" href="/tags/smoke/">smoke</a>
+  
+  <a class="label label-default" href="/tags/seattle-smoke/">seattle smoke</a>
+  
+  <a class="label label-default" href="/tags/pm2.5/">PM2.5</a>
+  
+  <a class="label label-default" href="/tags/aqi/">AQI</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/2018/08/16/wildfires-and-climate-change/">Wildfires and climate change</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yucheng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+
+    
+
+    <p class="powered-by">
+
+      &copy; 2018 Yu Cheng &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ncl.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/matlab.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//yucheng.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

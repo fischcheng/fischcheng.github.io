@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Remote sensing on Yu Cheng</title>
+    <link>/tags/remote-sensing/</link>
+    <description>Recent content in Remote sensing on Yu Cheng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
+    <lastBuildDate>Thu, 16 Aug 2018 19:01:23 -0700</lastBuildDate>
+    
+	<atom:link href="/tags/remote-sensing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wildfires and climate change</title>
+      <link>/2018/08/16/wildfires-and-climate-change/</link>
+      <pubDate>Thu, 16 Aug 2018 19:01:23 -0700</pubDate>
+      
+      <guid>/2018/08/16/wildfires-and-climate-change/</guid>
+      <description>I moved to Seattle last summer. And I&amp;rsquo;ve already experienced three times of smoke this bad. Ironically, I had this impression that Seattle is famous for its good air quality. As many articles pointing out, the wildfires in the surrounding areas are to be blamed. They also suggest that the fires seem to spread wider and last longer than ever before due to the abnormally hot and dry condition this summer.</description>
+    </item>
+    
+  </channel>
+</rss>

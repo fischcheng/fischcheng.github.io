@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/</loc>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/2018/08/16/wildfires-and-climate-change/</loc>
+      <lastmod>2018-08-16T19:01:23-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/2018/08/16/parsing-a-.xlsx-file-generated-by-labchart/</loc>
       <lastmod>2018-08-16T15:26:08-07:00</lastmod>
     </url>
@@ -294,8 +310,26 @@
     
     <url>
     
+      <loc>/tags/aqi/</loc>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/agulhas-leakage/</loc>
       <lastmod>2017-10-02T11:00:40-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/altair/</loc>
+      <lastmod>2018-08-16T19:01:23-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -366,7 +400,7 @@
     <url>
     
       <loc>/tags/climate-change/</loc>
-      <lastmod>2017-10-02T11:00:40-07:00</lastmod>
+      <lastmod>2018-08-16T19:01:23-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -393,7 +427,7 @@
     <url>
     
       <loc>/categories/data/</loc>
-      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -581,6 +615,15 @@
     
     <url>
     
+      <loc>/tags/pm2.5/</loc>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/pop2/</loc>
       <lastmod>2016-07-28T17:06:00+00:00</lastmod>
       <priority>0</priority>
@@ -627,7 +670,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2018-08-16T15:26:08-07:00</lastmod>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
     </url>
     
   
@@ -688,6 +731,15 @@
     
     <url>
     
+      <loc>/tags/remote-sensing/</loc>
+      <lastmod>2018-08-16T19:01:23-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/siod/</loc>
       <lastmod>2016-07-04T17:07:00+00:00</lastmod>
       <priority>0</priority>
@@ -697,8 +749,26 @@
     
     <url>
     
+      <loc>/tags/satellite/</loc>
+      <lastmod>2018-08-16T19:01:23-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/scripts/</loc>
       <lastmod>2017-02-05T00:42:30-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/seattle-smoke/</loc>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -717,6 +787,15 @@
     
       <loc>/tags/sediments/</loc>
       <lastmod>2014-07-17T16:50:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/smoke/</loc>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -798,6 +877,15 @@
     
       <loc>/tags/westerlies/</loc>
       <lastmod>2017-10-02T11:00:40-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/wildfires/</loc>
+      <lastmod>2018-08-22T11:07:23-07:00</lastmod>
       <priority>0</priority>
     </url>
     
