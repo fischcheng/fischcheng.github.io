@@ -1,7 +1,7 @@
 +++
 title = "Wildfires and climate change"
 date = 2018-08-15T19:01:23-07:00
-draft = true
+draft = True
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = [""]
@@ -23,7 +23,14 @@ preview = false
 summary = false
 +++
 
-The past week has be tough for people in Seattle. 
+Last week was tough for everyone in Seattle due to the bad air quality. Sadly, it was nothing compared to what we have this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to "[smoking seven cigarettes in a day](https://www.vox.com/energy-and-environment/2018/8/21/17761908/seattle-air-quality-haze-smoke-wildfire-health)." The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds are expected to arrive first in the Wednesday evening. 
+
+<iframe id="altairchart"
+    src="/img/AQI_0810_0821_24hrs.html" width=850 height=970 
+    scrolling="no" frameborder="no">
+</iframe>
+
+One thing I noticed from these articles is that they focus on the AQI. So I digged deep
 
 
 
