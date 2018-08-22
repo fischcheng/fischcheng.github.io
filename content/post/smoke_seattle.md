@@ -62,7 +62,7 @@ Walk-through of the plot:
 
 To my knowledge, the interactive plots you've seen on the internet mostly involve javascript. Altair is no exception. It's a wrapper that translates your python commands to [vega-lite/vega](https://vega.github.io/vega-lite/)-readable json objects. I really like the idea of "visualization grammar" that divides visualization into several building blocks. Vega/Vega-lite can take json objects and create rich interactive visualizations. I've been following Altair for quite a while, but only recently I decided to give it a spin. It's my first plot using Altair. I'll share more thoughts about Altair in future posts.
 
-{{< gist fischcheng f5942f05606f58c4a42a6049922ff994>}}
+{{< gist fischcheng f5942f05606f58c4a42a6049922ff994 >}}
 
 
 
