@@ -37,7 +37,7 @@ According to the EPA website, the AQI focuses on health effects, not strictly bo
 
 However, the conversion between AQI and particle concentration is not linear. It is also not clear to me, what the averaging period of the reported AQI number is. After some googling, I found a [chart](https://www.epa.gov/sites/production/files/2014-05/documents/zell-aqi.pdf) published by EPA, but the conversion is based on the 24-hr average of particle concentration. 
 
-The station-based PM2.5 data is harder to find then I expected. Kudos to the Puget Sound Clean Air Agency providing a fantastic online [graphing tool](https://secure.pscleanair.org/AirGraphing//AirGraphing) and the downloadable data. Below I plotted the PM2.5 concentration in the past 10 days using Altair, a declarative statistical visualization library for Python, based on Vega and Vega-Lite.
+The station-based PM2.5 data is harder to find than I expected. Kudos to the Puget Sound Clean Air Agency for providing a fantastic online [graphing tool](https://secure.pscleanair.org/AirGraphing//AirGraphing) and the downloadable data. Below I plotted the PM2.5 concentration in the past 10 days using Altair, a declarative statistical visualization library for Python, based on Vega and Vega-Lite.
 
 <iframe id="altairchart"
     src="/img/AQI_0810_0822_24hrs.html" width=850 height=400 
@@ -51,16 +51,16 @@ Last Wednesday, the 24hrs-averaged PM2.5 concentration reached 95.4 $\mu g/m^{3}
 
 Walk-through of the plot: 
 
-1. Clean up the dataframe: Altair takes in dataframes as data source. I changed the dtypes and name of my two columns. One limitation is that Altair doesn't recognize the index. So anything you want to plot need to be columns (use reset_index)
+1. Clean up the dataframe: Altair takes in dataframes as data source. I changed the dtypes and the name of my two columns. One limitation is that Altair doesn't recognize the index. So anything you want to plot need to be in columns (use reset_index)
 
-2.  Define the AQI levels as a dataframe `source,` set the legend and corresponding colors and plot the rectangles using: `alt.Chart(source).mark_rect()`
+2.  Define the AQI levels as a dataframe `source`, set the legend and corresponding colors and plot the rectangles using: `alt.Chart(source).mark_rect()`
 
-3. The line plot of PM2.5  with vertical line and circle while mouse hovering is composed of five elements (or layers): selectors, rule, line, point and text. This is adapted from [one of the examples](https://altair-viz.github.io/gallery/multiline_tooltip.html) in Altair's gallery.
+3. The line plot of PM2.5  with vertical line and circle while mouse hovering is composed of five elements (or layers): selectors, rule, line, point and text. This is adapted from [one of the examples](https://altair-viz.github.io/gallery/multiline_tooltip.html) in the Altair gallery.
 
 4. Combine the line plot and the rectengle, simply `(rect+layer).configure_axis(grid=False)`
 
 
-To my knowledge, the interactive plots you've seen on the internet mostly involve javascript. Altair is no exception. It's a wrapper that translates your python commands to [vega-lite/vega](https://vega.github.io/vega-lite/)-readable json objects. I really like the idea of "visualization grammar" that divides visualization into several building blocks. Vega/Vega-lite can take json objects and create rich interactive visualizations. I've been following Altair for quite a while, but only recently I decided to give it a spin. It's my first plot using Altair. I'll share more thoughts about Altair in future posts.
+To my knowledge, the interactive plots you've seen on the Internet mostly involve javascript. Altair is no exception. It's a wrapper that translates your python commands to [Vega-lite/Vega](https://vega.github.io/vega-lite/)-readable json objects. I really like the idea of "visualization grammar" that divides visualization into several building blocks. Vega/Vega-lite can take json objects and create rich interactive visualizations. I've been following Altair for quite a while, but only recently I decided to give it a spin. It's my first plot using Altair. I'll share more thoughts about Altair in future posts.
 
 {{< gist fischcheng f5942f05606f58c4a42a6049922ff994 >}}
 
