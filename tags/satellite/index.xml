@@ -1,24 +1,171 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Satellite on Yu Cheng</title>
+    <title>satellite | Yu Cheng</title>
     <link>/tags/satellite/</link>
-    <description>Recent content in Satellite on Yu Cheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
-    <lastBuildDate>Thu, 16 Aug 2018 19:01:23 -0700</lastBuildDate>
-    
-	<atom:link href="/tags/satellite/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/satellite/index.xml" rel="self" type="application/rss+xml" />
+    <description>satellite</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 16 Aug 2018 19:01:23 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>satellite</title>
+      <link>/tags/satellite/</link>
+    </image>
     
     <item>
       <title>Wildfires and climate change</title>
-      <link>/2018/08/16/wildfires-and-climate-change/</link>
-      <pubDate>Thu, 16 Aug 2018 19:01:23 -0700</pubDate>
-      
-      <guid>/2018/08/16/wildfires-and-climate-change/</guid>
-      <description>I moved to Seattle last summer. And I&amp;rsquo;ve already experienced three times of smoke this bad. Ironically, I had this impression that Seattle is famous for its good air quality. As many articles pointing out, the wildfires in the surrounding areas are to be blamed. They also suggest that the fires seem to spread wider and last longer than ever before due to the abnormally hot and dry condition this summer.</description>
+      <link>/post/wildfire/</link>
+      <pubDate>Thu, 16 Aug 2018 19:01:23 +0000</pubDate>
+      <guid>/post/wildfire/</guid>
+      <description>&lt;p&gt;I moved to Seattle last summer. And I&amp;rsquo;ve already experienced three times of smoke this bad. Ironically, I had this impression that Seattle is famous for its good air quality. As many articles pointing out, the wildfires in the surrounding areas are to be blamed. They also suggest that the fires seem to spread wider and last longer than ever before due to the abnormally hot and dry condition this summer. Is it somewhat related to global warming?&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/MODIS_map_0816.png&#34; &gt;
+&lt;img src=&#34;/img/MODIS_map_0816.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;To begin with, I found the active wildfire dataset from the &lt;a href=&#34;https://fsapps.nwcg.gov/afm/gisdata.php&#34; target=&#34;_blank&#34;&gt;US Forest Service&lt;/a&gt;. Two resolutions are available MODIS 1km and VIIRS 375m. You can choose between different regions and time periods. And the MODIS reflectance image is downloaded from the &lt;a href=&#34;https://worldview.earthdata.nasa.gov&#34; target=&#34;_blank&#34;&gt;EARTHDATA WORLDVIEW&lt;/a&gt; interface.&lt;/p&gt;
+
+&lt;p&gt;I used geopandas to read the shapefiles, and cartopy to plot the wildfires on the continental U.S.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import cartopy.io.shapereader as shpreader
+from cartopy.feature import ShapelyFeature
+import cartopy.crs as ccrs
+
+# Change the reference system of Geopandas dataframe to the one Cartopy knows.
+crs_epsg = ccrs.epsg(&#39;3857&#39;)
+fp = &amp;quot;modis_fire_last7_2018_234_conus_shapefile/modis_fire_last7_2018_234_conus.shp&amp;quot;
+data = gpd.read_file(fp)
+df_epsg = data.to_crs(epsg=&#39;3857&#39;)
+
+#ax = plt.axes([0, 0, 1, 1],projection=ccrs.LambertConformal())
+fig, ax1 = plt.subplots(1, 1, subplot_kw={&#39;projection&#39;: crs_epsg},figsize=(10, 5))
+ax1.set_extent([-125, -66.5, 20, 50], ccrs.Geodetic())
+
+shapename = &#39;admin_1_states_provinces_lakes_shp&#39;
+states_shp = shpreader.natural_earth(resolution=&#39;110m&#39;,category=&#39;cultural&#39;, 
+    name=shapename)
+ax1.background_patch.set_visible(False)
+ax1.outline_patch.set_visible(False) # Remove the outline, very useful
+#ax.coastlines()
+
+for state in shpreader.Reader(states_shp).geometries():
+    # pick a default color for the land with a black outline,
+    # this will change if the storm intersects with our track
+    facecolor = &#39;LightGray&#39;#[0.9375, 0.9375, 0.859375]
+    edgecolor = &#39;black&#39;
+
+    #if state.intersects(track):
+     #   facecolor = &#39;red&#39;
+    #elif state.intersects(track_buffer):
+     #   facecolor = &#39;#FF7E00&#39;
+    ax1.add_geometries([state], ccrs.PlateCarree(),
+                      facecolor=facecolor, edgecolor=edgecolor,alpha=0.6)
+df_epsg.plot(ax=ax1, color=&#39;red&#39;,markersize=7,zorder=51)
+plt.title(&#39;Wildfire 8/15-8/22 from MODIS satellite&#39;)
+#plt.savefig(&#39;MODIS_map_last_7days.png&#39;,dpi=200)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/MODIS_map_last_7days.png&#34; &gt;
+&lt;img src=&#34;/img/MODIS_map_last_7days.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;I downloaded the wildfire occurrence data from the &lt;a href=&#34;https://wildfire.cr.usgs.gov/firehistory/data.html&#34; target=&#34;_blank&#34;&gt;USGS website&lt;/a&gt;. Here I focus only on the data collected by US forest service. The metadata can be found &lt;a href=&#34;https://wildfire.cr.usgs.gov/firehistory/firehistory_1980_2016.xml&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. Again, I used geopandas to read the shapefile, and converted interested columns to pandas dataframe. I then changed some columns to the correct dtypes and selected only the major wildfires occurred in the western U.S. The major wildfire is defined as those fires burned over 1000 square acres when controlled.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+ff = &amp;quot;wf_usfs_1980_2016/wf_usfs_1980_2016.shp&amp;quot;
+df = gpd.read_file(ff)
+
+dff=pd.DataFrame(df[[&#39;CAUSE&#39;,&#39;SPECCAUSE&#39;,&#39;SIZECLASSN&#39;,&#39;YEAR_&#39;,&#39;STARTDATED&#39;,
+    &#39;CONTRDATED&#39;,&#39;OUTDATED&#39;,&#39;STATE&#39;,&#39;TOTALACRES&#39;,&#39;DLONGITUDE&#39;]])
+
+# Clean data
+dff[&#39;STARTDATED&#39;]=pd.to_datetime(dff[&#39;STARTDATED&#39;])
+dff[&#39;CONTRDATED&#39;]=pd.to_datetime(dff[&#39;CONTRDATED&#39;])
+dff[&#39;OUTDATED&#39;]=pd.to_datetime(dff[&#39;OUTDATED&#39;])
+dff[&#39;LENGTH&#39;]=(dff[&#39;CONTRDATED&#39;]-dff[&#39;STARTDATED&#39;])
+
+dff[&#39;YEAR&#39;]=pd.to_numeric(dff[&#39;YEAR_&#39;])
+dff=dff.drop(&#39;YEAR_&#39;,axis=1)
+
+WEST_US_major_fire=dff[(dff[&#39;SIZECLASSN&#39;]&amp;gt;5) &amp;amp; (dff[&#39;DLONGITUDE&#39;]&amp;lt;-103)]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Three questions I&amp;rsquo;d like to answer:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Has the occurrence of major wildfires increased in the last 30 years?&lt;/li&gt;
+&lt;li&gt;Has the wildfire season got longer in the same period?&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Do we have more severe wildfires in recent years?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;event_count=WEST_US_major_fire.groupby(&#39;YEAR&#39;)[&#39;STARTDATED&#39;].count()
+total_acre=WEST_US_major_fire.groupby(&#39;YEAR&#39;).sum()[&#39;TOTALACRES&#39;]
+#year=pd.date_range(start=&#39;1980&#39;, end=&#39;2017&#39;, freq=&#39;A&#39;)
+season=pd.Series(season_window,index=total_acre.index)
+season[season&amp;gt;365]=365
+annual_df=pd.DataFrame({&#39;event_count&#39;: event_count, &#39;total_acre&#39;: total_acre,
+&#39;season_length&#39;:season})
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I plotted the wildfire occurence, burned area and season length against the temperature and precipitation reanalysis data I downloaded from &lt;a href=&#34;https://esrl.noaa.gov/psd/&#34; target=&#34;_blank&#34;&gt;NOAA PSD&lt;/a&gt; using Altair.&lt;/p&gt;
+
+&lt;iframe id=&#34;altairchart&#34;
+    src=&#34;/img/wildfire_charts.html&#34; width=800 height=970 
+    scrolling=&#34;no&#34; frameborder=&#34;no&#34;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;There are clear increasing trends in the average and maximum surface air temperature, as well as a decreasing trend in precipitation over the western U.S. since 1980. The occurrence, burned area, and season length of wildfires all appear to increase during the same period. The burned area and occurrence seem to have strong interannual variability. The average wildfire season length after 2000 is about 70 days longer than that in 1980-2000.&lt;/p&gt;
+
+&lt;p&gt;This is a very crude exploration of data. I am fully aware of the danger of mistaking correlation as causation. There are more things to be done, more variables to be considered. For example, after reading through several journal articles, I learned that soil moisture also plays an important role. Unfortunately, the soil moisture is scarcely measured and poorly modeled. I would also like to expand my research by including more wildfire data from other sources.&lt;/p&gt;
+
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/fischcheng/430775c68696152247ce1954117e722f.js&#34;&gt;&lt;/script&gt;
+
+</description>
     </item>
     
   </channel>

@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publication_types on Yu Cheng</title>
+    <title>Publication_types | Yu Cheng</title>
     <link>/publication_types/</link>
-    <description>Recent content in Publication_types on Yu Cheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
-    <lastBuildDate>Mon, 27 Nov 2017 10:41:52 -0700</lastBuildDate>
-    
-	<atom:link href="/publication_types/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/publication_types/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publication_types</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Publication_types</title>
+      <link>/publication_types/</link>
+    </image>
     
     <item>
       <title>2</title>
       <link>/publication_types/2/</link>
-      <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
-      
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       <guid>/publication_types/2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>1</title>
+      <link>/publication_types/1/</link>
+      <pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>/publication_types/1/</guid>
       <description></description>
     </item>
     

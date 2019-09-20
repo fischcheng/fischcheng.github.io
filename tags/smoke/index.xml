@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Smoke on Yu Cheng</title>
+    <title>smoke | Yu Cheng</title>
     <link>/tags/smoke/</link>
-    <description>Recent content in Smoke on Yu Cheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
-    <lastBuildDate>Wed, 22 Aug 2018 11:07:23 -0700</lastBuildDate>
-    
-	<atom:link href="/tags/smoke/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/smoke/index.xml" rel="self" type="application/rss+xml" />
+    <description>smoke</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Aug 2018 11:07:23 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>smoke</title>
+      <link>/tags/smoke/</link>
+    </image>
     
     <item>
       <title>Wildfire Smoke is Choking Seattle: visualizing using Altair</title>
-      <link>/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/</link>
-      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
-      
-      <guid>/2018/08/22/wildfire-smoke-is-choking-seattle-visualizing-using-altair/</guid>
-      <description>Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &amp;ldquo;smoking seven cigarettes in a day.&amp;rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.</description>
+      <link>/post/smoke_seattle/</link>
+      <pubDate>Wed, 22 Aug 2018 11:07:23 +0000</pubDate>
+      <guid>/post/smoke_seattle/</guid>
+      <description>&lt;p&gt;Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &amp;ldquo;&lt;a href=&#34;https://www.vox.com/energy-and-environment/2018/8/21/17761908/seattle-air-quality-haze-smoke-wildfire-health&#34; target=&#34;_blank&#34;&gt;smoking seven cigarettes in a day&lt;/a&gt;.&amp;rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.&lt;/p&gt;
+
+&lt;p&gt;Here is the experimental smoke forecast from NWS&amp;rsquo; tweet on Tuesday:&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Another round of &lt;a href=&#34;https://twitter.com/hashtag/smoke?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#smoke&lt;/a&gt; from the wildfires in north central Washington and British Columbia is expected to impact the area this afternoon. This will keep smoke thick, at least through Wednesday. Smoke conditions at: &lt;a href=&#34;https://t.co/cgLa9sAQBQ&#34;&gt;https://t.co/cgLa9sAQBQ&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/WAwx?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#WAwx&lt;/a&gt; &lt;a href=&#34;https://t.co/cgJHU5SS7u&#34;&gt;pic.twitter.com/cgJHU5SS7u&lt;/a&gt;&lt;/p&gt;&amp;mdash; NWS Seattle (@NWSSeattle) &lt;a href=&#34;https://twitter.com/NWSSeattle/status/1031999007864705024?ref_src=twsrc%5Etfw&#34;&gt;August 21, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;News articles seem to be obsessed with the AQI number. When I tried plotting out the AQI levels in Seattle in the past week, I realized that the AQI is unitless, but the data I found has a typical aerosol measurement unit $\mu g/m^{3}$. So I dived deeper to find out more details about AQI, which I&amp;rsquo;d like to explain below.&lt;/p&gt;
+
+&lt;p&gt;According to the EPA website, the AQI focuses on health effects, not strictly bounded to particle concentration. An AQI value of 100 corresponds to the national air quality standard for that pollutant, and EPA currently published AQI for four pollutants, &lt;em&gt;ground level ozone, particle pollution, carbon monoxide, and sulfur dioxide.&lt;/em&gt; The number we saw in the news articles is for the particle pollution, specifically the &lt;strong&gt;PM2.5&lt;/strong&gt;. Because the AQI 100 depends on the national standard, the AQI scale varies between countries and the regulatory agencies. Here is the current scale published by EPA:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/aqi_scale.png&#34; data-caption=&#34;https://airnow.gov/index.cfm?action=aqibasics.aqi&#34;&gt;
+&lt;img src=&#34;/img/aqi_scale.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;a href=&#34;https://airnow.gov/index.cfm?action=aqibasics.aqi&#34; target=&#34;_blank&#34;&gt;https://airnow.gov/index.cfm?action=aqibasics.aqi&lt;/a&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;However, the conversion between AQI and particle concentration is not linear. It is also not clear to me, what the averaging period of the reported AQI number is. After some googling, I found a &lt;a href=&#34;https://www.epa.gov/sites/production/files/2014-05/documents/zell-aqi.pdf&#34; target=&#34;_blank&#34;&gt;chart&lt;/a&gt; published by EPA, but the conversion is based on the 24-hr average of particle concentration.&lt;/p&gt;
+
+&lt;p&gt;The station-based PM2.5 data is harder to find than I expected. Kudos to the Puget Sound Clean Air Agency for providing a fantastic online &lt;a href=&#34;https://secure.pscleanair.org/AirGraphing//AirGraphing&#34; target=&#34;_blank&#34;&gt;graphing tool&lt;/a&gt; and the downloadable data. Below I plotted the PM2.5 concentration in the past 10 days using Altair, a declarative statistical visualization library for Python, based on Vega and Vega-Lite.&lt;/p&gt;
+
+&lt;iframe id=&#34;altairchart&#34;
+    src=&#34;/img/AQI_0810_0822_24hrs.html&#34; width=850 height=400 
+    scrolling=&#34;no&#34; frameborder=&#34;no&#34;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;Last Wednesday, the 24hrs-averaged PM2.5 concentration reached 95.4 $\mu g/m^{3}$, which is at the &lt;em&gt;Unhealthy&lt;/em&gt; level. Yesterday the PM2.5 peaked at 154.9 $\mu g/m^{3}$, which is classified &lt;em&gt;Very Unhealthy&lt;/em&gt;. Fortunately, the index seems to be declining in the past 24 hours.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Walk-through of the plot:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Clean up the dataframe: Altair takes in dataframes as data source. I changed the dtypes and the name of my two columns. One limitation is that Altair doesn&amp;rsquo;t recognize the index. So anything you want to plot need to be in columns (use reset_index)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Define the AQI levels as a dataframe &lt;code&gt;source&lt;/code&gt;, set the legend and corresponding colors and plot the rectangles using: &lt;code&gt;alt.Chart(source).mark_rect()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The line plot of PM2.5  with vertical line and circle while mouse hovering is composed of five elements (or layers): selectors, rule, line, point and text. This is adapted from &lt;a href=&#34;https://altair-viz.github.io/gallery/multiline_tooltip.html&#34; target=&#34;_blank&#34;&gt;one of the examples&lt;/a&gt; in the Altair gallery.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Combine the line plot and the rectengle, simply &lt;code&gt;(rect+layer).configure_axis(grid=False)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To my knowledge, the interactive plots you&amp;rsquo;ve seen on the Internet mostly involve javascript. Altair is no exception. It&amp;rsquo;s a wrapper that translates your python commands to &lt;a href=&#34;https://vega.github.io/vega-lite/&#34; target=&#34;_blank&#34;&gt;Vega-lite/Vega&lt;/a&gt;-readable json objects. I really like the idea of &amp;ldquo;visualization grammar&amp;rdquo; that divides visualization into several building blocks. Vega/Vega-lite can take json objects and create rich interactive visualizations. I&amp;rsquo;ve been following Altair for quite a while, but only recently I decided to give it a spin. It&amp;rsquo;s my first plot using Altair. I&amp;rsquo;ll share more thoughts about Altair in future posts.&lt;/p&gt;
+
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/fischcheng/f5942f05606f58c4a42a6049922ff994.js&#34;&gt;&lt;/script&gt;
+
+</description>
     </item>
     
   </channel>

@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Yu Cheng</title>
+    <title>Publications | Yu Cheng</title>
     <link>/publication/</link>
-    <description>Recent content in Publications on Yu Cheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+      <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Publications</title>
+      <link>/publication/</link>
+    </image>
     
-	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Interannual Agulhas Leakage Variability and Its Regional Climate Imprints</title>
+      <link>/publication/interannual_al/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/interannual_al/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Lagrangian ocean analysis: Fundamentals and practices</title>
-      <link>/publication/lom/</link>
-      <pubDate>Mon, 27 Nov 2017 10:41:52 -0700</pubDate>
-      
-      <guid>/publication/lom/</guid>
+      <link>/publication/lagrangian_review/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/lagrangian_review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quantifying Agulhas Leakage in a High-Resolution Climate Model</title>
-      <link>/publication/quantifying-agulhas-leakage/</link>
+      <link>/publication/quatifying_al/</link>
       <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/quantifying-agulhas-leakage/</guid>
+      <guid>/publication/quatifying_al/</guid>
       <description></description>
     </item>
     
     <item>
-      <title> Investigating the relationship between Agulhas leakage and Southern Hemisphere westerlies in a coupled system</title>
-      <link>/publication/osm2016-poster/</link>
+      <title>Investigating the relationship between Agulhas leakage and Southern Hemisphere westerlies in a coupled system</title>
+      <link>/publication/osm2016_poster/</link>
       <pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/osm2016-poster/</guid>
+      <guid>/publication/osm2016_poster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quantifying Agulhas leakage in coupled climate models</title>
-      <link>/publication/iugg2015_slides/</link>
+      <link>/publication/iugg2015_oral/</link>
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/iugg2015_slides/</guid>
+      <guid>/publication/iugg2015_oral/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A new Eulerian method to estimate “spicy” Agulhas leakage in climate models</title>
-      <link>/publication/spice-anomaly/</link>
+      <link>/publication/spice_anomaly/</link>
       <pubDate>Thu, 11 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/spice-anomaly/</guid>
+      <guid>/publication/spice_anomaly/</guid>
       <description></description>
     </item>
     

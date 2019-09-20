@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Yu Cheng</title>
+    <title>Categories | Yu Cheng</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Yu Cheng</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 Yu Cheng</copyright>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Aug 2018 11:07:23 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Categories</title>
+      <link>/categories/</link>
+    </image>
     
     <item>
-      <title>Data</title>
+      <title>data</title>
       <link>/categories/data/</link>
-      <pubDate>Wed, 22 Aug 2018 11:07:23 -0700</pubDate>
-      
+      <pubDate>Wed, 22 Aug 2018 11:07:23 +0000</pubDate>
       <guid>/categories/data/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Note</title>
+      <title>note</title>
       <link>/categories/note/</link>
-      <pubDate>Thu, 05 Oct 2017 00:16:43 -0400</pubDate>
-      
+      <pubDate>Thu, 05 Oct 2017 00:16:43 +0000</pubDate>
       <guid>/categories/note/</guid>
       <description></description>
     </item>

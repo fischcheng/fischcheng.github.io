@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interannual variability | Yu Cheng</title>
+    <link>/tags/interannual-variability/</link>
+      <atom:link href="/tags/interannual-variability/index.xml" rel="self" type="application/rss+xml" />
+    <description>Interannual variability</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Interannual variability</title>
+      <link>/tags/interannual-variability/</link>
+    </image>
+    
+    <item>
+      <title>Interannual Agulhas Leakage Variability and Its Regional Climate Imprints</title>
+      <link>/publication/interannual_al/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/interannual_al/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
