@@ -17,7 +17,7 @@ deploy:
         - install-packages:
             packages: git ssh-client
         - michidk/git-push@0.7.19:
-            token: $GIT_TOKEN
+            gh_oauth: $GIT_TOKEN
             gh_pages: true
             basedir: public
             branch: master
