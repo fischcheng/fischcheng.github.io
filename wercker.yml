@@ -12,7 +12,7 @@ build:
         code: |
             git submodule update --init --recursive
 
-    - arjen/hugo-build@2.3.0:
+    - arjen/hugo-build@2.10.0:
         theme: "hugo-academic"
 
 deploy:
@@ -21,7 +21,7 @@ deploy:
           name: install git
           code: |
              apt-get update && apt-get install git -y
-       - leipert/git-push@0.7.6:
+       - michidk/git-push@0.7.19:
             gh_oauth: $Git_Token
             gh_pages: true
             basedir: public
