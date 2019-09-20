@@ -18,7 +18,7 @@ deploy:
           name: install git
           code: |
              apt-get update && apt-get install git -y
-       - michidk/git-push@0.7.19:
+       - leipert/git-push@0.7.6:
             gh_oauth: $Git_Token
             gh_pages: true
             basedir: public
