@@ -738,7 +738,7 @@ theme = &quot;hugo-academic&quot;
 
 <p>Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under <code>master</code> branch will be displayed under this address <code>https://&lt;username&gt;.github.io</code>, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under <code>gh-pages</code> branch can be accessed under <code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>. Github even provides an Automatic Generator to help to create a project site. More details can be found <a href="https://pages.github.com" target="_blank">here</a>.</p>
 
-<p>My website is a user site. Under this repo <code>fischcheng.github.io</code>, the <code>source</code> branch archived all changes to the source codes, and <code>master</code> branch store the Hugo-generated HTML pages.</p>
+<p>My website is an user site. Under this repo <code>fischcheng.github.io</code>, the <code>source</code> branch archived all changes to the source codes, and <code>master</code> branch store the Hugo-generated HTML pages.</p>
 
 <h3 id="automated-deployment-using-wercker">Automated deployment using Wercker</h3>
 
@@ -809,7 +809,7 @@ build:
 
 <p>So I poked around and realized that, even if the second <code>deploy</code> step is included in the <code>wercker.yml</code>, one still needs to manually add a new &ldquo;pipeline&rdquo; under the &ldquo;workflow&rdquo; tab. Upon creating a new pipeline, the &ldquo;YML pipeline name&rdquo; must be in the predefined names in the <code>wercker.yml</code>.</p>
 
-<p>Here I used this <a href="https://github.com/leipert/step-git-push" target="_blank">step</a> to deploy the built site to GitHub. Each pipeline starts from scratch, so for the <code>deploy</code> pipeline, the <code>git</code> package needs to be installed again. On also has to setup the environment variable <code>$Git_Token</code>, acquired from Github setting.</p>
+<p>Here I used this <a href="https://github.com/leipert/step-git-push" target="_blank">step</a> to deploy the built site to GitHub. Each pipeline starts from scratch. So for the <code>deploy</code> pipeline, the <code>git</code> package needs to be installed again. One also has to setup the environment variable <code>$Git_Token</code>, acquired from Github setting.</p>
 
 <pre><code class="language-yaml">deploy:
     steps:
@@ -1038,7 +1038,7 @@ build:
       return;
     }
     var d = document, s = d.createElement('script'); s.async = true;
-    s.src = 'https://' + "yu_cheng" + '.disqus.com/embed.js';
+    s.src = 'https://' + "yucheng" + '.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   })();

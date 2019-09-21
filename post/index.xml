@@ -1225,7 +1225,7 @@ theme = &amp;quot;hugo-academic&amp;quot;
 
 &lt;p&gt;Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code&gt;master&lt;/code&gt; branch will be displayed under this address &lt;code&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code&gt;gh-pages&lt;/code&gt; branch can be accessed under &lt;code&gt;http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code&gt;. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;My website is a user site. Under this repo &lt;code&gt;fischcheng.github.io&lt;/code&gt;, the &lt;code&gt;source&lt;/code&gt; branch archived all changes to the source codes, and &lt;code&gt;master&lt;/code&gt; branch store the Hugo-generated HTML pages.&lt;/p&gt;
+&lt;p&gt;My website is an user site. Under this repo &lt;code&gt;fischcheng.github.io&lt;/code&gt;, the &lt;code&gt;source&lt;/code&gt; branch archived all changes to the source codes, and &lt;code&gt;master&lt;/code&gt; branch store the Hugo-generated HTML pages.&lt;/p&gt;
 
 &lt;h3 id=&#34;automated-deployment-using-wercker&#34;&gt;Automated deployment using Wercker&lt;/h3&gt;
 
@@ -1296,7 +1296,7 @@ build:
 
 &lt;p&gt;So I poked around and realized that, even if the second &lt;code&gt;deploy&lt;/code&gt; step is included in the &lt;code&gt;wercker.yml&lt;/code&gt;, one still needs to manually add a new &amp;ldquo;pipeline&amp;rdquo; under the &amp;ldquo;workflow&amp;rdquo; tab. Upon creating a new pipeline, the &amp;ldquo;YML pipeline name&amp;rdquo; must be in the predefined names in the &lt;code&gt;wercker.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here I used this &lt;a href=&#34;https://github.com/leipert/step-git-push&#34; target=&#34;_blank&#34;&gt;step&lt;/a&gt; to deploy the built site to GitHub. Each pipeline starts from scratch, so for the &lt;code&gt;deploy&lt;/code&gt; pipeline, the &lt;code&gt;git&lt;/code&gt; package needs to be installed again. On also has to setup the environment variable &lt;code&gt;$Git_Token&lt;/code&gt;, acquired from Github setting.&lt;/p&gt;
+&lt;p&gt;Here I used this &lt;a href=&#34;https://github.com/leipert/step-git-push&#34; target=&#34;_blank&#34;&gt;step&lt;/a&gt; to deploy the built site to GitHub. Each pipeline starts from scratch. So for the &lt;code&gt;deploy&lt;/code&gt; pipeline, the &lt;code&gt;git&lt;/code&gt; package needs to be installed again. One also has to setup the environment variable &lt;code&gt;$Git_Token&lt;/code&gt;, acquired from Github setting.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;deploy:
     steps:
