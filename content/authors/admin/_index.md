@@ -73,6 +73,6 @@ user_groups: []
 # - Visitors
 ---
 
-Yu has eight years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. His works have been published in the Journal of Climate and Ocean Modeling. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, scientific programming and physical oceanography to ask more challenging questions.
+Yu has eight years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, scientific programming and physical oceanography to ask more challenging questions.
 
-Fun fact: Yu is a big fan of any sports with racquets. He plays in local tennis leagues, school badminton clubs and has been stringing racquets for friends for many years.
+Fun fact: Yu loves any sports with racquets. He plays in local tennis leagues, school badminton clubs and has been stringing racquets for friends for many years.
