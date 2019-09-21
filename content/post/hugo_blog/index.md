@@ -125,7 +125,7 @@ The contents within `static/js` and `static/ccs` will be included in the `header
 ### Github pages, user site or project site
 Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under `master` branch will be displayed under this address `https://<username>.github.io`, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under `gh-pages` branch can be accessed under `http://<username>.github.io/<repository>`. Github even provides an Automatic Generator to help to create a project site. More details can be found [here](https://pages.github.com).
 
-My website is a user site. Under this repo `fischcheng.github.io`, the `source` branch archived all changes to the source codes, and `master` branch store the Hugo-generated HTML pages. 
+My website is an user site. Under this repo `fischcheng.github.io`, the `source` branch archived all changes to the source codes, and `master` branch store the Hugo-generated HTML pages. 
 
 
 ### Automated deployment using Wercker
@@ -170,7 +170,7 @@ There is no more such thing as "Add deploy target" in Wercker. The interface has
 
 So I poked around and realized that, even if the second `deploy` step is included in the `wercker.yml`, one still needs to manually add a new "pipeline" under the "workflow" tab. Upon creating a new pipeline, the "YML pipeline name" must be in the predefined names in the `wercker.yml`. 
 
-Here I used this [step](https://github.com/leipert/step-git-push) to deploy the built site to GitHub. Each pipeline starts from scratch, so for the `deploy` pipeline, the `git` package needs to be installed again. On also has to setup the environment variable `$Git_Token`, acquired from Github setting. 
+Here I used this [step](https://github.com/leipert/step-git-push) to deploy the built site to GitHub. Each pipeline starts from scratch. So for the `deploy` pipeline, the `git` package needs to be installed again. One also has to setup the environment variable `$Git_Token`, acquired from Github setting.
 
 ``` yaml
 deploy:
