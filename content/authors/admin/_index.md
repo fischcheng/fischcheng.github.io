@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Atmospheric Data Scientist
+role: Sr. Atmospheric Data Scientist
 
 # Organizations/Affiliations
 organizations:
-- name: ClimaCell
-  url: "https://www.climacell.co"
+- name: tomorrow.io
+  url: "https://www.tomorrow.io"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Passionate about extracting weather insights from various data sources, and mapping weather data everywhere in the world.
+bio: Passionate about leveraging my past experience to make positive impacts on the planet. Well, raising two wonderful children heartfully is a good start. 
 
 interests:
 - Climate variability and modeling
@@ -42,7 +42,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: "mailto:fischcheng@gmail.com"  # '#contact'
+  link: "mailto:yu@yu-cheng.co"  # '#contact'
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/fischcheng
@@ -54,7 +54,7 @@ social:
   link: https://github.com/fischcheng
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/in/yu-cheng-seattle
+  link: https://www.linkedin.com/in/yu-cheng-boston
 
 
 # Link to a PDF of your resume/CV from the About widget.
@@ -73,6 +73,6 @@ user_groups: []
 # - Visitors
 ---
 
-Yu has eight years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, scientific programming and physical oceanography to ask more challenging questions.
+Yu has ten years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, scientific programming and physical oceanography to ask more challenging questions.
 
-Fun fact: Yu loves any sports with racquets. He plays in local tennis leagues, school badminton clubs and has been stringing racquets for friends for many years.
+Fun facts: Yu loves any sports with racquets. He plays in local tennis leagues, school badminton clubs and has been stringing racquets for friends for many years.
