@@ -34,7 +34,7 @@ links:
   name: Follow
   url: https://twitter.com/fischcheng
 url_code: ""
-url_pdf: ""
+url_pdf: "slides/climacell_intro.pdf"
 url_slides: ""
 url_video: "https://www.youtube.com/watch?v=sILPqRI2n7I"
 
@@ -43,7 +43,7 @@ url_video: "https://www.youtube.com/watch?v=sILPqRI2n7I"
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: "slides/climacell_intro.pdf"
+slides: ""
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
