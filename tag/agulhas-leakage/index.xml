@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Agulhas leakage | Yu Cheng</title><link>/tag/agulhas-leakage/</link><atom:link href="/tag/agulhas-leakage/index.xml" rel="self" type="application/rss+xml"/><description>Agulhas leakage</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 02 Oct 2017 11:00:40 +0000</lastBuildDate><image><url>/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url><title>Agulhas leakage</title><link>/tag/agulhas-leakage/</link></image><item><title>Climate changes in the high-resolution 20th century simulation</title><link>/project/change-hrc/</link><pubDate>Mon, 02 Oct 2017 11:00:40 +0000</pubDate><guid>/project/change-hrc/</guid><description>&lt;h3 id="motivation">Motivation&lt;/h3>
+&lt;p>Previous studies suggest that leakage has increased since the late 1960s [Biastoch et al., 2009, Biastoch et al., 2015, Loveday et al., 2015], consistent with the observed changes in westerlies [Marshall 2003, Swart and Fyfe 2012]. We began to wonder if such changes exist in our climate change simulation HRC07. After all, none of the above-listed works were done with an ocean-eddy resolving coupled model like our in-house CCSM3.5.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/Global_annual_mean_SST_HRC07.png" alt="SST_HRC07" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>However, the early attempts revealed that the climate change simulation HRC07 suffered a lot from the spin-up process, specifically the global mean SST. The 10yr idle run before 1940 seems not enough. SST dives first before rising again and peaks around 1960. Therefore, instead of focusing on the linear trends of climate change run, we would like to use the two control runs to remove the common model drift between cases to isolate the real &amp;ldquo;warming signal&amp;rdquo; in the climate change simulation.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/Dedrifted_annual_mean_SST.png" alt="SST_dedrifted" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="method">Method&lt;/h3>
+&lt;p>Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. Three different runs are employed in this study: a 20th-century climate change simulation with observed CO&lt;sub>2&lt;/sub> forcing (HRC07), and two present-day control simulation with year-2000 CO&lt;sub>2&lt;/sub> forcing. All of them are initialized from the same spun-up year 2000 initial conditions, although at lower-resolution. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p>
+&lt;p>To remove the model drift in the HRC07, we take two approaches: (1) subtract HRC07 from the cubic spline fit of HRC08/09 and (2) takes the difference of (HRC08+HRC09)/2 -HRC07 at every timestep for many variables. It is expected that the difference might increase in first few years because the effect of high CO&lt;sub>2&lt;/sub> in the year 2000 is still lingering in HRC07. Global mean SST shown above is a good example. However, note that the equilibrium timescale differs from variable to variable. To rule out the initial-shock, we do not feel comfortable just rule out the first three decades.&lt;/p>
+&lt;p>So, instead of focusing on the linear trend based on regression of a prescribed period (which is usually very subjective), in this study, we will focus on the the changes between first 20 and last 20 years of the available record 1948-2007. First, we will focus on the differences in Agulhas leakage and westerlies, and try to compare such to the low-res CMIP5 historical CCSM run. Then we will progress to identify the changes in ocean circulation associated with the increasing AL in HRC07.&lt;/p>
+&lt;p>(developing)&lt;/p></description></item><item><title>Large-scale forcing dominates interannual variability of Agulhas leakage</title><link>/project/largescale_forcing/</link><pubDate>Sun, 30 Jul 2017 00:00:00 +0000</pubDate><guid>/project/largescale_forcing/</guid><description>&lt;h4 id="motivation">Motivation&lt;/h4>
+&lt;p>In our early work, we have shown that Agulhas leakage is highly variable at daily to seasonal time scales, presumably dominated by the passage of Agulhas Rings. Decadal trends of Agulhas leakage are oftend attributed to the changes of Southern Hemisphere westerlies by previous studies. We hypothesize that, at interannual time scales, leakage variability is constrained by large-scale wind forcing, minifesting itself as changing large-scale velocity fields.&lt;/p>
+&lt;h4 id="method">Method&lt;/h4>
+&lt;p>Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. All the velocity fields used in this project is from an ongoing twentieth century climate change simulation with observed CO2 forcing. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p>
+&lt;p>Beside the control case with actual vecolity fields, we designed three testing cases with slighly modified velocity fields. The velocity fields were first decomposed into large-scale fileds using a 500x repeating 9-point spatial smoother (Fig.1). The difference between the original and the large-scale fields are then taken as the eddy-fields. We shuffled or shifted the eddy fields' temporal order, before plugged them back to the sequential large-scale fields. Forty years of data from 1961 to 2000 are used. By comparing leakage time series using different integration fields, we can show that, at interannual time scales, leakage time series among cases are highly coherent, which is attributed to the commonly-varying large-scale fields.&lt;/p>
+&lt;figure id="figure-diagram-for-shuffling-and-shifting-experiments">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/large-scale/fig1_schematic_shuffling_trans.png" alt="Diagram for shuffling and shifting experiments." loading="lazy" data-zoomable width="800" />&lt;/div>
+&lt;/div>&lt;figcaption>
+Diagram for shuffling and shifting experiments.
+&lt;/figcaption>&lt;/figure>
+&lt;h4 id="time-series-comparison">Time series comparison&lt;/h4>
+&lt;p>Applying a 24-months low-possed fileds allow us to compare the interannual leakage variability between the testing cases and the reference case. As shown in Fig. 2, the timeseries correlate well above 0.6 (p&amp;lt;0.01). A Coherence analysis further support the hypothesis: leakage time series between cases are highly coherent over time scales longer than 1000 days (Fig. 3).&lt;/p>
+&lt;figure id="figure-24-months-low-passed-leakage-timeseries">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/large-scale/fig4_AL_HRC07p2d_shuffle_lowpassed.png" alt="24-months low-passed leakage timeseries" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+24-months low-passed leakage timeseries
+&lt;/figcaption>&lt;/figure>
+&lt;figure id="figure-coherence-square-of-agulhas-leakage-timeseries">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/large-scale/fig5_coherence_spectra_11taper.png" alt="coherence square of Agulhas leakage timeseries" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+coherence square of Agulhas leakage timeseries
+&lt;/figcaption>&lt;/figure>
+&lt;h4 id="regional-climate-imprints">Regional climate imprints&lt;/h4>
+&lt;p>Leakage variability at this time scale is highly associated with the poleward shift of Southern Hemisphere westerlies, as shown in the regression of such to the low-passed Agulhas leakage time series (Fig. 4).&lt;/p>
+&lt;figure id="figure-westerlies-response-to-interannual-leakage-variability">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/large-scale/fig7_regress_TAUX_LP_AL_SAMI_HRC07_overlay.png" alt="Westerlies response to interannual leakage variability" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+Westerlies response to interannual leakage variability
+&lt;/figcaption>&lt;/figure>
+&lt;p>By regressing various climate variables from both atmosphere and ocean, we are able to show some regional climate patterns associated with interannual leakage variability (Fig. 5)&lt;/p>
+&lt;figure id="figure-regional-imprints-of-low-passed-agulhas-leakage">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/large-scale/fig8_regress_LP_HRC07_AL_All6.png" alt="Regional imprints of low-passed Agulhas leakage" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+Regional imprints of low-passed Agulhas leakage
+&lt;/figcaption>&lt;/figure>
+&lt;h4 id="future-work">Future work&lt;/h4>
+&lt;p>As the high-resolution climate change simulation still ongoing, we are eager to find out the long-term trends of Agulhas leakage and its effects on the regional climate, South Atlantic Ocean, and Atlantic Meridional Overturning Circulation. We would like to investigate the heat content and northward heat transport variability in the Southern Ocean in our coupled simulation, and relate such to Agulhas leakage.&lt;/p></description></item><item><title>Quantifying Agulhas Leakage in a High-Resolution Climate Model</title><link>/publication/quatifying_al/</link><pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate><guid>/publication/quatifying_al/</guid><description/></item><item><title>Investigating the relationship between Agulhas leakage and Southern Hemisphere westerlies in a coupled system</title><link>/publication/osm2016_poster/</link><pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate><guid>/publication/osm2016_poster/</guid><description/></item><item><title>Quantifying Agulhas leakage in coupled climate models</title><link>/publication/iugg2015_oral/</link><pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate><guid>/publication/iugg2015_oral/</guid><description/></item><item><title>A new Eulerian method to estimate “spicy” Agulhas leakage in climate models</title><link>/publication/spice_anomaly/</link><pubDate>Thu, 11 Jun 2015 00:00:00 +0000</pubDate><guid>/publication/spice_anomaly/</guid><description/></item><item><title>Quantifying Agulhas leakage in a high-resolution coupled climate model</title><link>/project/quantify_leakage/</link><pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate><guid>/project/quantify_leakage/</guid><description>&lt;h4 id="motivation">Motivation&lt;/h4>
+&lt;p>The Agulhas current and its leakage of warm and salty indian-ocean water, play crucial role in the climate system by influencing Atlantic Meridional Overturning Circulation stability. While the ocean circulation models are not capable due to lacking of couplings, and the fully-coupled climate models fail because of inability to resolve mesoscale features, the high-resolution coupled model is the only viable tool to access this topic.&lt;/p>
+&lt;h4 id="dataset">Dataset&lt;/h4>
+&lt;p>Due to limitation of computing resources, and the interests of longterm time-scale variabilities, current generation coupled-climate models are conventionally configured to horizontal resolution of 1.0 degree, and outputs are usuall stored monthly. This configuration leads to poor performances in simulating mesoscale features. In Agulhas current context, these models fail to reasonably simulate features such as Agulhas return current, Auglhas Ring, and therefore Agulhas leakage. Here, my work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively.&lt;/p>
+&lt;h4 id="quantifying-agulhas-leakage">Quantifying Agulhas leakage&lt;/h4>
+&lt;p>The first difficulty we must overcome is quantifying Agulhas leakage robustly.In numerical models, where we have gridded data, a widely accepted approach to quantify Agulhas leakage is Lagrangian particle tracking.&lt;/p>
+&lt;p>With the aid of Connectivity Modeling System (CMS), we release particles along the ACT array. Each particle is tagged with a volume flux equivalent to the local velocity times the corresponding grid cell size. They are advected by local velocity fields from CCSM3.5 forward in time for two years. Tracking every particle trajectories, we can determine whether one particle crossing the GoodHope line, which basin it ends up in, and, above all, the timing of last-crossing. Summing up the number of last-crossing particles of every time-step, we can establish time-series of Agulhas leakage.&lt;/p>
+&lt;center>
+&lt;div
+class="magnific-video mpf-iframe embed video-player ">
+&lt;iframe src="https://www.youtube.com/embed/lP9AS70c4oU" type="text/html"
+allowfullscreen
+frameborder="0"
+width="80%"
+height="385"
+>&lt;/iframe>
+&lt;/div>
+&lt;/center>
+&lt;h4 id="temporal-resolution">Temporal Resolution&lt;/h4>
+&lt;p>The approach mentioned above is fairly simple; however, there are many technical diffculties we must solve. First, lagrangian calculations in previous studies are mostly based on &lt;a href="http://stockage.univ-brest.fr/~grima/Ariane/" target="_blank" rel="noopener">Ariane&lt;/a> toolbox, which is not applicable to CCSM3.5 due to grid setup. Therefore, we use CMS instead. In addition, most of previos studies use Ocean General Circulation Model outputs with high temopral resolution (typically 5-daily output.), while most of Coupled Model outputs are archieved monthly, which is not ideal for lagrangian particle tracking.&lt;/p>
+&lt;p>To Adress these problems, we have tested different strategies, including releasing frequency, offshore boundary of releasing, particles with same the volume and so on. We also conducted several experiments using different temopral-resolution velocity fields to adress the degree of degradation of Agulhas leakage estimates of temporal-averaging.&lt;/p>
+&lt;figure id="figure-p2d-vs-m2d-agulhas-leakage-timeseries">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="http://www.rsmas.miami.edu/users/ycheng/media/AL_pent_vs_mon.png" alt="p2d vs m2d Agulhas leakage timeseries" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+p2d vs m2d Agulhas leakage timeseries
+&lt;/figcaption>&lt;/figure>
+&lt;h4 id="future-work">Future work&lt;/h4>
+&lt;p>We&amp;rsquo;ve established a robust way to quantify Agulhas leakage in high-resolution CCSM3.5 output, with which we obtain much more resonable Agulhas Leakage estimates (~20Sv) than previous estimates based on coarse-resolution CCSM4 simulation. Our next plan is to apply such method to a complete 54year high-resolution pre-industrial CCSM3.5 run, and to a currently-running 20-Centuray climate change run to evaluate the variability of Agulhas leakage and possibliy to link such variability to other climate modes, such as El Niño, AMO and Indian Ocean Dipole. In particular, we are very interested in seeing the variability of Agulhas Leakage in the climate-change condition, because the inter-basin exchange is believed to counteract the global-warming effect on the AMOC.&lt;/p></description></item><item><title>Agulhas Group meeting notes, 2014-07-10</title><link>/post/meeting_note_0710/</link><pubDate>Thu, 17 Jul 2014 16:50:00 +0000</pubDate><guid>/post/meeting_note_0710/</guid><description>&lt;p>&lt;a href="http://www.clim-past.net/9/2631/2013/cp-9-2631-2013.html" target="_blank" rel="noopener">P. Scussolini, E. van Sebille, J.V. Durgadoo: Paleo Agulhas rings enter the subtropical gyre during the penultimate deglaciation&lt;/a>&lt;/p>
+&lt;p>&lt;strong>What scientific questions are the authors addressing?&lt;/strong>&lt;/p>
+&lt;p>The maximum strength of Agulhas leakage is identified during the glacial Termination II. The authors attempt to demonstrate the leakage, mostly in the form of rings, was effectively incorporated into the South Atlantic gyre, instead of retroflecting back to Southern or Indian ocean.&lt;/p>
+&lt;p>&lt;strong>What methods do the authors use to address the questions?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>They investigate the presence of paleo Agulhas rings from a sediment core on the central Walvis Ridge (64PE-174P13, 29.45.71&amp;rsquo;S, 2.24.10&amp;rsquo;E, 2914m deep). By selecting the appropriate species of plaktic foraminifer, they aim to target the salinity and temperature anomalies induced by the leakage at the depth of the thermocline.&lt;/li>
+&lt;li>Analyzing INALT01 60yr model output to relate density perturbations at thermocline depth to the passage of individual rings over the core site. They concluded that the increasing variability of density at thermocline depth can be contributed to increasing passage of Agulhas rings.&lt;/li>
+&lt;li>Using this relation as a basis of proxy of Agulhas leakage, they generate a time series of individual Globorotalia truncatulinoides O_18 variability to infer the variability of Agulhas leakage.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>What are the authors' main conclusions?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Strong relation between SSH and potential density at 452m variability is prominent in INALT01. Fig3 shows the temporal variability induced by individual Agulhas ring crossings the chosen core location. The largest density troughs can be attributed to passing Agulhas rings. Out of average 6 rings/year, the core site captures on average one to two full rings according to a Fourier analysis of SSH on the location.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The time series shows high levels of pycnocline depth variability at the site, suggesting enhanced numbers of Agulhas rings moving into the South Atlantic Gyre around glacial Termination II.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Their results closely follow the previous quantifications of Agulhas leakage from the east of the Cape Basin (other sediments cores.), showing that Indian Ocean waters enter the South Atlantic circulation.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>What are the implications of the results?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>By targeting the isotopes in appropriate species, scientists can not only study certain era of sediments cores, but also specific levels of the ocean.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This result is a crucial support for the view of a prominent role of the Agulhas leakage in the shift from a glacial to an interglacial mode of the Atlantic circulation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Even though the increased leakage during the glacial termination did make it into subtropical gyre, the corresponding salt and heat were not neccesarily advected across the equator. However, modeling evidence show that the heat and salt from the Leakage do not have to reach the North Atlantic to impact the AMOC.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Why did you choose this paper?&lt;/strong>
+Back to work on leakage, digging something more that supporting the claim that Agulhas leakage has impact on Atlantic circulation.&lt;/p>
+&lt;p>&lt;strong>Who read this paper?&lt;/strong>
+Yu Cheng&lt;/p></description></item></channel></rss>

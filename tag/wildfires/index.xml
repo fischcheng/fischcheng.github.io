@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wildfires | Yu Cheng</title><link>/tag/wildfires/</link><atom:link href="/tag/wildfires/index.xml" rel="self" type="application/rss+xml"/><description>wildfires</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Aug 2018 11:07:23 +0000</lastBuildDate><image><url>/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url><title>wildfires</title><link>/tag/wildfires/</link></image><item><title>Wildfire Smoke is Choking Seattle: visualizing using Altair</title><link>/post/smoke_seattle/</link><pubDate>Wed, 22 Aug 2018 11:07:23 +0000</pubDate><guid>/post/smoke_seattle/</guid><description>&lt;p>Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &amp;ldquo;&lt;a href="https://www.vox.com/energy-and-environment/2018/8/21/17761908/seattle-air-quality-haze-smoke-wildfire-health" target="_blank" rel="noopener">smoking seven cigarettes in a day&lt;/a>.&amp;rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.&lt;/p>
+&lt;p>Here is the experimental smoke forecast from NWS' tweet on Tuesday:&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Another round of &lt;a href="https://twitter.com/hashtag/smoke?src=hash&amp;amp;ref_src=twsrc%5Etfw">#smoke&lt;/a> from the wildfires in north central Washington and British Columbia is expected to impact the area this afternoon. This will keep smoke thick, at least through Wednesday. Smoke conditions at: &lt;a href="https://t.co/cgLa9sAQBQ">https://t.co/cgLa9sAQBQ&lt;/a> &lt;a href="https://twitter.com/hashtag/WAwx?src=hash&amp;amp;ref_src=twsrc%5Etfw">#WAwx&lt;/a> &lt;a href="https://t.co/cgJHU5SS7u">pic.twitter.com/cgJHU5SS7u&lt;/a>&lt;/p>&amp;mdash; NWS Seattle (@NWSSeattle) &lt;a href="https://twitter.com/NWSSeattle/status/1031999007864705024?ref_src=twsrc%5Etfw">August 21, 2018&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>News articles seem to be obsessed with the AQI number. When I tried plotting out the AQI levels in Seattle in the past week, I realized that the AQI is unitless, but the data I found has a typical aerosol measurement unit $\mu g/m^{3}$. So I dived deeper to find out more details about AQI, which I&amp;rsquo;d like to explain below.&lt;/p>
+&lt;p>According to the EPA website, the AQI focuses on health effects, not strictly bounded to particle concentration. An AQI value of 100 corresponds to the national air quality standard for that pollutant, and EPA currently published AQI for four pollutants, &lt;em>ground level ozone, particle pollution, carbon monoxide, and sulfur dioxide.&lt;/em> The number we saw in the news articles is for the particle pollution, specifically the &lt;strong>PM2.5&lt;/strong>. Because the AQI 100 depends on the national standard, the AQI scale varies between countries and the regulatory agencies. Here is the current scale published by EPA:&lt;/p>
+&lt;figure id="figure-httpsairnowgovindexcfmactionaqibasicsaqi">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/aqi_scale.png" alt="https://airnow.gov/index.cfm?action=aqibasics.aqi" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+&lt;a href="https://airnow.gov/index.cfm?action=aqibasics.aqi">https://airnow.gov/index.cfm?action=aqibasics.aqi&lt;/a>
+&lt;/figcaption>&lt;/figure>
+&lt;p>However, the conversion between AQI and particle concentration is not linear. It is also not clear to me, what the averaging period of the reported AQI number is. After some googling, I found a &lt;a href="https://www.epa.gov/sites/production/files/2014-05/documents/zell-aqi.pdf" target="_blank" rel="noopener">chart&lt;/a> published by EPA, but the conversion is based on the 24-hr average of particle concentration.&lt;/p>
+&lt;p>The station-based PM2.5 data is harder to find than I expected. Kudos to the Puget Sound Clean Air Agency for providing a fantastic online &lt;a href="https://secure.pscleanair.org/AirGraphing//AirGraphing" target="_blank" rel="noopener">graphing tool&lt;/a> and the downloadable data. Below I plotted the PM2.5 concentration in the past 10 days using Altair, a declarative statistical visualization library for Python, based on Vega and Vega-Lite.&lt;/p>
+&lt;iframe id="altairchart"
+src="/img/AQI_0810_0822_24hrs.html" width=850 height=400
+scrolling="no" frameborder="no">
+&lt;/iframe>
+&lt;p>Last Wednesday, the 24hrs-averaged PM2.5 concentration reached 95.4 $\mu g/m^{3}$, which is at the &lt;em>Unhealthy&lt;/em> level. Yesterday the PM2.5 peaked at 154.9 $\mu g/m^{3}$, which is classified &lt;em>Very Unhealthy&lt;/em>. Fortunately, the index seems to be declining in the past 24 hours.&lt;/p>
+&lt;hr>
+&lt;p>Walk-through of the plot:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Clean up the dataframe: Altair takes in dataframes as data source. I changed the dtypes and the name of my two columns. One limitation is that Altair doesn&amp;rsquo;t recognize the index. So anything you want to plot need to be in columns (use reset_index)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Define the AQI levels as a dataframe &lt;code>source&lt;/code>, set the legend and corresponding colors and plot the rectangles using: &lt;code>alt.Chart(source).mark_rect()&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The line plot of PM2.5 with vertical line and circle while mouse hovering is composed of five elements (or layers): selectors, rule, line, point and text. This is adapted from &lt;a href="https://altair-viz.github.io/gallery/multiline_tooltip.html" target="_blank" rel="noopener">one of the examples&lt;/a> in the Altair gallery.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Combine the line plot and the rectengle, simply &lt;code>(rect+layer).configure_axis(grid=False)&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>To my knowledge, the interactive plots you&amp;rsquo;ve seen on the Internet mostly involve javascript. Altair is no exception. It&amp;rsquo;s a wrapper that translates your python commands to &lt;a href="https://vega.github.io/vega-lite/" target="_blank" rel="noopener">Vega-lite/Vega&lt;/a>-readable json objects. I really like the idea of &amp;ldquo;visualization grammar&amp;rdquo; that divides visualization into several building blocks. Vega/Vega-lite can take json objects and create rich interactive visualizations. I&amp;rsquo;ve been following Altair for quite a while, but only recently I decided to give it a spin. It&amp;rsquo;s my first plot using Altair. I&amp;rsquo;ll share more thoughts about Altair in future posts.&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/fischcheng/f5942f05606f58c4a42a6049922ff994.js">&lt;/script></description></item><item><title>Wildfires and climate change</title><link>/post/wildfire/</link><pubDate>Thu, 16 Aug 2018 19:01:23 +0000</pubDate><guid>/post/wildfire/</guid><description>&lt;p>I moved to Seattle last summer. And I&amp;rsquo;ve already experienced three times of smoke this bad. Ironically, I had this impression that Seattle is famous for its good air quality. As many articles pointing out, the wildfires in the surrounding areas are to be blamed. They also suggest that the fires seem to spread wider and last longer than ever before due to the abnormally hot and dry condition this summer. Is it somewhat related to global warming?&lt;/p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/MODIS_map_0816.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>To begin with, I found the active wildfire dataset from the &lt;a href="https://fsapps.nwcg.gov/afm/gisdata.php" target="_blank" rel="noopener">US Forest Service&lt;/a>. Two resolutions are available MODIS 1km and VIIRS 375m. You can choose between different regions and time periods. And the MODIS reflectance image is downloaded from the &lt;a href="https://worldview.earthdata.nasa.gov" target="_blank" rel="noopener">EARTHDATA WORLDVIEW&lt;/a> interface.&lt;/p>
+&lt;p>I used geopandas to read the shapefiles, and cartopy to plot the wildfires on the continental U.S.&lt;/p>
+&lt;pre>&lt;code class="language-python">import cartopy.io.shapereader as shpreader
+from cartopy.feature import ShapelyFeature
+import cartopy.crs as ccrs
+# Change the reference system of Geopandas dataframe to the one Cartopy knows.
+crs_epsg = ccrs.epsg('3857')
+fp = &amp;quot;modis_fire_last7_2018_234_conus_shapefile/modis_fire_last7_2018_234_conus.shp&amp;quot;
+data = gpd.read_file(fp)
+df_epsg = data.to_crs(epsg='3857')
+#ax = plt.axes([0, 0, 1, 1],projection=ccrs.LambertConformal())
+fig, ax1 = plt.subplots(1, 1, subplot_kw={'projection': crs_epsg},figsize=(10, 5))
+ax1.set_extent([-125, -66.5, 20, 50], ccrs.Geodetic())
+shapename = 'admin_1_states_provinces_lakes_shp'
+states_shp = shpreader.natural_earth(resolution='110m',category='cultural',
+name=shapename)
+ax1.background_patch.set_visible(False)
+ax1.outline_patch.set_visible(False) # Remove the outline, very useful
+#ax.coastlines()
+for state in shpreader.Reader(states_shp).geometries():
+# pick a default color for the land with a black outline,
+# this will change if the storm intersects with our track
+facecolor = 'LightGray'#[0.9375, 0.9375, 0.859375]
+edgecolor = 'black'
+#if state.intersects(track):
+# facecolor = 'red'
+#elif state.intersects(track_buffer):
+# facecolor = '#FF7E00'
+ax1.add_geometries([state], ccrs.PlateCarree(),
+facecolor=facecolor, edgecolor=edgecolor,alpha=0.6)
+df_epsg.plot(ax=ax1, color='red',markersize=7,zorder=51)
+plt.title('Wildfire 8/15-8/22 from MODIS satellite')
+#plt.savefig('MODIS_map_last_7days.png',dpi=200)
+plt.show()
+&lt;/code>&lt;/pre>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/MODIS_map_last_7days.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>I downloaded the wildfire occurrence data from the &lt;a href="https://wildfire.cr.usgs.gov/firehistory/data.html" target="_blank" rel="noopener">USGS website&lt;/a>. Here I focus only on the data collected by US forest service. The metadata can be found &lt;a href="https://wildfire.cr.usgs.gov/firehistory/firehistory_1980_2016.xml" target="_blank" rel="noopener">here&lt;/a>. Again, I used geopandas to read the shapefile, and converted interested columns to pandas dataframe. I then changed some columns to the correct dtypes and selected only the major wildfires occurred in the western U.S. The major wildfire is defined as those fires burned over 1000 square acres when controlled.&lt;/p>
+&lt;pre>&lt;code class="language-python">import pandas as pd
+ff = &amp;quot;wf_usfs_1980_2016/wf_usfs_1980_2016.shp&amp;quot;
+df = gpd.read_file(ff)
+dff=pd.DataFrame(df[['CAUSE','SPECCAUSE','SIZECLASSN','YEAR_','STARTDATED',
+'CONTRDATED','OUTDATED','STATE','TOTALACRES','DLONGITUDE']])
+# Clean data
+dff['STARTDATED']=pd.to_datetime(dff['STARTDATED'])
+dff['CONTRDATED']=pd.to_datetime(dff['CONTRDATED'])
+dff['OUTDATED']=pd.to_datetime(dff['OUTDATED'])
+dff['LENGTH']=(dff['CONTRDATED']-dff['STARTDATED'])
+dff['YEAR']=pd.to_numeric(dff['YEAR_'])
+dff=dff.drop('YEAR_',axis=1)
+WEST_US_major_fire=dff[(dff['SIZECLASSN']&amp;gt;5) &amp;amp; (dff['DLONGITUDE']&amp;lt;-103)]
+&lt;/code>&lt;/pre>
+&lt;p>Three questions I&amp;rsquo;d like to answer:&lt;/p>
+&lt;ul>
+&lt;li>Has the occurrence of major wildfires increased in the last 30 years?&lt;/li>
+&lt;li>Has the wildfire season got longer in the same period?&lt;/li>
+&lt;li>Do we have more severe wildfires in recent years?&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-python">event_count=WEST_US_major_fire.groupby('YEAR')['STARTDATED'].count()
+total_acre=WEST_US_major_fire.groupby('YEAR').sum()['TOTALACRES']
+#year=pd.date_range(start='1980', end='2017', freq='A')
+season=pd.Series(season_window,index=total_acre.index)
+season[season&amp;gt;365]=365
+annual_df=pd.DataFrame({'event_count': event_count, 'total_acre': total_acre,
+'season_length':season})
+&lt;/code>&lt;/pre>
+&lt;p>I plotted the wildfire occurence, burned area and season length against the temperature and precipitation reanalysis data I downloaded from &lt;a href="https://esrl.noaa.gov/psd/" target="_blank" rel="noopener">NOAA PSD&lt;/a> using Altair.&lt;/p>
+&lt;iframe id="altairchart"
+src="/img/wildfire_charts.html" width=800 height=970
+scrolling="no" frameborder="no">
+&lt;/iframe>
+&lt;p>There are clear increasing trends in the average and maximum surface air temperature, as well as a decreasing trend in precipitation over the western U.S. since 1980. The occurrence, burned area, and season length of wildfires all appear to increase during the same period. The burned area and occurrence seem to have strong interannual variability. The average wildfire season length after 2000 is about 70 days longer than that in 1980-2000.&lt;/p>
+&lt;p>This is a very crude exploration of data. I am fully aware of the danger of mistaking correlation as causation. There are more things to be done, more variables to be considered. For example, after reading through several journal articles, I learned that soil moisture also plays an important role. Unfortunately, the soil moisture is scarcely measured and poorly modeled. I would also like to expand my research by including more wildfire data from other sources.&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/fischcheng/430775c68696152247ce1954117e722f.js">&lt;/script></description></item></channel></rss>

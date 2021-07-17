@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>evacuation | Yu Cheng</title><link>/tag/evacuation/</link><atom:link href="/tag/evacuation/index.xml" rel="self" type="application/rss+xml"/><description>evacuation</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 06 Oct 2016 00:42:30 +0000</lastBuildDate><image><url>/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url><title>evacuation</title><link>/tag/evacuation/</link></image><item><title>Remove model drift using control run simulations</title><link>/post/read_hurricanes/</link><pubDate>Thu, 06 Oct 2016 00:42:30 +0000</pubDate><guid>/post/read_hurricanes/</guid><description>&lt;p>The University will be closed on both Thursday and Friday in preparation for the approaching Hurricane Matthew. Students and faculties were asked to leave RSMAS by 5 pm on Wednesday since wind shutters would completely seal the MSC building. The threat seems imminent; people are freak out &amp;ndash; Publix was like a war zone when I was ordered to pick up some bottled water on my way home.&lt;/p>
+&lt;p>Last night, Matthew with the maximum sustained wind at 140 mph, was a category 4 hurricane (&amp;gt;130mph). Last time a major hurricane (category 3 and above) made a landfall in the US was back in 2005 (Wilma at 120 mph). I slowly began to understand peoples' reactions.&lt;/p>
+&lt;center>
+&lt;iframe src="https://embed.windytv.com/?25.720,-80.271,6,menu,message,marker" width="750" height="500" frameborder="0">&lt;/iframe>
+&lt;/center>
+&lt;h3 id="more-like-overreactions">More like overreactions?###&lt;/h3>
+&lt;p>Growing up in Taiwan and coming from atmospheric sciences background, I have experienced many typhoons. Just recently, I visited Taiwan from 9/14 to 9/27. During that short period, three major typhoons (Meranti, Malakas, and Megi) hit the little island. My return flight to the US nearly got canceled &amp;ndash; my wife and I were sitting on the grounded but shaky aircraft for almost an hour. So honestly, I am surprised to see my colleagues' hurricane preparation.&lt;/p>
+&lt;p>I mean, it should be like this. General public are aware of the threats and cooperate with the government to evacuate. Schools and companies grant enough time for students and employees to get prepared for the approaching storm. There is no such thing as overpreparation. It&amp;rsquo;s the right attitude facing any threats at such magnitude. Instead, people in Taiwan always blame everything on the Central Weather Bureau and local governments without being sufficiently prepared.&lt;/p>
+&lt;p>&lt;em>check out recent typhoons in Taiwan!&lt;/em>&lt;/p>
+&lt;center>
+&lt;div
+class="magnific-video mpf-iframe embed video-player ">
+&lt;iframe src="https://www.youtube.com/embed/-IHZXBgz0yg" type="text/html"
+allowfullscreen
+frameborder="0"
+width="80%"
+height="385"
+>&lt;/iframe>
+&lt;/div>
+&lt;/center>
+&lt;center>
+&lt;div
+class="magnific-video mpf-iframe embed video-player ">
+&lt;iframe src="https://www.youtube.com/embed/OmVJGC381XY" type="text/html"
+allowfullscreen
+frameborder="0"
+width="80%"
+height="385"
+>&lt;/iframe>
+&lt;/div>
+&lt;/center>
+&lt;h3 id="how-to-read-the-nws-hurricane-warning">How to read the NWS hurricane warning?&lt;/h3>
+&lt;p>The best way to track the latest hurricane forecast is to visit the &lt;a href="http://www.nhc.noaa.gov/#MATTHEW" target="_blank" rel="noopener">national weather service website&lt;/a>. I&amp;rsquo;m no hurricane/typhoon specialist (like I always said, I dived into the ocean when I came to Miami). Thanks to my colleagues, I finally got a grip on reading the NWS hurricane warnings. They are very different from the ones issued by Taiwanese weather bureau, and I would like to share some of my findings below:&lt;/p>
+&lt;figure id="figure-nws-hurricane-warning">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/hurricane01.png" alt="NWS hurricane warning" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+NWS hurricane warning
+&lt;/figcaption>&lt;/figure>
+&lt;ol>
+&lt;li>
+&lt;p>Concise punch line on the top (as for the 2 am warning): &lt;strong>&amp;hellip;MATTHEW POUNDING PORTIONS OF THE CENTRAL BAHAMAS&amp;hellip; &amp;hellip;EXPECTED TO INTENSIFY AS IT APPROACHES FLORIDA&amp;hellip;&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The essential hurricane statistics on the top-left including location, moving direction and speed, minimum pressure and maximum sustained wind.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For more detailed paragraphs, checked the Public Advisory, Forecast advisory and discussion, and their Spanish versions. Check their official guide on &lt;a href="http://www.nhc.noaa.gov/help/tcp.shtml" target="_blank" rel="noopener">how to read a public advisory.&lt;/a> I personally enjoy reading the Forecast advisory.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For the path forecast, check the &lt;a href="http://www.nhc.noaa.gov/refresh/graphics_at4&amp;#43;shtml/034341.shtml?5-daynl#contents" target="_blank" rel="noopener">Warnings/Cone&lt;/a>. Over 2/3 of chances that the center of the hurricane will stay in the white zone on the map. However, the area it may affect is much broader, considering its rain bands and hurricane force winds. Also there is still 1/3 of chances that the center of the hurricane will be outside that cone. More details can be found &lt;a href="http://www.nhc.noaa.gov/aboutcone.shtml" target="_blank" rel="noopener">here&lt;/a>.
+&lt;figure id="figure-forecast-path">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/hurricane02.png" alt="forecast path" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+forecast path
+&lt;/figcaption>&lt;/figure>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For the currently wind affected area, check the &lt;a href="http://www.nhc.noaa.gov/refresh/graphics_at4&amp;#43;shtml/034341.shtml?radii#contents" target="_blank" rel="noopener">surface wind field plot&lt;/a>. It shows the maximum possible extent of a given wind speed within particular quadrants around the tropical cyclone. By definition, Hurricane force winds exceeds 74mph and Tropical Storm force winds are no less than 39mph, so the later cover a much larger area.
+&lt;figure id="figure-force-wind-affected-area">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/hurricane03.png" alt="force wind affected area" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+force wind affected area
+&lt;/figcaption>&lt;/figure>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now comes to the &lt;a href="http://www.nhc.noaa.gov/refresh/graphics_at4&amp;#43;shtml/034341.shtml?tswind120#contents" target="_blank" rel="noopener">force wind speed probabilities.&lt;/a> These plots indicate the cumulative possibility that a specific area will experience winds over a certain threshold. Users can change the cumulative periods (up to 120hrs), and the wind thresholds (tropical storm force, 50knots and hurricane force.)
+&lt;figure id="figure-force-wind-speed-probabilities">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/hurricane04.png" alt="force wind speed probabilities" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+force wind speed probabilities
+&lt;/figcaption>&lt;/figure>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Rainfall and storm surges are more difficult to predict. But NWS also provides such products.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="others">Others&lt;/h3>
+&lt;ol>
+&lt;li>I was surprised to see that Matthew reached 140mph last night. However, I realized that NWS takes 1-min average maximum sustained wind to define hurricane intensity. In West Pacific, 10-min average is used instead. So I&amp;rsquo;m less impressed by Matthew now. But let&amp;rsquo;s check back in 24 hrs since it is predicted to regroup and intensify again before reaching Florida.&lt;/li>
+&lt;li>Interesting read on the differences between watches and warnings:
+&lt;figure id="figure-watches-vs-warnings">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/hurricane05.png" alt="Watches vs Warnings" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Watches vs Warnings
+&lt;/figcaption>&lt;/figure>&lt;/li>
+&lt;/ol>
+&lt;p>References:&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="http://www.aoml.noaa.gov/hrd/tcfaq/A3.html" target="_blank" rel="noopener">NOAA Hurricane Research Devision&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.nhc.noaa.gov/aboutcone.shtml" target="_blank" rel="noopener">Definition of the NHC Track Forecast Cone&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.nhc.noaa.gov/prepare/wwa.php" target="_blank" rel="noopener">Hurricane Preparedness - Watches &amp;amp; Warnings&lt;/a>&lt;/li>
+&lt;/ol></description></item></channel></rss>

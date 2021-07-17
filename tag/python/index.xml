@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python | Yu Cheng</title><link>/tag/python/</link><atom:link href="/tag/python/index.xml" rel="self" type="application/rss+xml"/><description>python</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 05 Oct 2017 00:16:43 +0000</lastBuildDate><image><url>/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url><title>python</title><link>/tag/python/</link></image><item><title>Remove model drift using control run simulations</title><link>/post/polyfit/</link><pubDate>Thu, 05 Oct 2017 00:16:43 +0000</pubDate><guid>/post/polyfit/</guid><description>&lt;p>Recently, I&amp;rsquo;ve been trying to remove model drift from my high-resolution CCSM 20th century climate change simulation. The model drift is estimated using the two companion control runs, HRC08 and HRC09. All three runs were spun up from a similar initial condition, with CO&lt;sub>2&lt;/sub> held fixed in year 2000 level. Following Gupta et al., [2013]&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, we tried to identify the model drift by fitting a cubic polynomial to the full record of control runs (nearly 70 years). The drift is then removed from the 20th-century climate change simulation. One thing is worth pointing out, this climate change run did not start from a pre-industrial level of CO&lt;sub>2&lt;/sub>, but a year 2000 level forcing. Some variables, including the global mean sea surface temperature, may have lingering effect of higher CO&lt;sub>2&lt;/sub> level that takes few decades to reach the new equilibrium.&lt;/p>
+&lt;p>Below, I&amp;rsquo;d like to document my experience of cubic fitting the surface temperature (TS) locally at each grid point. Removing these drifts from the TS in the climate change run yields the de-drifted TS dataset. This post highlights several packages I&amp;rsquo;ve been using most frequently, including numpy, xarray and cartopy.&lt;/p>
+&lt;pre>&lt;code class="language-python">f1 = './data/TS.ens.all.nc'
+ds1 = xarray.open_dataset(f1, decode_times=True, chunks={'lat':200,'lon':200})
+TS_annual=ds1.TS.resample('12MS',dim='time')
+&lt;/code>&lt;/pre>
+&lt;p>These lines load in a NetCDF file with 69 years of monthly mean TS (time: 69, lat: 384, lon: 576) in (200x200) chunks. The chunk is the built-in support of &lt;a href="https://dask.pydata.org/en/latest/" target="_blank" rel="noopener">&lt;code>Dask&lt;/code>&lt;/a> in &lt;a href="http://xarray.pydata.org" target="_blank" rel="noopener">&lt;code>Xarray&lt;/code>&lt;/a>. &lt;code>Xarray&lt;/code> is a very powerful package. It attempts to extend the labeled data power of &lt;code>Pandas&lt;/code> to the multi-dimensional datasets that we often work on in geophysical sciences.&lt;/p>
+&lt;pre>&lt;code class="language-python">import matplotlib.dates as dates
+from numpy.polynomial.polynomial import polyval,polyfit
+import xarray
+def driftfit(arr):
+stacked = arr.stack(loc=('lat', 'lon'))
+timenum=dates.date2num(stacked.time.to_index().to_pydatetime())
+regressions = polyfit(timenum, stacked, 3)
+drift_stacked= polyval(timenum,regressions)
+foo = xarray.DataArray(drift_stacked.T, coords=[stacked['time'], stacked['loc']], dims=['time', 'loc'],name=arr.name)
+arr_drift=foo.unstack('loc')
+return arr_drift
+&lt;/code>&lt;/pre>
+&lt;p>This is a function to fit a 3rd order polynomial to the 69-year surface temperature of each grid cell. It stacks locations of the input array using &lt;code>arr.stack(loc=('lat', 'lon'))&lt;/code>, and using &lt;code>numpy.polynomial.polynomial.polyfit&lt;/code> to find the cubic fit of the local temperature time series over 69 years. The coefficients are then converted back to the polynomials using &lt;code>polyval(timenum,regressions)&lt;/code>. Next step is to generate a DataArray from numpy.array so that I can unstack the array correctly and keep the metadata from the input DataArray.&lt;/p>
+&lt;div class="alert alert-note">
+&lt;div>
+One interesting and confusing thing I noticed: not all &lt;code>polyfit&lt;/code> are created equal. The &lt;code>numpy.polyfit&lt;/code> outputs the polynomial coefficients from the highest power, while the &lt;code>numpy.polynomial.polynomial.polyfit&lt;/code> does the other way round. And so are the input order of their corresponding &lt;code>polyval&lt;/code>.
+&lt;/div>
+&lt;/div>
+&lt;p>I then load in the climate change run and remove the cubic fit from it. Two functions &lt;code>lintrend&lt;/code> and &lt;code>trendts&lt;/code> are constructed similarly to &lt;code>driftfit&lt;/code>, so I left out the details. The former output the coefficient of the first order polynomial (the slope), and the later output the trend time series.&lt;/p>
+&lt;pre>&lt;code class="language-python">ensfit=driftfit(TS_annual)
+f2 = './data/TS.HRC07.all.nc'
+ds2 = xarray.open_dataset(f2, decode_times=True, chunks={'lat':200,'lon':200})
+TS_HRC07_annual=ds2.TS.resample('12MS',dim='time')
+TS_HRC07_dedrift=TS_HRC07_annual-ensfit
+trend_HRC07=lintrend(TS_HRC07_dedrift)
+trendTS_HRC07=trendts(TS_HRC07_dedrift)
+&lt;/code>&lt;/pre>
+&lt;figure id="figure-hrc07-ts-timeseries-at-40e-45s-and-the-cubic-fit-from-control-runs">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/fit_and_HRC07.png" alt="HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs." loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+HRC07 TS timeseries at 40E, 45S, and the cubic fit from control runs.
+&lt;/figcaption>&lt;/figure>
+&lt;p>After removing the drift from each location, I plot out the linear trend map of TS for the HRC07 run using &lt;code>cartopy&lt;/code>.&lt;/p>
+&lt;pre>&lt;code class="language-python">plt.figure(figsize=(13,5))
+ax = plt.subplot(111, projection=ccrs.PlateCarree()) #ccrs.Mollweide()
+mm = ax.pcolormesh(ds1.lon,
+ds1.lat,
+trend_HRC07*365*10,
+vmin=-.5,
+vmax=.5,
+transform=ccrs.PlateCarree(),cmap=cmo.balance )
+ax.set_global()
+#ax.set_extent([-180, 180, -70, 70])
+ax.coastlines();
+cb=plt.colorbar(mm,ax=ax,fraction=0.046, pad=0.01)
+#ax.set_xticks([0, 60, 120, 180, 240, 300, 360], crs=ccrs.PlateCarree())
+ax.set_xticks([-180,-120,-60,0, 60, 120, 180], crs=ccrs.PlateCarree())
+ax.set_yticks([-90, -60, -30, 0, 30, 60, 90], crs=ccrs.PlateCarree())
+lon_formatter = LongitudeFormatter()
+lat_formatter = LatitudeFormatter()
+ax.xaxis.set_major_formatter(lon_formatter)
+ax.yaxis.set_major_formatter(lat_formatter)
+ax.set_title('dedrifted HRC07 Temperature linear trend ')
+cb.set_label('degC/decade')
+plt.show()
+&lt;/code>&lt;/pre>
+&lt;figure id="figure-hrc07-ts-linear-trends-from-1953-to-2008-with-model-drift-removed">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/dedrifted_HRC07_trend_map.png" alt="HRC07 TS linear trends from 1953 to 2008 with model drift removed" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+HRC07 TS linear trends from 1953 to 2008 with model drift removed
+&lt;/figcaption>&lt;/figure>
+&lt;p>The cooling trends in the Agulhas System seem to contradict to what we anticipated and hence need a closer look. Note that this kind of trend and drift estimates highly depends on the chosen endpoints and available record lengths. In Gupta et al. [2013]&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, drifts are estimated from multiple control runs of hundreds of years. For our high-resolution model, having multiple century-long control runs is a luxury. Maybe this technique is not applicable given the short record of our runs. Besides, estimating the drift locally may need to be justified.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>Gupta, A. S., N. C. Jourdain, J. N. Brown, and D. Monselesan, 2013: Climate Drift in the CMIP5 Models*. J. Climate, 26, 8597–8615, doi:10.1175/JCLI-D-12-00521.1.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>Fill in the missing data using Python pandas</title><link>/post/pandas_missing_value/</link><pubDate>Mon, 13 Feb 2017 00:42:30 +0000</pubDate><guid>/post/pandas_missing_value/</guid><description>&lt;p>One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p>
+&lt;blockquote>
+&lt;p>pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.&lt;/p>
+&lt;/blockquote>
+&lt;p>At the core of Pandas are the data structures: &lt;em>Series&lt;/em>, &lt;em>DataFrame&lt;/em> and &lt;em>Panel&lt;/em>. The ones I used the most are the first two. A &lt;em>Series&lt;/em> is an array labeled with timestamps, and a &lt;em>DataFrame&lt;/em> consists of many &lt;em>Series&lt;/em>. In a real-world use case, I use pandas to generate a range of time-axis, which is then attached to my Agulhas leakage time-series. After doing that, the value at a specific timestep can be easily retrieved by calling &lt;code>Series['timestamp'].&lt;/code> And to plot the whole time series is as simple as &lt;code>Series.plot().&lt;/code>&lt;/p>
+&lt;p>For a &lt;em>DataFrame&lt;/em>, to see the key statistics of a &lt;em>DataFrame&lt;/em> with many columns, simply use &lt;code>DataFrame.describe()&lt;/code>. A table with mean, standard deviation, counts, and percentiles will then pop up. To compare multiple time series visually, naively put &lt;code>DataFrame.plot().&lt;/code>&lt;/p>
+&lt;h4 id="working-with-missing-data">Working with missing data&lt;/h4>
+&lt;p>Recently, I am calculating the Atlantic Ocean Heat Content (OHC).&lt;/p>
+&lt;pre>&lt;code class="language-python">#headers=['date','OHC2000','OHC300','OHC700']
+OHC_multilevels=DataFrame.from_csv('OHC_HRC07_1951-2002.csv') # If it's pandas generated, this is much easier.
+OHC_multilevels.plot()
+&lt;/code>&lt;/pre>
+&lt;figure id="figure-atlantic-ohc-in-multiple-layers-1951-2002">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/output_32_1.png" alt="Atlantic OHC in multiple layers 1951-2002" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+Atlantic OHC in multiple layers 1951-2002
+&lt;/figcaption>&lt;/figure>
+&lt;p>Obviously, something fishy happened near 1952 and again in 1971. Several months have values close to zero, which is unlikely. Going back to the data, I confirmed that the temperature and salinity fields of those months are missing. To clean up the time series, I first assigned &lt;code>None&lt;/code> to those months, and interpolate linearly using the neighboring months. Three time series in the same &lt;em>DataFrame&lt;/em> are processed using following two lines.&lt;/p>
+&lt;pre>&lt;code class="language-python">OHC_multilevels[OHC_multilevels&amp;lt;100]=None
+OHC_multilevels.interpolate().plot()
+&lt;/code>&lt;/pre>
+&lt;figure id="figure-filled-missing-data-with-linear-interpolation">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/output_33_1.png" alt="filled missing data with linear interpolation" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+filled missing data with linear interpolation
+&lt;/figcaption>&lt;/figure>
+&lt;p>This is just a glimpse of the awesomness of pandas. More details can be found in the &lt;a href="http://pandas.pydata.org/pandas-docs/stable/overview.html" target="_blank" rel="noopener">official documentation&lt;/a>.&lt;/p></description></item><item><title>Jupyter notebook gallery</title><link>/post/jupyter_notebooks/</link><pubDate>Sun, 05 Feb 2017 00:42:30 +0000</pubDate><guid>/post/jupyter_notebooks/</guid><description>&lt;p>Sometimes I got emails requesting codes to plot certain things. Those inquiries remind me that I have an older version of my website on Wordpress.com still up and running. That was an answer to the requirement that every student in RSMAS should have their own websites back in 2014. To fill in the blanks, I listed out some of my python works in Ipython notebooks.&lt;/p>
+&lt;p>Python is a thing that I picked up in the graduate school. I not only use &lt;code>Python&lt;/code> to visualize model outputs or satellite data but as a shell-script alternative to control my workflow. &lt;code>Ipython&lt;/code> stands for &lt;em>Interactive Python&lt;/em>. It was an interactive shell, complementing the original python prompt. The Notebook web-interface was added to &lt;code>Ipython&lt;/code> project in 2011, and it has evolved into an enormous spin-off project called &lt;code>Jupyter&lt;/code> in 2014. Such notebooks connect to different &lt;em>kernels.&lt;/em> There are many kernels compatible with &lt;code>Ipython/Jupyter&lt;/code>, including &lt;code>Python&lt;/code> (natürlich!), &lt;code>Julia&lt;/code>, &lt;code>R&lt;/code>, and &lt;code>Haskell&lt;/code>.&lt;/p>
+&lt;p>I love using Ipython notebooks because I can run code, comment in Markdown and plot inline on the same page. Everything is then easily exported to shareable formats such as pdf, HTML, Latex, even presentation slides.&lt;/p>
+&lt;p>Ths description quoted from Jupyter.org:&lt;/p>
+&lt;blockquote>
+&lt;p>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.&lt;/p>
+&lt;/blockquote>
+&lt;p>In 2013, I participated in a research cruise &amp;ldquo;Meteor 100/2&amp;rdquo;. On board, I was asked to provide daily Satellite plots as well as plots from RTOFS outputs. I used Python scripts to control the daily procedure to download data, to plot these data with several NCL scripts, then tar and compress them before moving them to DropBox shared-directory, so that the Chief-Scientist on board could receive the latest satellite images, regardless of the pathetic bandwidth of the satellite-based internet.&lt;/p>
+&lt;figure id="figure-satellite-sst-and-onboard-observed-wind-vectors">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://ycheng1.files.wordpress.com/2013/10/trac_anim.gif" alt="Satellite SST and onboard observed wind-vectors" loading="lazy" data-zoomable width="600" />&lt;/div>
+&lt;/div>&lt;figcaption>
+Satellite SST and onboard observed wind-vectors
+&lt;/figcaption>&lt;/figure>
+&lt;p>Like I said, Ipython Notebooks are easily shareable, in particular through the nbviewer provided by &lt;em>Jupyter.org&lt;/em>. Below are some links to my early works in the notebook format:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/daily.ipynb" target="_blank" rel="noopener">Plotting routine for Meteor 100/2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/track_wind.ipynb" target="_blank" rel="noopener">Along-track wind-observation and animation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://nbviewer.jupyter.org/url/www.rsmas.miami.edu/users/ycheng/p1_CCSM3.ipynb?create=1" target="_blank" rel="noopener">Linear Inverse Modeling data validation, predictability study&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fischcheng/fischcheng.github.io/blob/source/static/notebook/p3.ipynb" target="_blank" rel="noopener">Reduced Gravity model showing equatorial waves&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;center>
+&lt;div
+class="magnific-video mpf-iframe embed video-player ">
+&lt;iframe src="https://www.youtube.com/embed/jx_bGld1eLM" type="text/html"
+allowfullscreen
+frameborder="0"
+width="80%"
+height="385"
+>&lt;/iframe>
+&lt;/div>
+&lt;/center></description></item><item><title>Automated deployment of Hugo generated site to Github pages</title><link>/post/hugo_blog/</link><pubDate>Wed, 14 Sep 2016 20:54:16 +0000</pubDate><guid>/post/hugo_blog/</guid><description>&lt;p>In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href="https://github.com/fischcheng/fischcheng.github.io" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;h3 id="basic-setting-in-my-configtoml-for-the-academic-theme">Basic setting in my config.toml for the Academic Theme&lt;/h3>
+&lt;p>Many beautifully designed themes are already &lt;a href="http://themes.gohugo.io" target="_blank" rel="noopener">available&lt;/a>. I decided to use the &lt;a href="http://themes.gohugo.io/academic/" target="_blank" rel="noopener">academic theme&lt;/a>, because it&amp;rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the &lt;a href="http://themes.gohugo.io/theme/academic/" target="_blank" rel="noopener">demo website&lt;/a> in action.&lt;/p>
+&lt;p>In &lt;code>config.toml&lt;/code>, one can set the universal variables used by Hugo to generate HTML pages. For example:&lt;/p>
+&lt;pre>&lt;code class="language-toml">baseurl = &amp;quot;https://fischcheng.github.io/&amp;quot;
+title = &amp;quot;Yu Cheng&amp;quot;
+copyright = &amp;quot;&amp;amp;copy; 2016 Yu Cheng&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+theme = &amp;quot;hugo-academic&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;p>Also some specific parameters used by the chosen theme:&lt;/p>
+&lt;pre>&lt;code class="language-toml">[params.about]
+interests = [&amp;quot;Largescale ocean circulation&amp;quot;, &amp;quot;climate variability and modeling&amp;quot;]
+str_interests = &amp;quot;Interests&amp;quot;
+str_education = &amp;quot;Education&amp;quot;
+[[params.about.education]]
+course = &amp;quot;BSc in Atmospheric Sciences&amp;quot;
+institution = &amp;quot;National Taiwan University&amp;quot;
+year = 2010
+&lt;/code>&lt;/pre>
+&lt;p>In the &lt;code>academic&lt;/code> theme, there are 7 sections on the homepage. The &lt;code>about&lt;/code> and &lt;code>teaching&lt;/code> sections are under &lt;code>content/home&lt;/code>. The content of personal profile is from &lt;code>about.md&lt;/code>, yet the entries in interests and education are configured in &lt;code>config.toml&lt;/code>.&lt;/p>
+&lt;p>Three other types of contents are &lt;code>publication&lt;/code>, &lt;code>post&lt;/code> and &lt;code>project&lt;/code>. Each has its unique page layouts, stored under corresponding folders under &lt;code>content&lt;/code>. Add a line &lt;code>selected = true&lt;/code> in the meta-data part in the publication entry to ensure that entry displayed in the &lt;code>selected publication&lt;/code> section.&lt;/p>
+&lt;p>Next change following items to customize the navigation bar:&lt;/p>
+&lt;pre>&lt;code class="language-toml">[[menu.main]]
+name = &amp;quot;Home&amp;quot;
+url = &amp;quot;#top&amp;quot;
+weight = 1
+[[menu.main]]
+name = &amp;quot;Publications&amp;quot;
+url = &amp;quot;#publications&amp;quot;
+weight = 2
+[[menu.main]]
+name = &amp;quot;Posts&amp;quot;
+url = &amp;quot;#posts&amp;quot;
+weight = 3
+[[menu.main]]
+name = &amp;quot;Research&amp;quot;
+url = &amp;quot;#projects&amp;quot;
+weight = 4
+[[menu.main]]
+name = &amp;quot;Works&amp;quot;
+url = &amp;quot;#works&amp;quot;
+weight = 5
+[[menu.main]]
+name = &amp;quot;Contact&amp;quot;
+url = &amp;quot;#contact&amp;quot;
+weight = 6
+&lt;/code>&lt;/pre>
+&lt;p>Changing the name will tell Hugo to replace the navbar items and URL for the page that button linked to. I modified the default &lt;code>teaching.md&lt;/code> page to &lt;code>works&lt;/code> and renamed &lt;code>project&lt;/code> section to &lt;code>research&lt;/code>. Also, I enabled commenting by setting &lt;code>disqusShortname = &amp;quot;yucheng&amp;quot;&lt;/code> in &lt;code>config.toml&lt;/code>. And follow this snippet to add a new social network icon:&lt;/p>
+&lt;pre>&lt;code class="language-toml">[[params.social]]
+icon = &amp;quot;envelope&amp;quot; # icon name for email
+icon_pack = &amp;quot;fa&amp;quot; # for font-awesome icons
+link = &amp;quot;mailto:username@xxx.xxx&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;p>On top of the hugo-academic theme, I added an additional stylesheet under &lt;code>static/css&lt;/code>. This changes the default color scheme from light blue to green. Besides, I changed the font of the &lt;code>navbar-brand&lt;/code>, the title of my site by adding following lines:&lt;/p>
+&lt;pre>&lt;code class="language-css">.navbar-brand {
+text-transform: uppercase;
+font-weight: bold;
+font-size: 1.5em;
+color: #2b2b2b;
+font-family: 'Permanent Marker', cursive;
+}
+&lt;/code>&lt;/pre>
+&lt;p>The contents within &lt;code>static/js&lt;/code> and &lt;code>static/ccs&lt;/code> will be included in the &lt;code>header.html&lt;/code> after the default ccs stylesheets, so it&amp;rsquo;s totally possible to change color scheme without modifying anything in the &lt;code>themes/academic&lt;/code>. However, to change fonts, I modified &lt;code>themes/academic/layouts/partials/header.html&lt;/code> to load an additional font &lt;em>Permanent Marker&lt;/em> from google fonts.&lt;/p>
+&lt;pre>&lt;code class="language-html">&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker&amp;quot;&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h3 id="github-pages-user-site-or-project-site">Github pages, user site or project site&lt;/h3>
+&lt;p>Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code>master&lt;/code> branch will be displayed under this address &lt;code>https://&amp;lt;username&amp;gt;.github.io&lt;/code>, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code>gh-pages&lt;/code> branch can be accessed under &lt;code>http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code>. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href="https://pages.github.com" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;p>My website is an user site. Under this repo &lt;code>fischcheng.github.io&lt;/code>, the &lt;code>source&lt;/code> branch archived all changes to the source codes, and &lt;code>master&lt;/code> branch store the Hugo-generated HTML pages.&lt;/p>
+&lt;h3 id="automated-deployment-using-wercker">Automated deployment using Wercker&lt;/h3>
+&lt;p>The default way to build a hugo site is simple, invoke &lt;code>hugo&lt;/code> under the site root. A &lt;code>public&lt;/code> folder will be created, containing every HTML pages and copied stylesheets and static files (banner images and profile icons or so). Push this folder to the &lt;code>master&lt;/code> branch, and voila, the site is online.&lt;/p>
+&lt;p>What if a single &lt;code>push&lt;/code> to the &lt;code>source&lt;/code> branch (or whatever name of your development branch) can trigger all the rest steps? Travis-CI was my old choice for the last version of this site, until I came across this wonderful guide on Hugo&amp;rsquo;s official &lt;a href="https://gohugo.io/tutorials/automated-deployments/" target="_blank" rel="noopener">site&lt;/a>. However, things changed a lot since that article was last edited and below I would like to detail all the issues I ran into and how I solved them.&lt;/p>
+&lt;p>&lt;a href="http://wercker.com" target="_blank" rel="noopener">Wercker&lt;/a> is a continuous integration (CI) tool that helps developers to build, test and deploy their applications based on &lt;a href="docker">Docker&lt;/a>. A Wercker account can be easily hooked to a given Github or Bitbucket account, and one can create new applications from a chosen repository. After setting up, a push to the repository will automatically trigger the application. One of the biggest advantages of Wercker over Travis-CI is the collection of easily-located and well-documented &lt;em>steps&lt;/em>. In our case, the application consists of two steps &lt;em>build hugo&lt;/em> and &lt;em>deploy to GitHub.&lt;/em>&lt;/p>
+&lt;figure id="figure-wercker-dashboard-to-find-existed-steps-click-the-registry-tab-to-create-your-own-applications-and-steps-access-the-create-tab">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/wercker01.png" alt="Wercker dashboard: to find existed steps, click the Registry tab; to create your own applications and steps, access the Create tab." loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Wercker dashboard: to find existed steps, click the Registry tab; to create your own applications and steps, access the Create tab.
+&lt;/figcaption>&lt;/figure>
+&lt;p>The first task is to create the config.yml (&lt;a href="https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml" target="_blank" rel="noopener">link to mine&lt;/a>) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p>
+&lt;h4 id="build">Build&lt;/h4>
+&lt;p>Following the official guide, I used this &lt;a href="https://github.com/ArjenSchwarz/wercker-step-hugo-build" target="_blank" rel="noopener">step&lt;/a> to trigger Hugo to build HTML pages. However, my first try didn&amp;rsquo;t successfully generate the pages correctly, because the &lt;code>arjen/hugo-build&lt;/code> step couldn&amp;rsquo;t find the &lt;code>hugo-academic&lt;/code> theme. For easier tracking and updating, I forked the &lt;code>hugo-academic&lt;/code> repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the &lt;code>hugo-academic&lt;/code> theme. Kudos to this &lt;a href="https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/" target="_blank" rel="noopener">post&lt;/a> which helped me to track this issue down.&lt;/p>
+&lt;pre>&lt;code class="language-yaml">box: debian
+build:
+steps:
+- script:
+name: install git
+code: |
+apt-get update
+apt-get install git -y
+- script:
+name: initialize git submodules
+code: |
+git submodule update --init --recursive
+- arjen/hugo-build@1.11.0:
+version: &amp;quot;0.15&amp;quot;
+theme: &amp;quot;hugo-academic&amp;quot;
+flags: --buildDrafts=true
+&lt;/code>&lt;/pre>
+&lt;h4 id="deploy">Deploy&lt;/h4>
+&lt;p>There is no more such thing as &amp;ldquo;Add deploy target&amp;rdquo; in Wercker. The interface has changed to the new &amp;ldquo;workflows of pipelines.&amp;rdquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.&lt;/p>
+&lt;p>So I poked around and realized that, even if the second &lt;code>deploy&lt;/code> step is included in the &lt;code>wercker.yml&lt;/code>, one still needs to manually add a new &amp;ldquo;pipeline&amp;rdquo; under the &amp;ldquo;workflow&amp;rdquo; tab. Upon creating a new pipeline, the &amp;ldquo;YML pipeline name&amp;rdquo; must be in the predefined names in the &lt;code>wercker.yml&lt;/code>.&lt;/p>
+&lt;p>Here I used this &lt;a href="https://github.com/leipert/step-git-push" target="_blank" rel="noopener">step&lt;/a> to deploy the built site to GitHub. Each pipeline starts from scratch. So for the &lt;code>deploy&lt;/code> pipeline, the &lt;code>git&lt;/code> package needs to be installed again. One also has to setup the environment variable &lt;code>$Git_Token&lt;/code>, acquired from Github setting.&lt;/p>
+&lt;pre>&lt;code class="language-yaml">deploy:
+steps:
+- script:
+name: install git
+code: |
+apt-get update &amp;amp;&amp;amp; apt-get install git -y
+- leipert/git-push@0.7.6:
+gh_oauth: $Git_Token
+gh_pages: true
+basedir: public
+branch: master
+&lt;/code>&lt;/pre>
+&lt;figure id="figure-click-deploy-pipeline-to-setup-included-environment-variables-get-the-github-access-token-from-github-profile-setting">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/wercker02.png" alt="Click deploy pipeline to setup included environment variables. Get the Github access token from Github profile setting." loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Click deploy pipeline to setup included environment variables. Get the Github access token from Github profile setting.
+&lt;/figcaption>&lt;/figure></description></item><item><title>Renovate this place and new goals</title><link>/post/renovate_here/</link><pubDate>Tue, 05 Jul 2016 16:06:00 +0000</pubDate><guid>/post/renovate_here/</guid><description>&lt;p>I&amp;rsquo;ve just spent the long weekend updating my nearly-abandoned website. This year, I have passed my qualifying exam (February), and the paper I&amp;rsquo;ve been working on for almost an year is now finally accepted.&lt;/p>
+&lt;p>The website has been changed to a GitHub user-page, instead of a project-page. Also, now the website is automatically generated by Travis-CI, a very popular service recently, testing and deploying the codes to ensure portability. All the changes and new posts are made on my laptop. Html pages are built by Pelican/Python3, on the /source branch. A push to the remote host will trigger Travis-CI. With a little help from ghp-import, the Travis-CI-generated pages will be force-pushed to the /master branch. Voila, that is the website now you are looking at.&lt;/p>
+&lt;p>Through this little-over-two-days endeavor, I now had more knowledge on Github, Travis-CI, and more control on my own website templates. Now it&amp;rsquo;s just the matter of keeping things rolling &amp;ndash; I made the resolution to post more frequently. In fact, I have just updated the Work page to include some of my recent presentations and abstracts. I will also post some of the notes from our group meeting.&lt;/p></description></item><item><title>Building a static blog with Pelican</title><link>/post/pelican_migration/</link><pubDate>Tue, 10 Jun 2014 12:05:00 +0000</pubDate><guid>/post/pelican_migration/</guid><description>&lt;h4 id="once-upon-a-time">Once upon a time&amp;hellip;&lt;/h4>
+&lt;p>I spent a summer using Microsoft Frontpage to build a website, hosted by my highschool&amp;rsquo;s server. Then I also had my first experience with PHP, javascript, html, css, cgi (common gateway interface, I haven&amp;rsquo;t seen such things for a while!) However, some popular free-webpage services just kept popping out the years after, as &amp;ldquo;blog&amp;rdquo; became a everyday word. All of a sudden, a vibrant and powerful &amp;ldquo;blog&amp;rdquo;, usually implemented with guestbook and albums is just few clicks away. Thus, I stop writing my own webpages. That was ten years ago. Years later, even MS Frontpage is discontinued. End of last summer, every students in RSMAS got an mail about annual progress report, and building your personal page is listed as a requirment. I first cheated by adding a new blog using wordpress, refusing to revisit my old friends, being afraid of spending too much time on such distractions. However, these distractions just won&amp;rsquo;t dispear even though I tried hard to ignore&amp;hellip; Therefore, after the tiring semster with TA and seminar talk, I came back to revisit some other interesting stuffs I&amp;rsquo;ve had no time to spend on for the past few months.&lt;/p>
+&lt;h4 id="pelican-i-love-this-bird">Pelican: I love this bird!!&lt;/h4>
+&lt;p>I&amp;rsquo;ve heard about Django quite often, so it was my first try. Lacking of PHP knowledge, and a personal site needs not to have some log-in or user-management functions, I decided to build a static blog. By accident, I noticed that lots of technical blogs are hosted by Github, and powered by Jekyll, Octopress or Pelican. The reason that I chose Pelican, is simply because it&amp;rsquo;s python/jinja2 based. And I happened to find some very good references:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/" target="_blank" rel="noopener">http://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/" target="_blank" rel="noopener">http://blog.xlarrakoetxea.org/posts/2012/10/creating-a-blog-with-pelican/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/getpelican" target="_blank" rel="noopener">https://github.com/getpelican&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p align="center">
+{% img http://www.allaboutbirds.org/guide/PHOTO/LARGE/brown_pelican_5.jpg 400 500 %}
+&lt;/p>
+&lt;h4 id="overview">Overview&lt;/h4>
+&lt;p>Pelican is a static site engine powered by python, using templates based on Jinja2. It supports both reStructuredText and Markdown, as well as asciiDoc and html, which makes writing new posts extremely easy. The center of a pelican-powered site is the &lt;em>configuration.py&lt;/em> file, which controls the basic settings of your site, including side bar, navigation bar options, disqus-comments, tags, categories, twitter supports, and PATH. All the original files (including .md, .rst files) are stored in /contents, and all the html generated by Pelican go to /output folder. Simply upload the /output folder to your web-host, and T&amp;rsquo;ADA, your website is on. For details of installation and deployment, pleace check official Pelican documentation.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://docs.getpelican.com/en/3.3.0/" target="_blank" rel="noopener">http://docs.getpelican.com/en/3.3.0/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="themes">Themes&lt;/h4>
+&lt;p>One of the reasons that I chose Pelican is the active community on Github. As mentioned above, pelican templates are generated by Jinja2, which is a template engine powered by Python. A set of themes including templates of different pages and stylesheets. There are many high-quality themes available on github, which can be easily downloaded using following command:&lt;/p>
+&lt;pre>&lt;code>:::bash
+git clone https://github.com/getpelican/pelican-themes
+&lt;/code>&lt;/pre>
+&lt;p>This blog is powered by pelican-bootstraps3 theme; few other themes I would also like to try are Pelican-pure, Mockingbird and Notmyidea. Additional stylesheet can be easily integrated by changing the setting in &lt;em>configuration.py&lt;/em>. To switch between different themes, just modify this line in your &lt;em>configuration.py&lt;/em>.&lt;/p>
+&lt;pre>&lt;code>:::python
+THEME = &amp;quot;pelican-bootstrap3&amp;quot; # or whatever themes you like
+&lt;/code>&lt;/pre>
+&lt;h4 id="customize">Customize&lt;/h4>
+&lt;p>This is a more tricky part, due to my limited knowledge of CSS and Jinja2. So far I&amp;rsquo;ve only managed to change the background color, font size, line-height and link-hover style of my header. Even though the syntax of CSS is very straightforward, lacking of nested structure, it is very difficult to read the CCS stylesheet by someone else: one must figure out the class/ID names of each elements in the html files, and locate corresponding tags in the minified CSS file. I&amp;rsquo;ve found a Sublime-Text package to unminify the CSS, yet still find it difficult to change even a single property. Currently, I am attempting to use SASS/COMPASS to rewrite the stylesheet.&lt;/p>
+&lt;h4 id="plugins">Plugins&lt;/h4>
+&lt;p>One of greatest feature of Pelican is to include modular plugins into your static site. Same as Pelican-themes, these plugins can be downloaded easily from github.&lt;/p>
+&lt;pre>&lt;code>:::bash
+git clone https://github.com/getpelican/pelican-plugins.git
+&lt;/code>&lt;/pre>
+&lt;p>Curretnly, I am using the Liquid-tags plugin by &lt;a href="mailto:jakevdp@cs.washington.edu">Jake Vanderplas&lt;/a> to enable Youtube video, iPython notebook, code-block and image insertion in my blog posts, as well as the Math-rendering. Other plugins such as Gravatar and internal-links are very easily to be implemented, in fact, just two lines in the &lt;em>configuration.py&lt;/em>. The idea of plugins, are similar to the idea of importing libraries in the beginning of every Python scripts.&lt;/p>
+&lt;pre>&lt;code>:::python
+# Plugins
+PLUGIN_PATH = '/Users/yucheng/Desktop/Other/MyPage/pelican-plugin'
+PLUGINS = ['liquid_tags.img', 'liquid_tags.video',
+'liquid_tags.youtube', 'liquid_tags.vimeo',
+'liquid_tags.include_code', 'liquid_tags.notebook','render_math']
+&lt;/code>&lt;/pre>
+&lt;h4 id="summary">Summary&lt;/h4>
+&lt;p>Pelican is a really powerful static-site generator, using Python. All options you may play with are in the &lt;em>configuration.py&lt;/em> and the &lt;em>syltesheet.css&lt;/em>. The official documentation of Pelican is rather complete, not to mention the active developer-base. If you are a Python lover, it won&amp;rsquo;t take you too long to setup a really polished and somehow-dynamic static site. So, look no further, among numerous static-site engines, Pelican is definitely one of the best.&lt;/p></description></item></channel></rss>
