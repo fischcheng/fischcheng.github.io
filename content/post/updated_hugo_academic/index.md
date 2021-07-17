@@ -88,13 +88,13 @@ For available languages and styles, check [link](https://highlightjs.org/static/
 
 ------
 ## Alerts
-{{% alert note %}}
+{{% callout note %}}
 It's about time to sleep!
-{{% /alert %}}
+{{% /callout %}}
 
-{{% alert warning %}}
+{{% callout warning %}}
 Hope this will help you.
-{{% /alert %}}
+{{% /callout %}}
 
 -----
 Some more options in the Hugo-Academic [Theme](https://gcushen.github.io/hugo-academic-demo/post/managing-content/). That's all for now. I guess the only thing I missed about Pelican was its plugin to embed ipython notebook cells to the post. Haven't found a hugo-shortcode for that purpose yet. Or maybe a shortcode to embed an Instagram post?

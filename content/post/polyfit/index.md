@@ -55,9 +55,9 @@ def driftfit(arr):
 
 This is a function to fit a 3rd order polynomial to the 69-year surface temperature of each grid cell. It stacks locations of the input array using `arr.stack(loc=('lat', 'lon'))`, and using `numpy.polynomial.polynomial.polyfit` to find the cubic fit of the local temperature time series over 69 years. The coefficients are then converted back to the polynomials using `polyval(timenum,regressions)`. Next step is to generate a DataArray from numpy.array so that I can unstack the array correctly and keep the metadata from the input DataArray.
 
-{{% alert note %}}
+{{% callout note %}}
 One interesting and confusing thing I noticed: not all `polyfit` are created equal. The `numpy.polyfit` outputs the polynomial coefficients from the highest power, while the `numpy.polynomial.polynomial.polyfit` does the other way round. And so are the input order of their corresponding `polyval`. 
-{{% /alert %}}
+{{% /callout %}}
 
 I then load in the climate change run and remove the cubic fit from it. Two functions `lintrend` and `trendts` are constructed similarly to `driftfit`, so I left out the details. The former output the coefficient of the first order polynomial (the slope), and the later output the trend time series. 
 
