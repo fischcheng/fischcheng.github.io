@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>climate change | Yu Cheng</title><link>/tag/climate-change/</link><atom:link href="/tag/climate-change/index.xml" rel="self" type="application/rss+xml"/><description>climate change</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 16 Aug 2018 19:01:23 +0000</lastBuildDate><image><url>/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url><title>climate change</title><link>/tag/climate-change/</link></image><item><title>Wildfires and climate change</title><link>/post/wildfire/</link><pubDate>Thu, 16 Aug 2018 19:01:23 +0000</pubDate><guid>/post/wildfire/</guid><description>&lt;p>I moved to Seattle last summer. And I&amp;rsquo;ve already experienced three times of smoke this bad. Ironically, I had this impression that Seattle is famous for its good air quality. As many articles pointing out, the wildfires in the surrounding areas are to be blamed. They also suggest that the fires seem to spread wider and last longer than ever before due to the abnormally hot and dry condition this summer. Is it somewhat related to global warming?&lt;/p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/MODIS_map_0816.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>To begin with, I found the active wildfire dataset from the &lt;a href="https://fsapps.nwcg.gov/afm/gisdata.php" target="_blank" rel="noopener">US Forest Service&lt;/a>. Two resolutions are available MODIS 1km and VIIRS 375m. You can choose between different regions and time periods. And the MODIS reflectance image is downloaded from the &lt;a href="https://worldview.earthdata.nasa.gov" target="_blank" rel="noopener">EARTHDATA WORLDVIEW&lt;/a> interface.&lt;/p>
+&lt;p>I used geopandas to read the shapefiles, and cartopy to plot the wildfires on the continental U.S.&lt;/p>
+&lt;pre>&lt;code class="language-python">import cartopy.io.shapereader as shpreader
+from cartopy.feature import ShapelyFeature
+import cartopy.crs as ccrs
+# Change the reference system of Geopandas dataframe to the one Cartopy knows.
+crs_epsg = ccrs.epsg('3857')
+fp = &amp;quot;modis_fire_last7_2018_234_conus_shapefile/modis_fire_last7_2018_234_conus.shp&amp;quot;
+data = gpd.read_file(fp)
+df_epsg = data.to_crs(epsg='3857')
+#ax = plt.axes([0, 0, 1, 1],projection=ccrs.LambertConformal())
+fig, ax1 = plt.subplots(1, 1, subplot_kw={'projection': crs_epsg},figsize=(10, 5))
+ax1.set_extent([-125, -66.5, 20, 50], ccrs.Geodetic())
+shapename = 'admin_1_states_provinces_lakes_shp'
+states_shp = shpreader.natural_earth(resolution='110m',category='cultural',
+name=shapename)
+ax1.background_patch.set_visible(False)
+ax1.outline_patch.set_visible(False) # Remove the outline, very useful
+#ax.coastlines()
+for state in shpreader.Reader(states_shp).geometries():
+# pick a default color for the land with a black outline,
+# this will change if the storm intersects with our track
+facecolor = 'LightGray'#[0.9375, 0.9375, 0.859375]
+edgecolor = 'black'
+#if state.intersects(track):
+# facecolor = 'red'
+#elif state.intersects(track_buffer):
+# facecolor = '#FF7E00'
+ax1.add_geometries([state], ccrs.PlateCarree(),
+facecolor=facecolor, edgecolor=edgecolor,alpha=0.6)
+df_epsg.plot(ax=ax1, color='red',markersize=7,zorder=51)
+plt.title('Wildfire 8/15-8/22 from MODIS satellite')
+#plt.savefig('MODIS_map_last_7days.png',dpi=200)
+plt.show()
+&lt;/code>&lt;/pre>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/MODIS_map_last_7days.png" alt="" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>I downloaded the wildfire occurrence data from the &lt;a href="https://wildfire.cr.usgs.gov/firehistory/data.html" target="_blank" rel="noopener">USGS website&lt;/a>. Here I focus only on the data collected by US forest service. The metadata can be found &lt;a href="https://wildfire.cr.usgs.gov/firehistory/firehistory_1980_2016.xml" target="_blank" rel="noopener">here&lt;/a>. Again, I used geopandas to read the shapefile, and converted interested columns to pandas dataframe. I then changed some columns to the correct dtypes and selected only the major wildfires occurred in the western U.S. The major wildfire is defined as those fires burned over 1000 square acres when controlled.&lt;/p>
+&lt;pre>&lt;code class="language-python">import pandas as pd
+ff = &amp;quot;wf_usfs_1980_2016/wf_usfs_1980_2016.shp&amp;quot;
+df = gpd.read_file(ff)
+dff=pd.DataFrame(df[['CAUSE','SPECCAUSE','SIZECLASSN','YEAR_','STARTDATED',
+'CONTRDATED','OUTDATED','STATE','TOTALACRES','DLONGITUDE']])
+# Clean data
+dff['STARTDATED']=pd.to_datetime(dff['STARTDATED'])
+dff['CONTRDATED']=pd.to_datetime(dff['CONTRDATED'])
+dff['OUTDATED']=pd.to_datetime(dff['OUTDATED'])
+dff['LENGTH']=(dff['CONTRDATED']-dff['STARTDATED'])
+dff['YEAR']=pd.to_numeric(dff['YEAR_'])
+dff=dff.drop('YEAR_',axis=1)
+WEST_US_major_fire=dff[(dff['SIZECLASSN']&amp;gt;5) &amp;amp; (dff['DLONGITUDE']&amp;lt;-103)]
+&lt;/code>&lt;/pre>
+&lt;p>Three questions I&amp;rsquo;d like to answer:&lt;/p>
+&lt;ul>
+&lt;li>Has the occurrence of major wildfires increased in the last 30 years?&lt;/li>
+&lt;li>Has the wildfire season got longer in the same period?&lt;/li>
+&lt;li>Do we have more severe wildfires in recent years?&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-python">event_count=WEST_US_major_fire.groupby('YEAR')['STARTDATED'].count()
+total_acre=WEST_US_major_fire.groupby('YEAR').sum()['TOTALACRES']
+#year=pd.date_range(start='1980', end='2017', freq='A')
+season=pd.Series(season_window,index=total_acre.index)
+season[season&amp;gt;365]=365
+annual_df=pd.DataFrame({'event_count': event_count, 'total_acre': total_acre,
+'season_length':season})
+&lt;/code>&lt;/pre>
+&lt;p>I plotted the wildfire occurence, burned area and season length against the temperature and precipitation reanalysis data I downloaded from &lt;a href="https://esrl.noaa.gov/psd/" target="_blank" rel="noopener">NOAA PSD&lt;/a> using Altair.&lt;/p>
+&lt;iframe id="altairchart"
+src="/img/wildfire_charts.html" width=800 height=970
+scrolling="no" frameborder="no">
+&lt;/iframe>
+&lt;p>There are clear increasing trends in the average and maximum surface air temperature, as well as a decreasing trend in precipitation over the western U.S. since 1980. The occurrence, burned area, and season length of wildfires all appear to increase during the same period. The burned area and occurrence seem to have strong interannual variability. The average wildfire season length after 2000 is about 70 days longer than that in 1980-2000.&lt;/p>
+&lt;p>This is a very crude exploration of data. I am fully aware of the danger of mistaking correlation as causation. There are more things to be done, more variables to be considered. For example, after reading through several journal articles, I learned that soil moisture also plays an important role. Unfortunately, the soil moisture is scarcely measured and poorly modeled. I would also like to expand my research by including more wildfire data from other sources.&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/fischcheng/430775c68696152247ce1954117e722f.js">&lt;/script></description></item><item><title>Climate changes in the high-resolution 20th century simulation</title><link>/project/change-hrc/</link><pubDate>Mon, 02 Oct 2017 11:00:40 +0000</pubDate><guid>/project/change-hrc/</guid><description>&lt;h3 id="motivation">Motivation&lt;/h3>
+&lt;p>Previous studies suggest that leakage has increased since the late 1960s [Biastoch et al., 2009, Biastoch et al., 2015, Loveday et al., 2015], consistent with the observed changes in westerlies [Marshall 2003, Swart and Fyfe 2012]. We began to wonder if such changes exist in our climate change simulation HRC07. After all, none of the above-listed works were done with an ocean-eddy resolving coupled model like our in-house CCSM3.5.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/Global_annual_mean_SST_HRC07.png" alt="SST_HRC07" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>However, the early attempts revealed that the climate change simulation HRC07 suffered a lot from the spin-up process, specifically the global mean SST. The 10yr idle run before 1940 seems not enough. SST dives first before rising again and peaks around 1960. Therefore, instead of focusing on the linear trends of climate change run, we would like to use the two control runs to remove the common model drift between cases to isolate the real &amp;ldquo;warming signal&amp;rdquo; in the climate change simulation.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="/img/Dedrifted_annual_mean_SST.png" alt="SST_dedrifted" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="method">Method&lt;/h3>
+&lt;p>Our work is based on a high-resolution configured Community Climate System Model (CCSM3.5) output. The spatial resolution of this simulation for the atmospheric and ocean component is 0.5 degree and 0.1 degree respectively. Three different runs are employed in this study: a 20th-century climate change simulation with observed CO&lt;sub>2&lt;/sub> forcing (HRC07), and two present-day control simulation with year-2000 CO&lt;sub>2&lt;/sub> forcing. All of them are initialized from the same spun-up year 2000 initial conditions, although at lower-resolution. Agulhas leakage is quantified using a Lagrangian particle tracking approach, more details can be found in Cheng et al. [2016].&lt;/p>
+&lt;p>To remove the model drift in the HRC07, we take two approaches: (1) subtract HRC07 from the cubic spline fit of HRC08/09 and (2) takes the difference of (HRC08+HRC09)/2 -HRC07 at every timestep for many variables. It is expected that the difference might increase in first few years because the effect of high CO&lt;sub>2&lt;/sub> in the year 2000 is still lingering in HRC07. Global mean SST shown above is a good example. However, note that the equilibrium timescale differs from variable to variable. To rule out the initial-shock, we do not feel comfortable just rule out the first three decades.&lt;/p>
+&lt;p>So, instead of focusing on the linear trend based on regression of a prescribed period (which is usually very subjective), in this study, we will focus on the the changes between first 20 and last 20 years of the available record 1948-2007. First, we will focus on the differences in Agulhas leakage and westerlies, and try to compare such to the low-res CMIP5 historical CCSM run. Then we will progress to identify the changes in ocean circulation associated with the increasing AL in HRC07.&lt;/p>
+&lt;p>(developing)&lt;/p></description></item></channel></rss>
