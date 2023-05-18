@@ -10,21 +10,21 @@ authors:
 superuser: true
 
 # Role/position
-role: Sr. Atmospheric Data Scientist
+role: Sr. Founding Data Scientist
 
 # Organizations/Affiliations
 organizations:
-- name: tomorrow.io
-  url: "https://www.tomorrow.io"
+- name: Web3 Builders
+  url: "https://web3builders.co"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Passionate about leveraging my past experience to make positive impacts on the planet. Well, raising two wonderful children heartfully is a good start. 
 
 interests:
 - Climate variability and modeling
-- Extreme Weather
+- ML/AI Applications
+- Predictive Modeling
 - Data Visualization
-- Machine Learning
 
 education:
   courses:
@@ -73,6 +73,6 @@ user_groups: []
 # - Visitors
 ---
 
-Yu has 10 years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, scientific programming and physical oceanography to solve more challenging problems.
+Yu has 10 years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, software engineering and data science to solve more challenging problems.
 
 Fun facts: Yu loves all sports with racquets. He plays in local tennis leagues school badminton clubs and has been stringing racquets for friends for many years. One of his dearest memories from Miami was serving as a ballperson at Miami Open and handing towels to Rafael Nadal.
