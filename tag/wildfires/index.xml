@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wildfires | Yu Cheng</title><link>/tag/wildfires/</link><atom:link href="/tag/wildfires/index.xml" rel="self" type="application/rss+xml"/><description>wildfires</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Wed, 22 Aug 2018 11:07:23 +0000</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_2.png</url><title>wildfires</title><link>/tag/wildfires/</link></image><item><title>Wildfire Smoke is Choking Seattle: visualizing using Altair</title><link>/post/smoke_seattle/</link><pubDate>Wed, 22 Aug 2018 11:07:23 +0000</pubDate><guid>/post/smoke_seattle/</guid><description>&lt;p>Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &amp;ldquo;&lt;a href="https://www.vox.com/energy-and-environment/2018/8/21/17761908/seattle-air-quality-haze-smoke-wildfire-health" target="_blank" rel="noopener">smoking seven cigarettes in a day&lt;/a>.&amp;rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.&lt;/p>
-&lt;p>Here is the experimental smoke forecast from NWS' tweet on Tuesday:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wildfires | Yu Cheng</title><link>/tag/wildfires/</link><atom:link href="/tag/wildfires/index.xml" rel="self" type="application/rss+xml"/><description>wildfires</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Wed, 22 Aug 2018 11:07:23 +0000</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_3.png</url><title>wildfires</title><link>/tag/wildfires/</link></image><item><title>Wildfire Smoke is Choking Seattle: visualizing using Altair</title><link>/post/smoke_seattle/</link><pubDate>Wed, 22 Aug 2018 11:07:23 +0000</pubDate><guid>/post/smoke_seattle/</guid><description>&lt;p>Last week was tough for everyone in Seattle because of the bad air quality. Sadly, it was nothing compared to what we are going through this week. The Air Quality Index (AQI) reached well above 150 since Monday, which is roughly equal to &amp;ldquo;&lt;a href="https://www.vox.com/energy-and-environment/2018/8/21/17761908/seattle-air-quality-haze-smoke-wildfire-health" target="_blank" rel="noopener">smoking seven cigarettes in a day&lt;/a>.&amp;rdquo; The hazardous smoke is attributed to the surrounding massive wildfires, and the onshore winds to the rescue are expected to arrive first in the Wednesday evening.&lt;/p>
+&lt;p>Here is the experimental smoke forecast from NWS&amp;rsquo; tweet on Tuesday:&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Another round of &lt;a href="https://twitter.com/hashtag/smoke?src=hash&amp;amp;ref_src=twsrc%5Etfw">#smoke&lt;/a> from the wildfires in north central Washington and British Columbia is expected to impact the area this afternoon. This will keep smoke thick, at least through Wednesday. Smoke conditions at: &lt;a href="https://t.co/cgLa9sAQBQ">https://t.co/cgLa9sAQBQ&lt;/a> &lt;a href="https://twitter.com/hashtag/WAwx?src=hash&amp;amp;ref_src=twsrc%5Etfw">#WAwx&lt;/a> &lt;a href="https://t.co/cgJHU5SS7u">pic.twitter.com/cgJHU5SS7u&lt;/a>&lt;/p>&amp;mdash; NWS Seattle (@NWSSeattle) &lt;a href="https://twitter.com/NWSSeattle/status/1031999007864705024?ref_src=twsrc%5Etfw">August 21, 2018&lt;/a>&lt;/blockquote>
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;p>News articles seem to be obsessed with the AQI number. When I tried plotting out the AQI levels in Seattle in the past week, I realized that the AQI is unitless, but the data I found has a typical aerosol measurement unit $\mu g/m^{3}$. So I dived deeper to find out more details about AQI, which I&amp;rsquo;d like to explain below.&lt;/p>
@@ -8,7 +8,7 @@
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="/img/aqi_scale.png" alt="https://airnow.gov/index.cfm?action=aqibasics.aqi" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-&lt;a href="https://airnow.gov/index.cfm?action=aqibasics.aqi">https://airnow.gov/index.cfm?action=aqibasics.aqi&lt;/a>
+&lt;a href="https://airnow.gov/index.cfm?action=aqibasics.aqi" target="_blank" rel="noopener">https://airnow.gov/index.cfm?action=aqibasics.aqi&lt;/a>
 &lt;/figcaption>&lt;/figure>
 &lt;p>However, the conversion between AQI and particle concentration is not linear. It is also not clear to me, what the averaging period of the reported AQI number is. After some googling, I found a &lt;a href="https://www.epa.gov/sites/production/files/2014-05/documents/zell-aqi.pdf" target="_blank" rel="noopener">chart&lt;/a> published by EPA, but the conversion is based on the 24-hr average of particle concentration.&lt;/p>
 &lt;p>The station-based PM2.5 data is harder to find than I expected. Kudos to the Puget Sound Clean Air Agency for providing a fantastic online &lt;a href="https://secure.pscleanair.org/AirGraphing//AirGraphing" target="_blank" rel="noopener">graphing tool&lt;/a> and the downloadable data. Below I plotted the PM2.5 concentration in the past 10 days using Altair, a declarative statistical visualization library for Python, based on Vega and Vega-Lite.&lt;/p>
@@ -41,73 +41,81 @@ scrolling="no" frameborder="no">
 &lt;/div>&lt;/figure>
 &lt;p>To begin with, I found the active wildfire dataset from the &lt;a href="https://fsapps.nwcg.gov/afm/gisdata.php" target="_blank" rel="noopener">US Forest Service&lt;/a>. Two resolutions are available MODIS 1km and VIIRS 375m. You can choose between different regions and time periods. And the MODIS reflectance image is downloaded from the &lt;a href="https://worldview.earthdata.nasa.gov" target="_blank" rel="noopener">EARTHDATA WORLDVIEW&lt;/a> interface.&lt;/p>
 &lt;p>I used geopandas to read the shapefiles, and cartopy to plot the wildfires on the continental U.S.&lt;/p>
-&lt;pre>&lt;code class="language-python">import cartopy.io.shapereader as shpreader
-from cartopy.feature import ShapelyFeature
-import cartopy.crs as ccrs
-# Change the reference system of Geopandas dataframe to the one Cartopy knows.
-crs_epsg = ccrs.epsg('3857')
-fp = &amp;quot;modis_fire_last7_2018_234_conus_shapefile/modis_fire_last7_2018_234_conus.shp&amp;quot;
-data = gpd.read_file(fp)
-df_epsg = data.to_crs(epsg='3857')
-#ax = plt.axes([0, 0, 1, 1],projection=ccrs.LambertConformal())
-fig, ax1 = plt.subplots(1, 1, subplot_kw={'projection': crs_epsg},figsize=(10, 5))
-ax1.set_extent([-125, -66.5, 20, 50], ccrs.Geodetic())
-shapename = 'admin_1_states_provinces_lakes_shp'
-states_shp = shpreader.natural_earth(resolution='110m',category='cultural',
-name=shapename)
-ax1.background_patch.set_visible(False)
-ax1.outline_patch.set_visible(False) # Remove the outline, very useful
-#ax.coastlines()
-for state in shpreader.Reader(states_shp).geometries():
-# pick a default color for the land with a black outline,
-# this will change if the storm intersects with our track
-facecolor = 'LightGray'#[0.9375, 0.9375, 0.859375]
-edgecolor = 'black'
-#if state.intersects(track):
-# facecolor = 'red'
-#elif state.intersects(track_buffer):
-# facecolor = '#FF7E00'
-ax1.add_geometries([state], ccrs.PlateCarree(),
-facecolor=facecolor, edgecolor=edgecolor,alpha=0.6)
-df_epsg.plot(ax=ax1, color='red',markersize=7,zorder=51)
-plt.title('Wildfire 8/15-8/22 from MODIS satellite')
-#plt.savefig('MODIS_map_last_7days.png',dpi=200)
-plt.show()
-&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">cartopy.io.shapereader&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">shpreader&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">cartopy.feature&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">ShapelyFeature&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">cartopy.crs&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">ccrs&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Change the reference system of Geopandas dataframe to the one Cartopy knows.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">crs_epsg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ccrs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">epsg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;3857&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">fp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;modis_fire_last7_2018_234_conus_shapefile/modis_fire_last7_2018_234_conus.shp&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">gpd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_file&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df_epsg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">data&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_crs&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">epsg&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;3857&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#ax = plt.axes([0, 0, 1, 1],projection=ccrs.LambertConformal())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">fig&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ax1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">subplots&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">subplot_kw&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="s1">&amp;#39;projection&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">crs_epsg&lt;/span>&lt;span class="p">},&lt;/span>&lt;span class="n">figsize&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ax1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">set_extent&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">125&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mf">66.5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">50&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">ccrs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Geodetic&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">shapename&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;admin_1_states_provinces_lakes_shp&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">states_shp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">shpreader&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">natural_earth&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">resolution&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;110m&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">category&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;cultural&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">shapename&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ax1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">background_patch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">set_visible&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ax1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">outline_patch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">set_visible&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># Remove the outline, very useful&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#ax.coastlines()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">state&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">shpreader&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Reader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">states_shp&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">geometries&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># pick a default color for the land with a black outline,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># this will change if the storm intersects with our track&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">facecolor&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;LightGray&amp;#39;&lt;/span>&lt;span class="c1">#[0.9375, 0.9375, 0.859375]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">edgecolor&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;black&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#if state.intersects(track):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># facecolor = &amp;#39;red&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#elif state.intersects(track_buffer):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># facecolor = &amp;#39;#FF7E00&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ax1&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">add_geometries&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="n">state&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">ccrs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">PlateCarree&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">facecolor&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">facecolor&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">edgecolor&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">edgecolor&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">alpha&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mf">0.6&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df_epsg&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ax&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">ax1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">color&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;red&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">markersize&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">zorder&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">51&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">title&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Wildfire 8/15-8/22 from MODIS satellite&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#plt.savefig(&amp;#39;MODIS_map_last_7days.png&amp;#39;,dpi=200)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">show&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="/img/MODIS_map_last_7days.png" alt="" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;p>I downloaded the wildfire occurrence data from the &lt;a href="https://wildfire.cr.usgs.gov/firehistory/data.html" target="_blank" rel="noopener">USGS website&lt;/a>. Here I focus only on the data collected by US forest service. The metadata can be found &lt;a href="https://wildfire.cr.usgs.gov/firehistory/firehistory_1980_2016.xml" target="_blank" rel="noopener">here&lt;/a>. Again, I used geopandas to read the shapefile, and converted interested columns to pandas dataframe. I then changed some columns to the correct dtypes and selected only the major wildfires occurred in the western U.S. The major wildfire is defined as those fires burned over 1000 square acres when controlled.&lt;/p>
-&lt;pre>&lt;code class="language-python">import pandas as pd
-ff = &amp;quot;wf_usfs_1980_2016/wf_usfs_1980_2016.shp&amp;quot;
-df = gpd.read_file(ff)
-dff=pd.DataFrame(df[['CAUSE','SPECCAUSE','SIZECLASSN','YEAR_','STARTDATED',
-'CONTRDATED','OUTDATED','STATE','TOTALACRES','DLONGITUDE']])
-# Clean data
-dff['STARTDATED']=pd.to_datetime(dff['STARTDATED'])
-dff['CONTRDATED']=pd.to_datetime(dff['CONTRDATED'])
-dff['OUTDATED']=pd.to_datetime(dff['OUTDATED'])
-dff['LENGTH']=(dff['CONTRDATED']-dff['STARTDATED'])
-dff['YEAR']=pd.to_numeric(dff['YEAR_'])
-dff=dff.drop('YEAR_',axis=1)
-WEST_US_major_fire=dff[(dff['SIZECLASSN']&amp;gt;5) &amp;amp; (dff['DLONGITUDE']&amp;lt;-103)]
-&lt;/code>&lt;/pre>
-&lt;p>Three questions I&amp;rsquo;d like to answer:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ff&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;wf_usfs_1980_2016/wf_usfs_1980_2016.shp&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">df&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">gpd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_file&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ff&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[[&lt;/span>&lt;span class="s1">&amp;#39;CAUSE&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;SPECCAUSE&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;SIZECLASSN&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;YEAR_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;STARTDATED&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;CONTRDATED&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;OUTDATED&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;STATE&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;TOTALACRES&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;DLONGITUDE&amp;#39;&lt;/span>&lt;span class="p">]])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Clean data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;STARTDATED&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_datetime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;STARTDATED&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;CONTRDATED&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_datetime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;CONTRDATED&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;OUTDATED&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_datetime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;OUTDATED&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;LENGTH&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;CONTRDATED&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;STARTDATED&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;YEAR&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_numeric&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;YEAR_&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">dff&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">drop&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;YEAR_&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">axis&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">WEST_US_major_fire&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;SIZECLASSN&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;amp;&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">dff&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;DLONGITUDE&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">&amp;lt;-&lt;/span>&lt;span class="mi">103&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Three questions I&amp;rsquo;d like to answer:&lt;/p>
 &lt;ul>
 &lt;li>Has the occurrence of major wildfires increased in the last 30 years?&lt;/li>
 &lt;li>Has the wildfire season got longer in the same period?&lt;/li>
 &lt;li>Do we have more severe wildfires in recent years?&lt;/li>
 &lt;/ul>
-&lt;pre>&lt;code class="language-python">event_count=WEST_US_major_fire.groupby('YEAR')['STARTDATED'].count()
-total_acre=WEST_US_major_fire.groupby('YEAR').sum()['TOTALACRES']
-#year=pd.date_range(start='1980', end='2017', freq='A')
-season=pd.Series(season_window,index=total_acre.index)
-season[season&amp;gt;365]=365
-annual_df=pd.DataFrame({'event_count': event_count, 'total_acre': total_acre,
-'season_length':season})
-&lt;/code>&lt;/pre>
-&lt;p>I plotted the wildfire occurence, burned area and season length against the temperature and precipitation reanalysis data I downloaded from &lt;a href="https://esrl.noaa.gov/psd/" target="_blank" rel="noopener">NOAA PSD&lt;/a> using Altair.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">event_count&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">WEST_US_major_fire&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;YEAR&amp;#39;&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="s1">&amp;#39;STARTDATED&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">count&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">total_acre&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">WEST_US_major_fire&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">groupby&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;YEAR&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sum&lt;/span>&lt;span class="p">()[&lt;/span>&lt;span class="s1">&amp;#39;TOTALACRES&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#year=pd.date_range(start=&amp;#39;1980&amp;#39;, end=&amp;#39;2017&amp;#39;, freq=&amp;#39;A&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">season&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Series&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">season_window&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">total_acre&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">season&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">season&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="mi">365&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">365&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">annual_df&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;event_count&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">event_count&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;total_acre&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">total_acre&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;season_length&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">season&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I plotted the wildfire occurence, burned area and season length against the temperature and precipitation reanalysis data I downloaded from &lt;a href="https://esrl.noaa.gov/psd/" target="_blank" rel="noopener">NOAA PSD&lt;/a> using Altair.&lt;/p>
 &lt;iframe id="altairchart"
 src="/img/wildfire_charts.html" width=800 height=970
 scrolling="no" frameborder="no">

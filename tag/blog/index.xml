@@ -1,70 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>blog | Yu Cheng</title><link>/tag/blog/</link><atom:link href="/tag/blog/index.xml" rel="self" type="application/rss+xml"/><description>blog</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Wed, 14 Sep 2016 20:54:16 +0000</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_2.png</url><title>blog</title><link>/tag/blog/</link></image><item><title>Automated deployment of Hugo generated site to Github pages</title><link>/post/hugo_blog/</link><pubDate>Wed, 14 Sep 2016 20:54:16 +0000</pubDate><guid>/post/hugo_blog/</guid><description>&lt;p>In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href="https://github.com/fischcheng/fischcheng.github.io" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>blog | Yu Cheng</title><link>/tag/blog/</link><atom:link href="/tag/blog/index.xml" rel="self" type="application/rss+xml"/><description>blog</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Wed, 14 Sep 2016 20:54:16 +0000</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_3.png</url><title>blog</title><link>/tag/blog/</link></image><item><title>Automated deployment of Hugo generated site to Github pages</title><link>/post/hugo_blog/</link><pubDate>Wed, 14 Sep 2016 20:54:16 +0000</pubDate><guid>/post/hugo_blog/</guid><description>&lt;p>In the last post, I listed the typical workflow of generating a static website with Hugo. Here I would like to share the issues I encountered and the tweaks I&amp;rsquo;ve made. The source codes for this site can be found &lt;a href="https://github.com/fischcheng/fischcheng.github.io" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
 &lt;h3 id="basic-setting-in-my-configtoml-for-the-academic-theme">Basic setting in my config.toml for the Academic Theme&lt;/h3>
 &lt;p>Many beautifully designed themes are already &lt;a href="http://themes.gohugo.io" target="_blank" rel="noopener">available&lt;/a>. I decided to use the &lt;a href="http://themes.gohugo.io/academic/" target="_blank" rel="noopener">academic theme&lt;/a>, because it&amp;rsquo;s specifically designed for academic uses, showcasing publications, personal profile, and projects. For more details, please see the &lt;a href="http://themes.gohugo.io/theme/academic/" target="_blank" rel="noopener">demo website&lt;/a> in action.&lt;/p>
 &lt;p>In &lt;code>config.toml&lt;/code>, one can set the universal variables used by Hugo to generate HTML pages. For example:&lt;/p>
-&lt;pre>&lt;code class="language-toml">baseurl = &amp;quot;https://fischcheng.github.io/&amp;quot;
-title = &amp;quot;Yu Cheng&amp;quot;
-copyright = &amp;quot;&amp;amp;copy; 2016 Yu Cheng&amp;quot;
-languageCode = &amp;quot;en-us&amp;quot;
-theme = &amp;quot;hugo-academic&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;p>Also some specific parameters used by the chosen theme:&lt;/p>
-&lt;pre>&lt;code class="language-toml">[params.about]
-interests = [&amp;quot;Largescale ocean circulation&amp;quot;, &amp;quot;climate variability and modeling&amp;quot;]
-str_interests = &amp;quot;Interests&amp;quot;
-str_education = &amp;quot;Education&amp;quot;
-[[params.about.education]]
-course = &amp;quot;BSc in Atmospheric Sciences&amp;quot;
-institution = &amp;quot;National Taiwan University&amp;quot;
-year = 2010
-&lt;/code>&lt;/pre>
-&lt;p>In the &lt;code>academic&lt;/code> theme, there are 7 sections on the homepage. The &lt;code>about&lt;/code> and &lt;code>teaching&lt;/code> sections are under &lt;code>content/home&lt;/code>. The content of personal profile is from &lt;code>about.md&lt;/code>, yet the entries in interests and education are configured in &lt;code>config.toml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">baseurl&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;https://fischcheng.github.io/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">title&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Yu Cheng&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">copyright&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;amp;copy; 2016 Yu Cheng&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">languageCode&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;en-us&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">theme&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;hugo-academic&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also some specific parameters used by the chosen theme:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">about&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">interests&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;Largescale ocean circulation&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;climate variability and modeling&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">str_interests&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Interests&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">str_education&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Education&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">about&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">education&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">course&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;BSc in Atmospheric Sciences&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">institution&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;National Taiwan University&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">year&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">2010&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the &lt;code>academic&lt;/code> theme, there are 7 sections on the homepage. The &lt;code>about&lt;/code> and &lt;code>teaching&lt;/code> sections are under &lt;code>content/home&lt;/code>. The content of personal profile is from &lt;code>about.md&lt;/code>, yet the entries in interests and education are configured in &lt;code>config.toml&lt;/code>.&lt;/p>
 &lt;p>Three other types of contents are &lt;code>publication&lt;/code>, &lt;code>post&lt;/code> and &lt;code>project&lt;/code>. Each has its unique page layouts, stored under corresponding folders under &lt;code>content&lt;/code>. Add a line &lt;code>selected = true&lt;/code> in the meta-data part in the publication entry to ensure that entry displayed in the &lt;code>selected publication&lt;/code> section.&lt;/p>
 &lt;p>Next change following items to customize the navigation bar:&lt;/p>
-&lt;pre>&lt;code class="language-toml">[[menu.main]]
-name = &amp;quot;Home&amp;quot;
-url = &amp;quot;#top&amp;quot;
-weight = 1
-[[menu.main]]
-name = &amp;quot;Publications&amp;quot;
-url = &amp;quot;#publications&amp;quot;
-weight = 2
-[[menu.main]]
-name = &amp;quot;Posts&amp;quot;
-url = &amp;quot;#posts&amp;quot;
-weight = 3
-[[menu.main]]
-name = &amp;quot;Research&amp;quot;
-url = &amp;quot;#projects&amp;quot;
-weight = 4
-[[menu.main]]
-name = &amp;quot;Works&amp;quot;
-url = &amp;quot;#works&amp;quot;
-weight = 5
-[[menu.main]]
-name = &amp;quot;Contact&amp;quot;
-url = &amp;quot;#contact&amp;quot;
-weight = 6
-&lt;/code>&lt;/pre>
-&lt;p>Changing the name will tell Hugo to replace the navbar items and URL for the page that button linked to. I modified the default &lt;code>teaching.md&lt;/code> page to &lt;code>works&lt;/code> and renamed &lt;code>project&lt;/code> section to &lt;code>research&lt;/code>. Also, I enabled commenting by setting &lt;code>disqusShortname = &amp;quot;yucheng&amp;quot;&lt;/code> in &lt;code>config.toml&lt;/code>. And follow this snippet to add a new social network icon:&lt;/p>
-&lt;pre>&lt;code class="language-toml">[[params.social]]
-icon = &amp;quot;envelope&amp;quot; # icon name for email
-icon_pack = &amp;quot;fa&amp;quot; # for font-awesome icons
-link = &amp;quot;mailto:username@xxx.xxx&amp;quot;
-&lt;/code>&lt;/pre>
-&lt;p>On top of the hugo-academic theme, I added an additional stylesheet under &lt;code>static/css&lt;/code>. This changes the default color scheme from light blue to green. Besides, I changed the font of the &lt;code>navbar-brand&lt;/code>, the title of my site by adding following lines:&lt;/p>
-&lt;pre>&lt;code class="language-css">.navbar-brand {
-text-transform: uppercase;
-font-weight: bold;
-font-size: 1.5em;
-color: #2b2b2b;
-font-family: 'Permanent Marker', cursive;
-}
-&lt;/code>&lt;/pre>
-&lt;p>The contents within &lt;code>static/js&lt;/code> and &lt;code>static/ccs&lt;/code> will be included in the &lt;code>header.html&lt;/code> after the default ccs stylesheets, so it&amp;rsquo;s totally possible to change color scheme without modifying anything in the &lt;code>themes/academic&lt;/code>. However, to change fonts, I modified &lt;code>themes/academic/layouts/partials/header.html&lt;/code> to load an additional font &lt;em>Permanent Marker&lt;/em> from google fonts.&lt;/p>
-&lt;pre>&lt;code class="language-html">&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker&amp;quot;&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;h3 id="github-pages-user-site-or-project-site">Github pages, user site or project site&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">main&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Home&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;#top&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">weight&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">main&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Publications&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;#publications&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">weight&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">main&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Posts&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;#posts&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">weight&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">main&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Research&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;#projects&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">weight&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">main&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Works&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;#works&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">weight&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">menu&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">main&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;Contact&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;#contact&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">weight&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">6&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Changing the name will tell Hugo to replace the navbar items and URL for the page that button linked to. I modified the default &lt;code>teaching.md&lt;/code> page to &lt;code>works&lt;/code> and renamed &lt;code>project&lt;/code> section to &lt;code>research&lt;/code>. Also, I enabled commenting by setting &lt;code>disqusShortname = &amp;quot;yucheng&amp;quot;&lt;/code> in &lt;code>config.toml&lt;/code>. And follow this snippet to add a new social network icon:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">social&lt;/span>&lt;span class="p">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">icon&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;envelope&amp;#34;&lt;/span> &lt;span class="c"># icon name for email&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">icon_pack&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;fa&amp;#34;&lt;/span> &lt;span class="c"># for font-awesome icons&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">link&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;mailto:username@xxx.xxx&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On top of the hugo-academic theme, I added an additional stylesheet under &lt;code>static/css&lt;/code>. This changes the default color scheme from light blue to green. Besides, I changed the font of the &lt;code>navbar-brand&lt;/code>, the title of my site by adding following lines:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">navbar-brand&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">text-transform&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">uppercase&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">font-weight&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">bold&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">font-size&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">1.5&lt;/span>&lt;span class="kt">em&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mh">#2b2b2b&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">font-family&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;Permanent Marker&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">cursive&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The contents within &lt;code>static/js&lt;/code> and &lt;code>static/ccs&lt;/code> will be included in the &lt;code>header.html&lt;/code> after the default ccs stylesheets, so it&amp;rsquo;s totally possible to change color scheme without modifying anything in the &lt;code>themes/academic&lt;/code>. However, to change fonts, I modified &lt;code>themes/academic/layouts/partials/header.html&lt;/code> to load an additional font &lt;em>Permanent Marker&lt;/em> from google fonts.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono|Permanent+Marker&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="github-pages-user-site-or-project-site">Github pages, user site or project site&lt;/h3>
 &lt;p>Two kinds of site are supported on GitHub pages, the user/organization site, and the project site. For the former, the site itself is a repository, everything under &lt;code>master&lt;/code> branch will be displayed under this address &lt;code>https://&amp;lt;username&amp;gt;.github.io&lt;/code>, which is customizable. And the later is a website to showcase an existed repo. Without changing the original branch, everything under &lt;code>gh-pages&lt;/code> branch can be accessed under &lt;code>http://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository&amp;gt;&lt;/code>. Github even provides an Automatic Generator to help to create a project site. More details can be found &lt;a href="https://pages.github.com" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
 &lt;p>My website is an user site. Under this repo &lt;code>fischcheng.github.io&lt;/code>, the &lt;code>source&lt;/code> branch archived all changes to the source codes, and &lt;code>master&lt;/code> branch store the Hugo-generated HTML pages.&lt;/p>
 &lt;h3 id="automated-deployment-using-wercker">Automated deployment using Wercker&lt;/h3>
@@ -80,39 +80,39 @@ Wercker dashboard: to find existed steps, click the Registry tab; to create your
 &lt;p>The first task is to create the config.yml (&lt;a href="https://github.com/fischcheng/fischcheng.github.io/blob/source/wercker.yml" target="_blank" rel="noopener">link to mine&lt;/a>) in the developing branch. Please follow the original Hugo guide to setup the link between a Wercker application to the Github. Below, I will only list out the discrepancies I encountered.&lt;/p>
 &lt;h4 id="build">Build&lt;/h4>
 &lt;p>Following the official guide, I used this &lt;a href="https://github.com/ArjenSchwarz/wercker-step-hugo-build" target="_blank" rel="noopener">step&lt;/a> to trigger Hugo to build HTML pages. However, my first try didn&amp;rsquo;t successfully generate the pages correctly, because the &lt;code>arjen/hugo-build&lt;/code> step couldn&amp;rsquo;t find the &lt;code>hugo-academic&lt;/code> theme. For easier tracking and updating, I forked the &lt;code>hugo-academic&lt;/code> repo, and I later realized that, for a repo embedded within another repo, the former is counted as a submodule. For the build step to work as desired, I had to install git and initialize submodule to ensure that the build step can locate the &lt;code>hugo-academic&lt;/code> theme. Kudos to this &lt;a href="https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/" target="_blank" rel="noopener">post&lt;/a> which helped me to track this issue down.&lt;/p>
-&lt;pre>&lt;code class="language-yaml">box: debian
-build:
-steps:
-- script:
-name: install git
-code: |
-apt-get update
-apt-get install git -y
-- script:
-name: initialize git submodules
-code: |
-git submodule update --init --recursive
-- arjen/hugo-build@1.11.0:
-version: &amp;quot;0.15&amp;quot;
-theme: &amp;quot;hugo-academic&amp;quot;
-flags: --buildDrafts=true
-&lt;/code>&lt;/pre>
-&lt;h4 id="deploy">Deploy&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">box&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">debian&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">build&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">install git&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">code&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> apt-get update
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> apt-get install git -y&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">initialize git submodules&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">code&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> git submodule update --init --recursive&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">arjen/hugo-build@1.11.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;0.15&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">theme&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;hugo-academic&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">flags&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>--&lt;span class="l">buildDrafts=true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="deploy">Deploy&lt;/h4>
 &lt;p>There is no more such thing as &amp;ldquo;Add deploy target&amp;rdquo; in Wercker. The interface has changed to the new &amp;ldquo;workflows of pipelines.&amp;rdquo; This change is so new that even the documentation on Wercker website has not changed yet. Their customer service still referred me to the old supporting materials.&lt;/p>
 &lt;p>So I poked around and realized that, even if the second &lt;code>deploy&lt;/code> step is included in the &lt;code>wercker.yml&lt;/code>, one still needs to manually add a new &amp;ldquo;pipeline&amp;rdquo; under the &amp;ldquo;workflow&amp;rdquo; tab. Upon creating a new pipeline, the &amp;ldquo;YML pipeline name&amp;rdquo; must be in the predefined names in the &lt;code>wercker.yml&lt;/code>.&lt;/p>
 &lt;p>Here I used this &lt;a href="https://github.com/leipert/step-git-push" target="_blank" rel="noopener">step&lt;/a> to deploy the built site to GitHub. Each pipeline starts from scratch. So for the &lt;code>deploy&lt;/code> pipeline, the &lt;code>git&lt;/code> package needs to be installed again. One also has to setup the environment variable &lt;code>$Git_Token&lt;/code>, acquired from Github setting.&lt;/p>
-&lt;pre>&lt;code class="language-yaml">deploy:
-steps:
-- script:
-name: install git
-code: |
-apt-get update &amp;amp;&amp;amp; apt-get install git -y
-- leipert/git-push@0.7.6:
-gh_oauth: $Git_Token
-gh_pages: true
-basedir: public
-branch: master
-&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">install git&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">code&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> apt-get update &amp;amp;&amp;amp; apt-get install git -y&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">leipert/git-push@0.7.6&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">gh_oauth&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">$Git_Token&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">gh_pages&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">basedir&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">public&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">branch&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">master&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;figure id="figure-click-deploy-pipeline-to-setup-included-environment-variables-get-the-github-access-token-from-github-profile-setting">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="/img/wercker02.png" alt="Click deploy pipeline to setup included environment variables. Get the Github access token from Github profile setting." loading="lazy" data-zoomable />&lt;/div>

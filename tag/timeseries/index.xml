@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>timeseries | Yu Cheng</title><link>/tag/timeseries/</link><atom:link href="/tag/timeseries/index.xml" rel="self" type="application/rss+xml"/><description>timeseries</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Mon, 13 Feb 2017 00:42:30 +0000</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_2.png</url><title>timeseries</title><link>/tag/timeseries/</link></image><item><title>Fill in the missing data using Python pandas</title><link>/post/pandas_missing_value/</link><pubDate>Mon, 13 Feb 2017 00:42:30 +0000</pubDate><guid>/post/pandas_missing_value/</guid><description>&lt;p>One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>timeseries | Yu Cheng</title><link>/tag/timeseries/</link><atom:link href="/tag/timeseries/index.xml" rel="self" type="application/rss+xml"/><description>timeseries</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Mon, 13 Feb 2017 00:42:30 +0000</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_3.png</url><title>timeseries</title><link>/tag/timeseries/</link></image><item><title>Fill in the missing data using Python pandas</title><link>/post/pandas_missing_value/</link><pubDate>Mon, 13 Feb 2017 00:42:30 +0000</pubDate><guid>/post/pandas_missing_value/</guid><description>&lt;p>One of the many advantages of Python is its abundant and often powerful Libraries. For my research, besides plotting maps, I often play with time series. When it comes to manipulating and plotting time series, no other tools can beat python pandas.&lt;/p>
 &lt;blockquote>
 &lt;p>pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.&lt;/p>
 &lt;/blockquote>
@@ -6,10 +6,10 @@
 &lt;p>For a &lt;em>DataFrame&lt;/em>, to see the key statistics of a &lt;em>DataFrame&lt;/em> with many columns, simply use &lt;code>DataFrame.describe()&lt;/code>. A table with mean, standard deviation, counts, and percentiles will then pop up. To compare multiple time series visually, naively put &lt;code>DataFrame.plot().&lt;/code>&lt;/p>
 &lt;h4 id="working-with-missing-data">Working with missing data&lt;/h4>
 &lt;p>Recently, I am calculating the Atlantic Ocean Heat Content (OHC).&lt;/p>
-&lt;pre>&lt;code class="language-python">#headers=['date','OHC2000','OHC300','OHC700']
-OHC_multilevels=DataFrame.from_csv('OHC_HRC07_1951-2002.csv') # If it's pandas generated, this is much easier.
-OHC_multilevels.plot()
-&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#headers=[&amp;#39;date&amp;#39;,&amp;#39;OHC2000&amp;#39;,&amp;#39;OHC300&amp;#39;,&amp;#39;OHC700&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">OHC_multilevels&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">DataFrame&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">from_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;OHC_HRC07_1951-2002.csv&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># If it&amp;#39;s pandas generated, this is much easier.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">OHC_multilevels&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plot&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;figure id="figure-atlantic-ohc-in-multiple-layers-1951-2002">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="/img/output_32_1.png" alt="Atlantic OHC in multiple layers 1951-2002" loading="lazy" data-zoomable width="600" />&lt;/div>
@@ -17,9 +17,9 @@ OHC_multilevels.plot()
 Atlantic OHC in multiple layers 1951-2002
 &lt;/figcaption>&lt;/figure>
 &lt;p>Obviously, something fishy happened near 1952 and again in 1971. Several months have values close to zero, which is unlikely. Going back to the data, I confirmed that the temperature and salinity fields of those months are missing. To clean up the time series, I first assigned &lt;code>None&lt;/code> to those months, and interpolate linearly using the neighboring months. Three time series in the same &lt;em>DataFrame&lt;/em> are processed using following two lines.&lt;/p>
-&lt;pre>&lt;code class="language-python">OHC_multilevels[OHC_multilevels&amp;lt;100]=None
-OHC_multilevels.interpolate().plot()
-&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">OHC_multilevels&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">OHC_multilevels&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">OHC_multilevels&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interpolate&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plot&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;figure id="figure-filled-missing-data-with-linear-interpolation">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="/img/output_33_1.png" alt="filled missing data with linear interpolation" loading="lazy" data-zoomable width="600" />&lt;/div>
