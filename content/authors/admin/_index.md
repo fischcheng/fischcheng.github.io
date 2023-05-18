@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Yu Cheng
+title: Yu Cheng 鄭嵎
 
 # Username (this should match the folder name)
 authors:
