@@ -26,7 +26,7 @@
 &lt;li>Download &lt;code>Espanso&lt;/code> binary &lt;a href="https://espanso.org/install/" target="_blank" rel="noopener">here&lt;/a>, follow the setup instructions and provide necessary permisions.&lt;/li>
 &lt;li>In terminal, &lt;code>espanso status&lt;/code> will show if &lt;code>espanso&lt;/code> is running in the background, or check the icon in the status bar.&lt;/li>
 &lt;li>A simple example and some pre-built keywords &lt;code>:espanso&lt;/code> will automatically change into &lt;code>Hi there!&lt;/code>&lt;/li>
-&lt;li>To modify Espanso configuration and add more keywords and match rules, enter &amp;rsquo;espanso path&amp;rsquo; to locate the configuration folder.&lt;/li>
+&lt;li>To modify Espanso configuration and add more keywords and match rules, enter &lt;code>espanso path&lt;/code> to locate the configuration folder.&lt;/li>
 &lt;li>The &lt;code>configuration folder&lt;/code>, something like &lt;code>/Users/&amp;lt;username&amp;gt;/Library/Application\ Support/espanso&lt;/code> (Mac for example), contains two subfolders, &lt;code>config/default.yml&lt;/code> and &lt;code>match/base.yml&lt;/code>&lt;/li>
 &lt;/ol>
 &lt;blockquote>
