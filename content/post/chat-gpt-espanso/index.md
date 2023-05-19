@@ -62,7 +62,7 @@ It wasn't long before I realized that repeatedly typing the same prompts was any
 5. The `configuration folder`, something like `/Users/<username>/Library/Application\ Support/espanso` (Mac for example), contains two subfolders, `config/default.yml` and `match/base.yml`
 > * The files contained in the match directory define WHAT Espanso should do. In other words, this is where you should specify all the custom snippets and actions (aka Matches). 
 > * The files contained in the config directory define HOW Espanso should perform its expansions. In other words, this is were you should specify all Espanso's parameters and options. 
-6. Whenever you alter the configuration, remember to use 'espanso restart' to ensure the changes are active. 
+6. Whenever you alter the configuration, remember to use `espanso restart` to ensure the changes are active. 
 7. Press `Alt + Space` (or `Opt + Space` for Mac) to pull up the search bar for available keywords.
 
 You can find more details [here](https://espanso.org/docs/get-started/).
