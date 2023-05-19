@@ -36,7 +36,7 @@
 &lt;/ul>
 &lt;/blockquote>
 &lt;ol start="6">
-&lt;li>Whenever you alter the configuration, remember to use &amp;rsquo;espanso restart&amp;rsquo; to ensure the changes are active.&lt;/li>
+&lt;li>Whenever you alter the configuration, remember to use &lt;code>espanso restart&lt;/code> to ensure the changes are active.&lt;/li>
 &lt;li>Press &lt;code>Alt + Space&lt;/code> (or &lt;code>Opt + Space&lt;/code> for Mac) to pull up the search bar for available keywords.&lt;/li>
 &lt;/ol>
 &lt;p>You can find more details &lt;a href="https://espanso.org/docs/get-started/" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
