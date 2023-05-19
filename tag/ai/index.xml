@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | Yu Cheng</title><link>/tag/ai/</link><atom:link href="/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Icon by Freepik</copyright><lastBuildDate>Thu, 18 May 2023 19:39:48 -0400</lastBuildDate><image><url>/media/icon_hu98bd36228c4581e4fa706c990bf09188_18185_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>/tag/ai/</link></image><item><title>Supercharging Your Job Hunt with ChatGPT and Espanso</title><link>/post/chat-gpt-espanso/</link><pubDate>Thu, 18 May 2023 19:39:48 -0400</pubDate><guid>/post/chat-gpt-espanso/</guid><description>&lt;h3 id="job-searching-with-chatgpt">Job Searching with ChatGPT&lt;/h3>
+&lt;p>The meteoric rise of ChatGPT since its launch has made it a hot topic everywhere. An ever-increasing array of courses and articles dedicated to refining the art of prompting with language learning models (LLMs) emerges every second. Here is a great &lt;a href="https://github.com/f/awesome-chatgpt-prompts" target="_blank" rel="noopener">collection&lt;/a> of effective prompting snippets that I always come back to.&lt;/p>
+&lt;p>Recently, I found myself back in the job market due to a corporate restructure. While thinking about my next move, it struck me - why not harness the prowess of ChatGPT to streamline my job search? A quick google search (I haven&amp;rsquo;t jumped ship to Bing 😏) led me to this great video by Jeff Su (&lt;a href="https://www.youtube.com/watch?v=pmnY5V16GSE" target="_blank" rel="noopener">part1&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=ZXmbb5fPfgk" target="_blank" rel="noopener">part2&lt;/a>).&lt;/p>
+&lt;p>His insightful videos underscores some facets of job-hunting where ChatGPT excels:&lt;/p>
+&lt;ul>
+&lt;li>Customizing resumes and cover letters according to the job description&lt;/li>
+&lt;li>Optimizing resume bullet points using successful templates&lt;/li>
+&lt;li>Crafting incisive questions for the company/interviewers&lt;/li>
+&lt;li>Drafting personalized LinkedIn messages to secure coffee chats&lt;/li>
+&lt;li>Interview preparation (compiling prepared questions and answers)&lt;/li>
+&lt;li>Composing impactful &amp;lsquo;Thank You&amp;rsquo; emails&lt;/li>
+&lt;li>Negotiating job offers&lt;/li>
+&lt;/ul>
+&lt;p>Given that my job hunt has been progressing at a slower pace than I&amp;rsquo;d like, this post will focus on the utilization of ChatGPT in tailoring cover letters and resumes. Moreover, I will be discussing how Espanso can expedite these complex prompting steps.&lt;/p>
+&lt;h3 id="use-espanso-to-speed-things-up">Use Espanso to speed things up&lt;/h3>
+&lt;p>The intricate prompting steps mainly comprise:&lt;/p>
+&lt;ul>
+&lt;li>Assigning an identity to ChatGPT - think of a resume writing maestro with two decades of experience, or a seasoned tech recruiter, etc.&lt;/li>
+&lt;li>Providing comprehensive context, summarizing the previous step&amp;rsquo;s output, and incorporating it into the next prompt.&lt;/li>
+&lt;li>Constraining the output format, for instance, into a predefined table.&lt;/li>
+&lt;li>Specifically instructing ChatGPT to refrain from fabricating information.&lt;/li>
+&lt;/ul>
+&lt;p>It wasn&amp;rsquo;t long before I realized that repeatedly typing the same prompts was anything but fun. That&amp;rsquo;s when &lt;a href="https://espanso.org" target="_blank" rel="noopener">&lt;code>Espanso&lt;/code>&lt;/a>, a tool I&amp;rsquo;d previously utilized, sprung to mind. Espanso is an open-source text expander. Think of it as an auto-complete feature for modern IDEs that you can use anywhere you can type.&lt;/p>
+&lt;h4 id="getting-started-with-espanso">Getting Started with Espanso&lt;/h4>
+&lt;ol>
+&lt;li>Download &lt;code>Espanso&lt;/code> binary &lt;a href="https://espanso.org/install/" target="_blank" rel="noopener">here&lt;/a>, follow the setup instructions and provide necessary permisions.&lt;/li>
+&lt;li>In terminal, &lt;code>espanso status&lt;/code> will show if &lt;code>espanso&lt;/code> is running in the background, or check the icon in the status bar.&lt;/li>
+&lt;li>A simple example and some pre-built keywords &lt;code>:espanso&lt;/code> will automatically change into &lt;code>Hi there!&lt;/code>&lt;/li>
+&lt;li>To modify Espanso configuration and add more keywords and match rules, enter &amp;rsquo;espanso path&amp;rsquo; to locate the configuration folder.&lt;/li>
+&lt;li>The &lt;code>configuration folder&lt;/code>, something like &lt;code>/Users/&amp;lt;username&amp;gt;/Library/Application\ Support/espanso&lt;/code> (Mac for example), contains two subfolders, &lt;code>config/default.yml&lt;/code> and &lt;code>match/base.yml&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;ul>
+&lt;li>The files contained in the match directory define WHAT Espanso should do. In other words, this is where you should specify all the custom snippets and actions (aka Matches).&lt;/li>
+&lt;li>The files contained in the config directory define HOW Espanso should perform its expansions. In other words, this is were you should specify all Espanso&amp;rsquo;s parameters and options.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;ol start="6">
+&lt;li>Whenever you alter the configuration, remember to use &amp;rsquo;espanso restart&amp;rsquo; to ensure the changes are active.&lt;/li>
+&lt;li>Press &lt;code>Alt + Space&lt;/code> (or &lt;code>Opt + Space&lt;/code> for Mac) to pull up the search bar for available keywords.&lt;/li>
+&lt;/ol>
+&lt;p>You can find more details &lt;a href="https://espanso.org/docs/get-started/" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;h4 id="sample-triggers">Sample triggers&lt;/h4>
+&lt;p>Here are some of my Espanso &lt;code>match&lt;/code> rules specifically for ChatGPT. I’ve bracketed the job description and resume since they frequently need adjusting to fit specific job requirements. &lt;em>The &amp;ldquo;|&amp;rdquo; allows multiple lines to replace when setting the matching rules.&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">matches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># Simple text replacement&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">trigger&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;:jdsum&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">replace&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> Based on the job description, what are the biggest challenge for the position will face day-to-day.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> Please see quoted part between brackets for the job description.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> {job description}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">trigger&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;:jdskills&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">replace&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Based on the job description, List out the necessary skills by categories into a table.&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">trigger&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;:covergrab&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">replace&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> &amp;#34;Based on the resume posted below. {resume}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> You are currently working as a Data Scientist at a startup with 5 years of inter-disciplinary experience and you would love to apply for the position based on the job description.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> Write an attention-grabbing hook for you cover letter that highlights your experience and qualifications in a way that shows you empathize and can successfully take on the challenges of the data scientist role.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> Consider incorporating specific examples of how you&amp;#39;ve tackled these challenges in your past works and explore creative ways to express your enthusiasm for the opportunity. Keep your hook within 100 words.&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">trigger&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;:coverall&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">replace&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> &amp;#34;Incorporate the attention grabbing hook above, and compose a cover letter under 300 words.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> Please do not make up information, and focus on the enthusiasm of the opportunity.&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hope these help! Stay commited, stay positive!&lt;/p></description></item></channel></rss>
