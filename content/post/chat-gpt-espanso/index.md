@@ -4,7 +4,7 @@
 title: "Supercharging Your Job Hunt with ChatGPT and Espanso"
 subtitle: ""
 summary: "The meteoric rise of ChatGPT since its launch has made it a hot topic everywhere. An ever-increasing array of courses and articles dedicated to refining the art of prompting with language learning models (LLMs) emerges every second. Can it help to streamline the job-searching process?"
-authors: ["Yu Cheng"]
+authors: [admin]
 tags: ["AI", "ChatGPT", "Utility", "Espanso"]
 categories: ["AI"]
 date: 2023-05-18T19:39:48-04:00
