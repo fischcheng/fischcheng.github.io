@@ -58,7 +58,7 @@ It wasn't long before I realized that repeatedly typing the same prompts was any
 1. Download `Espanso` binary [here](https://espanso.org/install/), follow the setup instructions and provide necessary permisions. 
 2. In terminal, `espanso status` will show if `espanso` is running in the background, or check the icon in the status bar. 
 3. A simple example and some pre-built keywords `:espanso` will automatically change into `Hi there!`
-4. To modify Espanso configuration and add more keywords and match rules, enter 'espanso path' to locate the configuration folder.
+4. To modify Espanso configuration and add more keywords and match rules, enter `espanso path` to locate the configuration folder.
 5. The `configuration folder`, something like `/Users/<username>/Library/Application\ Support/espanso` (Mac for example), contains two subfolders, `config/default.yml` and `match/base.yml`
 > * The files contained in the match directory define WHAT Espanso should do. In other words, this is where you should specify all the custom snippets and actions (aka Matches). 
 > * The files contained in the config directory define HOW Espanso should perform its expansions. In other words, this is were you should specify all Espanso's parameters and options. 
