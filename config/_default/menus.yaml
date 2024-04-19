@@ -23,5 +23,5 @@ main:
     url: "#talks"
     weight: 60
   - name: Resume
-    url: "pdf/resume_2023.pdf"
+    url: "pdf/resume_2024.pdf"
     weight: 70
