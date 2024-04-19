@@ -10,18 +10,18 @@ authors:
 superuser: true
 
 # Role/position
-role: Sustainability Data Scientist
+role: Sr. Founding Data Scientist
 
 # Organizations/Affiliations
 organizations:
-- name: MIT Office of Sustainability
-  url: "https://sustainability.mit.edu"
+- name: Web3 Builders
+  url: "https://web3builders.co"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Passionate about leveraging my past experience to make positive impacts on the planet. Well, raising two wonderful children heartfully is a good start. 
 
 interests:
-- Data-driven Organization
+- Climate variability and modeling
 - ML/AI Applications
 - Predictive Modeling
 - Data Visualization
@@ -43,9 +43,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: "mailto:yu@yu-cheng.co"  # '#contact'
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/fischcheng
+- icon: newspaper
+  icon_pack: fa
+  link: https://substack.com/@fischcheng
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=j65KEFYAAAAJ&hl=en
