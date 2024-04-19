@@ -28,7 +28,7 @@ The first difficulty we must overcome is quantifying Agulhas leakage robustly.In
 With the aid of Connectivity Modeling System (CMS), we release particles along the ACT array. Each particle is tagged with a volume flux equivalent to the local velocity times the corresponding grid cell size. They are advected by local velocity fields from CCSM3.5 forward in time for two years. Tracking every particle trajectories, we can determine whether one particle crossing the GoodHope line, which basin it ends up in, and, above all, the timing of last-crossing. Summing up the number of last-crossing particles of every time-step, we can establish time-series of Agulhas leakage. 
 
 <center>
-{{< youtube2 src="lP9AS70c4oU" width="80%">}}
+{{< youtube lP9AS70c4oU >}}
 </center>
 
 #### Temporal Resolution

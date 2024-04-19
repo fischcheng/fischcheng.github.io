@@ -36,7 +36,8 @@ Last week was tough for everyone in Seattle because of the bad air quality. Sadl
 
 Here is the experimental smoke forecast from NWS' tweet on Tuesday:
 
-{{< tweet 1031999007864705024 >}}
+{{< twitter user="NWSSeattle" id="1031999007864705024" >}}
+
 
 News articles seem to be obsessed with the AQI number. When I tried plotting out the AQI levels in Seattle in the past week, I realized that the AQI is unitless, but the data I found has a typical aerosol measurement unit $\mu g/m^{3}$. So I dived deeper to find out more details about AQI, which I'd like to explain below.
 

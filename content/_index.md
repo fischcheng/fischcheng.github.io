@@ -1,8 +1,8 @@
 ---
-# Page title
-title: My page
-# Page type - we want a landing page (such as a homepage)
+title: ''
+date: 2024-04-19
 type: landing
+
 
 # Your landing page sections - add as many different content blocks as you like
 sections:
@@ -25,9 +25,19 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Sustainability Data Scientist
+          company: MIT Office of Sustainability
+          company_url: 'https://sustainability.mit.edu/'
+          company_logo: ''
+          location: Boston
+          date_start: '2023-09-11'
+          date_end: ''
+          description: |2-
+              Innovate MIT's sustainability data collection, reporting, and sharing efforts, leveraging cloud technology and modern data stacks.
+
         - title: Founding Senior Data Scientist
           company: Web3 Builders
-          company_url: 'https://web3builders.co'
+          company_url: ''
           company_logo: ''
           location: Boston
           date_start: '2022-06-27'

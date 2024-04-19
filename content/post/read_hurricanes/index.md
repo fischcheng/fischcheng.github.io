@@ -40,11 +40,7 @@ I mean, it should be like this. General public are aware of the threats and coop
 
 *check out recent typhoons in Taiwan!*
 <center>
-{{< youtube2 src="-IHZXBgz0yg" width="80%">}}
-</center>
-
-<center>
-{{< youtube2 src="OmVJGC381XY" width="80%">}}
+{{< youtube OmVJGC381XY >}}
 </center>
 
 

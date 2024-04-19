@@ -54,5 +54,5 @@ Like I said, Ipython Notebooks are easily shareable, in particular through the n
 * [Reduced Gravity model showing equatorial waves](https://github.com/fischcheng/fischcheng.github.io/blob/source/static/notebook/p3.ipynb)
 
 <center>
-{{< youtube2 src="jx_bGld1eLM" width="80%">}}
+{{< youtube jx_bGld1eLM >}}
 </center>

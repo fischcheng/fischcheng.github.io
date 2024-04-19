@@ -80,8 +80,7 @@ For available languages and styles, check [link](https://highlightjs.org/static/
 
 ------
 ## Twitter Tweet
-{{< tweet 833394043585376256 >}}
-
+{{< twitter user="rogerfederer" id="833394043585376256" >}}
 ------
 ## Youtube video
 {{< youtube GTqicHqhb1A >}}
