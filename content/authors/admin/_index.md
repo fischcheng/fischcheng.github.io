@@ -10,19 +10,19 @@ authors:
 superuser: true
 
 # Role/position
-role: Sr. Founding Data Scientist
+role: Sustainability Data Scientist
 
 # Organizations/Affiliations
 organizations:
-- name: Web3 Builders
-  url: "https://web3builders.co"
+- name: MIT Office of Sustainability
+  url: "https://sustainability.mit.edu/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Passionate about leveraging my past experience to make positive impacts on the planet. Well, raising two wonderful children heartfully is a good start. 
 
 interests:
-- Climate variability and modeling
-- ML/AI Applications
+- Data-driven Organization
+- ML/AI Application
 - Predictive Modeling
 - Data Visualization
 
