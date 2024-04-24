@@ -29,7 +29,7 @@ sections:
           company: MIT Office of Sustainability
           company_url: 'https://sustainability.mit.edu/'
           company_logo: ''
-          location: Boston
+          location: Cambridge
           date_start: '2023-09-11'
           date_end: ''
           description: |2-

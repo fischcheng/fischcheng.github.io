@@ -44,7 +44,7 @@ social:
   icon_pack: fas
   link: "mailto:yu@yu-cheng.co"  # '#contact'
 - icon: newspaper
-  icon_pack: fa
+  icon_pack: fas
   link: https://substack.com/@fischcheng
 - icon: google-scholar
   icon_pack: ai
