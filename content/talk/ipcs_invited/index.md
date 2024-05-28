@@ -1,24 +1,24 @@
 ---
-title: "Weather Forecast? Weather Intelligence! 氣象新創ClimaCell經驗分享"
-event: "ICPS 臺灣大學氣候變遷及永續發展國際學程"
-event_url: "http://www.ipcs.ntu.edu.tw/page/news/index.aspx?kind=1"
+title: "BASIN, the MITOS data platform"
+event: "2024 IT Partners Conference"
+event_url: "https://wikis.mit.edu/confluence/display/ITPartners/2024+IT+Partners+Conference+-+Tuesday%2C+June+11"
 
-location: "Taipei, Taiwan"
+location: "Cambridge, MA"
 
-summary: ""
-abstract: "天氣影響著生活的各個層面，大多數人卻無法輕易評估天氣對自己的影響，開發中農業國家的人們受天氣影響最大，卻很難得到準確的天氣資訊。ClimaCell致力於簡化從預報到決策的過程、彌補天氣資訊的不平等。或許你也好奇，學校之外，大氣研究有什麼其他可能？又會遇到什麼挑戰？"
+summary: "How a data platform leverage modern data stacks help MIT progresses its climate actions."
+abstract: "Leveraging existing works such as the Sustainability Datapool and IS&T Datahub, we set out to establish a one-stop shop for data pipeline monitoring, scheduling, data validation and cataloging. Introduce, BASIN, the MITOS data platform."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 
-date: "2021-02-26T15:00:00"
+date: "2024-06-11T11:15:00"
 #date_end: "2018-06-13T14:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: "2021-02-27T00:00:00"
+publishDate: "2024-05-28T12:00:00"
 
-authors: []
+authors: ["Yu Cheng"]
 tags: []
 
 # Is this a featured talk? (true/false)
@@ -29,14 +29,14 @@ image:
   focal_point: Right
 
 links:
-- icon: twitter
+- icon: linkedin
   icon_pack: fab
   name: Follow
-  url: https://twitter.com/fischcheng
+  url: https://www.linkedin.com/in/yu-cheng-boston/
 url_code: ""
-url_pdf: "slides/climacell_intro.pdf"
+url_pdf: ""
 url_slides: ""
-url_video: "https://www.youtube.com/watch?v=sILPqRI2n7I"
+url_video: ""
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
