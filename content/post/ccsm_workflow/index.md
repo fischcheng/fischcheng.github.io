@@ -14,7 +14,6 @@ featured: false
 draft: false
 math: true
 diagram: true
-markup: mmark
 
 projects: []
 ---
