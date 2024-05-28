@@ -1,37 +1,38 @@
 ---
-title: "Agulhas leakage variability in a coupled climate system: controls and responses"
-event: UW Physical Oceanography seminar
-event_url: ""
+title: "BASIN, the MITOS data platform"
+event: "2024 IT Partners Conference"
+event_url: "https://wikis.mit.edu/confluence/display/ITPartners/2024+IT+Partners+Conference+-+Tuesday%2C+June+11"
 
-location: "Seattle, Washington"
+location: "Cambridge, MA"
 
-summary: ""
-abstract: "Agulhas leakage may have profound impacts on the climate system, by importing heat and salt anomalies from the Indian Ocean into the Atlantic and affecting the stability of the meridional overturning circulation. Furthermore, SST anomalies associated with leakage may influence terrestrial climate through air-sea coupling. Here, for the first time, we use an ocean-eddy-resolving (1/10 degree) global climate model (Community Climate System Model version 4.0, CCSM4), to investigate agulhas leakage variability and its impacts in a fully coupled framework. We devise a strategy to quantify Agulhas leakage by applying a Lagrangian particle tracking approach in daily-mean velocity fields archived every five days (pentads). Our eddy-resolving simulation is able to form an agulhas retroflection and constrain a realistic mean leakage of 11.2 Sv, compared to 43 Sv in the 1 degree CCSM. We find that more than 50% of leakage transport occurs outside eddies, and that standard monthly coupled model output is sufficient to capture nearly 80% of leakage variability on seasonal and longer time scales when compared to using pentads. These results lead us to hypothesize that interannual leakage variability is predominantly constrained by the large-scale circulation, despite the prevalence of Agulhas rings and other eddy structures. To test this hypothesis, we separate the large-scale and eddy velocity fields using a spatial smoother and, while keeping the large-scale fields' temporal order, we shuffle or shift the eddy fields to generate three modified total velocity fields. The resulting leakage time series have strong coherence at periods longer than 1000 days and significant correlations (0.62 < ρ < 0.69) at interannual time scales, suggesting that the large-scale circulation can explain up to 50% of the variance of Agulhas leakage. Investigating linkages to this variability, we find that leakage is associated with meridional shifts of the zonal wind stress, resembling the pattern of the Southern Annular Mode. Furthermore, high leakage periods are associated with locally increasing SST and surface heat fluxes over the retroflection region and reduced precipitation over the east of southern Africa. In terms of climate change since the 1960s, in contrast to the pronounced upward trend of Agulhas leakage suggested by previous studies using ocean hindcasts, we find no significant trend in our simulation. This may be due to a smaller-than-observed trend in the SAM or to cold biases in the southern hemisphere found in our model. More investigation is needed before we could attribute this finding to the presence of coupled physics in our model."
+summary: "How a data platform leverage modern data stacks help MIT progresses its climate actions."
+abstract: "Leveraging existing works such as the Sustainability Datapool and IS&T Datahub, we set out to establish a one-stop shop for data pipeline monitoring, scheduling, data validation and cataloging. Introduce, BASIN, the MITOS data platform."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2017-04-19T12:30:00Z"
-#date_end: "2017-04-19T13:30:00Z"
+
+date: "2024-06-11T11:15:00"
+#date_end: "2018-06-13T14:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: "2017-03-20T00:00:00Z"
+publishDate: "2024-05-28T12:00:00"
 
-authors: []
+authors: ["Yu Cheng"]
 tags: []
 
 # Is this a featured talk? (true/false)
-featured: false
+featured: true
 
 image:
   caption: ''
   focal_point: Right
 
 links:
-- icon: twitter
+- icon: linkedin
   icon_pack: fab
   name: Follow
-  url: https://twitter.com/fischcheng
+  url: https://www.linkedin.com/in/yu-cheng-boston/
 url_code: ""
 url_pdf: ""
 url_slides: ""
