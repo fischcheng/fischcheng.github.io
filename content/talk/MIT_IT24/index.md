@@ -1,12 +1,12 @@
 ---
-title: "BASIN, the MITOS data platform"
-event: "2024 IT Partners Conference"
+title: "Basin, the MITOS data platform"
+event: "2024 MIT IT Partners Conference"
 event_url: "https://wikis.mit.edu/confluence/display/ITPartners/2024+IT+Partners+Conference+-+Tuesday%2C+June+11"
 
 location: "Cambridge, MA"
 
-summary: "How a data platform leverage modern data stacks help MIT progresses its climate actions."
-abstract: "Leveraging existing works such as the Sustainability Datapool and IS&T Datahub, we set out to establish a one-stop shop for data pipeline monitoring, scheduling, data validation and cataloging. Introduce, BASIN, the MITOS data platform."
+summary: "How a data platform leveraging modern data stack helps MIT advance its climate actions."
+abstract: "Leveraging existing works such as the Sustainability Datapool and IS&T Datahub, we set out to establish a one-stop control panel for data pipeline scheduling, data validation and cataloging. Introducing, Basin, the MITOS data platform."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -34,7 +34,7 @@ links:
   name: Follow
   url: https://www.linkedin.com/in/yu-cheng-boston/
 url_code: ""
-url_pdf: ""
+url_pdf: "slides/Basin_IT_parnters_06112024.pdf"
 url_slides: ""
 url_video: ""
 
