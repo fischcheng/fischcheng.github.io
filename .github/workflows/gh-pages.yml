@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - source # Set a branch to deploy
+  pull_request:
 
 jobs:
   deploy:
@@ -25,4 +26,6 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
+          publish_dir: ./public
+          publish_branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
