@@ -27,10 +27,7 @@ image:
   caption: ''
   focal_point: Right
 
-links:
-  - icon: hero/document-text
-    label: Slides
-    url: slides/Scientific_Computing_AL.pdf
+links: []
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -49,3 +46,5 @@ projects: []
 # Enable math on this page?
 math: true
 ---
+
+[Slides](slides/Scientific_Computing_AL.pdf)

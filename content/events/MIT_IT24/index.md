@@ -28,13 +28,7 @@ image:
   caption: ''
   focal_point: Right
 
-links:
-  - icon: brands/linkedin
-    label: Follow
-    url: https://www.linkedin.com/in/yu-cheng-boston/
-  - icon: hero/document-text
-    label: Slides
-    url: slides/Basin_IT_parnters_06112024.pdf
+links: []
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -53,3 +47,5 @@ projects: []
 # Enable math on this page?
 math: true
 ---
+
+[Follow](https://www.linkedin.com/in/yu-cheng-boston/) · [Slides](slides/Basin_IT_parnters_06112024.pdf)

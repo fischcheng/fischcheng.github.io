@@ -44,10 +44,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-links:
-  - icon: hero/document-text
-    label: PDF
-    url: https://1drv.ms/b/s!AuB_mliF0-yg2_0Ui02a13EwpPcLnQ
+links: []
 projects: 
 - quantify_leakage
 
@@ -58,3 +55,5 @@ projects:
 #   Otherwise, set `slides: ""`.
 slides: ''
 ---
+
+[PDF](https://1drv.ms/b/s!AuB_mliF0-yg2_0Ui02a13EwpPcLnQ)

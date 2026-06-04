@@ -47,13 +47,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-links:
-  - icon: hero/document-text
-    label: PDF
-    url: https://drive.google.com/file/d/1uS1zlR_j79ogVsnkyvAeYiaLxgk4KEPx/view?usp=sharing
-  - icon: hero/link
-    label: Source
-    url: https://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-17-0647.1
+links: []
 projects: 
 - Largescale_forcing
 
@@ -64,3 +58,5 @@ projects:
 #   Otherwise, set `slides: ""`.
 slides: ""
 ---
+
+[PDF](https://drive.google.com/file/d/1uS1zlR_j79ogVsnkyvAeYiaLxgk4KEPx/view?usp=sharing) · [Source](https://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-17-0647.1)

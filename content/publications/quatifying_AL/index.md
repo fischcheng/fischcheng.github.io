@@ -47,13 +47,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-links:
-  - icon: hero/document-text
-    label: PDF
-    url: https://journals.ametsoc.org/doi/pdf/10.1175/JCLI-D-15-0568.1
-  - icon: hero/link
-    label: Source
-    url: https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-15-0568.1
+links: []
 projects: 
 - quantify_leakage
 
@@ -64,3 +58,5 @@ projects:
 #   Otherwise, set `slides: ""`.
 slides: ""
 ---
+
+[PDF](https://journals.ametsoc.org/doi/pdf/10.1175/JCLI-D-15-0568.1) · [Source](https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-15-0568.1)

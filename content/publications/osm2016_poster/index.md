@@ -45,13 +45,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-links:
-  - icon: hero/document-text
-    label: PDF
-    url: https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1002/2015GL064482
-  - icon: hero/link
-    label: Source
-    url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015GL064482
+links: []
 projects: 
 - Largescale_forcing
 
@@ -62,3 +56,5 @@ projects:
 #   Otherwise, set `slides: ""`.
 slides: ''
 ---
+
+[PDF](https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1002/2015GL064482) · [Source](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015GL064482)

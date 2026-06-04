@@ -44,13 +44,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-links:
-  - icon: hero/document-text
-    label: PDF
-    url: http://arxiv.org/pdf/1512.04133v1
-  - icon: hero/link
-    label: Source
-    url: https://www.sciencedirect.com/science/article/pii/S1463500317301853
+links: []
 projects: []
 
 # Slides (optional).
@@ -60,3 +54,5 @@ projects: []
 #   Otherwise, set `slides: ""`.
 slides: ""
 ---
+
+[PDF](http://arxiv.org/pdf/1512.04133v1) · [Source](https://www.sciencedirect.com/science/article/pii/S1463500317301853)
