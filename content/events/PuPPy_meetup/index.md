@@ -47,4 +47,4 @@ projects: []
 math: true
 ---
 
-[Slides](slides/Scientific_Computing_AL.pdf)
+[Slides](/slides/Scientific_Computing_AL.pdf)

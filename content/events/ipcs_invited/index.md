@@ -48,4 +48,4 @@ projects: []
 math: true
 ---
 
-[Slides](slides/climacell_intro.pdf) · [Video](https://www.youtube.com/watch?v=sILPqRI2n7I)
+[Slides](/slides/climacell_intro.pdf) · [Video](https://www.youtube.com/watch?v=sILPqRI2n7I)
