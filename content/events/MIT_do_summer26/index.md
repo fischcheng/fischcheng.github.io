@@ -1,22 +1,22 @@
 ---
-title: "Basin, the MITOS data platform"
-event: "2024 MIT IT Partners Conference"
-event_url: "https://wikis.mit.edu/confluence/display/ITPartners/2024+IT+Partners+Conference+-+Tuesday%2C+June+11"
+title: "MITOS Data Orientation"
+event: "2026 MITOS Summer Student Cohort"
+event_url: ""
 
 location: "Cambridge, MA"
 
-summary: "How a data platform leveraging modern data stack helps MIT advance its climate actions."
-abstract: "Leveraging existing works such as the Sustainability Datapool and IS&T Datahub, we set out to establish a one-stop control panel for data pipeline scheduling, data validation and cataloging. Introducing, Basin, the MITOS data platform."
+summary: "Introduction to the MIT Office of Sustainability's Data Practice and Culture."
+abstract: "In this session, I will walk through the MITOS data platform and share some of the principles that shape our data culture. We built the platform around four core values: transparency, reliability, reproducibility, and collaboration. While tools and technologies continue to evolve rapidly, we believe these principles remain essential to building trustworthy and sustainable data practices. If there is one takeaway from your 10 weeks with MITOS, I hope it is the importance of carrying these principles into every project you work on."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 
-date: "2024-06-11T11:15:00"
+date: "2026-06-01T11:00:00"
 #date_end: "2018-06-13T14:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: "2024-05-28T12:00:00"
+publishDate: "2026-06-04T12:30:00"
 
 authors: ["Yu Cheng"]
 tags: []
@@ -48,4 +48,4 @@ projects: []
 math: true
 ---
 
-[Follow](https://www.linkedin.com/in/yu-cheng-boston/) · [Slides](/slides/Basin_IT_parnters_06112024.pdf)
+[Follow](https://www.linkedin.com/in/yu-cheng-boston/) · [Slides](/slides/DataOrientation_Summer2026_yc.html)
