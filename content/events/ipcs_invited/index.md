@@ -28,13 +28,7 @@ image:
   caption: ''
   focal_point: Right
 
-links:
-  - icon: hero/document-text
-    label: Slides
-    url: slides/climacell_intro.pdf
-  - icon: hero/video-camera
-    label: Video
-    url: https://www.youtube.com/watch?v=sILPqRI2n7I
+links: []
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -53,3 +47,5 @@ projects: []
 # Enable math on this page?
 math: true
 ---
+
+[Slides](slides/climacell_intro.pdf) · [Video](https://www.youtube.com/watch?v=sILPqRI2n7I)
