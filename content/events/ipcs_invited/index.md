@@ -29,9 +29,11 @@ image:
   focal_point: Right
 
 links:
-  - type: pdf
+  - icon: hero/document-text
+    label: Slides
     url: slides/climacell_intro.pdf
-  - type: video
+  - icon: hero/video-camera
+    label: Video
     url: https://www.youtube.com/watch?v=sILPqRI2n7I
 
 # Markdown Slides (optional).

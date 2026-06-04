@@ -32,7 +32,8 @@ links:
   - icon: brands/linkedin
     label: Follow
     url: https://www.linkedin.com/in/yu-cheng-boston/
-  - type: pdf
+  - icon: hero/document-text
+    label: Slides
     url: slides/Basin_IT_parnters_06112024.pdf
 
 # Markdown Slides (optional).

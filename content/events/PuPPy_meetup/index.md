@@ -28,7 +28,8 @@ image:
   focal_point: Right
 
 links:
-  - type: pdf
+  - icon: hero/document-text
+    label: Slides
     url: slides/Scientific_Computing_AL.pdf
 
 # Markdown Slides (optional).
