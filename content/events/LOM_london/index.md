@@ -26,11 +26,7 @@ image:
   caption: ''
   focal_point: Right
 
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/fischcheng
+links: []
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
