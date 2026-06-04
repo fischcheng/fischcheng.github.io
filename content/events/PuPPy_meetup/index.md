@@ -28,14 +28,8 @@ image:
   focal_point: Right
 
 links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/fischcheng
-url_code: ""
-url_pdf: "slides/Scientific_Computing_AL.pdf"
-url_slides: ""
-url_video: ""
+  - type: pdf
+    url: slides/Scientific_Computing_AL.pdf
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.

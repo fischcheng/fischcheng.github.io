@@ -29,14 +29,10 @@ image:
   focal_point: Right
 
 links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/fischcheng
-url_code: ""
-url_pdf: "slides/climacell_intro.pdf"
-url_slides: ""
-url_video: "https://www.youtube.com/watch?v=sILPqRI2n7I"
+  - type: pdf
+    url: slides/climacell_intro.pdf
+  - type: video
+    url: https://www.youtube.com/watch?v=sILPqRI2n7I
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.

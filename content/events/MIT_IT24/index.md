@@ -29,14 +29,11 @@ image:
   focal_point: Right
 
 links:
-- icon: linkedin
-  icon_pack: fab
-  name: Follow
-  url: https://www.linkedin.com/in/yu-cheng-boston/
-url_code: ""
-url_pdf: "slides/Basin_IT_parnters_06112024.pdf"
-url_slides: ""
-url_video: ""
+  - icon: brands/linkedin
+    label: Follow
+    url: https://www.linkedin.com/in/yu-cheng-boston/
+  - type: pdf
+    url: slides/Basin_IT_parnters_06112024.pdf
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
