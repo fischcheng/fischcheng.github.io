@@ -31,14 +31,6 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: https://1drv.ms/b/s!AuB_mliF0-yg2_0Ui02a13EwpPcLnQ
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -52,6 +44,10 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
+links:
+  - icon: hero/document-text
+    label: PDF
+    url: https://1drv.ms/b/s!AuB_mliF0-yg2_0Ui02a13EwpPcLnQ
 projects: 
 - quantify_leakage
 

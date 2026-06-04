@@ -34,14 +34,6 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: https://journals.ametsoc.org/doi/pdf/10.1175/JCLI-D-15-0568.1
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-15-0568.1
-url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -55,6 +47,13 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
+links:
+  - icon: hero/document-text
+    label: PDF
+    url: https://journals.ametsoc.org/doi/pdf/10.1175/JCLI-D-15-0568.1
+  - icon: hero/link
+    label: Source
+    url: https://journals.ametsoc.org/doi/full/10.1175/JCLI-D-15-0568.1
 projects: 
 - quantify_leakage
 

@@ -34,14 +34,6 @@ featured: true
 # links:
 # - name: ""
 #   url: ""
-url_pdf: https://drive.google.com/file/d/1uS1zlR_j79ogVsnkyvAeYiaLxgk4KEPx/view?usp=sharing
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: https://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-17-0647.1
-url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -55,6 +47,13 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
+links:
+  - icon: hero/document-text
+    label: PDF
+    url: https://drive.google.com/file/d/1uS1zlR_j79ogVsnkyvAeYiaLxgk4KEPx/view?usp=sharing
+  - icon: hero/link
+    label: Source
+    url: https://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-17-0647.1
 projects: 
 - Largescale_forcing
 
