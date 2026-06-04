@@ -1,115 +1,98 @@
-# SITE SETUP
-# Guide: https://docs.hugoblox.com/tutorial/
-# Documentation: https://docs.hugoblox.com/
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+# ══════════════════════════════════════════════════════════════════════════════
+# HUGO BLOX CONFIGURATION
+# Schema: hugoblox.com/schema/v2
+# ══════════════════════════════════════════════════════════════════════════════
+hugoblox:
+  schema: "2.0"
 
-# Appearance
+  identity:
+    name: "Yu Cheng"
+    organization: ""
+    type: person
+    tagline: "Sustainability Data Scientist"
+    description: "Yu Cheng's personal academic website — data science, climate modeling, and sustainability."
+    social:
+      twitter: "fischcheng"
 
-appearance:
-  theme_day: earth
-  theme_night: minimal
-  font: minimal
-  font_size: L
+  theme:
+    mode: dark
+    pack: "default"
+    colors:
+      primary: ""
+      secondary: ""
+      neutral: ""
 
-# SEO
+  typography:
+    pack: "modern"
 
-marketing:
-  seo:
-    site_type: Person
-    local_business_type: ''
-    org_name: ''
-    description: "Yu Cheng's personal website"
-    twitter: 'fischcheng'
-  analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-  verification:
-    google: ''
-    baidu: ''
+  layout:
+    radius: "md"
+    spacing: "comfortable"
+    avatar_shape: square
 
-
-# Site header
-
-header:
-  navbar:
+  header:
     enable: true
-    align: l
-    show_logo: true
-    show_language: false
-    show_day_night: true
-    show_search: true
-    highlight_active_link: true
+    style: navbar
+    sticky: true
+    align: center
+    search: true
+    theme_toggle: true
+    theme_picker: false
+    language_switcher: false
+    cta:
+      enable: false
 
-# Site footer
+  footer:
+    style: minimal
+    language_switcher: false
+    text: ""
 
-footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: "© {year} Yu Cheng"
     license:
-      enable: true
+      type: cc
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
 
-# Localization
+  content:
+    math:
+      enable: false
+    toc:
+      enable: true
+    reading_time:
+      enable: true
+    citations:
+      style: apa
 
-locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
-  address_format: en-us
-
-# Site features
-
-features:
-  syntax_highlighter:
-    theme_light: github-light
-    theme_dark: dracula
-  math:
-    enable: false
-  privacy_pack:
-    enable: false
-  repository:
-    url: 'https://github.com/<username>/<repository>'
-    content_dir: content
-    branch: main
-  avatar:
-    gravatar: false
-    shape: square
-  comment:
-    provider: ''
-    disqus:
-      shortname: ''
-      show_count: true
-    commento:
-      url: ''
-    giscus:
-      repo: ''
-      repo_id: ''
-      category: ''
-      category_id: ''
   search:
-    provider: wowchemy
-    algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
-      show_logo: false
-  map:
-    provider: ''
-    api_key: ''
-    zoom: 15
-
-# Extensions
-
-extensions:
-  cms:
-    branch: main
-    local_backend: false
-  academicons:
     enable: true
+    suggestions: []
+    quick_actions: []
 
-# Security
+  comments:
+    enable: false
+    provider: ""
 
-security:
-  # Allow frame for embedding speaker notes in slides
-  allow_frame: true
+  analytics:
+    google:
+      measurement_id: ""
+
+  verification:
+    google: ""
+    bing: ""
+
+  repository:
+    enable: false
+
+  locale:
+    date_format: "Jan 2, 2006"
+    time_format: "3:04 PM"
+    address_format: en-us
+
+  security:
+    frame_options: allow
+
+  pro:
+    hide_attribution: false
+    affiliate_code: ""

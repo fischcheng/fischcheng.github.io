@@ -1,0 +1,4 @@
+---
+title: Posts
+view: card
+---

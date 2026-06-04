@@ -1,0 +1,8 @@
+{{ $columns := .config.columns | default 1 }}
+{{ if eq $columns 1 }}
+<div class="container max-w-[65ch] mx-auto grid grid-cols-1 gap-6 my-5">
+{{ else }}
+{{ $id := printf "carousel-%d" now.UnixNano }}
+<div class="hbx-carousel container mx-auto my-8 px-4" data-carousel-id="{{ $id }}">
+  <div id="{{ $id }}" class="hbx-carousel-track">
+{{ end }}

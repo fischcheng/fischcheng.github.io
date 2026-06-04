@@ -1,0 +1,87 @@
+/* Site-level overrides */
+
+/* Smaller base font size (default Tailwind is 16px) */
+html {
+  font-size: 15px;
+}
+
+/* Bold the site name in the navbar */
+.navbar-brand {
+  font-weight: 700;
+}
+
+/* Bio section name — smaller weight than the default font-black */
+.resume-biography h1 {
+  font-weight: 500;
+}
+
+/* ── Horizontal scroll carousel ─────────────────────────────────── */
+.hbx-carousel {
+  position: relative;
+}
+
+.hbx-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.hbx-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each card takes up ~1/2 width on desktop so 2 are visible */
+.hbx-carousel-track > * {
+  flex: 0 0 calc(50% - 0.75rem);
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+
+/* On small screens show one card at a time */
+@media (max-width: 640px) {
+  .hbx-carousel-track > * {
+    flex: 0 0 90%;
+  }
+}
+
+.hbx-carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.hbx-carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #475569;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.hbx-carousel-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dark .hbx-carousel-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+.dark .hbx-carousel-btn:hover {
+  background: #334155;
+  color: #f1f5f9;
+}

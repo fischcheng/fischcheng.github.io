@@ -1,0 +1,17 @@
+{{ $columns := .config.columns | default 1 }}
+{{ if eq $columns 1 }}
+</div>
+{{ else }}
+  </div><!-- end carousel track -->
+  <div class="hbx-carousel-nav">
+    <button class="hbx-carousel-btn" aria-label="Previous"
+      onclick="(function(btn){var t=btn.closest('.hbx-carousel').querySelector('.hbx-carousel-track');t.scrollBy({left:-t.offsetWidth*0.85,behavior:'smooth'})})(this)">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+    </button>
+    <button class="hbx-carousel-btn" aria-label="Next"
+      onclick="(function(btn){var t=btn.closest('.hbx-carousel').querySelector('.hbx-carousel-track');t.scrollBy({left:t.offsetWidth*0.85,behavior:'smooth'})})(this)">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+    </button>
+  </div>
+</div><!-- end carousel -->
+{{ end }}
