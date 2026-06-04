@@ -28,7 +28,7 @@ hugoblox:
   layout:
     radius: "md"
     spacing: "comfortable"
-    avatar_shape: square
+    avatar_shape: circle
 
   header:
     enable: true

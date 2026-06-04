@@ -7,7 +7,10 @@ sections:
   - block: resume-biography-3
     content:
       username: me
-      text: ''
+      text: |
+        Yu has 10 years of experience using pioneering high-resolution climate models to study the ocean and its role in the climate system. Coming from Taiwan, he is a big fan of all weather phenomena and the latest technology. With an atmospheric science background, he is passionate about combining his experiences in climate modeling, software engineering and data science to solve more challenging problems.
+
+        Fun facts: Yu loves all sports with racquets. He plays in local tennis leagues, school badminton clubs, and has been stringing racquets for friends for many years. One of his dearest memories from Miami was serving as a ballperson at Miami Open and handing towels to Rafael Nadal.
       button:
         text: Download CV
         url: pdf/resume_2024.pdf
@@ -23,7 +26,7 @@ sections:
         size: sm
       avatar:
         size: medium
-        shape: square
+        shape: circle
 
   - block: collection
     id: news
