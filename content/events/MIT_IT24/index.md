@@ -18,7 +18,7 @@ all_day: false
 # Schedule page publish date (NOT talk date).
 publishDate: "2024-05-28T12:00:00"
 
-authors: ["Yu Cheng"]
+authors: []
 tags: []
 
 # Is this a featured talk? (true/false)
